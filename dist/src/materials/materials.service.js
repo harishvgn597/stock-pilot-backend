@@ -14,6 +14,29 @@ let MaterialsService = class MaterialsService {
     constructor(prisma) {
         this.prisma = prisma;
     }
+    async search(query) {
+        return this.prisma.material.findMany({
+            where: {
+                OR: [
+                    { materialCode: { contains: query, mode: 'insensitive' } },
+                    { description: { contains: query, mode: 'insensitive' } },
+                ],
+            },
+            include: {
+                prices: {
+                    select: {
+                        id: true,
+                        conditionRecord: true,
+                        conditionType: true,
+                        rate: true,
+                        validFrom: true,
+                        validTo: true,
+                    },
+                },
+            },
+            take: 50,
+        });
+    }
     async findByCode(materialCode) {
         const material = await this.prisma.material.findUnique({
             where: { materialCode },

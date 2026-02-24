@@ -10,17 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { MaterialsService } from './materials.service.js';
 let MaterialsController = class MaterialsController {
     materialsService;
     constructor(materialsService) {
         this.materialsService = materialsService;
     }
+    search(query) {
+        return this.materialsService.search(query || '');
+    }
     findByCode(materialCode) {
         return this.materialsService.findByCode(materialCode);
     }
 };
+__decorate([
+    Get('search'),
+    __param(0, Query('q')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], MaterialsController.prototype, "search", null);
 __decorate([
     Get(':materialCode'),
     __param(0, Param('materialCode')),

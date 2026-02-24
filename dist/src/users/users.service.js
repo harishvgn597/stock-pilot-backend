@@ -7,30 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable, ConflictException } from '@nestjs/common';
+import { Injectable, ConflictException, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
 let UsersService = class UsersService {
     prisma;
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async findAll() {
-        return this.prisma.user.findMany({
-            select: {
-                id: true,
-                name: true,
-                email: true,
-                phoneNumber: true,
-                franchiseeName: true,
-                gstin: true,
-                createdAt: true,
-            },
-            orderBy: { createdAt: 'desc' },
-        });
-    }
-    async findOne(id) {
-        return this.prisma.user.findUnique({
-            where: { id },
+    async findByEmail(email) {
+        const user = await this.prisma.user.findUnique({
+            where: { email },
             select: {
                 id: true,
                 name: true,
@@ -41,6 +27,10 @@ let UsersService = class UsersService {
                 createdAt: true,
             },
         });
+        if (!user) {
+            throw new NotFoundException(`User with email ${email} not found`);
+        }
+        return user;
     }
     async create(dto) {
         const existing = await this.prisma.user.findUnique({

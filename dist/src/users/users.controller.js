@@ -18,29 +18,20 @@ let UsersController = class UsersController {
     constructor(usersService) {
         this.usersService = usersService;
     }
-    findAll() {
-        return this.usersService.findAll();
-    }
-    findOne(id) {
-        return this.usersService.findOne(id);
+    findByEmail(email) {
+        return this.usersService.findByEmail(email);
     }
     create(createUserDto) {
         return this.usersService.create(createUserDto);
     }
 };
 __decorate([
-    Get(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], UsersController.prototype, "findAll", null);
-__decorate([
-    Get(':id'),
-    __param(0, Param('id')),
+    Get(':email'),
+    __param(0, Param('email')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], UsersController.prototype, "findOne", null);
+], UsersController.prototype, "findByEmail", null);
 __decorate([
     Post(),
     __param(0, Body()),

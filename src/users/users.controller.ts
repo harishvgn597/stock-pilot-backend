@@ -6,16 +6,10 @@ import { CreateUserDto } from './dto/create-user.dto.js';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  // GET /users
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
-  }
-
-  // GET /users/:id
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id);
+  // GET /users/:email
+  @Get(':email')
+  findByEmail(@Param('email') email: string) {
+    return this.usersService.findByEmail(email);
   }
 
   // POST /users

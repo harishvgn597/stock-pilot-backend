@@ -9,7 +9,9 @@ export const DbNull = runtime.DbNull;
 export const JsonNull = runtime.JsonNull;
 export const AnyNull = runtime.AnyNull;
 export const ModelName = {
-    User: 'User'
+    User: 'User',
+    Material: 'Material',
+    MaterialPrice: 'MaterialPrice'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
     ReadUncommitted: 'ReadUncommitted',
@@ -25,6 +27,23 @@ export const UserScalarFieldEnum = {
     franchiseeName: 'franchiseeName',
     gstin: 'gstin',
     password: 'password',
+    createdAt: 'createdAt'
+};
+export const MaterialScalarFieldEnum = {
+    id: 'id',
+    materialCode: 'materialCode',
+    description: 'description',
+    materialGroup: 'materialGroup',
+    createdAt: 'createdAt'
+};
+export const MaterialPriceScalarFieldEnum = {
+    id: 'id',
+    conditionRecord: 'conditionRecord',
+    conditionType: 'conditionType',
+    rate: 'rate',
+    validFrom: 'validFrom',
+    validTo: 'validTo',
+    materialId: 'materialId',
     createdAt: 'createdAt'
 };
 export const SortOrder = {

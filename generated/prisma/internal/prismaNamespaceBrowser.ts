@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Material: 'Material',
+  MaterialPrice: 'MaterialPrice'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -82,6 +84,31 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const MaterialScalarFieldEnum = {
+  id: 'id',
+  materialCode: 'materialCode',
+  description: 'description',
+  materialGroup: 'materialGroup',
+  createdAt: 'createdAt'
+} as const
+
+export type MaterialScalarFieldEnum = (typeof MaterialScalarFieldEnum)[keyof typeof MaterialScalarFieldEnum]
+
+
+export const MaterialPriceScalarFieldEnum = {
+  id: 'id',
+  conditionRecord: 'conditionRecord',
+  conditionType: 'conditionType',
+  rate: 'rate',
+  validFrom: 'validFrom',
+  validTo: 'validTo',
+  materialId: 'materialId',
+  createdAt: 'createdAt'
+} as const
+
+export type MaterialPriceScalarFieldEnum = (typeof MaterialPriceScalarFieldEnum)[keyof typeof MaterialPriceScalarFieldEnum]
 
 
 export const SortOrder = {

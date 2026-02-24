@@ -23,3 +23,27 @@ model User {
   password       String
   createdAt      DateTime @default(now())
 }
+
+model Material {
+  id            String   @id @default(uuid())
+  materialCode  String   @unique
+  description   String
+  materialGroup String
+  createdAt     DateTime @default(now())
+
+  prices MaterialPrice[]
+}
+
+model MaterialPrice {
+  id              String   @id @default(uuid())
+  conditionRecord String
+  conditionType   String
+  rate            Float
+  validFrom       DateTime
+  validTo         DateTime
+
+  materialId String
+  material   Material @relation(fields: [materialId], references: [id])
+
+  createdAt DateTime @default(now())
+}

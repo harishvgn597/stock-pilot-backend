@@ -12,6 +12,8 @@ export declare const JsonNull: import("@prisma/client-runtime-utils").JsonNullCl
 export declare const AnyNull: import("@prisma/client-runtime-utils").AnyNullClass;
 export declare const ModelName: {
     readonly User: "User";
+    readonly Material: "Material";
+    readonly MaterialPrice: "MaterialPrice";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -32,6 +34,25 @@ export declare const UserScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum];
+export declare const MaterialScalarFieldEnum: {
+    readonly id: "id";
+    readonly materialCode: "materialCode";
+    readonly description: "description";
+    readonly materialGroup: "materialGroup";
+    readonly createdAt: "createdAt";
+};
+export type MaterialScalarFieldEnum = (typeof MaterialScalarFieldEnum)[keyof typeof MaterialScalarFieldEnum];
+export declare const MaterialPriceScalarFieldEnum: {
+    readonly id: "id";
+    readonly conditionRecord: "conditionRecord";
+    readonly conditionType: "conditionType";
+    readonly rate: "rate";
+    readonly validFrom: "validFrom";
+    readonly validTo: "validTo";
+    readonly materialId: "materialId";
+    readonly createdAt: "createdAt";
+};
+export type MaterialPriceScalarFieldEnum = (typeof MaterialPriceScalarFieldEnum)[keyof typeof MaterialPriceScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";

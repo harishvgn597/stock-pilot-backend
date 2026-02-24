@@ -13,6 +13,14 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.prisma.user;
   }
 
+  get material() {
+    return this.prisma.material;
+  }
+
+  get materialPrice() {
+    return this.prisma.materialPrice;
+  }
+
   async onModuleInit() {
     await this.prisma.$connect();
   }

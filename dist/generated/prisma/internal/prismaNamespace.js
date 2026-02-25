@@ -26,7 +26,9 @@ export const AnyNull = runtime.AnyNull;
 export const ModelName = {
     User: 'User',
     Material: 'Material',
-    MaterialPrice: 'MaterialPrice'
+    MaterialPrice: 'MaterialPrice',
+    Invoice: 'Invoice',
+    InvoiceItem: 'InvoiceItem'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
     ReadUncommitted: 'ReadUncommitted',
@@ -61,6 +63,27 @@ export const MaterialPriceScalarFieldEnum = {
     materialId: 'materialId',
     createdAt: 'createdAt'
 };
+export const InvoiceScalarFieldEnum = {
+    id: 'id',
+    invoiceNumber: 'invoiceNumber',
+    invoiceDate: 'invoiceDate',
+    customerName: 'customerName',
+    createdAt: 'createdAt'
+};
+export const InvoiceItemScalarFieldEnum = {
+    id: 'id',
+    invoiceId: 'invoiceId',
+    materialCode: 'materialCode',
+    description: 'description',
+    hsn: 'hsn',
+    quantity: 'quantity',
+    uom: 'uom',
+    unitPrice: 'unitPrice',
+    totalAmount: 'totalAmount',
+    cgst: 'cgst',
+    sgst: 'sgst',
+    createdAt: 'createdAt'
+};
 export const SortOrder = {
     asc: 'asc',
     desc: 'desc'
@@ -68,6 +91,10 @@ export const SortOrder = {
 export const QueryMode = {
     default: 'default',
     insensitive: 'insensitive'
+};
+export const NullsOrder = {
+    first: 'first',
+    last: 'last'
 };
 export const defineExtension = runtime.Extensions.defineExtension;
 //# sourceMappingURL=prismaNamespace.js.map

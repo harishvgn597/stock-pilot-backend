@@ -14,6 +14,8 @@ export declare const ModelName: {
     readonly User: "User";
     readonly Material: "Material";
     readonly MaterialPrice: "MaterialPrice";
+    readonly Invoice: "Invoice";
+    readonly InvoiceItem: "InvoiceItem";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -53,6 +55,29 @@ export declare const MaterialPriceScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type MaterialPriceScalarFieldEnum = (typeof MaterialPriceScalarFieldEnum)[keyof typeof MaterialPriceScalarFieldEnum];
+export declare const InvoiceScalarFieldEnum: {
+    readonly id: "id";
+    readonly invoiceNumber: "invoiceNumber";
+    readonly invoiceDate: "invoiceDate";
+    readonly customerName: "customerName";
+    readonly createdAt: "createdAt";
+};
+export type InvoiceScalarFieldEnum = (typeof InvoiceScalarFieldEnum)[keyof typeof InvoiceScalarFieldEnum];
+export declare const InvoiceItemScalarFieldEnum: {
+    readonly id: "id";
+    readonly invoiceId: "invoiceId";
+    readonly materialCode: "materialCode";
+    readonly description: "description";
+    readonly hsn: "hsn";
+    readonly quantity: "quantity";
+    readonly uom: "uom";
+    readonly unitPrice: "unitPrice";
+    readonly totalAmount: "totalAmount";
+    readonly cgst: "cgst";
+    readonly sgst: "sgst";
+    readonly createdAt: "createdAt";
+};
+export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";
@@ -63,3 +88,8 @@ export declare const QueryMode: {
     readonly insensitive: "insensitive";
 };
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode];
+export declare const NullsOrder: {
+    readonly first: "first";
+    readonly last: "last";
+};
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder];

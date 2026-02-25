@@ -20,6 +20,12 @@ let PrismaService = class PrismaService {
     get materialPrice() {
         return this.prisma.materialPrice;
     }
+    get invoice() {
+        return this.prisma.invoice;
+    }
+    get invoiceItem() {
+        return this.prisma.invoiceItem;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

@@ -31,7 +31,8 @@ model Material {
   materialGroup String
   createdAt     DateTime @default(now())
 
-  prices MaterialPrice[]
+  prices       MaterialPrice[]
+  invoiceItems InvoiceItem[]
 }
 
 model MaterialPrice {
@@ -44,6 +45,38 @@ model MaterialPrice {
 
   materialId String
   material   Material @relation(fields: [materialId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Invoice {
+  id            String   @id @default(uuid())
+  invoiceNumber String   @unique
+  invoiceDate   DateTime
+  customerName  String
+
+  createdAt DateTime @default(now())
+
+  items InvoiceItem[]
+}
+
+model InvoiceItem {
+  id String @id @default(uuid())
+
+  invoiceId String
+  invoice   Invoice @relation(fields: [invoiceId], references: [id])
+
+  materialCode String
+  material     Material @relation(fields: [materialCode], references: [materialCode])
+
+  description String
+  hsn         String?
+  quantity    Float
+  uom         String
+  unitPrice   Float
+  totalAmount Float
+  cgst        Float
+  sgst        Float
 
   createdAt DateTime @default(now())
 }

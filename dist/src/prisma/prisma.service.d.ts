@@ -10,6 +10,12 @@ export declare class PrismaService implements OnModuleInit, OnModuleDestroy {
     get materialPrice(): import("../../generated/prisma/models.js").MaterialPriceDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
         omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
     }>;
+    get invoice(): import("../../generated/prisma/models.js").InvoiceDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
+        omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
+    }>;
+    get invoiceItem(): import("../../generated/prisma/models.js").InvoiceItemDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
+        omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
+    }>;
     onModuleInit(): Promise<void>;
     onModuleDestroy(): Promise<void>;
 }

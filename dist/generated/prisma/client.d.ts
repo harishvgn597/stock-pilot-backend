@@ -9,3 +9,5 @@ export { Prisma };
 export type User = Prisma.UserModel;
 export type Material = Prisma.MaterialModel;
 export type MaterialPrice = Prisma.MaterialPriceModel;
+export type Invoice = Prisma.InvoiceModel;
+export type InvoiceItem = Prisma.InvoiceItemModel;

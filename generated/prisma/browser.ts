@@ -32,3 +32,13 @@ export type Material = Prisma.MaterialModel
  * 
  */
 export type MaterialPrice = Prisma.MaterialPriceModel
+/**
+ * Model Invoice
+ * 
+ */
+export type Invoice = Prisma.InvoiceModel
+/**
+ * Model InvoiceItem
+ * 
+ */
+export type InvoiceItem = Prisma.InvoiceItemModel

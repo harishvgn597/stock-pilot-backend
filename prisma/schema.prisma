@@ -31,8 +31,9 @@ model Material {
   materialGroup String
   createdAt     DateTime @default(now())
 
-  prices       MaterialPrice[]
-  invoiceItems InvoiceItem[]
+  prices        MaterialPrice[]
+  invoiceItems  InvoiceItem[]
+  engineerStock EngineerStock[]
 }
 
 model MaterialPrice {
@@ -77,6 +78,30 @@ model InvoiceItem {
   totalAmount Float
   cgst        Float
   sgst        Float
+
+  createdAt DateTime @default(now())
+}
+
+model Engineer {
+  id    String @id @default(uuid())
+  name  String
+  email String @unique
+
+  createdAt DateTime @default(now())
+
+  assignedGoods EngineerStock[]
+}
+
+model EngineerStock {
+  id String @id @default(uuid())
+
+  engineerId String
+  engineer   Engineer @relation(fields: [engineerId], references: [id])
+
+  materialCode String
+  material     Material @relation(fields: [materialCode], references: [materialCode])
+
+  quantity Float
 
   createdAt DateTime @default(now())
 }

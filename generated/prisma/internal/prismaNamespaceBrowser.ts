@@ -55,7 +55,9 @@ export const ModelName = {
   Material: 'Material',
   MaterialPrice: 'MaterialPrice',
   Invoice: 'Invoice',
-  InvoiceItem: 'InvoiceItem'
+  InvoiceItem: 'InvoiceItem',
+  Engineer: 'Engineer',
+  EngineerStock: 'EngineerStock'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -140,6 +142,27 @@ export const InvoiceItemScalarFieldEnum = {
 } as const
 
 export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum]
+
+
+export const EngineerScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  createdAt: 'createdAt'
+} as const
+
+export type EngineerScalarFieldEnum = (typeof EngineerScalarFieldEnum)[keyof typeof EngineerScalarFieldEnum]
+
+
+export const EngineerStockScalarFieldEnum = {
+  id: 'id',
+  engineerId: 'engineerId',
+  materialCode: 'materialCode',
+  quantity: 'quantity',
+  createdAt: 'createdAt'
+} as const
+
+export type EngineerStockScalarFieldEnum = (typeof EngineerStockScalarFieldEnum)[keyof typeof EngineerStockScalarFieldEnum]
 
 
 export const SortOrder = {

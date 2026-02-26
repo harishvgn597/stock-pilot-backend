@@ -13,7 +13,9 @@ export const ModelName = {
     Material: 'Material',
     MaterialPrice: 'MaterialPrice',
     Invoice: 'Invoice',
-    InvoiceItem: 'InvoiceItem'
+    InvoiceItem: 'InvoiceItem',
+    Engineer: 'Engineer',
+    EngineerStock: 'EngineerStock'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
     ReadUncommitted: 'ReadUncommitted',
@@ -67,6 +69,19 @@ export const InvoiceItemScalarFieldEnum = {
     totalAmount: 'totalAmount',
     cgst: 'cgst',
     sgst: 'sgst',
+    createdAt: 'createdAt'
+};
+export const EngineerScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    email: 'email',
+    createdAt: 'createdAt'
+};
+export const EngineerStockScalarFieldEnum = {
+    id: 'id',
+    engineerId: 'engineerId',
+    materialCode: 'materialCode',
+    quantity: 'quantity',
     createdAt: 'createdAt'
 };
 export const SortOrder = {

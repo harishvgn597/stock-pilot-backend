@@ -184,6 +184,7 @@ export type MaterialWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Material"> | Date | string
   prices?: Prisma.MaterialPriceListRelationFilter
   invoiceItems?: Prisma.InvoiceItemListRelationFilter
+  engineerStock?: Prisma.EngineerStockListRelationFilter
 }
 
 export type MaterialOrderByWithRelationInput = {
@@ -194,6 +195,7 @@ export type MaterialOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   prices?: Prisma.MaterialPriceOrderByRelationAggregateInput
   invoiceItems?: Prisma.InvoiceItemOrderByRelationAggregateInput
+  engineerStock?: Prisma.EngineerStockOrderByRelationAggregateInput
 }
 
 export type MaterialWhereUniqueInput = Prisma.AtLeast<{
@@ -207,6 +209,7 @@ export type MaterialWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Material"> | Date | string
   prices?: Prisma.MaterialPriceListRelationFilter
   invoiceItems?: Prisma.InvoiceItemListRelationFilter
+  engineerStock?: Prisma.EngineerStockListRelationFilter
 }, "id" | "materialCode">
 
 export type MaterialOrderByWithAggregationInput = {
@@ -239,6 +242,7 @@ export type MaterialCreateInput = {
   createdAt?: Date | string
   prices?: Prisma.MaterialPriceCreateNestedManyWithoutMaterialInput
   invoiceItems?: Prisma.InvoiceItemCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateInput = {
@@ -249,6 +253,7 @@ export type MaterialUncheckedCreateInput = {
   createdAt?: Date | string
   prices?: Prisma.MaterialPriceUncheckedCreateNestedManyWithoutMaterialInput
   invoiceItems?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUpdateInput = {
@@ -259,6 +264,7 @@ export type MaterialUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   prices?: Prisma.MaterialPriceUpdateManyWithoutMaterialNestedInput
   invoiceItems?: Prisma.InvoiceItemUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateInput = {
@@ -269,6 +275,7 @@ export type MaterialUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   prices?: Prisma.MaterialPriceUncheckedUpdateManyWithoutMaterialNestedInput
   invoiceItems?: Prisma.InvoiceItemUncheckedUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateManyInput = {
@@ -352,6 +359,20 @@ export type MaterialUpdateOneRequiredWithoutInvoiceItemsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutInvoiceItemsInput, Prisma.MaterialUpdateWithoutInvoiceItemsInput>, Prisma.MaterialUncheckedUpdateWithoutInvoiceItemsInput>
 }
 
+export type MaterialCreateNestedOneWithoutEngineerStockInput = {
+  create?: Prisma.XOR<Prisma.MaterialCreateWithoutEngineerStockInput, Prisma.MaterialUncheckedCreateWithoutEngineerStockInput>
+  connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutEngineerStockInput
+  connect?: Prisma.MaterialWhereUniqueInput
+}
+
+export type MaterialUpdateOneRequiredWithoutEngineerStockNestedInput = {
+  create?: Prisma.XOR<Prisma.MaterialCreateWithoutEngineerStockInput, Prisma.MaterialUncheckedCreateWithoutEngineerStockInput>
+  connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutEngineerStockInput
+  upsert?: Prisma.MaterialUpsertWithoutEngineerStockInput
+  connect?: Prisma.MaterialWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutEngineerStockInput, Prisma.MaterialUpdateWithoutEngineerStockInput>, Prisma.MaterialUncheckedUpdateWithoutEngineerStockInput>
+}
+
 export type MaterialCreateWithoutPricesInput = {
   id?: string
   materialCode: string
@@ -359,6 +380,7 @@ export type MaterialCreateWithoutPricesInput = {
   materialGroup: string
   createdAt?: Date | string
   invoiceItems?: Prisma.InvoiceItemCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutPricesInput = {
@@ -368,6 +390,7 @@ export type MaterialUncheckedCreateWithoutPricesInput = {
   materialGroup: string
   createdAt?: Date | string
   invoiceItems?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutPricesInput = {
@@ -393,6 +416,7 @@ export type MaterialUpdateWithoutPricesInput = {
   materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invoiceItems?: Prisma.InvoiceItemUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutPricesInput = {
@@ -402,6 +426,7 @@ export type MaterialUncheckedUpdateWithoutPricesInput = {
   materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invoiceItems?: Prisma.InvoiceItemUncheckedUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutInvoiceItemsInput = {
@@ -411,6 +436,7 @@ export type MaterialCreateWithoutInvoiceItemsInput = {
   materialGroup: string
   createdAt?: Date | string
   prices?: Prisma.MaterialPriceCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
@@ -420,6 +446,7 @@ export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
   materialGroup: string
   createdAt?: Date | string
   prices?: Prisma.MaterialPriceUncheckedCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutInvoiceItemsInput = {
@@ -445,6 +472,7 @@ export type MaterialUpdateWithoutInvoiceItemsInput = {
   materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   prices?: Prisma.MaterialPriceUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
@@ -454,6 +482,63 @@ export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
   materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   prices?: Prisma.MaterialPriceUncheckedUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput
+}
+
+export type MaterialCreateWithoutEngineerStockInput = {
+  id?: string
+  materialCode: string
+  description: string
+  materialGroup: string
+  createdAt?: Date | string
+  prices?: Prisma.MaterialPriceCreateNestedManyWithoutMaterialInput
+  invoiceItems?: Prisma.InvoiceItemCreateNestedManyWithoutMaterialInput
+}
+
+export type MaterialUncheckedCreateWithoutEngineerStockInput = {
+  id?: string
+  materialCode: string
+  description: string
+  materialGroup: string
+  createdAt?: Date | string
+  prices?: Prisma.MaterialPriceUncheckedCreateNestedManyWithoutMaterialInput
+  invoiceItems?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutMaterialInput
+}
+
+export type MaterialCreateOrConnectWithoutEngineerStockInput = {
+  where: Prisma.MaterialWhereUniqueInput
+  create: Prisma.XOR<Prisma.MaterialCreateWithoutEngineerStockInput, Prisma.MaterialUncheckedCreateWithoutEngineerStockInput>
+}
+
+export type MaterialUpsertWithoutEngineerStockInput = {
+  update: Prisma.XOR<Prisma.MaterialUpdateWithoutEngineerStockInput, Prisma.MaterialUncheckedUpdateWithoutEngineerStockInput>
+  create: Prisma.XOR<Prisma.MaterialCreateWithoutEngineerStockInput, Prisma.MaterialUncheckedCreateWithoutEngineerStockInput>
+  where?: Prisma.MaterialWhereInput
+}
+
+export type MaterialUpdateToOneWithWhereWithoutEngineerStockInput = {
+  where?: Prisma.MaterialWhereInput
+  data: Prisma.XOR<Prisma.MaterialUpdateWithoutEngineerStockInput, Prisma.MaterialUncheckedUpdateWithoutEngineerStockInput>
+}
+
+export type MaterialUpdateWithoutEngineerStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  prices?: Prisma.MaterialPriceUpdateManyWithoutMaterialNestedInput
+  invoiceItems?: Prisma.InvoiceItemUpdateManyWithoutMaterialNestedInput
+}
+
+export type MaterialUncheckedUpdateWithoutEngineerStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  prices?: Prisma.MaterialPriceUncheckedUpdateManyWithoutMaterialNestedInput
+  invoiceItems?: Prisma.InvoiceItemUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 
@@ -464,11 +549,13 @@ export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
 export type MaterialCountOutputType = {
   prices: number
   invoiceItems: number
+  engineerStock: number
 }
 
 export type MaterialCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   prices?: boolean | MaterialCountOutputTypeCountPricesArgs
   invoiceItems?: boolean | MaterialCountOutputTypeCountInvoiceItemsArgs
+  engineerStock?: boolean | MaterialCountOutputTypeCountEngineerStockArgs
 }
 
 /**
@@ -495,6 +582,13 @@ export type MaterialCountOutputTypeCountInvoiceItemsArgs<ExtArgs extends runtime
   where?: Prisma.InvoiceItemWhereInput
 }
 
+/**
+ * MaterialCountOutputType without action
+ */
+export type MaterialCountOutputTypeCountEngineerStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EngineerStockWhereInput
+}
+
 
 export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -504,6 +598,7 @@ export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   createdAt?: boolean
   prices?: boolean | Prisma.Material$pricesArgs<ExtArgs>
   invoiceItems?: boolean | Prisma.Material$invoiceItemsArgs<ExtArgs>
+  engineerStock?: boolean | Prisma.Material$engineerStockArgs<ExtArgs>
   _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["material"]>
 
@@ -535,6 +630,7 @@ export type MaterialOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type MaterialInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   prices?: boolean | Prisma.Material$pricesArgs<ExtArgs>
   invoiceItems?: boolean | Prisma.Material$invoiceItemsArgs<ExtArgs>
+  engineerStock?: boolean | Prisma.Material$engineerStockArgs<ExtArgs>
   _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type MaterialIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -545,6 +641,7 @@ export type $MaterialPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   objects: {
     prices: Prisma.$MaterialPricePayload<ExtArgs>[]
     invoiceItems: Prisma.$InvoiceItemPayload<ExtArgs>[]
+    engineerStock: Prisma.$EngineerStockPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -948,6 +1045,7 @@ export interface Prisma__MaterialClient<T, Null = never, ExtArgs extends runtime
   readonly [Symbol.toStringTag]: "PrismaPromise"
   prices<T extends Prisma.Material$pricesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$pricesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MaterialPricePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   invoiceItems<T extends Prisma.Material$invoiceItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$invoiceItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoiceItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  engineerStock<T extends Prisma.Material$engineerStockArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$engineerStockArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EngineerStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1415,6 +1513,30 @@ export type Material$invoiceItemsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.InvoiceItemScalarFieldEnum | Prisma.InvoiceItemScalarFieldEnum[]
+}
+
+/**
+ * Material.engineerStock
+ */
+export type Material$engineerStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the EngineerStock
+   */
+  select?: Prisma.EngineerStockSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the EngineerStock
+   */
+  omit?: Prisma.EngineerStockOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EngineerStockInclude<ExtArgs> | null
+  where?: Prisma.EngineerStockWhereInput
+  orderBy?: Prisma.EngineerStockOrderByWithRelationInput | Prisma.EngineerStockOrderByWithRelationInput[]
+  cursor?: Prisma.EngineerStockWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EngineerStockScalarFieldEnum | Prisma.EngineerStockScalarFieldEnum[]
 }
 
 /**

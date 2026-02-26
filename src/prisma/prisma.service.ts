@@ -29,6 +29,14 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.prisma.invoiceItem;
   }
 
+  get engineer() {
+    return this.prisma.engineer;
+  }
+
+  get engineerStock() {
+    return this.prisma.engineerStock;
+  }
+
   async onModuleInit() {
     await this.prisma.$connect();
   }

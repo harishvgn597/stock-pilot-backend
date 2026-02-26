@@ -11,3 +11,5 @@ export type Material = Prisma.MaterialModel;
 export type MaterialPrice = Prisma.MaterialPriceModel;
 export type Invoice = Prisma.InvoiceModel;
 export type InvoiceItem = Prisma.InvoiceItemModel;
+export type Engineer = Prisma.EngineerModel;
+export type EngineerStock = Prisma.EngineerStockModel;

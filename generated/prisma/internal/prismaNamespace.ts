@@ -388,7 +388,9 @@ export const ModelName = {
   Material: 'Material',
   MaterialPrice: 'MaterialPrice',
   Invoice: 'Invoice',
-  InvoiceItem: 'InvoiceItem'
+  InvoiceItem: 'InvoiceItem',
+  Engineer: 'Engineer',
+  EngineerStock: 'EngineerStock'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem"
+    modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -778,6 +780,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Engineer: {
+      payload: Prisma.$EngineerPayload<ExtArgs>
+      fields: Prisma.EngineerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EngineerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EngineerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        findFirst: {
+          args: Prisma.EngineerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EngineerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        findMany: {
+          args: Prisma.EngineerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>[]
+        }
+        create: {
+          args: Prisma.EngineerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        createMany: {
+          args: Prisma.EngineerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EngineerCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>[]
+        }
+        delete: {
+          args: Prisma.EngineerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        update: {
+          args: Prisma.EngineerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        deleteMany: {
+          args: Prisma.EngineerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EngineerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EngineerUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>[]
+        }
+        upsert: {
+          args: Prisma.EngineerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerPayload>
+        }
+        aggregate: {
+          args: Prisma.EngineerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEngineer>
+        }
+        groupBy: {
+          args: Prisma.EngineerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EngineerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EngineerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EngineerCountAggregateOutputType> | number
+        }
+      }
+    }
+    EngineerStock: {
+      payload: Prisma.$EngineerStockPayload<ExtArgs>
+      fields: Prisma.EngineerStockFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EngineerStockFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EngineerStockFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        findFirst: {
+          args: Prisma.EngineerStockFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EngineerStockFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        findMany: {
+          args: Prisma.EngineerStockFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>[]
+        }
+        create: {
+          args: Prisma.EngineerStockCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        createMany: {
+          args: Prisma.EngineerStockCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EngineerStockCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>[]
+        }
+        delete: {
+          args: Prisma.EngineerStockDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        update: {
+          args: Prisma.EngineerStockUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        deleteMany: {
+          args: Prisma.EngineerStockDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EngineerStockUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EngineerStockUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>[]
+        }
+        upsert: {
+          args: Prisma.EngineerStockUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EngineerStockPayload>
+        }
+        aggregate: {
+          args: Prisma.EngineerStockAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEngineerStock>
+        }
+        groupBy: {
+          args: Prisma.EngineerStockGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EngineerStockGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EngineerStockCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EngineerStockCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -883,6 +1033,27 @@ export const InvoiceItemScalarFieldEnum = {
 } as const
 
 export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum]
+
+
+export const EngineerScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  createdAt: 'createdAt'
+} as const
+
+export type EngineerScalarFieldEnum = (typeof EngineerScalarFieldEnum)[keyof typeof EngineerScalarFieldEnum]
+
+
+export const EngineerStockScalarFieldEnum = {
+  id: 'id',
+  engineerId: 'engineerId',
+  materialCode: 'materialCode',
+  quantity: 'quantity',
+  createdAt: 'createdAt'
+} as const
+
+export type EngineerStockScalarFieldEnum = (typeof EngineerStockScalarFieldEnum)[keyof typeof EngineerStockScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1070,6 +1241,8 @@ export type GlobalOmitConfig = {
   materialPrice?: Prisma.MaterialPriceOmit
   invoice?: Prisma.InvoiceOmit
   invoiceItem?: Prisma.InvoiceItemOmit
+  engineer?: Prisma.EngineerOmit
+  engineerStock?: Prisma.EngineerStockOmit
 }
 
 /* Types for Logging */

@@ -64,3 +64,13 @@ export type Invoice = Prisma.InvoiceModel
  * 
  */
 export type InvoiceItem = Prisma.InvoiceItemModel
+/**
+ * Model Engineer
+ * 
+ */
+export type Engineer = Prisma.EngineerModel
+/**
+ * Model EngineerStock
+ * 
+ */
+export type EngineerStock = Prisma.EngineerStockModel

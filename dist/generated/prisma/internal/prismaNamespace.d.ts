@@ -786,6 +786,8 @@ export declare const EngineerScalarFieldEnum: {
     readonly id: "id";
     readonly name: "name";
     readonly email: "email";
+    readonly phoneNumber: "phoneNumber";
+    readonly specialization: "specialization";
     readonly createdAt: "createdAt";
 };
 export type EngineerScalarFieldEnum = (typeof EngineerScalarFieldEnum)[keyof typeof EngineerScalarFieldEnum];

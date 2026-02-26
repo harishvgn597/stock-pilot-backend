@@ -14,6 +14,8 @@ export class EngineersService {
         id: true,
         name: true,
         email: true,
+        phoneNumber: true,
+        specialization: true,
         createdAt: true,
       },
       orderBy: { createdAt: 'desc' },
@@ -65,6 +67,8 @@ export class EngineersService {
         id: true,
         name: true,
         email: true,
+        phoneNumber: true,
+        specialization: true,
         createdAt: true,
       },
     });

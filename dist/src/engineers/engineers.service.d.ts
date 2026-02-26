@@ -8,7 +8,9 @@ export declare class EngineersService {
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }[]>;
     findById(id: string): Promise<{
         assignedGoods: {
@@ -25,13 +27,17 @@ export declare class EngineersService {
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }>;
     create(dto: CreateEngineerDto): Promise<{
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }>;
     assignStock(dto: AssignStockDto): Promise<{
         id: string;

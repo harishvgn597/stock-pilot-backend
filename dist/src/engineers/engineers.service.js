@@ -20,6 +20,8 @@ let EngineersService = class EngineersService {
                 id: true,
                 name: true,
                 email: true,
+                phoneNumber: true,
+                specialization: true,
                 createdAt: true,
             },
             orderBy: { createdAt: 'desc' },
@@ -63,6 +65,8 @@ let EngineersService = class EngineersService {
                 id: true,
                 name: true,
                 email: true,
+                phoneNumber: true,
+                specialization: true,
                 createdAt: true,
             },
         });

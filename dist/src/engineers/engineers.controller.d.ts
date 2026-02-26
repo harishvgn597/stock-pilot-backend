@@ -8,7 +8,9 @@ export declare class EngineersController {
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }[]>;
     findById(id: string): Promise<{
         assignedGoods: {
@@ -25,7 +27,9 @@ export declare class EngineersController {
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }>;
     getStock(id: string): Promise<{
         id: string;
@@ -41,7 +45,9 @@ export declare class EngineersController {
         id: string;
         name: string;
         email: string;
+        phoneNumber: string | null;
         createdAt: Date;
+        specialization: string | null;
     }>;
     assignStock(assignStockDto: AssignStockDto): Promise<{
         id: string;

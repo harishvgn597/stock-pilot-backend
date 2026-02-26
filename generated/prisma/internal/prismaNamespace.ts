@@ -1039,6 +1039,8 @@ export const EngineerScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
+  phoneNumber: 'phoneNumber',
+  specialization: 'specialization',
   createdAt: 'createdAt'
 } as const
 

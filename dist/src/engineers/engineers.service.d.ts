@@ -63,4 +63,7 @@ export declare class EngineersService {
             materialGroup: string;
         };
     }[]>;
+    delete(id: string): Promise<{
+        message: string;
+    }>;
 }

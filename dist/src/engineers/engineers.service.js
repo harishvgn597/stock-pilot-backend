@@ -125,6 +125,21 @@ let EngineersService = class EngineersService {
             orderBy: { createdAt: 'desc' },
         });
     }
+    async delete(id) {
+        const engineer = await this.prisma.engineer.findUnique({
+            where: { id },
+        });
+        if (!engineer) {
+            throw new NotFoundException(`Engineer with id ${id} not found`);
+        }
+        await this.prisma.engineerStock.deleteMany({
+            where: { engineerId: id },
+        });
+        await this.prisma.engineer.delete({
+            where: { id },
+        });
+        return { message: `Engineer ${engineer.name} deleted successfully` };
+    }
 };
 EngineersService = __decorate([
     Injectable(),

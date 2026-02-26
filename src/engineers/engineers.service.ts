@@ -137,4 +137,26 @@ export class EngineersService {
       orderBy: { createdAt: 'desc' },
     });
   }
+
+  // DELETE /engineers/:id — delete an engineer and their assigned stock
+  async delete(id: string) {
+    const engineer = await this.prisma.engineer.findUnique({
+      where: { id },
+    });
+
+    if (!engineer) {
+      throw new NotFoundException(`Engineer with id ${id} not found`);
+    }
+
+    // Delete assigned stock first (foreign key constraint)
+    await this.prisma.engineerStock.deleteMany({
+      where: { engineerId: id },
+    });
+
+    await this.prisma.engineer.delete({
+      where: { id },
+    });
+
+    return { message: `Engineer ${engineer.name} deleted successfully` };
+  }
 }

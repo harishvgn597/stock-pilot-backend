@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param } from '@nestjs/common';
 import { EngineersService } from './engineers.service.js';
 import { CreateEngineerDto } from './dto/create-engineer.dto.js';
 import { AssignStockDto } from './dto/assign-stock.dto.js';
@@ -35,5 +35,11 @@ export class EngineersController {
   @Post('assign-stock')
   assignStock(@Body() assignStockDto: AssignStockDto) {
     return this.engineersService.assignStock(assignStockDto);
+  }
+
+  // DELETE /engineers/:id
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.engineersService.delete(id);
   }
 }

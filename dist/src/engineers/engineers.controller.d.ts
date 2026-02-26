@@ -63,4 +63,7 @@ export declare class EngineersController {
             name: string;
         };
     }>;
+    delete(id: string): Promise<{
+        message: string;
+    }>;
 }

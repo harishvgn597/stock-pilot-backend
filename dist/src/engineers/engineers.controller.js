@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param } from '@nestjs/common';
 import { EngineersService } from './engineers.service.js';
 import { CreateEngineerDto } from './dto/create-engineer.dto.js';
 import { AssignStockDto } from './dto/assign-stock.dto.js';
@@ -33,6 +33,9 @@ let EngineersController = class EngineersController {
     }
     assignStock(assignStockDto) {
         return this.engineersService.assignStock(assignStockDto);
+    }
+    delete(id) {
+        return this.engineersService.delete(id);
     }
 };
 __decorate([
@@ -69,6 +72,13 @@ __decorate([
     __metadata("design:paramtypes", [AssignStockDto]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "assignStock", null);
+__decorate([
+    Delete(':id'),
+    __param(0, Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], EngineersController.prototype, "delete", null);
 EngineersController = __decorate([
     Controller('engineers'),
     __metadata("design:paramtypes", [EngineersService])

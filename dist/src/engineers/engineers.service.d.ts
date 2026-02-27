@@ -63,6 +63,9 @@ export declare class EngineersService {
             materialGroup: string;
         };
     }[]>;
+    removeStock(engineerId: string, stockId: string): Promise<{
+        message: string;
+    }>;
     delete(id: string): Promise<{
         message: string;
     }>;

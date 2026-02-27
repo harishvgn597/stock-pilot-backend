@@ -37,6 +37,15 @@ export class EngineersController {
     return this.engineersService.assignStock(assignStockDto);
   }
 
+  // DELETE /engineers/:engineerId/stock/:stockId
+  @Delete(':engineerId/stock/:stockId')
+  removeStock(
+    @Param('engineerId') engineerId: string,
+    @Param('stockId') stockId: string,
+  ) {
+    return this.engineersService.removeStock(engineerId, stockId);
+  }
+
   // DELETE /engineers/:id
   @Delete(':id')
   delete(@Param('id') id: string) {

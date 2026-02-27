@@ -34,6 +34,9 @@ let EngineersController = class EngineersController {
     assignStock(assignStockDto) {
         return this.engineersService.assignStock(assignStockDto);
     }
+    removeStock(engineerId, stockId) {
+        return this.engineersService.removeStock(engineerId, stockId);
+    }
     delete(id) {
         return this.engineersService.delete(id);
     }
@@ -72,6 +75,14 @@ __decorate([
     __metadata("design:paramtypes", [AssignStockDto]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "assignStock", null);
+__decorate([
+    Delete(':engineerId/stock/:stockId'),
+    __param(0, Param('engineerId')),
+    __param(1, Param('stockId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], EngineersController.prototype, "removeStock", null);
 __decorate([
     Delete(':id'),
     __param(0, Param('id')),

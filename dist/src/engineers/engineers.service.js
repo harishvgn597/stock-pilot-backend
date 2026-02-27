@@ -125,6 +125,21 @@ let EngineersService = class EngineersService {
             orderBy: { createdAt: 'desc' },
         });
     }
+    async removeStock(engineerId, stockId) {
+        const stock = await this.prisma.engineerStock.findUnique({
+            where: { id: stockId },
+        });
+        if (!stock) {
+            throw new NotFoundException(`Stock assignment with id ${stockId} not found`);
+        }
+        if (stock.engineerId !== engineerId) {
+            throw new NotFoundException(`Stock assignment ${stockId} does not belong to engineer ${engineerId}`);
+        }
+        await this.prisma.engineerStock.delete({
+            where: { id: stockId },
+        });
+        return { message: `Stock assignment ${stockId} removed successfully` };
+    }
     async delete(id) {
         const engineer = await this.prisma.engineer.findUnique({
             where: { id },

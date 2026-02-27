@@ -138,6 +138,29 @@ export class EngineersService {
     });
   }
 
+  // DELETE /engineers/:engineerId/stock/:stockId — remove a stock assignment
+  async removeStock(engineerId: string, stockId: string) {
+    const stock = await this.prisma.engineerStock.findUnique({
+      where: { id: stockId },
+    });
+
+    if (!stock) {
+      throw new NotFoundException(`Stock assignment with id ${stockId} not found`);
+    }
+
+    if (stock.engineerId !== engineerId) {
+      throw new NotFoundException(
+        `Stock assignment ${stockId} does not belong to engineer ${engineerId}`,
+      );
+    }
+
+    await this.prisma.engineerStock.delete({
+      where: { id: stockId },
+    });
+
+    return { message: `Stock assignment ${stockId} removed successfully` };
+  }
+
   // DELETE /engineers/:id — delete an engineer and their assigned stock
   async delete(id: string) {
     const engineer = await this.prisma.engineer.findUnique({

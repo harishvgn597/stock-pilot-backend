@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
+import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 
 @Injectable()
 export class InvoicesService {
@@ -102,6 +103,40 @@ export class InvoicesService {
             sgst: true,
           },
         },
+      },
+    });
+  }
+
+  // PATCH /invoices/items/:id — update an invoice item
+  async updateItem(id: string, dto: UpdateInvoiceItemDto) {
+    const item = await this.prisma.invoiceItem.findUnique({
+      where: { id },
+    });
+
+    if (!item) {
+      throw new NotFoundException(`Invoice item with id ${id} not found`);
+    }
+
+    return this.prisma.invoiceItem.update({
+      where: { id },
+      data: {
+        ...(dto.quantity !== undefined && { quantity: dto.quantity }),
+        ...(dto.unitPrice !== undefined && { unitPrice: dto.unitPrice }),
+        ...(dto.totalAmount !== undefined && { totalAmount: dto.totalAmount }),
+        ...(dto.cgst !== undefined && { cgst: dto.cgst }),
+        ...(dto.sgst !== undefined && { sgst: dto.sgst }),
+      },
+      select: {
+        id: true,
+        materialCode: true,
+        description: true,
+        hsn: true,
+        quantity: true,
+        uom: true,
+        unitPrice: true,
+        totalAmount: true,
+        cgst: true,
+        sgst: true,
       },
     });
   }

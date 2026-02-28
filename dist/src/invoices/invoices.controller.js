@@ -10,9 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Body, Param } from '@nestjs/common';
 import { InvoicesService } from './invoices.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
+import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 let InvoicesController = class InvoicesController {
     invoicesService;
     constructor(invoicesService) {
@@ -26,6 +27,9 @@ let InvoicesController = class InvoicesController {
     }
     create(createInvoiceDto) {
         return this.invoicesService.create(createInvoiceDto);
+    }
+    updateItem(id, updateDto) {
+        return this.invoicesService.updateItem(id, updateDto);
     }
 };
 __decorate([
@@ -48,6 +52,14 @@ __decorate([
     __metadata("design:paramtypes", [CreateInvoiceDto]),
     __metadata("design:returntype", void 0)
 ], InvoicesController.prototype, "create", null);
+__decorate([
+    Patch('items/:id'),
+    __param(0, Param('id')),
+    __param(1, Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, UpdateInvoiceItemDto]),
+    __metadata("design:returntype", void 0)
+], InvoicesController.prototype, "updateItem", null);
 InvoicesController = __decorate([
     Controller('invoices'),
     __metadata("design:paramtypes", [InvoicesService])

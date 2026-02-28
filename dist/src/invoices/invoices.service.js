@@ -104,6 +104,36 @@ let InvoicesService = class InvoicesService {
             },
         });
     }
+    async updateItem(id, dto) {
+        const item = await this.prisma.invoiceItem.findUnique({
+            where: { id },
+        });
+        if (!item) {
+            throw new NotFoundException(`Invoice item with id ${id} not found`);
+        }
+        return this.prisma.invoiceItem.update({
+            where: { id },
+            data: {
+                ...(dto.quantity !== undefined && { quantity: dto.quantity }),
+                ...(dto.unitPrice !== undefined && { unitPrice: dto.unitPrice }),
+                ...(dto.totalAmount !== undefined && { totalAmount: dto.totalAmount }),
+                ...(dto.cgst !== undefined && { cgst: dto.cgst }),
+                ...(dto.sgst !== undefined && { sgst: dto.sgst }),
+            },
+            select: {
+                id: true,
+                materialCode: true,
+                description: true,
+                hsn: true,
+                quantity: true,
+                uom: true,
+                unitPrice: true,
+                totalAmount: true,
+                cgst: true,
+                sgst: true,
+            },
+        });
+    }
 };
 InvoicesService = __decorate([
     Injectable(),

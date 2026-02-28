@@ -1,5 +1,6 @@
 import { InvoicesService } from './invoices.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
+import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 export declare class InvoicesController {
     private readonly invoicesService;
     constructor(invoicesService: InvoicesService);
@@ -62,5 +63,17 @@ export declare class InvoicesController {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+    }>;
+    updateItem(id: string, updateDto: UpdateInvoiceItemDto): Promise<{
+        id: string;
+        materialCode: string;
+        description: string;
+        hsn: string | null;
+        quantity: number;
+        uom: string;
+        unitPrice: number;
+        totalAmount: number;
+        cgst: number;
+        sgst: number;
     }>;
 }

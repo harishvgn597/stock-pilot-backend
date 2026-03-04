@@ -191,6 +191,7 @@ export type EngineerWhereInput = {
   specialization?: Prisma.StringNullableFilter<"Engineer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string
   assignedGoods?: Prisma.EngineerStockListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
 }
 
 export type EngineerOrderByWithRelationInput = {
@@ -201,6 +202,7 @@ export type EngineerOrderByWithRelationInput = {
   specialization?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   assignedGoods?: Prisma.EngineerStockOrderByRelationAggregateInput
+  orders?: Prisma.OrderOrderByRelationAggregateInput
 }
 
 export type EngineerWhereUniqueInput = Prisma.AtLeast<{
@@ -214,6 +216,7 @@ export type EngineerWhereUniqueInput = Prisma.AtLeast<{
   specialization?: Prisma.StringNullableFilter<"Engineer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string
   assignedGoods?: Prisma.EngineerStockListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
 }, "id" | "email">
 
 export type EngineerOrderByWithAggregationInput = {
@@ -248,6 +251,7 @@ export type EngineerCreateInput = {
   specialization?: string | null
   createdAt?: Date | string
   assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput
+  orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput
 }
 
 export type EngineerUncheckedCreateInput = {
@@ -258,6 +262,7 @@ export type EngineerUncheckedCreateInput = {
   specialization?: string | null
   createdAt?: Date | string
   assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput
 }
 
 export type EngineerUpdateInput = {
@@ -268,6 +273,7 @@ export type EngineerUpdateInput = {
   specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput
 }
 
 export type EngineerUncheckedUpdateInput = {
@@ -278,6 +284,7 @@ export type EngineerUncheckedUpdateInput = {
   specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput
 }
 
 export type EngineerCreateManyInput = {
@@ -353,6 +360,20 @@ export type EngineerUpdateOneRequiredWithoutAssignedGoodsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.EngineerUpdateToOneWithWhereWithoutAssignedGoodsInput, Prisma.EngineerUpdateWithoutAssignedGoodsInput>, Prisma.EngineerUncheckedUpdateWithoutAssignedGoodsInput>
 }
 
+export type EngineerCreateNestedOneWithoutOrdersInput = {
+  create?: Prisma.XOR<Prisma.EngineerCreateWithoutOrdersInput, Prisma.EngineerUncheckedCreateWithoutOrdersInput>
+  connectOrCreate?: Prisma.EngineerCreateOrConnectWithoutOrdersInput
+  connect?: Prisma.EngineerWhereUniqueInput
+}
+
+export type EngineerUpdateOneRequiredWithoutOrdersNestedInput = {
+  create?: Prisma.XOR<Prisma.EngineerCreateWithoutOrdersInput, Prisma.EngineerUncheckedCreateWithoutOrdersInput>
+  connectOrCreate?: Prisma.EngineerCreateOrConnectWithoutOrdersInput
+  upsert?: Prisma.EngineerUpsertWithoutOrdersInput
+  connect?: Prisma.EngineerWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.EngineerUpdateToOneWithWhereWithoutOrdersInput, Prisma.EngineerUpdateWithoutOrdersInput>, Prisma.EngineerUncheckedUpdateWithoutOrdersInput>
+}
+
 export type EngineerCreateWithoutAssignedGoodsInput = {
   id?: string
   name: string
@@ -360,6 +381,7 @@ export type EngineerCreateWithoutAssignedGoodsInput = {
   phoneNumber?: string | null
   specialization?: string | null
   createdAt?: Date | string
+  orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput
 }
 
 export type EngineerUncheckedCreateWithoutAssignedGoodsInput = {
@@ -369,6 +391,7 @@ export type EngineerUncheckedCreateWithoutAssignedGoodsInput = {
   phoneNumber?: string | null
   specialization?: string | null
   createdAt?: Date | string
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput
 }
 
 export type EngineerCreateOrConnectWithoutAssignedGoodsInput = {
@@ -394,6 +417,7 @@ export type EngineerUpdateWithoutAssignedGoodsInput = {
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput
 }
 
 export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
@@ -403,6 +427,63 @@ export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput
+}
+
+export type EngineerCreateWithoutOrdersInput = {
+  id?: string
+  name: string
+  email: string
+  phoneNumber?: string | null
+  specialization?: string | null
+  createdAt?: Date | string
+  assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput
+}
+
+export type EngineerUncheckedCreateWithoutOrdersInput = {
+  id?: string
+  name: string
+  email: string
+  phoneNumber?: string | null
+  specialization?: string | null
+  createdAt?: Date | string
+  assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput
+}
+
+export type EngineerCreateOrConnectWithoutOrdersInput = {
+  where: Prisma.EngineerWhereUniqueInput
+  create: Prisma.XOR<Prisma.EngineerCreateWithoutOrdersInput, Prisma.EngineerUncheckedCreateWithoutOrdersInput>
+}
+
+export type EngineerUpsertWithoutOrdersInput = {
+  update: Prisma.XOR<Prisma.EngineerUpdateWithoutOrdersInput, Prisma.EngineerUncheckedUpdateWithoutOrdersInput>
+  create: Prisma.XOR<Prisma.EngineerCreateWithoutOrdersInput, Prisma.EngineerUncheckedCreateWithoutOrdersInput>
+  where?: Prisma.EngineerWhereInput
+}
+
+export type EngineerUpdateToOneWithWhereWithoutOrdersInput = {
+  where?: Prisma.EngineerWhereInput
+  data: Prisma.XOR<Prisma.EngineerUpdateWithoutOrdersInput, Prisma.EngineerUncheckedUpdateWithoutOrdersInput>
+}
+
+export type EngineerUpdateWithoutOrdersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput
+}
+
+export type EngineerUncheckedUpdateWithoutOrdersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput
 }
 
 
@@ -412,10 +493,12 @@ export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
 
 export type EngineerCountOutputType = {
   assignedGoods: number
+  orders: number
 }
 
 export type EngineerCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   assignedGoods?: boolean | EngineerCountOutputTypeCountAssignedGoodsArgs
+  orders?: boolean | EngineerCountOutputTypeCountOrdersArgs
 }
 
 /**
@@ -435,6 +518,13 @@ export type EngineerCountOutputTypeCountAssignedGoodsArgs<ExtArgs extends runtim
   where?: Prisma.EngineerStockWhereInput
 }
 
+/**
+ * EngineerCountOutputType without action
+ */
+export type EngineerCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
+}
+
 
 export type EngineerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -444,6 +534,7 @@ export type EngineerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   specialization?: boolean
   createdAt?: boolean
   assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>
+  orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>
   _count?: boolean | Prisma.EngineerCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["engineer"]>
 
@@ -477,6 +568,7 @@ export type EngineerSelectScalar = {
 export type EngineerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "specialization" | "createdAt", ExtArgs["result"]["engineer"]>
 export type EngineerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>
+  orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>
   _count?: boolean | Prisma.EngineerCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type EngineerIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -486,6 +578,7 @@ export type $EngineerPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   name: "Engineer"
   objects: {
     assignedGoods: Prisma.$EngineerStockPayload<ExtArgs>[]
+    orders: Prisma.$OrderPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -889,6 +982,7 @@ readonly fields: EngineerFieldRefs;
 export interface Prisma__EngineerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   assignedGoods<T extends Prisma.Engineer$assignedGoodsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Engineer$assignedGoodsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EngineerStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  orders<T extends Prisma.Engineer$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Engineer$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1333,6 +1427,30 @@ export type Engineer$assignedGoodsArgs<ExtArgs extends runtime.Types.Extensions.
   take?: number
   skip?: number
   distinct?: Prisma.EngineerStockScalarFieldEnum | Prisma.EngineerStockScalarFieldEnum[]
+}
+
+/**
+ * Engineer.orders
+ */
+export type Engineer$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
 }
 
 /**

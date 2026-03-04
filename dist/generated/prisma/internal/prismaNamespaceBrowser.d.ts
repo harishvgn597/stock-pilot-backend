@@ -18,6 +18,8 @@ export declare const ModelName: {
     readonly InvoiceItem: "InvoiceItem";
     readonly Engineer: "Engineer";
     readonly EngineerStock: "EngineerStock";
+    readonly Order: "Order";
+    readonly SaleOrder: "SaleOrder";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -98,6 +100,26 @@ export declare const EngineerStockScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type EngineerStockScalarFieldEnum = (typeof EngineerStockScalarFieldEnum)[keyof typeof EngineerStockScalarFieldEnum];
+export declare const OrderScalarFieldEnum: {
+    readonly id: "id";
+    readonly orderType: "orderType";
+    readonly engineerId: "engineerId";
+    readonly createdAt: "createdAt";
+};
+export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum];
+export declare const SaleOrderScalarFieldEnum: {
+    readonly id: "id";
+    readonly orderId: "orderId";
+    readonly billNumber: "billNumber";
+    readonly dateOfSale: "dateOfSale";
+    readonly materialCode: "materialCode";
+    readonly description: "description";
+    readonly quantity: "quantity";
+    readonly spareType: "spareType";
+    readonly price: "price";
+    readonly createdAt: "createdAt";
+};
+export type SaleOrderScalarFieldEnum = (typeof SaleOrderScalarFieldEnum)[keyof typeof SaleOrderScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";

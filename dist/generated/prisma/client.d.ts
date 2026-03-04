@@ -13,3 +13,5 @@ export type Invoice = Prisma.InvoiceModel;
 export type InvoiceItem = Prisma.InvoiceItemModel;
 export type Engineer = Prisma.EngineerModel;
 export type EngineerStock = Prisma.EngineerStockModel;
+export type Order = Prisma.OrderModel;
+export type SaleOrder = Prisma.SaleOrderModel;

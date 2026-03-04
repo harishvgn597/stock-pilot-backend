@@ -16,3 +16,12 @@ export const SpareType = {
 } as const
 
 export type SpareType = (typeof SpareType)[keyof typeof SpareType]
+
+
+export const OrderType = {
+  Sale: 'Sale',
+  ReturnToServiceCenter: 'ReturnToServiceCenter',
+  WarrantyAMC: 'WarrantyAMC'
+} as const
+
+export type OrderType = (typeof OrderType)[keyof typeof OrderType]

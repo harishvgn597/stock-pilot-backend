@@ -19,6 +19,12 @@ enum SpareType {
   Accessory
 }
 
+enum OrderType {
+  Sale
+  ReturnToServiceCenter
+  WarrantyAMC
+}
+
 model User {
   id             String   @id @default(uuid())
   name           String
@@ -40,6 +46,7 @@ model Material {
   prices        MaterialPrice[]
   invoiceItems  InvoiceItem[]
   engineerStock EngineerStock[]
+  saleOrders    SaleOrder[]
 }
 
 model MaterialPrice {
@@ -99,6 +106,7 @@ model Engineer {
   createdAt DateTime @default(now())
 
   assignedGoods EngineerStock[]
+  orders        Order[]
 }
 
 model EngineerStock {
@@ -111,6 +119,38 @@ model EngineerStock {
   material     Material @relation(fields: [materialCode], references: [materialCode])
 
   quantity Float
+
+  createdAt DateTime @default(now())
+}
+
+// ─── Orders ──────────────────────────────────────────────────────────────────
+
+model Order {
+  id         String    @id @default(uuid())
+  orderType  OrderType
+  engineerId String
+  engineer   Engineer  @relation(fields: [engineerId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  saleOrder SaleOrder?
+}
+
+model SaleOrder {
+  id          String @id @default(uuid())
+  orderId     String @unique
+  order       Order  @relation(fields: [orderId], references: [id])
+
+  billNumber  String   @unique
+  dateOfSale  DateTime
+
+  materialCode  String
+  material      Material  @relation(fields: [materialCode], references: [materialCode])
+
+  description   String
+  quantity      Float
+  spareType     SpareType?
+  price         Float
 
   createdAt DateTime @default(now())
 }

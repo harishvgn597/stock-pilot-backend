@@ -52,3 +52,13 @@ export type Engineer = Prisma.EngineerModel
  * 
  */
 export type EngineerStock = Prisma.EngineerStockModel
+/**
+ * Model Order
+ * 
+ */
+export type Order = Prisma.OrderModel
+/**
+ * Model SaleOrder
+ * 
+ */
+export type SaleOrder = Prisma.SaleOrderModel

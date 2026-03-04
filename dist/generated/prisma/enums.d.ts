@@ -4,3 +4,9 @@ export declare const SpareType: {
     readonly Accessory: "Accessory";
 };
 export type SpareType = (typeof SpareType)[keyof typeof SpareType];
+export declare const OrderType: {
+    readonly Sale: "Sale";
+    readonly ReturnToServiceCenter: "ReturnToServiceCenter";
+    readonly WarrantyAMC: "WarrantyAMC";
+};
+export type OrderType = (typeof OrderType)[keyof typeof OrderType];

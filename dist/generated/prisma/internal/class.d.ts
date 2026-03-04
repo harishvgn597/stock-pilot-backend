@@ -49,5 +49,11 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
     get engineerStock(): Prisma.EngineerStockDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
+    get order(): Prisma.OrderDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    get saleOrder(): Prisma.SaleOrderDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
 }
 export declare function getPrismaClientClass(): PrismaClientConstructor;

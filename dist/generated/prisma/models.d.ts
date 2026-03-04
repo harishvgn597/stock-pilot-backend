@@ -5,4 +5,6 @@ export type * from './models/Invoice.js';
 export type * from './models/InvoiceItem.js';
 export type * from './models/Engineer.js';
 export type * from './models/EngineerStock.js';
+export type * from './models/Order.js';
+export type * from './models/SaleOrder.js';
 export type * from './commonInputTypes.js';

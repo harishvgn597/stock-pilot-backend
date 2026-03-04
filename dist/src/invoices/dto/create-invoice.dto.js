@@ -8,6 +8,7 @@ export class CreateInvoiceItemDto {
     totalAmount;
     cgst;
     sgst;
+    spareType;
 }
 export class CreateInvoiceDto {
     invoiceNumber;

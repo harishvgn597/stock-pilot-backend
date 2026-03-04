@@ -54,6 +54,7 @@ export type InvoiceItemMinAggregateOutputType = {
   totalAmount: number | null
   cgst: number | null
   sgst: number | null
+  spareType: $Enums.SpareType | null
   createdAt: Date | null
 }
 
@@ -69,6 +70,7 @@ export type InvoiceItemMaxAggregateOutputType = {
   totalAmount: number | null
   cgst: number | null
   sgst: number | null
+  spareType: $Enums.SpareType | null
   createdAt: Date | null
 }
 
@@ -84,6 +86,7 @@ export type InvoiceItemCountAggregateOutputType = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType: number
   createdAt: number
   _all: number
 }
@@ -117,6 +120,7 @@ export type InvoiceItemMinAggregateInputType = {
   totalAmount?: true
   cgst?: true
   sgst?: true
+  spareType?: true
   createdAt?: true
 }
 
@@ -132,6 +136,7 @@ export type InvoiceItemMaxAggregateInputType = {
   totalAmount?: true
   cgst?: true
   sgst?: true
+  spareType?: true
   createdAt?: true
 }
 
@@ -147,6 +152,7 @@ export type InvoiceItemCountAggregateInputType = {
   totalAmount?: true
   cgst?: true
   sgst?: true
+  spareType?: true
   createdAt?: true
   _all?: true
 }
@@ -249,6 +255,7 @@ export type InvoiceItemGroupByOutputType = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType: $Enums.SpareType | null
   createdAt: Date
   _count: InvoiceItemCountAggregateOutputType | null
   _avg: InvoiceItemAvgAggregateOutputType | null
@@ -287,6 +294,7 @@ export type InvoiceItemWhereInput = {
   totalAmount?: Prisma.FloatFilter<"InvoiceItem"> | number
   cgst?: Prisma.FloatFilter<"InvoiceItem"> | number
   sgst?: Prisma.FloatFilter<"InvoiceItem"> | number
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"InvoiceItem"> | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFilter<"InvoiceItem"> | Date | string
   invoice?: Prisma.XOR<Prisma.InvoiceScalarRelationFilter, Prisma.InvoiceWhereInput>
   material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>
@@ -304,6 +312,7 @@ export type InvoiceItemOrderByWithRelationInput = {
   totalAmount?: Prisma.SortOrder
   cgst?: Prisma.SortOrder
   sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   invoice?: Prisma.InvoiceOrderByWithRelationInput
   material?: Prisma.MaterialOrderByWithRelationInput
@@ -324,6 +333,7 @@ export type InvoiceItemWhereUniqueInput = Prisma.AtLeast<{
   totalAmount?: Prisma.FloatFilter<"InvoiceItem"> | number
   cgst?: Prisma.FloatFilter<"InvoiceItem"> | number
   sgst?: Prisma.FloatFilter<"InvoiceItem"> | number
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"InvoiceItem"> | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFilter<"InvoiceItem"> | Date | string
   invoice?: Prisma.XOR<Prisma.InvoiceScalarRelationFilter, Prisma.InvoiceWhereInput>
   material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>
@@ -341,6 +351,7 @@ export type InvoiceItemOrderByWithAggregationInput = {
   totalAmount?: Prisma.SortOrder
   cgst?: Prisma.SortOrder
   sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.InvoiceItemCountOrderByAggregateInput
   _avg?: Prisma.InvoiceItemAvgOrderByAggregateInput
@@ -364,6 +375,7 @@ export type InvoiceItemScalarWhereWithAggregatesInput = {
   totalAmount?: Prisma.FloatWithAggregatesFilter<"InvoiceItem"> | number
   cgst?: Prisma.FloatWithAggregatesFilter<"InvoiceItem"> | number
   sgst?: Prisma.FloatWithAggregatesFilter<"InvoiceItem"> | number
+  spareType?: Prisma.EnumSpareTypeNullableWithAggregatesFilter<"InvoiceItem"> | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"InvoiceItem"> | Date | string
 }
 
@@ -377,6 +389,7 @@ export type InvoiceItemCreateInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
   invoice: Prisma.InvoiceCreateNestedOneWithoutItemsInput
   material: Prisma.MaterialCreateNestedOneWithoutInvoiceItemsInput
@@ -394,6 +407,7 @@ export type InvoiceItemUncheckedCreateInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -407,6 +421,7 @@ export type InvoiceItemUpdateInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invoice?: Prisma.InvoiceUpdateOneRequiredWithoutItemsNestedInput
   material?: Prisma.MaterialUpdateOneRequiredWithoutInvoiceItemsNestedInput
@@ -424,6 +439,7 @@ export type InvoiceItemUncheckedUpdateInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -439,6 +455,7 @@ export type InvoiceItemCreateManyInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -452,6 +469,7 @@ export type InvoiceItemUpdateManyMutationInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -467,6 +485,7 @@ export type InvoiceItemUncheckedUpdateManyInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -492,6 +511,7 @@ export type InvoiceItemCountOrderByAggregateInput = {
   totalAmount?: Prisma.SortOrder
   cgst?: Prisma.SortOrder
   sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -515,6 +535,7 @@ export type InvoiceItemMaxOrderByAggregateInput = {
   totalAmount?: Prisma.SortOrder
   cgst?: Prisma.SortOrder
   sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -530,6 +551,7 @@ export type InvoiceItemMinOrderByAggregateInput = {
   totalAmount?: Prisma.SortOrder
   cgst?: Prisma.SortOrder
   sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -629,6 +651,10 @@ export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
 
+export type NullableEnumSpareTypeFieldUpdateOperationsInput = {
+  set?: $Enums.SpareType | null
+}
+
 export type InvoiceItemCreateWithoutMaterialInput = {
   id?: string
   description: string
@@ -639,6 +665,7 @@ export type InvoiceItemCreateWithoutMaterialInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
   invoice: Prisma.InvoiceCreateNestedOneWithoutItemsInput
 }
@@ -654,6 +681,7 @@ export type InvoiceItemUncheckedCreateWithoutMaterialInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -698,6 +726,7 @@ export type InvoiceItemScalarWhereInput = {
   totalAmount?: Prisma.FloatFilter<"InvoiceItem"> | number
   cgst?: Prisma.FloatFilter<"InvoiceItem"> | number
   sgst?: Prisma.FloatFilter<"InvoiceItem"> | number
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"InvoiceItem"> | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFilter<"InvoiceItem"> | Date | string
 }
 
@@ -711,6 +740,7 @@ export type InvoiceItemCreateWithoutInvoiceInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
   material: Prisma.MaterialCreateNestedOneWithoutInvoiceItemsInput
 }
@@ -726,6 +756,7 @@ export type InvoiceItemUncheckedCreateWithoutInvoiceInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -766,6 +797,7 @@ export type InvoiceItemCreateManyMaterialInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -779,6 +811,7 @@ export type InvoiceItemUpdateWithoutMaterialInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invoice?: Prisma.InvoiceUpdateOneRequiredWithoutItemsNestedInput
 }
@@ -794,6 +827,7 @@ export type InvoiceItemUncheckedUpdateWithoutMaterialInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -808,6 +842,7 @@ export type InvoiceItemUncheckedUpdateManyWithoutMaterialInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -822,6 +857,7 @@ export type InvoiceItemCreateManyInvoiceInput = {
   totalAmount: number
   cgst: number
   sgst: number
+  spareType?: $Enums.SpareType | null
   createdAt?: Date | string
 }
 
@@ -835,6 +871,7 @@ export type InvoiceItemUpdateWithoutInvoiceInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   material?: Prisma.MaterialUpdateOneRequiredWithoutInvoiceItemsNestedInput
 }
@@ -850,6 +887,7 @@ export type InvoiceItemUncheckedUpdateWithoutInvoiceInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -864,6 +902,7 @@ export type InvoiceItemUncheckedUpdateManyWithoutInvoiceInput = {
   totalAmount?: Prisma.FloatFieldUpdateOperationsInput | number
   cgst?: Prisma.FloatFieldUpdateOperationsInput | number
   sgst?: Prisma.FloatFieldUpdateOperationsInput | number
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -881,6 +920,7 @@ export type InvoiceItemSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   totalAmount?: boolean
   cgst?: boolean
   sgst?: boolean
+  spareType?: boolean
   createdAt?: boolean
   invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
@@ -898,6 +938,7 @@ export type InvoiceItemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   totalAmount?: boolean
   cgst?: boolean
   sgst?: boolean
+  spareType?: boolean
   createdAt?: boolean
   invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
@@ -915,6 +956,7 @@ export type InvoiceItemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   totalAmount?: boolean
   cgst?: boolean
   sgst?: boolean
+  spareType?: boolean
   createdAt?: boolean
   invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
@@ -932,10 +974,11 @@ export type InvoiceItemSelectScalar = {
   totalAmount?: boolean
   cgst?: boolean
   sgst?: boolean
+  spareType?: boolean
   createdAt?: boolean
 }
 
-export type InvoiceItemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "invoiceId" | "materialCode" | "description" | "hsn" | "quantity" | "uom" | "unitPrice" | "totalAmount" | "cgst" | "sgst" | "createdAt", ExtArgs["result"]["invoiceItem"]>
+export type InvoiceItemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "invoiceId" | "materialCode" | "description" | "hsn" | "quantity" | "uom" | "unitPrice" | "totalAmount" | "cgst" | "sgst" | "spareType" | "createdAt", ExtArgs["result"]["invoiceItem"]>
 export type InvoiceItemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   invoice?: boolean | Prisma.InvoiceDefaultArgs<ExtArgs>
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
@@ -967,6 +1010,7 @@ export type $InvoiceItemPayload<ExtArgs extends runtime.Types.Extensions.Interna
     totalAmount: number
     cgst: number
     sgst: number
+    spareType: $Enums.SpareType | null
     createdAt: Date
   }, ExtArgs["result"]["invoiceItem"]>
   composites: {}
@@ -1404,6 +1448,7 @@ export interface InvoiceItemFieldRefs {
   readonly totalAmount: Prisma.FieldRef<"InvoiceItem", 'Float'>
   readonly cgst: Prisma.FieldRef<"InvoiceItem", 'Float'>
   readonly sgst: Prisma.FieldRef<"InvoiceItem", 'Float'>
+  readonly spareType: Prisma.FieldRef<"InvoiceItem", 'SpareType'>
   readonly createdAt: Prisma.FieldRef<"InvoiceItem", 'DateTime'>
 }
     

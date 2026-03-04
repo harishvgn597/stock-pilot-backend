@@ -1029,6 +1029,7 @@ export const InvoiceItemScalarFieldEnum = {
   totalAmount: 'totalAmount',
   cgst: 'cgst',
   sgst: 'sgst',
+  spareType: 'spareType',
   createdAt: 'createdAt'
 } as const
 
@@ -1127,6 +1128,20 @@ export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, '
  * Reference to a field of type 'Float[]'
  */
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SpareType'
+ */
+export type EnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpareType'>
+    
+
+
+/**
+ * Reference to a field of type 'SpareType[]'
+ */
+export type ListEnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpareType[]'>
     
 
 

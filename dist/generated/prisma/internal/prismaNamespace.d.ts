@@ -779,6 +779,7 @@ export declare const InvoiceItemScalarFieldEnum: {
     readonly totalAmount: "totalAmount";
     readonly cgst: "cgst";
     readonly sgst: "sgst";
+    readonly spareType: "spareType";
     readonly createdAt: "createdAt";
 };
 export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum];
@@ -820,6 +821,8 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>;
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>;
+export type EnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpareType'>;
+export type ListEnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpareType[]'>;
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>;
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>;
 export type BatchPayload = {

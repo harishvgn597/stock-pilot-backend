@@ -13,6 +13,12 @@ datasource db {
   provider = "postgresql"
 }
 
+enum SpareType {
+  Spare
+  Additive
+  Accessory
+}
+
 model User {
   id             String   @id @default(uuid())
   name           String
@@ -78,6 +84,7 @@ model InvoiceItem {
   totalAmount Float
   cgst        Float
   sgst        Float
+  spareType   SpareType?
 
   createdAt DateTime @default(now())
 }

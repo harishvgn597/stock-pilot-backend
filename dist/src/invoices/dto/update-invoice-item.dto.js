@@ -4,5 +4,6 @@ export class UpdateInvoiceItemDto {
     totalAmount;
     cgst;
     sgst;
+    spareType;
 }
 //# sourceMappingURL=update-invoice-item.dto.js.map

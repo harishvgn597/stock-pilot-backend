@@ -29,6 +29,7 @@ let InvoicesService = class InvoicesService {
                         totalAmount: true,
                         cgst: true,
                         sgst: true,
+                        spareType: true,
                     },
                 },
             },
@@ -51,6 +52,7 @@ let InvoicesService = class InvoicesService {
                         totalAmount: true,
                         cgst: true,
                         sgst: true,
+                        spareType: true,
                     },
                 },
             },
@@ -83,6 +85,7 @@ let InvoicesService = class InvoicesService {
                         totalAmount: item.totalAmount,
                         cgst: item.cgst,
                         sgst: item.sgst,
+                        spareType: item.spareType ?? null,
                     })),
                 },
             },
@@ -99,6 +102,7 @@ let InvoicesService = class InvoicesService {
                         totalAmount: true,
                         cgst: true,
                         sgst: true,
+                        spareType: true,
                     },
                 },
             },
@@ -119,6 +123,7 @@ let InvoicesService = class InvoicesService {
                 ...(dto.totalAmount !== undefined && { totalAmount: dto.totalAmount }),
                 ...(dto.cgst !== undefined && { cgst: dto.cgst }),
                 ...(dto.sgst !== undefined && { sgst: dto.sgst }),
+                ...(dto.spareType !== undefined && { spareType: dto.spareType }),
             },
             select: {
                 id: true,
@@ -131,6 +136,7 @@ let InvoicesService = class InvoicesService {
                 totalAmount: true,
                 cgst: true,
                 sgst: true,
+                spareType: true,
             },
         });
     }

@@ -138,6 +138,7 @@ export const InvoiceItemScalarFieldEnum = {
   totalAmount: 'totalAmount',
   cgst: 'cgst',
   sgst: 'sgst',
+  spareType: 'spareType',
   createdAt: 'createdAt'
 } as const
 

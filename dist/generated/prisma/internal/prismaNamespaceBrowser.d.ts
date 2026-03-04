@@ -77,6 +77,7 @@ export declare const InvoiceItemScalarFieldEnum: {
     readonly totalAmount: "totalAmount";
     readonly cgst: "cgst";
     readonly sgst: "sgst";
+    readonly spareType: "spareType";
     readonly createdAt: "createdAt";
 };
 export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum];

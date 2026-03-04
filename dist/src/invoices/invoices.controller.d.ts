@@ -16,6 +16,7 @@ export declare class InvoicesController {
             totalAmount: number;
             cgst: number;
             sgst: number;
+            spareType: import("../../generated/prisma/enums.js").SpareType | null;
         }[];
     } & {
         id: string;
@@ -36,6 +37,7 @@ export declare class InvoicesController {
             totalAmount: number;
             cgst: number;
             sgst: number;
+            spareType: import("../../generated/prisma/enums.js").SpareType | null;
         }[];
     } & {
         id: string;
@@ -56,6 +58,7 @@ export declare class InvoicesController {
             totalAmount: number;
             cgst: number;
             sgst: number;
+            spareType: import("../../generated/prisma/enums.js").SpareType | null;
         }[];
     } & {
         id: string;
@@ -75,5 +78,6 @@ export declare class InvoicesController {
         totalAmount: number;
         cgst: number;
         sgst: number;
+        spareType: import("../../generated/prisma/enums.js").SpareType | null;
     }>;
 }

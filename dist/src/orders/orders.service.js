@@ -41,6 +41,8 @@ let OrdersService = class OrdersService {
                     create: {
                         billNumber: dto.billNumber,
                         dateOfSale: new Date(dto.dateOfSale),
+                        ticketNumber: dto.ticketNumber ?? null,
+                        customerName: dto.customerName ?? null,
                         materialCode: dto.materialCode,
                         description: dto.description,
                         quantity: dto.quantity,

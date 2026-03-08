@@ -141,8 +141,10 @@ model SaleOrder {
   orderId     String @unique
   order       Order  @relation(fields: [orderId], references: [id])
 
-  billNumber  String   @unique
-  dateOfSale  DateTime
+  billNumber    String   @unique
+  dateOfSale    DateTime
+  ticketNumber  String?
+  customerName  String?
 
   materialCode  String
   material      Material  @relation(fields: [materialCode], references: [materialCode])

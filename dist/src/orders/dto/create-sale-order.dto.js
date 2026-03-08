@@ -2,6 +2,8 @@ export class CreateSaleOrderDto {
     engineerId;
     billNumber;
     dateOfSale;
+    ticketNumber;
+    customerName;
     materialCode;
     description;
     quantity;

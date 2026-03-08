@@ -100,6 +100,8 @@ export const SaleOrderScalarFieldEnum = {
     orderId: 'orderId',
     billNumber: 'billNumber',
     dateOfSale: 'dateOfSale',
+    ticketNumber: 'ticketNumber',
+    customerName: 'customerName',
     materialCode: 'materialCode',
     description: 'description',
     quantity: 'quantity',

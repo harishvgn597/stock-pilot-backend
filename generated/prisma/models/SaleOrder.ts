@@ -41,6 +41,8 @@ export type SaleOrderMinAggregateOutputType = {
   orderId: string | null
   billNumber: string | null
   dateOfSale: Date | null
+  ticketNumber: string | null
+  customerName: string | null
   materialCode: string | null
   description: string | null
   quantity: number | null
@@ -54,6 +56,8 @@ export type SaleOrderMaxAggregateOutputType = {
   orderId: string | null
   billNumber: string | null
   dateOfSale: Date | null
+  ticketNumber: string | null
+  customerName: string | null
   materialCode: string | null
   description: string | null
   quantity: number | null
@@ -67,6 +71,8 @@ export type SaleOrderCountAggregateOutputType = {
   orderId: number
   billNumber: number
   dateOfSale: number
+  ticketNumber: number
+  customerName: number
   materialCode: number
   description: number
   quantity: number
@@ -92,6 +98,8 @@ export type SaleOrderMinAggregateInputType = {
   orderId?: true
   billNumber?: true
   dateOfSale?: true
+  ticketNumber?: true
+  customerName?: true
   materialCode?: true
   description?: true
   quantity?: true
@@ -105,6 +113,8 @@ export type SaleOrderMaxAggregateInputType = {
   orderId?: true
   billNumber?: true
   dateOfSale?: true
+  ticketNumber?: true
+  customerName?: true
   materialCode?: true
   description?: true
   quantity?: true
@@ -118,6 +128,8 @@ export type SaleOrderCountAggregateInputType = {
   orderId?: true
   billNumber?: true
   dateOfSale?: true
+  ticketNumber?: true
+  customerName?: true
   materialCode?: true
   description?: true
   quantity?: true
@@ -218,6 +230,8 @@ export type SaleOrderGroupByOutputType = {
   orderId: string
   billNumber: string
   dateOfSale: Date
+  ticketNumber: string | null
+  customerName: string | null
   materialCode: string
   description: string
   quantity: number
@@ -254,6 +268,8 @@ export type SaleOrderWhereInput = {
   orderId?: Prisma.StringFilter<"SaleOrder"> | string
   billNumber?: Prisma.StringFilter<"SaleOrder"> | string
   dateOfSale?: Prisma.DateTimeFilter<"SaleOrder"> | Date | string
+  ticketNumber?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
+  customerName?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
   materialCode?: Prisma.StringFilter<"SaleOrder"> | string
   description?: Prisma.StringFilter<"SaleOrder"> | string
   quantity?: Prisma.FloatFilter<"SaleOrder"> | number
@@ -269,6 +285,8 @@ export type SaleOrderOrderByWithRelationInput = {
   orderId?: Prisma.SortOrder
   billNumber?: Prisma.SortOrder
   dateOfSale?: Prisma.SortOrder
+  ticketNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  customerName?: Prisma.SortOrderInput | Prisma.SortOrder
   materialCode?: Prisma.SortOrder
   description?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
@@ -287,6 +305,8 @@ export type SaleOrderWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.SaleOrderWhereInput[]
   NOT?: Prisma.SaleOrderWhereInput | Prisma.SaleOrderWhereInput[]
   dateOfSale?: Prisma.DateTimeFilter<"SaleOrder"> | Date | string
+  ticketNumber?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
+  customerName?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
   materialCode?: Prisma.StringFilter<"SaleOrder"> | string
   description?: Prisma.StringFilter<"SaleOrder"> | string
   quantity?: Prisma.FloatFilter<"SaleOrder"> | number
@@ -302,6 +322,8 @@ export type SaleOrderOrderByWithAggregationInput = {
   orderId?: Prisma.SortOrder
   billNumber?: Prisma.SortOrder
   dateOfSale?: Prisma.SortOrder
+  ticketNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  customerName?: Prisma.SortOrderInput | Prisma.SortOrder
   materialCode?: Prisma.SortOrder
   description?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
@@ -323,6 +345,8 @@ export type SaleOrderScalarWhereWithAggregatesInput = {
   orderId?: Prisma.StringWithAggregatesFilter<"SaleOrder"> | string
   billNumber?: Prisma.StringWithAggregatesFilter<"SaleOrder"> | string
   dateOfSale?: Prisma.DateTimeWithAggregatesFilter<"SaleOrder"> | Date | string
+  ticketNumber?: Prisma.StringNullableWithAggregatesFilter<"SaleOrder"> | string | null
+  customerName?: Prisma.StringNullableWithAggregatesFilter<"SaleOrder"> | string | null
   materialCode?: Prisma.StringWithAggregatesFilter<"SaleOrder"> | string
   description?: Prisma.StringWithAggregatesFilter<"SaleOrder"> | string
   quantity?: Prisma.FloatWithAggregatesFilter<"SaleOrder"> | number
@@ -335,6 +359,8 @@ export type SaleOrderCreateInput = {
   id?: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   description: string
   quantity: number
   spareType?: $Enums.SpareType | null
@@ -349,6 +375,8 @@ export type SaleOrderUncheckedCreateInput = {
   orderId: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   materialCode: string
   description: string
   quantity: number
@@ -361,6 +389,8 @@ export type SaleOrderUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -375,6 +405,8 @@ export type SaleOrderUncheckedUpdateInput = {
   orderId?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -388,6 +420,8 @@ export type SaleOrderCreateManyInput = {
   orderId: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   materialCode: string
   description: string
   quantity: number
@@ -400,6 +434,8 @@ export type SaleOrderUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -412,6 +448,8 @@ export type SaleOrderUncheckedUpdateManyInput = {
   orderId?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -440,6 +478,8 @@ export type SaleOrderCountOrderByAggregateInput = {
   orderId?: Prisma.SortOrder
   billNumber?: Prisma.SortOrder
   dateOfSale?: Prisma.SortOrder
+  ticketNumber?: Prisma.SortOrder
+  customerName?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
   description?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
@@ -458,6 +498,8 @@ export type SaleOrderMaxOrderByAggregateInput = {
   orderId?: Prisma.SortOrder
   billNumber?: Prisma.SortOrder
   dateOfSale?: Prisma.SortOrder
+  ticketNumber?: Prisma.SortOrder
+  customerName?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
   description?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
@@ -471,6 +513,8 @@ export type SaleOrderMinOrderByAggregateInput = {
   orderId?: Prisma.SortOrder
   billNumber?: Prisma.SortOrder
   dateOfSale?: Prisma.SortOrder
+  ticketNumber?: Prisma.SortOrder
+  customerName?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
   description?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
@@ -562,6 +606,8 @@ export type SaleOrderCreateWithoutMaterialInput = {
   id?: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   description: string
   quantity: number
   spareType?: $Enums.SpareType | null
@@ -575,6 +621,8 @@ export type SaleOrderUncheckedCreateWithoutMaterialInput = {
   orderId: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   description: string
   quantity: number
   spareType?: $Enums.SpareType | null
@@ -616,6 +664,8 @@ export type SaleOrderScalarWhereInput = {
   orderId?: Prisma.StringFilter<"SaleOrder"> | string
   billNumber?: Prisma.StringFilter<"SaleOrder"> | string
   dateOfSale?: Prisma.DateTimeFilter<"SaleOrder"> | Date | string
+  ticketNumber?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
+  customerName?: Prisma.StringNullableFilter<"SaleOrder"> | string | null
   materialCode?: Prisma.StringFilter<"SaleOrder"> | string
   description?: Prisma.StringFilter<"SaleOrder"> | string
   quantity?: Prisma.FloatFilter<"SaleOrder"> | number
@@ -628,6 +678,8 @@ export type SaleOrderCreateWithoutOrderInput = {
   id?: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   description: string
   quantity: number
   spareType?: $Enums.SpareType | null
@@ -640,6 +692,8 @@ export type SaleOrderUncheckedCreateWithoutOrderInput = {
   id?: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   materialCode: string
   description: string
   quantity: number
@@ -668,6 +722,8 @@ export type SaleOrderUpdateWithoutOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -680,6 +736,8 @@ export type SaleOrderUncheckedUpdateWithoutOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
@@ -693,6 +751,8 @@ export type SaleOrderCreateManyMaterialInput = {
   orderId: string
   billNumber: string
   dateOfSale: Date | string
+  ticketNumber?: string | null
+  customerName?: string | null
   description: string
   quantity: number
   spareType?: $Enums.SpareType | null
@@ -704,6 +764,8 @@ export type SaleOrderUpdateWithoutMaterialInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -717,6 +779,8 @@ export type SaleOrderUncheckedUpdateWithoutMaterialInput = {
   orderId?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -729,6 +793,8 @@ export type SaleOrderUncheckedUpdateManyWithoutMaterialInput = {
   orderId?: Prisma.StringFieldUpdateOperationsInput | string
   billNumber?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfSale?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  ticketNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customerName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.StringFieldUpdateOperationsInput | string
   quantity?: Prisma.FloatFieldUpdateOperationsInput | number
   spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
@@ -743,6 +809,8 @@ export type SaleOrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   orderId?: boolean
   billNumber?: boolean
   dateOfSale?: boolean
+  ticketNumber?: boolean
+  customerName?: boolean
   materialCode?: boolean
   description?: boolean
   quantity?: boolean
@@ -758,6 +826,8 @@ export type SaleOrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   orderId?: boolean
   billNumber?: boolean
   dateOfSale?: boolean
+  ticketNumber?: boolean
+  customerName?: boolean
   materialCode?: boolean
   description?: boolean
   quantity?: boolean
@@ -773,6 +843,8 @@ export type SaleOrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   orderId?: boolean
   billNumber?: boolean
   dateOfSale?: boolean
+  ticketNumber?: boolean
+  customerName?: boolean
   materialCode?: boolean
   description?: boolean
   quantity?: boolean
@@ -788,6 +860,8 @@ export type SaleOrderSelectScalar = {
   orderId?: boolean
   billNumber?: boolean
   dateOfSale?: boolean
+  ticketNumber?: boolean
+  customerName?: boolean
   materialCode?: boolean
   description?: boolean
   quantity?: boolean
@@ -796,7 +870,7 @@ export type SaleOrderSelectScalar = {
   createdAt?: boolean
 }
 
-export type SaleOrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "orderId" | "billNumber" | "dateOfSale" | "materialCode" | "description" | "quantity" | "spareType" | "price" | "createdAt", ExtArgs["result"]["saleOrder"]>
+export type SaleOrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "orderId" | "billNumber" | "dateOfSale" | "ticketNumber" | "customerName" | "materialCode" | "description" | "quantity" | "spareType" | "price" | "createdAt", ExtArgs["result"]["saleOrder"]>
 export type SaleOrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
@@ -821,6 +895,8 @@ export type $SaleOrderPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     orderId: string
     billNumber: string
     dateOfSale: Date
+    ticketNumber: string | null
+    customerName: string | null
     materialCode: string
     description: string
     quantity: number
@@ -1256,6 +1332,8 @@ export interface SaleOrderFieldRefs {
   readonly orderId: Prisma.FieldRef<"SaleOrder", 'String'>
   readonly billNumber: Prisma.FieldRef<"SaleOrder", 'String'>
   readonly dateOfSale: Prisma.FieldRef<"SaleOrder", 'DateTime'>
+  readonly ticketNumber: Prisma.FieldRef<"SaleOrder", 'String'>
+  readonly customerName: Prisma.FieldRef<"SaleOrder", 'String'>
   readonly materialCode: Prisma.FieldRef<"SaleOrder", 'String'>
   readonly description: Prisma.FieldRef<"SaleOrder", 'String'>
   readonly quantity: Prisma.FieldRef<"SaleOrder", 'Float'>

@@ -14,11 +14,13 @@ export declare class OrdersService {
             createdAt: Date;
             materialCode: string;
             description: string;
+            customerName: string | null;
             quantity: number;
             spareType: import("../../generated/prisma/enums.js").SpareType | null;
             orderId: string;
             billNumber: string;
             dateOfSale: Date;
+            ticketNumber: string | null;
             price: number;
         } | null;
     } & {
@@ -51,11 +53,13 @@ export declare class OrdersService {
         createdAt: Date;
         materialCode: string;
         description: string;
+        customerName: string | null;
         quantity: number;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
         orderId: string;
         billNumber: string;
         dateOfSale: Date;
+        ticketNumber: string | null;
         price: number;
     })[]>;
     findSaleByBillNumber(billNumber: string): Promise<{
@@ -82,11 +86,13 @@ export declare class OrdersService {
         createdAt: Date;
         materialCode: string;
         description: string;
+        customerName: string | null;
         quantity: number;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
         orderId: string;
         billNumber: string;
         dateOfSale: Date;
+        ticketNumber: string | null;
         price: number;
     }>;
     findSalesByEngineer(engineerId: string): Promise<({
@@ -100,11 +106,13 @@ export declare class OrdersService {
         createdAt: Date;
         materialCode: string;
         description: string;
+        customerName: string | null;
         quantity: number;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
         orderId: string;
         billNumber: string;
         dateOfSale: Date;
+        ticketNumber: string | null;
         price: number;
     })[]>;
 }

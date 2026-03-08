@@ -962,6 +962,8 @@ export declare const SaleOrderScalarFieldEnum: {
     readonly orderId: "orderId";
     readonly billNumber: "billNumber";
     readonly dateOfSale: "dateOfSale";
+    readonly ticketNumber: "ticketNumber";
+    readonly customerName: "customerName";
     readonly materialCode: "materialCode";
     readonly description: "description";
     readonly quantity: "quantity";

@@ -24,6 +24,7 @@ export class InvoicesService {
             cgst: true,
             sgst: true,
             spareType: true,
+            status: true,
           },
         },
       },
@@ -49,6 +50,7 @@ export class InvoicesService {
             cgst: true,
             sgst: true,
             spareType: true,
+            status: true,
           },
         },
       },
@@ -88,6 +90,7 @@ export class InvoicesService {
             cgst: item.cgst,
             sgst: item.sgst,
             spareType: item.spareType ?? null,
+            status: item.status ?? null,
           })),
         },
       },
@@ -105,6 +108,7 @@ export class InvoicesService {
             cgst: true,
             sgst: true,
             spareType: true,
+            status: true,
           },
         },
       },
@@ -130,6 +134,7 @@ export class InvoicesService {
         ...(dto.cgst !== undefined && { cgst: dto.cgst }),
         ...(dto.sgst !== undefined && { sgst: dto.sgst }),
         ...(dto.spareType !== undefined && { spareType: dto.spareType }),
+        ...(dto.status !== undefined && { status: dto.status }),
       },
       select: {
         id: true,
@@ -143,6 +148,7 @@ export class InvoicesService {
         cgst: true,
         sgst: true,
         spareType: true,
+        status: true,
       },
     });
   }

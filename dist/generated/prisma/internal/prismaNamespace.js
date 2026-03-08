@@ -89,6 +89,7 @@ export const InvoiceItemScalarFieldEnum = {
     cgst: 'cgst',
     sgst: 'sgst',
     spareType: 'spareType',
+    status: 'status',
     createdAt: 'createdAt'
 };
 export const EngineerScalarFieldEnum = {

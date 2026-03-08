@@ -121,6 +121,13 @@ export type EnumSpareTypeNullableFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel> | $Enums.SpareType | null
 }
 
+export type EnumItemStatusNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ItemStatus | Prisma.EnumItemStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel> | $Enums.ItemStatus | null
+}
+
 export type SortOrderInput = {
   sort: Prisma.SortOrder
   nulls?: Prisma.NullsOrder
@@ -152,6 +159,16 @@ export type EnumSpareTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
   _min?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel>
   _max?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel>
+}
+
+export type EnumItemStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ItemStatus | Prisma.EnumItemStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumItemStatusNullableWithAggregatesFilter<$PrismaModel> | $Enums.ItemStatus | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel>
 }
 
 export type EnumOrderTypeFilter<$PrismaModel = never> = {
@@ -286,6 +303,13 @@ export type NestedEnumSpareTypeNullableFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel> | $Enums.SpareType | null
 }
 
+export type NestedEnumItemStatusNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.ItemStatus | Prisma.EnumItemStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel> | $Enums.ItemStatus | null
+}
+
 export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel> | null
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null
@@ -322,6 +346,16 @@ export type NestedEnumSpareTypeNullableWithAggregatesFilter<$PrismaModel = never
   _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
   _min?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel>
   _max?: Prisma.NestedEnumSpareTypeNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumItemStatusNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ItemStatus | Prisma.EnumItemStatusFieldRefInput<$PrismaModel> | null
+  in?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.ItemStatus[] | Prisma.ListEnumItemStatusFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumItemStatusNullableWithAggregatesFilter<$PrismaModel> | $Enums.ItemStatus | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumItemStatusNullableFilter<$PrismaModel>
 }
 
 export type NestedEnumOrderTypeFilter<$PrismaModel = never> = {

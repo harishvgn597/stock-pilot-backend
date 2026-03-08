@@ -9,6 +9,7 @@ export class CreateInvoiceItemDto {
   cgst: number;
   sgst: number;
   spareType?: 'Spare' | 'Additive' | 'Accessory';
+  status?: 'Good' | 'Defective';
 }
 
 export class CreateInvoiceDto {

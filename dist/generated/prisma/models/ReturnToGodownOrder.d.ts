@@ -1,0 +1,767 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace.js";
+export type ReturnToGodownOrderModel = runtime.Types.Result.DefaultSelection<Prisma.$ReturnToGodownOrderPayload>;
+export type AggregateReturnToGodownOrder = {
+    _count: ReturnToGodownOrderCountAggregateOutputType | null;
+    _avg: ReturnToGodownOrderAvgAggregateOutputType | null;
+    _sum: ReturnToGodownOrderSumAggregateOutputType | null;
+    _min: ReturnToGodownOrderMinAggregateOutputType | null;
+    _max: ReturnToGodownOrderMaxAggregateOutputType | null;
+};
+export type ReturnToGodownOrderAvgAggregateOutputType = {
+    quantity: number | null;
+};
+export type ReturnToGodownOrderSumAggregateOutputType = {
+    quantity: number | null;
+};
+export type ReturnToGodownOrderMinAggregateOutputType = {
+    id: string | null;
+    orderId: string | null;
+    referenceNumber: string | null;
+    date: Date | null;
+    materialCode: string | null;
+    description: string | null;
+    quantity: number | null;
+    createdAt: Date | null;
+};
+export type ReturnToGodownOrderMaxAggregateOutputType = {
+    id: string | null;
+    orderId: string | null;
+    referenceNumber: string | null;
+    date: Date | null;
+    materialCode: string | null;
+    description: string | null;
+    quantity: number | null;
+    createdAt: Date | null;
+};
+export type ReturnToGodownOrderCountAggregateOutputType = {
+    id: number;
+    orderId: number;
+    referenceNumber: number;
+    date: number;
+    materialCode: number;
+    description: number;
+    quantity: number;
+    createdAt: number;
+    _all: number;
+};
+export type ReturnToGodownOrderAvgAggregateInputType = {
+    quantity?: true;
+};
+export type ReturnToGodownOrderSumAggregateInputType = {
+    quantity?: true;
+};
+export type ReturnToGodownOrderMinAggregateInputType = {
+    id?: true;
+    orderId?: true;
+    referenceNumber?: true;
+    date?: true;
+    materialCode?: true;
+    description?: true;
+    quantity?: true;
+    createdAt?: true;
+};
+export type ReturnToGodownOrderMaxAggregateInputType = {
+    id?: true;
+    orderId?: true;
+    referenceNumber?: true;
+    date?: true;
+    materialCode?: true;
+    description?: true;
+    quantity?: true;
+    createdAt?: true;
+};
+export type ReturnToGodownOrderCountAggregateInputType = {
+    id?: true;
+    orderId?: true;
+    referenceNumber?: true;
+    date?: true;
+    materialCode?: true;
+    description?: true;
+    quantity?: true;
+    createdAt?: true;
+    _all?: true;
+};
+export type ReturnToGodownOrderAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    orderBy?: Prisma.ReturnToGodownOrderOrderByWithRelationInput | Prisma.ReturnToGodownOrderOrderByWithRelationInput[];
+    cursor?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    _count?: true | ReturnToGodownOrderCountAggregateInputType;
+    _avg?: ReturnToGodownOrderAvgAggregateInputType;
+    _sum?: ReturnToGodownOrderSumAggregateInputType;
+    _min?: ReturnToGodownOrderMinAggregateInputType;
+    _max?: ReturnToGodownOrderMaxAggregateInputType;
+};
+export type GetReturnToGodownOrderAggregateType<T extends ReturnToGodownOrderAggregateArgs> = {
+    [P in keyof T & keyof AggregateReturnToGodownOrder]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateReturnToGodownOrder[P]> : Prisma.GetScalarType<T[P], AggregateReturnToGodownOrder[P]>;
+};
+export type ReturnToGodownOrderGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    orderBy?: Prisma.ReturnToGodownOrderOrderByWithAggregationInput | Prisma.ReturnToGodownOrderOrderByWithAggregationInput[];
+    by: Prisma.ReturnToGodownOrderScalarFieldEnum[] | Prisma.ReturnToGodownOrderScalarFieldEnum;
+    having?: Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: ReturnToGodownOrderCountAggregateInputType | true;
+    _avg?: ReturnToGodownOrderAvgAggregateInputType;
+    _sum?: ReturnToGodownOrderSumAggregateInputType;
+    _min?: ReturnToGodownOrderMinAggregateInputType;
+    _max?: ReturnToGodownOrderMaxAggregateInputType;
+};
+export type ReturnToGodownOrderGroupByOutputType = {
+    id: string;
+    orderId: string;
+    referenceNumber: string;
+    date: Date;
+    materialCode: string;
+    description: string;
+    quantity: number;
+    createdAt: Date;
+    _count: ReturnToGodownOrderCountAggregateOutputType | null;
+    _avg: ReturnToGodownOrderAvgAggregateOutputType | null;
+    _sum: ReturnToGodownOrderSumAggregateOutputType | null;
+    _min: ReturnToGodownOrderMinAggregateOutputType | null;
+    _max: ReturnToGodownOrderMaxAggregateOutputType | null;
+};
+type GetReturnToGodownOrderGroupByPayload<T extends ReturnToGodownOrderGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<ReturnToGodownOrderGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof ReturnToGodownOrderGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], ReturnToGodownOrderGroupByOutputType[P]> : Prisma.GetScalarType<T[P], ReturnToGodownOrderGroupByOutputType[P]>;
+}>>;
+export type ReturnToGodownOrderWhereInput = {
+    AND?: Prisma.ReturnToGodownOrderWhereInput | Prisma.ReturnToGodownOrderWhereInput[];
+    OR?: Prisma.ReturnToGodownOrderWhereInput[];
+    NOT?: Prisma.ReturnToGodownOrderWhereInput | Prisma.ReturnToGodownOrderWhereInput[];
+    id?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    orderId?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    referenceNumber?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    date?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+    materialCode?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    description?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    quantity?: Prisma.FloatFilter<"ReturnToGodownOrder"> | number;
+    createdAt?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+    order?: Prisma.XOR<Prisma.OrderScalarRelationFilter, Prisma.OrderWhereInput>;
+    material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>;
+};
+export type ReturnToGodownOrderOrderByWithRelationInput = {
+    id?: Prisma.SortOrder;
+    orderId?: Prisma.SortOrder;
+    referenceNumber?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    quantity?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    order?: Prisma.OrderOrderByWithRelationInput;
+    material?: Prisma.MaterialOrderByWithRelationInput;
+};
+export type ReturnToGodownOrderWhereUniqueInput = Prisma.AtLeast<{
+    id?: string;
+    orderId?: string;
+    referenceNumber?: string;
+    AND?: Prisma.ReturnToGodownOrderWhereInput | Prisma.ReturnToGodownOrderWhereInput[];
+    OR?: Prisma.ReturnToGodownOrderWhereInput[];
+    NOT?: Prisma.ReturnToGodownOrderWhereInput | Prisma.ReturnToGodownOrderWhereInput[];
+    date?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+    materialCode?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    description?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    quantity?: Prisma.FloatFilter<"ReturnToGodownOrder"> | number;
+    createdAt?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+    order?: Prisma.XOR<Prisma.OrderScalarRelationFilter, Prisma.OrderWhereInput>;
+    material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>;
+}, "id" | "orderId" | "referenceNumber">;
+export type ReturnToGodownOrderOrderByWithAggregationInput = {
+    id?: Prisma.SortOrder;
+    orderId?: Prisma.SortOrder;
+    referenceNumber?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    quantity?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    _count?: Prisma.ReturnToGodownOrderCountOrderByAggregateInput;
+    _avg?: Prisma.ReturnToGodownOrderAvgOrderByAggregateInput;
+    _max?: Prisma.ReturnToGodownOrderMaxOrderByAggregateInput;
+    _min?: Prisma.ReturnToGodownOrderMinOrderByAggregateInput;
+    _sum?: Prisma.ReturnToGodownOrderSumOrderByAggregateInput;
+};
+export type ReturnToGodownOrderScalarWhereWithAggregatesInput = {
+    AND?: Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput | Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput[];
+    OR?: Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput | Prisma.ReturnToGodownOrderScalarWhereWithAggregatesInput[];
+    id?: Prisma.StringWithAggregatesFilter<"ReturnToGodownOrder"> | string;
+    orderId?: Prisma.StringWithAggregatesFilter<"ReturnToGodownOrder"> | string;
+    referenceNumber?: Prisma.StringWithAggregatesFilter<"ReturnToGodownOrder"> | string;
+    date?: Prisma.DateTimeWithAggregatesFilter<"ReturnToGodownOrder"> | Date | string;
+    materialCode?: Prisma.StringWithAggregatesFilter<"ReturnToGodownOrder"> | string;
+    description?: Prisma.StringWithAggregatesFilter<"ReturnToGodownOrder"> | string;
+    quantity?: Prisma.FloatWithAggregatesFilter<"ReturnToGodownOrder"> | number;
+    createdAt?: Prisma.DateTimeWithAggregatesFilter<"ReturnToGodownOrder"> | Date | string;
+};
+export type ReturnToGodownOrderCreateInput = {
+    id?: string;
+    referenceNumber: string;
+    date: Date | string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+    order: Prisma.OrderCreateNestedOneWithoutReturnToGodownOrderInput;
+    material: Prisma.MaterialCreateNestedOneWithoutReturnToGodownOrdersInput;
+};
+export type ReturnToGodownOrderUncheckedCreateInput = {
+    id?: string;
+    orderId: string;
+    referenceNumber: string;
+    date: Date | string;
+    materialCode: string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+};
+export type ReturnToGodownOrderUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    order?: Prisma.OrderUpdateOneRequiredWithoutReturnToGodownOrderNestedInput;
+    material?: Prisma.MaterialUpdateOneRequiredWithoutReturnToGodownOrdersNestedInput;
+};
+export type ReturnToGodownOrderUncheckedUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderId?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderCreateManyInput = {
+    id?: string;
+    orderId: string;
+    referenceNumber: string;
+    date: Date | string;
+    materialCode: string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+};
+export type ReturnToGodownOrderUpdateManyMutationInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderUncheckedUpdateManyInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderId?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderListRelationFilter = {
+    every?: Prisma.ReturnToGodownOrderWhereInput;
+    some?: Prisma.ReturnToGodownOrderWhereInput;
+    none?: Prisma.ReturnToGodownOrderWhereInput;
+};
+export type ReturnToGodownOrderOrderByRelationAggregateInput = {
+    _count?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderNullableScalarRelationFilter = {
+    is?: Prisma.ReturnToGodownOrderWhereInput | null;
+    isNot?: Prisma.ReturnToGodownOrderWhereInput | null;
+};
+export type ReturnToGodownOrderCountOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    orderId?: Prisma.SortOrder;
+    referenceNumber?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    quantity?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderAvgOrderByAggregateInput = {
+    quantity?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderMaxOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    orderId?: Prisma.SortOrder;
+    referenceNumber?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    quantity?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderMinOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    orderId?: Prisma.SortOrder;
+    referenceNumber?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    description?: Prisma.SortOrder;
+    quantity?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderSumOrderByAggregateInput = {
+    quantity?: Prisma.SortOrder;
+};
+export type ReturnToGodownOrderCreateNestedManyWithoutMaterialInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput> | Prisma.ReturnToGodownOrderCreateWithoutMaterialInput[] | Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput | Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput[];
+    createMany?: Prisma.ReturnToGodownOrderCreateManyMaterialInputEnvelope;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+};
+export type ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput> | Prisma.ReturnToGodownOrderCreateWithoutMaterialInput[] | Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput | Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput[];
+    createMany?: Prisma.ReturnToGodownOrderCreateManyMaterialInputEnvelope;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+};
+export type ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput> | Prisma.ReturnToGodownOrderCreateWithoutMaterialInput[] | Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput | Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput[];
+    upsert?: Prisma.ReturnToGodownOrderUpsertWithWhereUniqueWithoutMaterialInput | Prisma.ReturnToGodownOrderUpsertWithWhereUniqueWithoutMaterialInput[];
+    createMany?: Prisma.ReturnToGodownOrderCreateManyMaterialInputEnvelope;
+    set?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    disconnect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    delete?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    update?: Prisma.ReturnToGodownOrderUpdateWithWhereUniqueWithoutMaterialInput | Prisma.ReturnToGodownOrderUpdateWithWhereUniqueWithoutMaterialInput[];
+    updateMany?: Prisma.ReturnToGodownOrderUpdateManyWithWhereWithoutMaterialInput | Prisma.ReturnToGodownOrderUpdateManyWithWhereWithoutMaterialInput[];
+    deleteMany?: Prisma.ReturnToGodownOrderScalarWhereInput | Prisma.ReturnToGodownOrderScalarWhereInput[];
+};
+export type ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput> | Prisma.ReturnToGodownOrderCreateWithoutMaterialInput[] | Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput | Prisma.ReturnToGodownOrderCreateOrConnectWithoutMaterialInput[];
+    upsert?: Prisma.ReturnToGodownOrderUpsertWithWhereUniqueWithoutMaterialInput | Prisma.ReturnToGodownOrderUpsertWithWhereUniqueWithoutMaterialInput[];
+    createMany?: Prisma.ReturnToGodownOrderCreateManyMaterialInputEnvelope;
+    set?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    disconnect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    delete?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput | Prisma.ReturnToGodownOrderWhereUniqueInput[];
+    update?: Prisma.ReturnToGodownOrderUpdateWithWhereUniqueWithoutMaterialInput | Prisma.ReturnToGodownOrderUpdateWithWhereUniqueWithoutMaterialInput[];
+    updateMany?: Prisma.ReturnToGodownOrderUpdateManyWithWhereWithoutMaterialInput | Prisma.ReturnToGodownOrderUpdateManyWithWhereWithoutMaterialInput[];
+    deleteMany?: Prisma.ReturnToGodownOrderScalarWhereInput | Prisma.ReturnToGodownOrderScalarWhereInput[];
+};
+export type ReturnToGodownOrderCreateNestedOneWithoutOrderInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutOrderInput;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutOrderInput;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderUpdateOneWithoutOrderNestedInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutOrderInput;
+    upsert?: Prisma.ReturnToGodownOrderUpsertWithoutOrderInput;
+    disconnect?: Prisma.ReturnToGodownOrderWhereInput | boolean;
+    delete?: Prisma.ReturnToGodownOrderWhereInput | boolean;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.ReturnToGodownOrderUpdateToOneWithWhereWithoutOrderInput, Prisma.ReturnToGodownOrderUpdateWithoutOrderInput>, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutOrderInput>;
+};
+export type ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput = {
+    create?: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+    connectOrCreate?: Prisma.ReturnToGodownOrderCreateOrConnectWithoutOrderInput;
+    upsert?: Prisma.ReturnToGodownOrderUpsertWithoutOrderInput;
+    disconnect?: Prisma.ReturnToGodownOrderWhereInput | boolean;
+    delete?: Prisma.ReturnToGodownOrderWhereInput | boolean;
+    connect?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.ReturnToGodownOrderUpdateToOneWithWhereWithoutOrderInput, Prisma.ReturnToGodownOrderUpdateWithoutOrderInput>, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutOrderInput>;
+};
+export type ReturnToGodownOrderCreateWithoutMaterialInput = {
+    id?: string;
+    referenceNumber: string;
+    date: Date | string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+    order: Prisma.OrderCreateNestedOneWithoutReturnToGodownOrderInput;
+};
+export type ReturnToGodownOrderUncheckedCreateWithoutMaterialInput = {
+    id?: string;
+    orderId: string;
+    referenceNumber: string;
+    date: Date | string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+};
+export type ReturnToGodownOrderCreateOrConnectWithoutMaterialInput = {
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    create: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput>;
+};
+export type ReturnToGodownOrderCreateManyMaterialInputEnvelope = {
+    data: Prisma.ReturnToGodownOrderCreateManyMaterialInput | Prisma.ReturnToGodownOrderCreateManyMaterialInput[];
+    skipDuplicates?: boolean;
+};
+export type ReturnToGodownOrderUpsertWithWhereUniqueWithoutMaterialInput = {
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    update: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutMaterialInput>;
+    create: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutMaterialInput>;
+};
+export type ReturnToGodownOrderUpdateWithWhereUniqueWithoutMaterialInput = {
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateWithoutMaterialInput, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutMaterialInput>;
+};
+export type ReturnToGodownOrderUpdateManyWithWhereWithoutMaterialInput = {
+    where: Prisma.ReturnToGodownOrderScalarWhereInput;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateManyMutationInput, Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialInput>;
+};
+export type ReturnToGodownOrderScalarWhereInput = {
+    AND?: Prisma.ReturnToGodownOrderScalarWhereInput | Prisma.ReturnToGodownOrderScalarWhereInput[];
+    OR?: Prisma.ReturnToGodownOrderScalarWhereInput[];
+    NOT?: Prisma.ReturnToGodownOrderScalarWhereInput | Prisma.ReturnToGodownOrderScalarWhereInput[];
+    id?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    orderId?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    referenceNumber?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    date?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+    materialCode?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    description?: Prisma.StringFilter<"ReturnToGodownOrder"> | string;
+    quantity?: Prisma.FloatFilter<"ReturnToGodownOrder"> | number;
+    createdAt?: Prisma.DateTimeFilter<"ReturnToGodownOrder"> | Date | string;
+};
+export type ReturnToGodownOrderCreateWithoutOrderInput = {
+    id?: string;
+    referenceNumber: string;
+    date: Date | string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+    material: Prisma.MaterialCreateNestedOneWithoutReturnToGodownOrdersInput;
+};
+export type ReturnToGodownOrderUncheckedCreateWithoutOrderInput = {
+    id?: string;
+    referenceNumber: string;
+    date: Date | string;
+    materialCode: string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+};
+export type ReturnToGodownOrderCreateOrConnectWithoutOrderInput = {
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    create: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+};
+export type ReturnToGodownOrderUpsertWithoutOrderInput = {
+    update: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutOrderInput>;
+    create: Prisma.XOR<Prisma.ReturnToGodownOrderCreateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedCreateWithoutOrderInput>;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+};
+export type ReturnToGodownOrderUpdateToOneWithWhereWithoutOrderInput = {
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateWithoutOrderInput, Prisma.ReturnToGodownOrderUncheckedUpdateWithoutOrderInput>;
+};
+export type ReturnToGodownOrderUpdateWithoutOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    material?: Prisma.MaterialUpdateOneRequiredWithoutReturnToGodownOrdersNestedInput;
+};
+export type ReturnToGodownOrderUncheckedUpdateWithoutOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderCreateManyMaterialInput = {
+    id?: string;
+    orderId: string;
+    referenceNumber: string;
+    date: Date | string;
+    description: string;
+    quantity: number;
+    createdAt?: Date | string;
+};
+export type ReturnToGodownOrderUpdateWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    order?: Prisma.OrderUpdateOneRequiredWithoutReturnToGodownOrderNestedInput;
+};
+export type ReturnToGodownOrderUncheckedUpdateWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderId?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderId?: Prisma.StringFieldUpdateOperationsInput | string;
+    referenceNumber?: Prisma.StringFieldUpdateOperationsInput | string;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type ReturnToGodownOrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    orderId?: boolean;
+    referenceNumber?: boolean;
+    date?: boolean;
+    materialCode?: boolean;
+    description?: boolean;
+    quantity?: boolean;
+    createdAt?: boolean;
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["returnToGodownOrder"]>;
+export type ReturnToGodownOrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    orderId?: boolean;
+    referenceNumber?: boolean;
+    date?: boolean;
+    materialCode?: boolean;
+    description?: boolean;
+    quantity?: boolean;
+    createdAt?: boolean;
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["returnToGodownOrder"]>;
+export type ReturnToGodownOrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    orderId?: boolean;
+    referenceNumber?: boolean;
+    date?: boolean;
+    materialCode?: boolean;
+    description?: boolean;
+    quantity?: boolean;
+    createdAt?: boolean;
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+}, ExtArgs["result"]["returnToGodownOrder"]>;
+export type ReturnToGodownOrderSelectScalar = {
+    id?: boolean;
+    orderId?: boolean;
+    referenceNumber?: boolean;
+    date?: boolean;
+    materialCode?: boolean;
+    description?: boolean;
+    quantity?: boolean;
+    createdAt?: boolean;
+};
+export type ReturnToGodownOrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "orderId" | "referenceNumber" | "date" | "materialCode" | "description" | "quantity" | "createdAt", ExtArgs["result"]["returnToGodownOrder"]>;
+export type ReturnToGodownOrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+};
+export type ReturnToGodownOrderIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+};
+export type ReturnToGodownOrderIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    order?: boolean | Prisma.OrderDefaultArgs<ExtArgs>;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+};
+export type $ReturnToGodownOrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "ReturnToGodownOrder";
+    objects: {
+        order: Prisma.$OrderPayload<ExtArgs>;
+        material: Prisma.$MaterialPayload<ExtArgs>;
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        id: string;
+        orderId: string;
+        referenceNumber: string;
+        date: Date;
+        materialCode: string;
+        description: string;
+        quantity: number;
+        createdAt: Date;
+    }, ExtArgs["result"]["returnToGodownOrder"]>;
+    composites: {};
+};
+export type ReturnToGodownOrderGetPayload<S extends boolean | null | undefined | ReturnToGodownOrderDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload, S>;
+export type ReturnToGodownOrderCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<ReturnToGodownOrderFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: ReturnToGodownOrderCountAggregateInputType | true;
+};
+export interface ReturnToGodownOrderDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['ReturnToGodownOrder'];
+        meta: {
+            name: 'ReturnToGodownOrder';
+        };
+    };
+    findUnique<T extends ReturnToGodownOrderFindUniqueArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    findUniqueOrThrow<T extends ReturnToGodownOrderFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    findFirst<T extends ReturnToGodownOrderFindFirstArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderFindFirstArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    findFirstOrThrow<T extends ReturnToGodownOrderFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    findMany<T extends ReturnToGodownOrderFindManyArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    create<T extends ReturnToGodownOrderCreateArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderCreateArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    createMany<T extends ReturnToGodownOrderCreateManyArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    createManyAndReturn<T extends ReturnToGodownOrderCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    delete<T extends ReturnToGodownOrderDeleteArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderDeleteArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    update<T extends ReturnToGodownOrderUpdateArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderUpdateArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    deleteMany<T extends ReturnToGodownOrderDeleteManyArgs>(args?: Prisma.SelectSubset<T, ReturnToGodownOrderDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    updateMany<T extends ReturnToGodownOrderUpdateManyArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    updateManyAndReturn<T extends ReturnToGodownOrderUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    upsert<T extends ReturnToGodownOrderUpsertArgs>(args: Prisma.SelectSubset<T, ReturnToGodownOrderUpsertArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    count<T extends ReturnToGodownOrderCountArgs>(args?: Prisma.Subset<T, ReturnToGodownOrderCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], ReturnToGodownOrderCountAggregateOutputType> : number>;
+    aggregate<T extends ReturnToGodownOrderAggregateArgs>(args: Prisma.Subset<T, ReturnToGodownOrderAggregateArgs>): Prisma.PrismaPromise<GetReturnToGodownOrderAggregateType<T>>;
+    groupBy<T extends ReturnToGodownOrderGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: ReturnToGodownOrderGroupByArgs['orderBy'];
+    } : {
+        orderBy?: ReturnToGodownOrderGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, ReturnToGodownOrderGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReturnToGodownOrderGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    readonly fields: ReturnToGodownOrderFieldRefs;
+}
+export interface Prisma__ReturnToGodownOrderClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    order<T extends Prisma.OrderDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.OrderDefaultArgs<ExtArgs>>): Prisma.Prisma__OrderClient<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    material<T extends Prisma.MaterialDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MaterialDefaultArgs<ExtArgs>>): Prisma.Prisma__MaterialClient<runtime.Types.Result.GetResult<Prisma.$MaterialPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+export interface ReturnToGodownOrderFieldRefs {
+    readonly id: Prisma.FieldRef<"ReturnToGodownOrder", 'String'>;
+    readonly orderId: Prisma.FieldRef<"ReturnToGodownOrder", 'String'>;
+    readonly referenceNumber: Prisma.FieldRef<"ReturnToGodownOrder", 'String'>;
+    readonly date: Prisma.FieldRef<"ReturnToGodownOrder", 'DateTime'>;
+    readonly materialCode: Prisma.FieldRef<"ReturnToGodownOrder", 'String'>;
+    readonly description: Prisma.FieldRef<"ReturnToGodownOrder", 'String'>;
+    readonly quantity: Prisma.FieldRef<"ReturnToGodownOrder", 'Float'>;
+    readonly createdAt: Prisma.FieldRef<"ReturnToGodownOrder", 'DateTime'>;
+}
+export type ReturnToGodownOrderFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    orderBy?: Prisma.ReturnToGodownOrderOrderByWithRelationInput | Prisma.ReturnToGodownOrderOrderByWithRelationInput[];
+    cursor?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.ReturnToGodownOrderScalarFieldEnum | Prisma.ReturnToGodownOrderScalarFieldEnum[];
+};
+export type ReturnToGodownOrderFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    orderBy?: Prisma.ReturnToGodownOrderOrderByWithRelationInput | Prisma.ReturnToGodownOrderOrderByWithRelationInput[];
+    cursor?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.ReturnToGodownOrderScalarFieldEnum | Prisma.ReturnToGodownOrderScalarFieldEnum[];
+};
+export type ReturnToGodownOrderFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    orderBy?: Prisma.ReturnToGodownOrderOrderByWithRelationInput | Prisma.ReturnToGodownOrderOrderByWithRelationInput[];
+    cursor?: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.ReturnToGodownOrderScalarFieldEnum | Prisma.ReturnToGodownOrderScalarFieldEnum[];
+};
+export type ReturnToGodownOrderCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderCreateInput, Prisma.ReturnToGodownOrderUncheckedCreateInput>;
+};
+export type ReturnToGodownOrderCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    data: Prisma.ReturnToGodownOrderCreateManyInput | Prisma.ReturnToGodownOrderCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+export type ReturnToGodownOrderCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelectCreateManyAndReturn<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    data: Prisma.ReturnToGodownOrderCreateManyInput | Prisma.ReturnToGodownOrderCreateManyInput[];
+    skipDuplicates?: boolean;
+    include?: Prisma.ReturnToGodownOrderIncludeCreateManyAndReturn<ExtArgs> | null;
+};
+export type ReturnToGodownOrderUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateInput, Prisma.ReturnToGodownOrderUncheckedUpdateInput>;
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateManyMutationInput, Prisma.ReturnToGodownOrderUncheckedUpdateManyInput>;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    limit?: number;
+};
+export type ReturnToGodownOrderUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelectUpdateManyAndReturn<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateManyMutationInput, Prisma.ReturnToGodownOrderUncheckedUpdateManyInput>;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    limit?: number;
+    include?: Prisma.ReturnToGodownOrderIncludeUpdateManyAndReturn<ExtArgs> | null;
+};
+export type ReturnToGodownOrderUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+    create: Prisma.XOR<Prisma.ReturnToGodownOrderCreateInput, Prisma.ReturnToGodownOrderUncheckedCreateInput>;
+    update: Prisma.XOR<Prisma.ReturnToGodownOrderUpdateInput, Prisma.ReturnToGodownOrderUncheckedUpdateInput>;
+};
+export type ReturnToGodownOrderDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where: Prisma.ReturnToGodownOrderWhereUniqueInput;
+};
+export type ReturnToGodownOrderDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.ReturnToGodownOrderWhereInput;
+    limit?: number;
+};
+export type ReturnToGodownOrderDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+};
+export {};

@@ -38,6 +38,12 @@ let PrismaService = class PrismaService {
     get saleOrder() {
         return this.prisma.saleOrder;
     }
+    get warrantyAmcOrder() {
+        return this.prisma.warrantyAmcOrder;
+    }
+    get returnToGodownOrder() {
+        return this.prisma.returnToGodownOrder;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

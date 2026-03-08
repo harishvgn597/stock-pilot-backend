@@ -91,6 +91,8 @@ export type OrderWhereInput = {
     createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string;
     engineer?: Prisma.XOR<Prisma.EngineerScalarRelationFilter, Prisma.EngineerWhereInput>;
     saleOrder?: Prisma.XOR<Prisma.SaleOrderNullableScalarRelationFilter, Prisma.SaleOrderWhereInput> | null;
+    warrantyAmcOrder?: Prisma.XOR<Prisma.WarrantyAmcOrderNullableScalarRelationFilter, Prisma.WarrantyAmcOrderWhereInput> | null;
+    returnToGodownOrder?: Prisma.XOR<Prisma.ReturnToGodownOrderNullableScalarRelationFilter, Prisma.ReturnToGodownOrderWhereInput> | null;
 };
 export type OrderOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -99,6 +101,8 @@ export type OrderOrderByWithRelationInput = {
     createdAt?: Prisma.SortOrder;
     engineer?: Prisma.EngineerOrderByWithRelationInput;
     saleOrder?: Prisma.SaleOrderOrderByWithRelationInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderOrderByWithRelationInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderOrderByWithRelationInput;
 };
 export type OrderWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -110,6 +114,8 @@ export type OrderWhereUniqueInput = Prisma.AtLeast<{
     createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string;
     engineer?: Prisma.XOR<Prisma.EngineerScalarRelationFilter, Prisma.EngineerWhereInput>;
     saleOrder?: Prisma.XOR<Prisma.SaleOrderNullableScalarRelationFilter, Prisma.SaleOrderWhereInput> | null;
+    warrantyAmcOrder?: Prisma.XOR<Prisma.WarrantyAmcOrderNullableScalarRelationFilter, Prisma.WarrantyAmcOrderWhereInput> | null;
+    returnToGodownOrder?: Prisma.XOR<Prisma.ReturnToGodownOrderNullableScalarRelationFilter, Prisma.ReturnToGodownOrderWhereInput> | null;
 }, "id">;
 export type OrderOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -135,6 +141,8 @@ export type OrderCreateInput = {
     createdAt?: Date | string;
     engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput;
     saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderCreateNestedOneWithoutOrderInput;
 };
 export type OrderUncheckedCreateInput = {
     id?: string;
@@ -142,6 +150,8 @@ export type OrderUncheckedCreateInput = {
     engineerId: string;
     createdAt?: Date | string;
     saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput;
 };
 export type OrderUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -149,6 +159,8 @@ export type OrderUpdateInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput;
     saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUpdateOneWithoutOrderNestedInput;
 };
 export type OrderUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -156,6 +168,8 @@ export type OrderUncheckedUpdateInput = {
     engineerId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput;
 };
 export type OrderCreateManyInput = {
     id?: string;
@@ -257,17 +271,45 @@ export type OrderUpdateOneRequiredWithoutSaleOrderNestedInput = {
     connect?: Prisma.OrderWhereUniqueInput;
     update?: Prisma.XOR<Prisma.XOR<Prisma.OrderUpdateToOneWithWhereWithoutSaleOrderInput, Prisma.OrderUpdateWithoutSaleOrderInput>, Prisma.OrderUncheckedUpdateWithoutSaleOrderInput>;
 };
+export type OrderCreateNestedOneWithoutWarrantyAmcOrderInput = {
+    create?: Prisma.XOR<Prisma.OrderCreateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedCreateWithoutWarrantyAmcOrderInput>;
+    connectOrCreate?: Prisma.OrderCreateOrConnectWithoutWarrantyAmcOrderInput;
+    connect?: Prisma.OrderWhereUniqueInput;
+};
+export type OrderUpdateOneRequiredWithoutWarrantyAmcOrderNestedInput = {
+    create?: Prisma.XOR<Prisma.OrderCreateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedCreateWithoutWarrantyAmcOrderInput>;
+    connectOrCreate?: Prisma.OrderCreateOrConnectWithoutWarrantyAmcOrderInput;
+    upsert?: Prisma.OrderUpsertWithoutWarrantyAmcOrderInput;
+    connect?: Prisma.OrderWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.OrderUpdateToOneWithWhereWithoutWarrantyAmcOrderInput, Prisma.OrderUpdateWithoutWarrantyAmcOrderInput>, Prisma.OrderUncheckedUpdateWithoutWarrantyAmcOrderInput>;
+};
+export type OrderCreateNestedOneWithoutReturnToGodownOrderInput = {
+    create?: Prisma.XOR<Prisma.OrderCreateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedCreateWithoutReturnToGodownOrderInput>;
+    connectOrCreate?: Prisma.OrderCreateOrConnectWithoutReturnToGodownOrderInput;
+    connect?: Prisma.OrderWhereUniqueInput;
+};
+export type OrderUpdateOneRequiredWithoutReturnToGodownOrderNestedInput = {
+    create?: Prisma.XOR<Prisma.OrderCreateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedCreateWithoutReturnToGodownOrderInput>;
+    connectOrCreate?: Prisma.OrderCreateOrConnectWithoutReturnToGodownOrderInput;
+    upsert?: Prisma.OrderUpsertWithoutReturnToGodownOrderInput;
+    connect?: Prisma.OrderWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.OrderUpdateToOneWithWhereWithoutReturnToGodownOrderInput, Prisma.OrderUpdateWithoutReturnToGodownOrderInput>, Prisma.OrderUncheckedUpdateWithoutReturnToGodownOrderInput>;
+};
 export type OrderCreateWithoutEngineerInput = {
     id?: string;
     orderType: $Enums.OrderType;
     createdAt?: Date | string;
     saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderCreateNestedOneWithoutOrderInput;
 };
 export type OrderUncheckedCreateWithoutEngineerInput = {
     id?: string;
     orderType: $Enums.OrderType;
     createdAt?: Date | string;
     saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput;
 };
 export type OrderCreateOrConnectWithoutEngineerInput = {
     where: Prisma.OrderWhereUniqueInput;
@@ -304,12 +346,16 @@ export type OrderCreateWithoutSaleOrderInput = {
     orderType: $Enums.OrderType;
     createdAt?: Date | string;
     engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderCreateNestedOneWithoutOrderInput;
 };
 export type OrderUncheckedCreateWithoutSaleOrderInput = {
     id?: string;
     orderType: $Enums.OrderType;
     engineerId: string;
     createdAt?: Date | string;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput;
 };
 export type OrderCreateOrConnectWithoutSaleOrderInput = {
     where: Prisma.OrderWhereUniqueInput;
@@ -329,12 +375,106 @@ export type OrderUpdateWithoutSaleOrderInput = {
     orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUpdateOneWithoutOrderNestedInput;
 };
 export type OrderUncheckedUpdateWithoutSaleOrderInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
     engineerId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput;
+};
+export type OrderCreateWithoutWarrantyAmcOrderInput = {
+    id?: string;
+    orderType: $Enums.OrderType;
+    createdAt?: Date | string;
+    engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput;
+    saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderCreateNestedOneWithoutOrderInput;
+};
+export type OrderUncheckedCreateWithoutWarrantyAmcOrderInput = {
+    id?: string;
+    orderType: $Enums.OrderType;
+    engineerId: string;
+    createdAt?: Date | string;
+    saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput;
+};
+export type OrderCreateOrConnectWithoutWarrantyAmcOrderInput = {
+    where: Prisma.OrderWhereUniqueInput;
+    create: Prisma.XOR<Prisma.OrderCreateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedCreateWithoutWarrantyAmcOrderInput>;
+};
+export type OrderUpsertWithoutWarrantyAmcOrderInput = {
+    update: Prisma.XOR<Prisma.OrderUpdateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedUpdateWithoutWarrantyAmcOrderInput>;
+    create: Prisma.XOR<Prisma.OrderCreateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedCreateWithoutWarrantyAmcOrderInput>;
+    where?: Prisma.OrderWhereInput;
+};
+export type OrderUpdateToOneWithWhereWithoutWarrantyAmcOrderInput = {
+    where?: Prisma.OrderWhereInput;
+    data: Prisma.XOR<Prisma.OrderUpdateWithoutWarrantyAmcOrderInput, Prisma.OrderUncheckedUpdateWithoutWarrantyAmcOrderInput>;
+};
+export type OrderUpdateWithoutWarrantyAmcOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput;
+    saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUpdateOneWithoutOrderNestedInput;
+};
+export type OrderUncheckedUpdateWithoutWarrantyAmcOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
+    engineerId?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput;
+};
+export type OrderCreateWithoutReturnToGodownOrderInput = {
+    id?: string;
+    orderType: $Enums.OrderType;
+    createdAt?: Date | string;
+    engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput;
+    saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput;
+};
+export type OrderUncheckedCreateWithoutReturnToGodownOrderInput = {
+    id?: string;
+    orderType: $Enums.OrderType;
+    engineerId: string;
+    createdAt?: Date | string;
+    saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput;
+};
+export type OrderCreateOrConnectWithoutReturnToGodownOrderInput = {
+    where: Prisma.OrderWhereUniqueInput;
+    create: Prisma.XOR<Prisma.OrderCreateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedCreateWithoutReturnToGodownOrderInput>;
+};
+export type OrderUpsertWithoutReturnToGodownOrderInput = {
+    update: Prisma.XOR<Prisma.OrderUpdateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedUpdateWithoutReturnToGodownOrderInput>;
+    create: Prisma.XOR<Prisma.OrderCreateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedCreateWithoutReturnToGodownOrderInput>;
+    where?: Prisma.OrderWhereInput;
+};
+export type OrderUpdateToOneWithWhereWithoutReturnToGodownOrderInput = {
+    where?: Prisma.OrderWhereInput;
+    data: Prisma.XOR<Prisma.OrderUpdateWithoutReturnToGodownOrderInput, Prisma.OrderUncheckedUpdateWithoutReturnToGodownOrderInput>;
+};
+export type OrderUpdateWithoutReturnToGodownOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput;
+    saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput;
+};
+export type OrderUncheckedUpdateWithoutReturnToGodownOrderInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
+    engineerId?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput;
 };
 export type OrderCreateManyEngineerInput = {
     id?: string;
@@ -346,12 +486,16 @@ export type OrderUpdateWithoutEngineerInput = {
     orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUpdateOneWithoutOrderNestedInput;
 };
 export type OrderUncheckedUpdateWithoutEngineerInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput;
+    returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput;
 };
 export type OrderUncheckedUpdateManyWithoutEngineerInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -365,6 +509,8 @@ export type OrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
     createdAt?: boolean;
     engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>;
     saleOrder?: boolean | Prisma.Order$saleOrderArgs<ExtArgs>;
+    warrantyAmcOrder?: boolean | Prisma.Order$warrantyAmcOrderArgs<ExtArgs>;
+    returnToGodownOrder?: boolean | Prisma.Order$returnToGodownOrderArgs<ExtArgs>;
 }, ExtArgs["result"]["order"]>;
 export type OrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
@@ -390,6 +536,8 @@ export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
 export type OrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>;
     saleOrder?: boolean | Prisma.Order$saleOrderArgs<ExtArgs>;
+    warrantyAmcOrder?: boolean | Prisma.Order$warrantyAmcOrderArgs<ExtArgs>;
+    returnToGodownOrder?: boolean | Prisma.Order$returnToGodownOrderArgs<ExtArgs>;
 };
 export type OrderIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>;
@@ -402,6 +550,8 @@ export type $OrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     objects: {
         engineer: Prisma.$EngineerPayload<ExtArgs>;
         saleOrder: Prisma.$SaleOrderPayload<ExtArgs> | null;
+        warrantyAmcOrder: Prisma.$WarrantyAmcOrderPayload<ExtArgs> | null;
+        returnToGodownOrder: Prisma.$ReturnToGodownOrderPayload<ExtArgs> | null;
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -462,6 +612,8 @@ export interface Prisma__OrderClient<T, Null = never, ExtArgs extends runtime.Ty
     readonly [Symbol.toStringTag]: "PrismaPromise";
     engineer<T extends Prisma.EngineerDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EngineerDefaultArgs<ExtArgs>>): Prisma.Prisma__EngineerClient<runtime.Types.Result.GetResult<Prisma.$EngineerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
     saleOrder<T extends Prisma.Order$saleOrderArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Order$saleOrderArgs<ExtArgs>>): Prisma.Prisma__SaleOrderClient<runtime.Types.Result.GetResult<Prisma.$SaleOrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    warrantyAmcOrder<T extends Prisma.Order$warrantyAmcOrderArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Order$warrantyAmcOrderArgs<ExtArgs>>): Prisma.Prisma__WarrantyAmcOrderClient<runtime.Types.Result.GetResult<Prisma.$WarrantyAmcOrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    returnToGodownOrder<T extends Prisma.Order$returnToGodownOrderArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Order$returnToGodownOrderArgs<ExtArgs>>): Prisma.Prisma__ReturnToGodownOrderClient<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
     then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
     catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
     finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
@@ -577,6 +729,18 @@ export type Order$saleOrderArgs<ExtArgs extends runtime.Types.Extensions.Interna
     omit?: Prisma.SaleOrderOmit<ExtArgs> | null;
     include?: Prisma.SaleOrderInclude<ExtArgs> | null;
     where?: Prisma.SaleOrderWhereInput;
+};
+export type Order$warrantyAmcOrderArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.WarrantyAmcOrderSelect<ExtArgs> | null;
+    omit?: Prisma.WarrantyAmcOrderOmit<ExtArgs> | null;
+    include?: Prisma.WarrantyAmcOrderInclude<ExtArgs> | null;
+    where?: Prisma.WarrantyAmcOrderWhereInput;
+};
+export type Order$returnToGodownOrderArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.ReturnToGodownOrderSelect<ExtArgs> | null;
+    omit?: Prisma.ReturnToGodownOrderOmit<ExtArgs> | null;
+    include?: Prisma.ReturnToGodownOrderInclude<ExtArgs> | null;
+    where?: Prisma.ReturnToGodownOrderWhereInput;
 };
 export type OrderDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     select?: Prisma.OrderSelect<ExtArgs> | null;

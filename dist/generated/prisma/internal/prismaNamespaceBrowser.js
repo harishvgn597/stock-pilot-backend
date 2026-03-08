@@ -17,7 +17,9 @@ export const ModelName = {
     Engineer: 'Engineer',
     EngineerStock: 'EngineerStock',
     Order: 'Order',
-    SaleOrder: 'SaleOrder'
+    SaleOrder: 'SaleOrder',
+    WarrantyAmcOrder: 'WarrantyAmcOrder',
+    ReturnToGodownOrder: 'ReturnToGodownOrder'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
     ReadUncommitted: 'ReadUncommitted',
@@ -107,6 +109,28 @@ export const SaleOrderScalarFieldEnum = {
     quantity: 'quantity',
     spareType: 'spareType',
     price: 'price',
+    createdAt: 'createdAt'
+};
+export const WarrantyAmcOrderScalarFieldEnum = {
+    id: 'id',
+    orderId: 'orderId',
+    ticketNumber: 'ticketNumber',
+    customerName: 'customerName',
+    date: 'date',
+    materialCode: 'materialCode',
+    description: 'description',
+    quantity: 'quantity',
+    spareType: 'spareType',
+    createdAt: 'createdAt'
+};
+export const ReturnToGodownOrderScalarFieldEnum = {
+    id: 'id',
+    orderId: 'orderId',
+    referenceNumber: 'referenceNumber',
+    date: 'date',
+    materialCode: 'materialCode',
+    description: 'description',
+    quantity: 'quantity',
     createdAt: 'createdAt'
 };
 export const SortOrder = {

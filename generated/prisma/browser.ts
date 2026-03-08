@@ -62,3 +62,13 @@ export type Order = Prisma.OrderModel
  * 
  */
 export type SaleOrder = Prisma.SaleOrderModel
+/**
+ * Model WarrantyAmcOrder
+ * 
+ */
+export type WarrantyAmcOrder = Prisma.WarrantyAmcOrderModel
+/**
+ * Model ReturnToGodownOrder
+ * 
+ */
+export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel

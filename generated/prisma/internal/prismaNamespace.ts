@@ -392,7 +392,9 @@ export const ModelName = {
   Engineer: 'Engineer',
   EngineerStock: 'EngineerStock',
   Order: 'Order',
-  SaleOrder: 'SaleOrder'
+  SaleOrder: 'SaleOrder',
+  WarrantyAmcOrder: 'WarrantyAmcOrder',
+  ReturnToGodownOrder: 'ReturnToGodownOrder'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -408,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder"
+    modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1078,6 +1080,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    WarrantyAmcOrder: {
+      payload: Prisma.$WarrantyAmcOrderPayload<ExtArgs>
+      fields: Prisma.WarrantyAmcOrderFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.WarrantyAmcOrderFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.WarrantyAmcOrderFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        findFirst: {
+          args: Prisma.WarrantyAmcOrderFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.WarrantyAmcOrderFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        findMany: {
+          args: Prisma.WarrantyAmcOrderFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>[]
+        }
+        create: {
+          args: Prisma.WarrantyAmcOrderCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        createMany: {
+          args: Prisma.WarrantyAmcOrderCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.WarrantyAmcOrderCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>[]
+        }
+        delete: {
+          args: Prisma.WarrantyAmcOrderDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        update: {
+          args: Prisma.WarrantyAmcOrderUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        deleteMany: {
+          args: Prisma.WarrantyAmcOrderDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.WarrantyAmcOrderUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.WarrantyAmcOrderUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>[]
+        }
+        upsert: {
+          args: Prisma.WarrantyAmcOrderUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WarrantyAmcOrderPayload>
+        }
+        aggregate: {
+          args: Prisma.WarrantyAmcOrderAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateWarrantyAmcOrder>
+        }
+        groupBy: {
+          args: Prisma.WarrantyAmcOrderGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WarrantyAmcOrderGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.WarrantyAmcOrderCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WarrantyAmcOrderCountAggregateOutputType> | number
+        }
+      }
+    }
+    ReturnToGodownOrder: {
+      payload: Prisma.$ReturnToGodownOrderPayload<ExtArgs>
+      fields: Prisma.ReturnToGodownOrderFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ReturnToGodownOrderFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ReturnToGodownOrderFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        findFirst: {
+          args: Prisma.ReturnToGodownOrderFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ReturnToGodownOrderFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        findMany: {
+          args: Prisma.ReturnToGodownOrderFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>[]
+        }
+        create: {
+          args: Prisma.ReturnToGodownOrderCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        createMany: {
+          args: Prisma.ReturnToGodownOrderCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ReturnToGodownOrderCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>[]
+        }
+        delete: {
+          args: Prisma.ReturnToGodownOrderDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        update: {
+          args: Prisma.ReturnToGodownOrderUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        deleteMany: {
+          args: Prisma.ReturnToGodownOrderDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ReturnToGodownOrderUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ReturnToGodownOrderUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>[]
+        }
+        upsert: {
+          args: Prisma.ReturnToGodownOrderUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ReturnToGodownOrderPayload>
+        }
+        aggregate: {
+          args: Prisma.ReturnToGodownOrderAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateReturnToGodownOrder>
+        }
+        groupBy: {
+          args: Prisma.ReturnToGodownOrderGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ReturnToGodownOrderGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ReturnToGodownOrderCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ReturnToGodownOrderCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1235,6 +1385,36 @@ export const SaleOrderScalarFieldEnum = {
 } as const
 
 export type SaleOrderScalarFieldEnum = (typeof SaleOrderScalarFieldEnum)[keyof typeof SaleOrderScalarFieldEnum]
+
+
+export const WarrantyAmcOrderScalarFieldEnum = {
+  id: 'id',
+  orderId: 'orderId',
+  ticketNumber: 'ticketNumber',
+  customerName: 'customerName',
+  date: 'date',
+  materialCode: 'materialCode',
+  description: 'description',
+  quantity: 'quantity',
+  spareType: 'spareType',
+  createdAt: 'createdAt'
+} as const
+
+export type WarrantyAmcOrderScalarFieldEnum = (typeof WarrantyAmcOrderScalarFieldEnum)[keyof typeof WarrantyAmcOrderScalarFieldEnum]
+
+
+export const ReturnToGodownOrderScalarFieldEnum = {
+  id: 'id',
+  orderId: 'orderId',
+  referenceNumber: 'referenceNumber',
+  date: 'date',
+  materialCode: 'materialCode',
+  description: 'description',
+  quantity: 'quantity',
+  createdAt: 'createdAt'
+} as const
+
+export type ReturnToGodownOrderScalarFieldEnum = (typeof ReturnToGodownOrderScalarFieldEnum)[keyof typeof ReturnToGodownOrderScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1454,6 +1634,8 @@ export type GlobalOmitConfig = {
   engineerStock?: Prisma.EngineerStockOmit
   order?: Prisma.OrderOmit
   saleOrder?: Prisma.SaleOrderOmit
+  warrantyAmcOrder?: Prisma.WarrantyAmcOrderOmit
+  returnToGodownOrder?: Prisma.ReturnToGodownOrderOmit
 }
 
 /* Types for Logging */

@@ -15,3 +15,5 @@ export type Engineer = Prisma.EngineerModel;
 export type EngineerStock = Prisma.EngineerStockModel;
 export type Order = Prisma.OrderModel;
 export type SaleOrder = Prisma.SaleOrderModel;
+export type WarrantyAmcOrder = Prisma.WarrantyAmcOrderModel;
+export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel;

@@ -59,6 +59,7 @@ export const InvoiceScalarFieldEnum = {
     invoiceNumber: 'invoiceNumber',
     invoiceDate: 'invoiceDate',
     customerName: 'customerName',
+    franchiseeId: 'franchiseeId',
     createdAt: 'createdAt'
 };
 export const InvoiceItemScalarFieldEnum = {
@@ -83,6 +84,7 @@ export const EngineerScalarFieldEnum = {
     email: 'email',
     phoneNumber: 'phoneNumber',
     specialization: 'specialization',
+    franchiseeId: 'franchiseeId',
     createdAt: 'createdAt'
 };
 export const EngineerStockScalarFieldEnum = {
@@ -96,6 +98,7 @@ export const OrderScalarFieldEnum = {
     id: 'id',
     orderType: 'orderType',
     engineerId: 'engineerId',
+    franchiseeId: 'franchiseeId',
     createdAt: 'createdAt'
 };
 export const SaleOrderScalarFieldEnum = {

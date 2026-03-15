@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Patch, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { InvoicesService } from './invoices.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
 import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
@@ -19,14 +20,14 @@ let InvoicesController = class InvoicesController {
     constructor(invoicesService) {
         this.invoicesService = invoicesService;
     }
-    findAll() {
-        return this.invoicesService.findAll();
+    findAll(req) {
+        return this.invoicesService.findAll(req.user.userId);
     }
-    findByNumber(invoiceNumber) {
-        return this.invoicesService.findByNumber(invoiceNumber);
+    findByNumber(invoiceNumber, req) {
+        return this.invoicesService.findByNumber(invoiceNumber, req.user.userId);
     }
-    create(createInvoiceDto) {
-        return this.invoicesService.create(createInvoiceDto);
+    create(createInvoiceDto, req) {
+        return this.invoicesService.create(createInvoiceDto, req.user.userId);
     }
     updateItem(id, updateDto) {
         return this.invoicesService.updateItem(id, updateDto);
@@ -34,22 +35,25 @@ let InvoicesController = class InvoicesController {
 };
 __decorate([
     Get(),
+    __param(0, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], InvoicesController.prototype, "findAll", null);
 __decorate([
     Get(':invoiceNumber'),
     __param(0, Param('invoiceNumber')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], InvoicesController.prototype, "findByNumber", null);
 __decorate([
     Post(),
     __param(0, Body()),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [CreateInvoiceDto]),
+    __metadata("design:paramtypes", [CreateInvoiceDto, Object]),
     __metadata("design:returntype", void 0)
 ], InvoicesController.prototype, "create", null);
 __decorate([
@@ -61,6 +65,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], InvoicesController.prototype, "updateItem", null);
 InvoicesController = __decorate([
+    UseGuards(JwtAuthGuard),
     Controller('invoices'),
     __metadata("design:paramtypes", [InvoicesService])
 ], InvoicesController);

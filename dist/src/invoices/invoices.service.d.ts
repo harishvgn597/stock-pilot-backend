@@ -4,7 +4,7 @@ import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 export declare class InvoicesService {
     private readonly prisma;
     constructor(prisma: PrismaService);
-    findAll(): Promise<({
+    findAll(franchiseeId: string): Promise<({
         items: {
             id: string;
             materialCode: string;
@@ -25,8 +25,9 @@ export declare class InvoicesService {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     })[]>;
-    findByNumber(invoiceNumber: string): Promise<{
+    findByNumber(invoiceNumber: string, franchiseeId: string): Promise<{
         items: {
             id: string;
             materialCode: string;
@@ -47,8 +48,9 @@ export declare class InvoicesService {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     }>;
-    create(dto: CreateInvoiceDto): Promise<{
+    create(dto: CreateInvoiceDto, franchiseeId: string): Promise<{
         items: {
             id: string;
             materialCode: string;
@@ -69,6 +71,7 @@ export declare class InvoicesService {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     }>;
     updateItem(id: string, dto: UpdateInvoiceItemDto): Promise<{
         id: string;

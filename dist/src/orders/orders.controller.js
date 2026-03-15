@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { OrdersService } from './orders.service.js';
 import { CreateSaleOrderDto } from './dto/create-sale-order.dto.js';
 import { CreateWarrantyAmcOrderDto } from './dto/create-warranty-amc-order.dto.js';
@@ -20,125 +21,138 @@ let OrdersController = class OrdersController {
     constructor(ordersService) {
         this.ordersService = ordersService;
     }
-    createSale(dto) {
-        return this.ordersService.createSale(dto);
+    createSale(dto, req) {
+        return this.ordersService.createSale(dto, req.user.userId);
     }
-    findAllSales() {
-        return this.ordersService.findAllSales();
+    findAllSales(req) {
+        return this.ordersService.findAllSales(req.user.userId);
     }
-    findSaleByBillNumber(billNumber) {
-        return this.ordersService.findSaleByBillNumber(billNumber);
+    findSaleByBillNumber(billNumber, req) {
+        return this.ordersService.findSaleByBillNumber(billNumber, req.user.userId);
     }
-    findSalesByEngineer(engineerId) {
-        return this.ordersService.findSalesByEngineer(engineerId);
+    findSalesByEngineer(engineerId, req) {
+        return this.ordersService.findSalesByEngineer(engineerId, req.user.userId);
     }
-    createWarrantyAmc(dto) {
-        return this.ordersService.createWarrantyAmc(dto);
+    createWarrantyAmc(dto, req) {
+        return this.ordersService.createWarrantyAmc(dto, req.user.userId);
     }
-    findAllWarrantyAmc() {
-        return this.ordersService.findAllWarrantyAmc();
+    findAllWarrantyAmc(req) {
+        return this.ordersService.findAllWarrantyAmc(req.user.userId);
     }
-    findWarrantyAmcByTicket(ticketNumber) {
-        return this.ordersService.findWarrantyAmcByTicket(ticketNumber);
+    findWarrantyAmcByTicket(ticketNumber, req) {
+        return this.ordersService.findWarrantyAmcByTicket(ticketNumber, req.user.userId);
     }
-    findWarrantyAmcByEngineer(engineerId) {
-        return this.ordersService.findWarrantyAmcByEngineer(engineerId);
+    findWarrantyAmcByEngineer(engineerId, req) {
+        return this.ordersService.findWarrantyAmcByEngineer(engineerId, req.user.userId);
     }
-    createReturnToGodown(dto) {
-        return this.ordersService.createReturnToGodown(dto);
+    createReturnToGodown(dto, req) {
+        return this.ordersService.createReturnToGodown(dto, req.user.userId);
     }
-    findAllReturnToGodown() {
-        return this.ordersService.findAllReturnToGodown();
+    findAllReturnToGodown(req) {
+        return this.ordersService.findAllReturnToGodown(req.user.userId);
     }
-    findReturnToGodownByRef(referenceNumber) {
-        return this.ordersService.findReturnToGodownByRef(referenceNumber);
+    findReturnToGodownByRef(referenceNumber, req) {
+        return this.ordersService.findReturnToGodownByRef(referenceNumber, req.user.userId);
     }
-    findReturnToGodownByEngineer(engineerId) {
-        return this.ordersService.findReturnToGodownByEngineer(engineerId);
+    findReturnToGodownByEngineer(engineerId, req) {
+        return this.ordersService.findReturnToGodownByEngineer(engineerId, req.user.userId);
     }
 };
 __decorate([
     Post('sale'),
     __param(0, Body()),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [CreateSaleOrderDto]),
+    __metadata("design:paramtypes", [CreateSaleOrderDto, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "createSale", null);
 __decorate([
     Get('sale'),
+    __param(0, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findAllSales", null);
 __decorate([
     Get('sale/:billNumber'),
     __param(0, Param('billNumber')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findSaleByBillNumber", null);
 __decorate([
     Get('engineer/:engineerId/sales'),
     __param(0, Param('engineerId')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findSalesByEngineer", null);
 __decorate([
     Post('warranty-amc'),
     __param(0, Body()),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [CreateWarrantyAmcOrderDto]),
+    __metadata("design:paramtypes", [CreateWarrantyAmcOrderDto, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "createWarrantyAmc", null);
 __decorate([
     Get('warranty-amc'),
+    __param(0, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findAllWarrantyAmc", null);
 __decorate([
     Get('warranty-amc/:ticketNumber'),
     __param(0, Param('ticketNumber')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findWarrantyAmcByTicket", null);
 __decorate([
     Get('engineer/:engineerId/warranty-amc'),
     __param(0, Param('engineerId')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findWarrantyAmcByEngineer", null);
 __decorate([
     Post('return-to-godown'),
     __param(0, Body()),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [CreateReturnToGodownOrderDto]),
+    __metadata("design:paramtypes", [CreateReturnToGodownOrderDto, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "createReturnToGodown", null);
 __decorate([
     Get('return-to-godown'),
+    __param(0, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findAllReturnToGodown", null);
 __decorate([
     Get('return-to-godown/:referenceNumber'),
     __param(0, Param('referenceNumber')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findReturnToGodownByRef", null);
 __decorate([
     Get('engineer/:engineerId/return-to-godown'),
     __param(0, Param('engineerId')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], OrdersController.prototype, "findReturnToGodownByEngineer", null);
 OrdersController = __decorate([
+    UseGuards(JwtAuthGuard),
     Controller('orders'),
     __metadata("design:paramtypes", [OrdersService])
 ], OrdersController);

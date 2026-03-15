@@ -14,29 +14,21 @@ let OrdersService = class OrdersService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async createSale(dto) {
-        const engineer = await this.prisma.engineer.findUnique({
-            where: { id: dto.engineerId },
-        });
-        if (!engineer) {
+    async createSale(dto, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: dto.engineerId, franchiseeId } });
+        if (!engineer)
             throw new NotFoundException(`Engineer with id ${dto.engineerId} not found`);
-        }
-        const material = await this.prisma.material.findUnique({
-            where: { materialCode: dto.materialCode },
-        });
-        if (!material) {
+        const material = await this.prisma.material.findUnique({ where: { materialCode: dto.materialCode } });
+        if (!material)
             throw new NotFoundException(`Material with code ${dto.materialCode} not found`);
-        }
-        const existing = await this.prisma.saleOrder.findUnique({
-            where: { billNumber: dto.billNumber },
-        });
-        if (existing) {
+        const existing = await this.prisma.saleOrder.findUnique({ where: { billNumber: dto.billNumber } });
+        if (existing)
             throw new ConflictException(`Bill number ${dto.billNumber} already exists`);
-        }
         return this.prisma.order.create({
             data: {
                 orderType: 'Sale',
                 engineerId: dto.engineerId,
+                franchiseeId,
                 saleOrder: {
                     create: {
                         billNumber: dto.billNumber,
@@ -52,72 +44,55 @@ let OrdersService = class OrdersService {
                 },
             },
             include: {
-                engineer: {
-                    select: { id: true, name: true, email: true },
-                },
+                engineer: { select: { id: true, name: true, email: true } },
                 saleOrder: true,
             },
         });
     }
-    async findAllSales() {
+    async findAllSales(franchiseeId) {
         return this.prisma.saleOrder.findMany({
+            where: { order: { franchiseeId } },
             include: {
                 order: {
                     include: {
-                        engineer: {
-                            select: { id: true, name: true, email: true, phoneNumber: true },
-                        },
+                        engineer: { select: { id: true, name: true, email: true, phoneNumber: true } },
                     },
                 },
-                material: {
-                    select: { materialCode: true, description: true, materialGroup: true },
-                },
+                material: { select: { materialCode: true, description: true, materialGroup: true } },
             },
             orderBy: { dateOfSale: 'desc' },
         });
     }
-    async findSaleByBillNumber(billNumber) {
-        const sale = await this.prisma.saleOrder.findUnique({
-            where: { billNumber },
+    async findSaleByBillNumber(billNumber, franchiseeId) {
+        const sale = await this.prisma.saleOrder.findFirst({
+            where: { billNumber, order: { franchiseeId } },
             include: {
                 order: {
                     include: {
-                        engineer: {
-                            select: { id: true, name: true, email: true, phoneNumber: true },
-                        },
+                        engineer: { select: { id: true, name: true, email: true, phoneNumber: true } },
                     },
                 },
-                material: {
-                    select: { materialCode: true, description: true, materialGroup: true },
-                },
+                material: { select: { materialCode: true, description: true, materialGroup: true } },
             },
         });
-        if (!sale) {
+        if (!sale)
             throw new NotFoundException(`Sale order with bill number ${billNumber} not found`);
-        }
         return sale;
     }
-    async findSalesByEngineer(engineerId) {
-        const engineer = await this.prisma.engineer.findUnique({
-            where: { id: engineerId },
-        });
-        if (!engineer) {
+    async findSalesByEngineer(engineerId, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: engineerId, franchiseeId } });
+        if (!engineer)
             throw new NotFoundException(`Engineer with id ${engineerId} not found`);
-        }
         return this.prisma.saleOrder.findMany({
-            where: {
-                order: { engineerId },
-            },
+            where: { order: { engineerId, franchiseeId } },
             include: {
-                material: {
-                    select: { materialCode: true, description: true, materialGroup: true },
-                },
+                material: { select: { materialCode: true, description: true, materialGroup: true } },
             },
             orderBy: { dateOfSale: 'desc' },
         });
     }
-    async createWarrantyAmc(dto) {
-        const engineer = await this.prisma.engineer.findUnique({ where: { id: dto.engineerId } });
+    async createWarrantyAmc(dto, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: dto.engineerId, franchiseeId } });
         if (!engineer)
             throw new NotFoundException(`Engineer with id ${dto.engineerId} not found`);
         const material = await this.prisma.material.findUnique({ where: { materialCode: dto.materialCode } });
@@ -127,6 +102,7 @@ let OrdersService = class OrdersService {
             data: {
                 orderType: 'WarrantyAMC',
                 engineerId: dto.engineerId,
+                franchiseeId,
                 warrantyAmcOrder: {
                     create: {
                         ticketNumber: dto.ticketNumber,
@@ -145,8 +121,9 @@ let OrdersService = class OrdersService {
             },
         });
     }
-    async findAllWarrantyAmc() {
+    async findAllWarrantyAmc(franchiseeId) {
         return this.prisma.warrantyAmcOrder.findMany({
+            where: { order: { franchiseeId } },
             include: {
                 order: {
                     include: {
@@ -158,9 +135,9 @@ let OrdersService = class OrdersService {
             orderBy: { date: 'desc' },
         });
     }
-    async findWarrantyAmcByTicket(ticketNumber) {
+    async findWarrantyAmcByTicket(ticketNumber, franchiseeId) {
         const record = await this.prisma.warrantyAmcOrder.findFirst({
-            where: { ticketNumber },
+            where: { ticketNumber, order: { franchiseeId } },
             include: {
                 order: {
                     include: {
@@ -174,20 +151,20 @@ let OrdersService = class OrdersService {
             throw new NotFoundException(`Warranty/AMC order with ticket ${ticketNumber} not found`);
         return record;
     }
-    async findWarrantyAmcByEngineer(engineerId) {
-        const engineer = await this.prisma.engineer.findUnique({ where: { id: engineerId } });
+    async findWarrantyAmcByEngineer(engineerId, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: engineerId, franchiseeId } });
         if (!engineer)
             throw new NotFoundException(`Engineer with id ${engineerId} not found`);
         return this.prisma.warrantyAmcOrder.findMany({
-            where: { order: { engineerId } },
+            where: { order: { engineerId, franchiseeId } },
             include: {
                 material: { select: { materialCode: true, description: true, materialGroup: true } },
             },
             orderBy: { date: 'desc' },
         });
     }
-    async createReturnToGodown(dto) {
-        const engineer = await this.prisma.engineer.findUnique({ where: { id: dto.engineerId } });
+    async createReturnToGodown(dto, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: dto.engineerId, franchiseeId } });
         if (!engineer)
             throw new NotFoundException(`Engineer with id ${dto.engineerId} not found`);
         const material = await this.prisma.material.findUnique({ where: { materialCode: dto.materialCode } });
@@ -200,6 +177,7 @@ let OrdersService = class OrdersService {
             data: {
                 orderType: 'ReturnToServiceCenter',
                 engineerId: dto.engineerId,
+                franchiseeId,
                 returnToGodownOrder: {
                     create: {
                         referenceNumber: dto.referenceNumber,
@@ -216,8 +194,9 @@ let OrdersService = class OrdersService {
             },
         });
     }
-    async findAllReturnToGodown() {
+    async findAllReturnToGodown(franchiseeId) {
         return this.prisma.returnToGodownOrder.findMany({
+            where: { order: { franchiseeId } },
             include: {
                 order: {
                     include: {
@@ -229,9 +208,9 @@ let OrdersService = class OrdersService {
             orderBy: { date: 'desc' },
         });
     }
-    async findReturnToGodownByRef(referenceNumber) {
-        const record = await this.prisma.returnToGodownOrder.findUnique({
-            where: { referenceNumber },
+    async findReturnToGodownByRef(referenceNumber, franchiseeId) {
+        const record = await this.prisma.returnToGodownOrder.findFirst({
+            where: { referenceNumber, order: { franchiseeId } },
             include: {
                 order: {
                     include: {
@@ -245,12 +224,12 @@ let OrdersService = class OrdersService {
             throw new NotFoundException(`Return order with reference ${referenceNumber} not found`);
         return record;
     }
-    async findReturnToGodownByEngineer(engineerId) {
-        const engineer = await this.prisma.engineer.findUnique({ where: { id: engineerId } });
+    async findReturnToGodownByEngineer(engineerId, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({ where: { id: engineerId, franchiseeId } });
         if (!engineer)
             throw new NotFoundException(`Engineer with id ${engineerId} not found`);
         return this.prisma.returnToGodownOrder.findMany({
-            where: { order: { engineerId } },
+            where: { order: { engineerId, franchiseeId } },
             include: {
                 material: { select: { materialCode: true, description: true, materialGroup: true } },
             },

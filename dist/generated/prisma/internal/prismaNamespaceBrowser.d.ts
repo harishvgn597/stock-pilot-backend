@@ -66,6 +66,7 @@ export declare const InvoiceScalarFieldEnum: {
     readonly invoiceNumber: "invoiceNumber";
     readonly invoiceDate: "invoiceDate";
     readonly customerName: "customerName";
+    readonly franchiseeId: "franchiseeId";
     readonly createdAt: "createdAt";
 };
 export type InvoiceScalarFieldEnum = (typeof InvoiceScalarFieldEnum)[keyof typeof InvoiceScalarFieldEnum];
@@ -92,6 +93,7 @@ export declare const EngineerScalarFieldEnum: {
     readonly email: "email";
     readonly phoneNumber: "phoneNumber";
     readonly specialization: "specialization";
+    readonly franchiseeId: "franchiseeId";
     readonly createdAt: "createdAt";
 };
 export type EngineerScalarFieldEnum = (typeof EngineerScalarFieldEnum)[keyof typeof EngineerScalarFieldEnum];
@@ -107,6 +109,7 @@ export declare const OrderScalarFieldEnum: {
     readonly id: "id";
     readonly orderType: "orderType";
     readonly engineerId: "engineerId";
+    readonly franchiseeId: "franchiseeId";
     readonly createdAt: "createdAt";
 };
 export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum];

@@ -5,7 +5,7 @@ import { CreateReturnToGodownOrderDto } from './dto/create-return-to-godown-orde
 export declare class OrdersController {
     private readonly ordersService;
     constructor(ordersService: OrdersService);
-    createSale(dto: CreateSaleOrderDto): Promise<{
+    createSale(dto: CreateSaleOrderDto, req: any): Promise<{
         engineer: {
             id: string;
             name: string;
@@ -28,10 +28,11 @@ export declare class OrdersController {
     } & {
         id: string;
         createdAt: Date;
+        franchiseeId: string;
         engineerId: string;
         orderType: import("../../generated/prisma/enums.js").OrderType;
     }>;
-    findAllSales(): Promise<({
+    findAllSales(req: any): Promise<({
         material: {
             materialCode: string;
             description: string;
@@ -47,6 +48,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -64,7 +66,7 @@ export declare class OrdersController {
         ticketNumber: string | null;
         price: number;
     })[]>;
-    findSaleByBillNumber(billNumber: string): Promise<{
+    findSaleByBillNumber(billNumber: string, req: any): Promise<{
         material: {
             materialCode: string;
             description: string;
@@ -80,6 +82,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -97,7 +100,7 @@ export declare class OrdersController {
         ticketNumber: string | null;
         price: number;
     }>;
-    findSalesByEngineer(engineerId: string): Promise<({
+    findSalesByEngineer(engineerId: string, req: any): Promise<({
         material: {
             materialCode: string;
             description: string;
@@ -117,7 +120,7 @@ export declare class OrdersController {
         ticketNumber: string | null;
         price: number;
     })[]>;
-    createWarrantyAmc(dto: CreateWarrantyAmcOrderDto): Promise<{
+    createWarrantyAmc(dto: CreateWarrantyAmcOrderDto, req: any): Promise<{
         engineer: {
             id: string;
             name: string;
@@ -138,10 +141,11 @@ export declare class OrdersController {
     } & {
         id: string;
         createdAt: Date;
+        franchiseeId: string;
         engineerId: string;
         orderType: import("../../generated/prisma/enums.js").OrderType;
     }>;
-    findAllWarrantyAmc(): Promise<({
+    findAllWarrantyAmc(req: any): Promise<({
         material: {
             materialCode: string;
             description: string;
@@ -157,6 +161,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -172,7 +177,7 @@ export declare class OrdersController {
         ticketNumber: string;
         date: Date;
     })[]>;
-    findWarrantyAmcByTicket(ticketNumber: string): Promise<{
+    findWarrantyAmcByTicket(ticketNumber: string, req: any): Promise<{
         material: {
             materialCode: string;
             description: string;
@@ -188,6 +193,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -203,7 +209,7 @@ export declare class OrdersController {
         ticketNumber: string;
         date: Date;
     }>;
-    findWarrantyAmcByEngineer(engineerId: string): Promise<({
+    findWarrantyAmcByEngineer(engineerId: string, req: any): Promise<({
         material: {
             materialCode: string;
             description: string;
@@ -221,7 +227,7 @@ export declare class OrdersController {
         ticketNumber: string;
         date: Date;
     })[]>;
-    createReturnToGodown(dto: CreateReturnToGodownOrderDto): Promise<{
+    createReturnToGodown(dto: CreateReturnToGodownOrderDto, req: any): Promise<{
         engineer: {
             id: string;
             name: string;
@@ -240,10 +246,11 @@ export declare class OrdersController {
     } & {
         id: string;
         createdAt: Date;
+        franchiseeId: string;
         engineerId: string;
         orderType: import("../../generated/prisma/enums.js").OrderType;
     }>;
-    findAllReturnToGodown(): Promise<({
+    findAllReturnToGodown(req: any): Promise<({
         material: {
             materialCode: string;
             description: string;
@@ -259,6 +266,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -272,7 +280,7 @@ export declare class OrdersController {
         date: Date;
         referenceNumber: string;
     })[]>;
-    findReturnToGodownByRef(referenceNumber: string): Promise<{
+    findReturnToGodownByRef(referenceNumber: string, req: any): Promise<{
         material: {
             materialCode: string;
             description: string;
@@ -288,6 +296,7 @@ export declare class OrdersController {
         } & {
             id: string;
             createdAt: Date;
+            franchiseeId: string;
             engineerId: string;
             orderType: import("../../generated/prisma/enums.js").OrderType;
         };
@@ -301,7 +310,7 @@ export declare class OrdersController {
         date: Date;
         referenceNumber: string;
     }>;
-    findReturnToGodownByEngineer(engineerId: string): Promise<({
+    findReturnToGodownByEngineer(engineerId: string, req: any): Promise<({
         material: {
             materialCode: string;
             description: string;

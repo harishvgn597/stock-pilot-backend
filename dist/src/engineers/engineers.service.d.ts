@@ -4,7 +4,7 @@ import { AssignStockDto } from './dto/assign-stock.dto.js';
 export declare class EngineersService {
     private readonly prisma;
     constructor(prisma: PrismaService);
-    findAll(): Promise<{
+    findAll(franchiseeId: string): Promise<{
         id: string;
         name: string;
         email: string;
@@ -12,7 +12,7 @@ export declare class EngineersService {
         createdAt: Date;
         specialization: string | null;
     }[]>;
-    findById(id: string): Promise<{
+    findById(id: string, franchiseeId: string): Promise<{
         assignedGoods: {
             id: string;
             createdAt: Date;
@@ -29,9 +29,10 @@ export declare class EngineersService {
         email: string;
         phoneNumber: string | null;
         createdAt: Date;
+        franchiseeId: string;
         specialization: string | null;
     }>;
-    create(dto: CreateEngineerDto): Promise<{
+    create(dto: CreateEngineerDto, franchiseeId: string): Promise<{
         id: string;
         name: string;
         email: string;
@@ -53,7 +54,7 @@ export declare class EngineersService {
             name: string;
         };
     }>;
-    getStock(engineerId: string): Promise<{
+    getStock(engineerId: string, franchiseeId: string): Promise<{
         id: string;
         createdAt: Date;
         materialCode: string;

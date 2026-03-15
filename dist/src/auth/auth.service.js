@@ -8,11 +8,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '../prisma/prisma.service.js';
 let AuthService = class AuthService {
     prisma;
-    constructor(prisma) {
+    jwtService;
+    constructor(prisma, jwtService) {
         this.prisma = prisma;
+        this.jwtService = jwtService;
     }
     async login(dto) {
         const user = await this.prisma.user.findUnique({
@@ -24,13 +27,19 @@ let AuthService = class AuthService {
         if (user.password !== dto.password) {
             throw new UnauthorizedException('Invalid email or password');
         }
-        const { password, ...result } = user;
-        return result;
+        const payload = { sub: user.id, email: user.email };
+        const token = this.jwtService.sign(payload);
+        const { password, ...userInfo } = user;
+        return {
+            token,
+            user: userInfo,
+        };
     }
 };
 AuthService = __decorate([
     Injectable(),
-    __metadata("design:paramtypes", [PrismaService])
+    __metadata("design:paramtypes", [PrismaService,
+        JwtService])
 ], AuthService);
 export { AuthService };
 //# sourceMappingURL=auth.service.js.map

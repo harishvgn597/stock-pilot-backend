@@ -14,8 +14,9 @@ let InvoicesService = class InvoicesService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async findAll() {
+    async findAll(franchiseeId) {
         return this.prisma.invoice.findMany({
+            where: { franchiseeId },
             include: {
                 items: {
                     select: {
@@ -37,9 +38,9 @@ let InvoicesService = class InvoicesService {
             orderBy: { createdAt: 'desc' },
         });
     }
-    async findByNumber(invoiceNumber) {
-        const invoice = await this.prisma.invoice.findUnique({
-            where: { invoiceNumber },
+    async findByNumber(invoiceNumber, franchiseeId) {
+        const invoice = await this.prisma.invoice.findFirst({
+            where: { invoiceNumber, franchiseeId },
             include: {
                 items: {
                     select: {
@@ -64,7 +65,7 @@ let InvoicesService = class InvoicesService {
         }
         return invoice;
     }
-    async create(dto) {
+    async create(dto, franchiseeId) {
         const existing = await this.prisma.invoice.findUnique({
             where: { invoiceNumber: dto.invoiceNumber },
         });
@@ -76,6 +77,7 @@ let InvoicesService = class InvoicesService {
                 invoiceNumber: dto.invoiceNumber,
                 invoiceDate: new Date(dto.invoiceDate),
                 customerName: dto.customerName,
+                franchiseeId,
                 items: {
                     create: dto.items.map((item) => ({
                         materialCode: item.materialCode,

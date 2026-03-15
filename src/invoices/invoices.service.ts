@@ -8,8 +8,9 @@ export class InvoicesService {
   constructor(private readonly prisma: PrismaService) {}
 
   // GET /invoices — list all invoices with items
-  async findAll() {
+  async findAll(franchiseeId: string) {
     return this.prisma.invoice.findMany({
+      where: { franchiseeId },
       include: {
         items: {
           select: {
@@ -33,9 +34,9 @@ export class InvoicesService {
   }
 
   // GET /invoices/:invoiceNumber — get a single invoice by number
-  async findByNumber(invoiceNumber: string) {
-    const invoice = await this.prisma.invoice.findUnique({
-      where: { invoiceNumber },
+  async findByNumber(invoiceNumber: string, franchiseeId: string) {
+    const invoice = await this.prisma.invoice.findFirst({
+      where: { invoiceNumber, franchiseeId },
       include: {
         items: {
           select: {
@@ -64,7 +65,7 @@ export class InvoicesService {
   }
 
   // POST /invoices — create invoice with line items
-  async create(dto: CreateInvoiceDto) {
+  async create(dto: CreateInvoiceDto, franchiseeId: string) {
     const existing = await this.prisma.invoice.findUnique({
       where: { invoiceNumber: dto.invoiceNumber },
     });
@@ -78,6 +79,7 @@ export class InvoicesService {
         invoiceNumber: dto.invoiceNumber,
         invoiceDate: new Date(dto.invoiceDate),
         customerName: dto.customerName,
+        franchiseeId,
         items: {
           create: dto.items.map((item) => ({
             materialCode: item.materialCode,

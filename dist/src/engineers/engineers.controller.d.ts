@@ -4,7 +4,7 @@ import { AssignStockDto } from './dto/assign-stock.dto.js';
 export declare class EngineersController {
     private readonly engineersService;
     constructor(engineersService: EngineersService);
-    findAll(): Promise<{
+    findAll(req: any): Promise<{
         id: string;
         name: string;
         email: string;
@@ -12,7 +12,7 @@ export declare class EngineersController {
         createdAt: Date;
         specialization: string | null;
     }[]>;
-    findById(id: string): Promise<{
+    findById(id: string, req: any): Promise<{
         assignedGoods: {
             id: string;
             createdAt: Date;
@@ -29,9 +29,10 @@ export declare class EngineersController {
         email: string;
         phoneNumber: string | null;
         createdAt: Date;
+        franchiseeId: string;
         specialization: string | null;
     }>;
-    getStock(id: string): Promise<{
+    getStock(id: string, req: any): Promise<{
         id: string;
         createdAt: Date;
         materialCode: string;
@@ -41,7 +42,7 @@ export declare class EngineersController {
             materialGroup: string;
         };
     }[]>;
-    create(createEngineerDto: CreateEngineerDto): Promise<{
+    create(createEngineerDto: CreateEngineerDto, req: any): Promise<{
         id: string;
         name: string;
         email: string;

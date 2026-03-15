@@ -12,6 +12,7 @@ export type EngineerMinAggregateOutputType = {
     email: string | null;
     phoneNumber: string | null;
     specialization: string | null;
+    franchiseeId: string | null;
     createdAt: Date | null;
 };
 export type EngineerMaxAggregateOutputType = {
@@ -20,6 +21,7 @@ export type EngineerMaxAggregateOutputType = {
     email: string | null;
     phoneNumber: string | null;
     specialization: string | null;
+    franchiseeId: string | null;
     createdAt: Date | null;
 };
 export type EngineerCountAggregateOutputType = {
@@ -28,6 +30,7 @@ export type EngineerCountAggregateOutputType = {
     email: number;
     phoneNumber: number;
     specialization: number;
+    franchiseeId: number;
     createdAt: number;
     _all: number;
 };
@@ -37,6 +40,7 @@ export type EngineerMinAggregateInputType = {
     email?: true;
     phoneNumber?: true;
     specialization?: true;
+    franchiseeId?: true;
     createdAt?: true;
 };
 export type EngineerMaxAggregateInputType = {
@@ -45,6 +49,7 @@ export type EngineerMaxAggregateInputType = {
     email?: true;
     phoneNumber?: true;
     specialization?: true;
+    franchiseeId?: true;
     createdAt?: true;
 };
 export type EngineerCountAggregateInputType = {
@@ -53,6 +58,7 @@ export type EngineerCountAggregateInputType = {
     email?: true;
     phoneNumber?: true;
     specialization?: true;
+    franchiseeId?: true;
     createdAt?: true;
     _all?: true;
 };
@@ -86,6 +92,7 @@ export type EngineerGroupByOutputType = {
     email: string;
     phoneNumber: string | null;
     specialization: string | null;
+    franchiseeId: string;
     createdAt: Date;
     _count: EngineerCountAggregateOutputType | null;
     _min: EngineerMinAggregateOutputType | null;
@@ -103,6 +110,7 @@ export type EngineerWhereInput = {
     email?: Prisma.StringFilter<"Engineer"> | string;
     phoneNumber?: Prisma.StringNullableFilter<"Engineer"> | string | null;
     specialization?: Prisma.StringNullableFilter<"Engineer"> | string | null;
+    franchiseeId?: Prisma.StringFilter<"Engineer"> | string;
     createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string;
     assignedGoods?: Prisma.EngineerStockListRelationFilter;
     orders?: Prisma.OrderListRelationFilter;
@@ -113,6 +121,7 @@ export type EngineerOrderByWithRelationInput = {
     email?: Prisma.SortOrder;
     phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder;
     specialization?: Prisma.SortOrderInput | Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
     assignedGoods?: Prisma.EngineerStockOrderByRelationAggregateInput;
     orders?: Prisma.OrderOrderByRelationAggregateInput;
@@ -126,6 +135,7 @@ export type EngineerWhereUniqueInput = Prisma.AtLeast<{
     name?: Prisma.StringFilter<"Engineer"> | string;
     phoneNumber?: Prisma.StringNullableFilter<"Engineer"> | string | null;
     specialization?: Prisma.StringNullableFilter<"Engineer"> | string | null;
+    franchiseeId?: Prisma.StringFilter<"Engineer"> | string;
     createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string;
     assignedGoods?: Prisma.EngineerStockListRelationFilter;
     orders?: Prisma.OrderListRelationFilter;
@@ -136,6 +146,7 @@ export type EngineerOrderByWithAggregationInput = {
     email?: Prisma.SortOrder;
     phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder;
     specialization?: Prisma.SortOrderInput | Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
     _count?: Prisma.EngineerCountOrderByAggregateInput;
     _max?: Prisma.EngineerMaxOrderByAggregateInput;
@@ -150,6 +161,7 @@ export type EngineerScalarWhereWithAggregatesInput = {
     email?: Prisma.StringWithAggregatesFilter<"Engineer"> | string;
     phoneNumber?: Prisma.StringNullableWithAggregatesFilter<"Engineer"> | string | null;
     specialization?: Prisma.StringNullableWithAggregatesFilter<"Engineer"> | string | null;
+    franchiseeId?: Prisma.StringWithAggregatesFilter<"Engineer"> | string;
     createdAt?: Prisma.DateTimeWithAggregatesFilter<"Engineer"> | Date | string;
 };
 export type EngineerCreateInput = {
@@ -158,6 +170,7 @@ export type EngineerCreateInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput;
     orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput;
@@ -168,6 +181,7 @@ export type EngineerUncheckedCreateInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput;
@@ -178,6 +192,7 @@ export type EngineerUpdateInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput;
     orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput;
@@ -188,6 +203,7 @@ export type EngineerUncheckedUpdateInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput;
@@ -198,6 +214,7 @@ export type EngineerCreateManyInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
 };
 export type EngineerUpdateManyMutationInput = {
@@ -206,6 +223,7 @@ export type EngineerUpdateManyMutationInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type EngineerUncheckedUpdateManyInput = {
@@ -214,6 +232,7 @@ export type EngineerUncheckedUpdateManyInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 export type EngineerCountOrderByAggregateInput = {
@@ -222,6 +241,7 @@ export type EngineerCountOrderByAggregateInput = {
     email?: Prisma.SortOrder;
     phoneNumber?: Prisma.SortOrder;
     specialization?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
 };
 export type EngineerMaxOrderByAggregateInput = {
@@ -230,6 +250,7 @@ export type EngineerMaxOrderByAggregateInput = {
     email?: Prisma.SortOrder;
     phoneNumber?: Prisma.SortOrder;
     specialization?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
 };
 export type EngineerMinOrderByAggregateInput = {
@@ -238,6 +259,7 @@ export type EngineerMinOrderByAggregateInput = {
     email?: Prisma.SortOrder;
     phoneNumber?: Prisma.SortOrder;
     specialization?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
 };
 export type EngineerScalarRelationFilter = {
@@ -274,6 +296,7 @@ export type EngineerCreateWithoutAssignedGoodsInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput;
 };
@@ -283,6 +306,7 @@ export type EngineerUncheckedCreateWithoutAssignedGoodsInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput;
 };
@@ -305,6 +329,7 @@ export type EngineerUpdateWithoutAssignedGoodsInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput;
 };
@@ -314,6 +339,7 @@ export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput;
 };
@@ -323,6 +349,7 @@ export type EngineerCreateWithoutOrdersInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput;
 };
@@ -332,6 +359,7 @@ export type EngineerUncheckedCreateWithoutOrdersInput = {
     email: string;
     phoneNumber?: string | null;
     specialization?: string | null;
+    franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput;
 };
@@ -354,6 +382,7 @@ export type EngineerUpdateWithoutOrdersInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput;
 };
@@ -363,6 +392,7 @@ export type EngineerUncheckedUpdateWithoutOrdersInput = {
     email?: Prisma.StringFieldUpdateOperationsInput | string;
     phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput;
 };
@@ -389,6 +419,7 @@ export type EngineerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
     email?: boolean;
     phoneNumber?: boolean;
     specialization?: boolean;
+    franchiseeId?: boolean;
     createdAt?: boolean;
     assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>;
     orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>;
@@ -400,6 +431,7 @@ export type EngineerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
     email?: boolean;
     phoneNumber?: boolean;
     specialization?: boolean;
+    franchiseeId?: boolean;
     createdAt?: boolean;
 }, ExtArgs["result"]["engineer"]>;
 export type EngineerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -408,6 +440,7 @@ export type EngineerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
     email?: boolean;
     phoneNumber?: boolean;
     specialization?: boolean;
+    franchiseeId?: boolean;
     createdAt?: boolean;
 }, ExtArgs["result"]["engineer"]>;
 export type EngineerSelectScalar = {
@@ -416,9 +449,10 @@ export type EngineerSelectScalar = {
     email?: boolean;
     phoneNumber?: boolean;
     specialization?: boolean;
+    franchiseeId?: boolean;
     createdAt?: boolean;
 };
-export type EngineerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "specialization" | "createdAt", ExtArgs["result"]["engineer"]>;
+export type EngineerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "specialization" | "franchiseeId" | "createdAt", ExtArgs["result"]["engineer"]>;
 export type EngineerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>;
     orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>;
@@ -438,6 +472,7 @@ export type $EngineerPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
         email: string;
         phoneNumber: string | null;
         specialization: string | null;
+        franchiseeId: string;
         createdAt: Date;
     }, ExtArgs["result"]["engineer"]>;
     composites: {};
@@ -503,6 +538,7 @@ export interface EngineerFieldRefs {
     readonly email: Prisma.FieldRef<"Engineer", 'String'>;
     readonly phoneNumber: Prisma.FieldRef<"Engineer", 'String'>;
     readonly specialization: Prisma.FieldRef<"Engineer", 'String'>;
+    readonly franchiseeId: Prisma.FieldRef<"Engineer", 'String'>;
     readonly createdAt: Prisma.FieldRef<"Engineer", 'DateTime'>;
 }
 export type EngineerFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {

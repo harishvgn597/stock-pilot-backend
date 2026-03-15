@@ -7,9 +7,10 @@ import { AssignStockDto } from './dto/assign-stock.dto.js';
 export class EngineersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  // GET /engineers — list all engineers
-  async findAll() {
+  // GET /engineers — list all engineers for this franchisee
+  async findAll(franchiseeId: string) {
     return this.prisma.engineer.findMany({
+      where: { franchiseeId },
       select: {
         id: true,
         name: true,
@@ -23,9 +24,9 @@ export class EngineersService {
   }
 
   // GET /engineers/:id — get engineer with assigned stock
-  async findById(id: string) {
-    const engineer = await this.prisma.engineer.findUnique({
-      where: { id },
+  async findById(id: string, franchiseeId: string) {
+    const engineer = await this.prisma.engineer.findFirst({
+      where: { id, franchiseeId },
       include: {
         assignedGoods: {
           select: {
@@ -52,7 +53,7 @@ export class EngineersService {
   }
 
   // POST /engineers — create a new engineer
-  async create(dto: CreateEngineerDto) {
+  async create(dto: CreateEngineerDto, franchiseeId: string) {
     const existing = await this.prisma.engineer.findUnique({
       where: { email: dto.email },
     });
@@ -62,7 +63,7 @@ export class EngineersService {
     }
 
     return this.prisma.engineer.create({
-      data: dto,
+      data: { ...dto, franchiseeId },
       select: {
         id: true,
         name: true,
@@ -114,9 +115,9 @@ export class EngineersService {
   }
 
   // GET /engineers/:id/stock — get only stock for an engineer
-  async getStock(engineerId: string) {
-    const engineer = await this.prisma.engineer.findUnique({
-      where: { id: engineerId },
+  async getStock(engineerId: string, franchiseeId: string) {
+    const engineer = await this.prisma.engineer.findFirst({
+      where: { id: engineerId, franchiseeId },
     });
 
     if (!engineer) {

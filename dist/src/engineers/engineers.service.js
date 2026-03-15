@@ -14,8 +14,9 @@ let EngineersService = class EngineersService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async findAll() {
+    async findAll(franchiseeId) {
         return this.prisma.engineer.findMany({
+            where: { franchiseeId },
             select: {
                 id: true,
                 name: true,
@@ -27,9 +28,9 @@ let EngineersService = class EngineersService {
             orderBy: { createdAt: 'desc' },
         });
     }
-    async findById(id) {
-        const engineer = await this.prisma.engineer.findUnique({
-            where: { id },
+    async findById(id, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({
+            where: { id, franchiseeId },
             include: {
                 assignedGoods: {
                     select: {
@@ -52,7 +53,7 @@ let EngineersService = class EngineersService {
         }
         return engineer;
     }
-    async create(dto) {
+    async create(dto, franchiseeId) {
         const existing = await this.prisma.engineer.findUnique({
             where: { email: dto.email },
         });
@@ -60,7 +61,7 @@ let EngineersService = class EngineersService {
             throw new ConflictException(`Engineer with email ${dto.email} already exists`);
         }
         return this.prisma.engineer.create({
-            data: dto,
+            data: { ...dto, franchiseeId },
             select: {
                 id: true,
                 name: true,
@@ -104,9 +105,9 @@ let EngineersService = class EngineersService {
             },
         });
     }
-    async getStock(engineerId) {
-        const engineer = await this.prisma.engineer.findUnique({
-            where: { id: engineerId },
+    async getStock(engineerId, franchiseeId) {
+        const engineer = await this.prisma.engineer.findFirst({
+            where: { id: engineerId, franchiseeId },
         });
         if (!engineer) {
             throw new NotFoundException(`Engineer with id ${engineerId} not found`);

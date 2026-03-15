@@ -75,6 +75,7 @@ model Invoice {
   invoiceNumber String   @unique
   invoiceDate   DateTime
   customerName  String
+  franchiseeId  String
 
   createdAt DateTime @default(now())
 
@@ -110,6 +111,7 @@ model Engineer {
   email          String  @unique
   phoneNumber    String?
   specialization String?
+  franchiseeId   String
 
   createdAt DateTime @default(now())
 
@@ -134,10 +136,11 @@ model EngineerStock {
 // ─── Orders ──────────────────────────────────────────────────────────────────
 
 model Order {
-  id         String    @id @default(uuid())
-  orderType  OrderType
-  engineerId String
-  engineer   Engineer  @relation(fields: [engineerId], references: [id])
+  id           String    @id @default(uuid())
+  orderType    OrderType
+  engineerId   String
+  engineer     Engineer  @relation(fields: [engineerId], references: [id])
+  franchiseeId String
 
   createdAt DateTime @default(now())
 

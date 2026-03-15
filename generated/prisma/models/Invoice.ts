@@ -29,6 +29,7 @@ export type InvoiceMinAggregateOutputType = {
   invoiceNumber: string | null
   invoiceDate: Date | null
   customerName: string | null
+  franchiseeId: string | null
   createdAt: Date | null
 }
 
@@ -37,6 +38,7 @@ export type InvoiceMaxAggregateOutputType = {
   invoiceNumber: string | null
   invoiceDate: Date | null
   customerName: string | null
+  franchiseeId: string | null
   createdAt: Date | null
 }
 
@@ -45,6 +47,7 @@ export type InvoiceCountAggregateOutputType = {
   invoiceNumber: number
   invoiceDate: number
   customerName: number
+  franchiseeId: number
   createdAt: number
   _all: number
 }
@@ -55,6 +58,7 @@ export type InvoiceMinAggregateInputType = {
   invoiceNumber?: true
   invoiceDate?: true
   customerName?: true
+  franchiseeId?: true
   createdAt?: true
 }
 
@@ -63,6 +67,7 @@ export type InvoiceMaxAggregateInputType = {
   invoiceNumber?: true
   invoiceDate?: true
   customerName?: true
+  franchiseeId?: true
   createdAt?: true
 }
 
@@ -71,6 +76,7 @@ export type InvoiceCountAggregateInputType = {
   invoiceNumber?: true
   invoiceDate?: true
   customerName?: true
+  franchiseeId?: true
   createdAt?: true
   _all?: true
 }
@@ -152,6 +158,7 @@ export type InvoiceGroupByOutputType = {
   invoiceNumber: string
   invoiceDate: Date
   customerName: string
+  franchiseeId: string
   createdAt: Date
   _count: InvoiceCountAggregateOutputType | null
   _min: InvoiceMinAggregateOutputType | null
@@ -181,6 +188,7 @@ export type InvoiceWhereInput = {
   invoiceNumber?: Prisma.StringFilter<"Invoice"> | string
   invoiceDate?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   customerName?: Prisma.StringFilter<"Invoice"> | string
+  franchiseeId?: Prisma.StringFilter<"Invoice"> | string
   createdAt?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   items?: Prisma.InvoiceItemListRelationFilter
 }
@@ -190,6 +198,7 @@ export type InvoiceOrderByWithRelationInput = {
   invoiceNumber?: Prisma.SortOrder
   invoiceDate?: Prisma.SortOrder
   customerName?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   items?: Prisma.InvoiceItemOrderByRelationAggregateInput
 }
@@ -202,6 +211,7 @@ export type InvoiceWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.InvoiceWhereInput | Prisma.InvoiceWhereInput[]
   invoiceDate?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   customerName?: Prisma.StringFilter<"Invoice"> | string
+  franchiseeId?: Prisma.StringFilter<"Invoice"> | string
   createdAt?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   items?: Prisma.InvoiceItemListRelationFilter
 }, "id" | "invoiceNumber">
@@ -211,6 +221,7 @@ export type InvoiceOrderByWithAggregationInput = {
   invoiceNumber?: Prisma.SortOrder
   invoiceDate?: Prisma.SortOrder
   customerName?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.InvoiceCountOrderByAggregateInput
   _max?: Prisma.InvoiceMaxOrderByAggregateInput
@@ -225,6 +236,7 @@ export type InvoiceScalarWhereWithAggregatesInput = {
   invoiceNumber?: Prisma.StringWithAggregatesFilter<"Invoice"> | string
   invoiceDate?: Prisma.DateTimeWithAggregatesFilter<"Invoice"> | Date | string
   customerName?: Prisma.StringWithAggregatesFilter<"Invoice"> | string
+  franchiseeId?: Prisma.StringWithAggregatesFilter<"Invoice"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Invoice"> | Date | string
 }
 
@@ -233,6 +245,7 @@ export type InvoiceCreateInput = {
   invoiceNumber: string
   invoiceDate: Date | string
   customerName: string
+  franchiseeId: string
   createdAt?: Date | string
   items?: Prisma.InvoiceItemCreateNestedManyWithoutInvoiceInput
 }
@@ -242,6 +255,7 @@ export type InvoiceUncheckedCreateInput = {
   invoiceNumber: string
   invoiceDate: Date | string
   customerName: string
+  franchiseeId: string
   createdAt?: Date | string
   items?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutInvoiceInput
 }
@@ -251,6 +265,7 @@ export type InvoiceUpdateInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.InvoiceItemUpdateManyWithoutInvoiceNestedInput
 }
@@ -260,6 +275,7 @@ export type InvoiceUncheckedUpdateInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.InvoiceItemUncheckedUpdateManyWithoutInvoiceNestedInput
 }
@@ -269,6 +285,7 @@ export type InvoiceCreateManyInput = {
   invoiceNumber: string
   invoiceDate: Date | string
   customerName: string
+  franchiseeId: string
   createdAt?: Date | string
 }
 
@@ -277,6 +294,7 @@ export type InvoiceUpdateManyMutationInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -285,6 +303,7 @@ export type InvoiceUncheckedUpdateManyInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -293,6 +312,7 @@ export type InvoiceCountOrderByAggregateInput = {
   invoiceNumber?: Prisma.SortOrder
   invoiceDate?: Prisma.SortOrder
   customerName?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -301,6 +321,7 @@ export type InvoiceMaxOrderByAggregateInput = {
   invoiceNumber?: Prisma.SortOrder
   invoiceDate?: Prisma.SortOrder
   customerName?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -309,6 +330,7 @@ export type InvoiceMinOrderByAggregateInput = {
   invoiceNumber?: Prisma.SortOrder
   invoiceDate?: Prisma.SortOrder
   customerName?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -336,6 +358,7 @@ export type InvoiceCreateWithoutItemsInput = {
   invoiceNumber: string
   invoiceDate: Date | string
   customerName: string
+  franchiseeId: string
   createdAt?: Date | string
 }
 
@@ -344,6 +367,7 @@ export type InvoiceUncheckedCreateWithoutItemsInput = {
   invoiceNumber: string
   invoiceDate: Date | string
   customerName: string
+  franchiseeId: string
   createdAt?: Date | string
 }
 
@@ -368,6 +392,7 @@ export type InvoiceUpdateWithoutItemsInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -376,6 +401,7 @@ export type InvoiceUncheckedUpdateWithoutItemsInput = {
   invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
   invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -415,6 +441,7 @@ export type InvoiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   invoiceNumber?: boolean
   invoiceDate?: boolean
   customerName?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
   items?: boolean | Prisma.Invoice$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
@@ -425,6 +452,7 @@ export type InvoiceSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   invoiceNumber?: boolean
   invoiceDate?: boolean
   customerName?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["invoice"]>
 
@@ -433,6 +461,7 @@ export type InvoiceSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   invoiceNumber?: boolean
   invoiceDate?: boolean
   customerName?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["invoice"]>
 
@@ -441,10 +470,11 @@ export type InvoiceSelectScalar = {
   invoiceNumber?: boolean
   invoiceDate?: boolean
   customerName?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
 }
 
-export type InvoiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "invoiceNumber" | "invoiceDate" | "customerName" | "createdAt", ExtArgs["result"]["invoice"]>
+export type InvoiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "invoiceNumber" | "invoiceDate" | "customerName" | "franchiseeId" | "createdAt", ExtArgs["result"]["invoice"]>
 export type InvoiceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   items?: boolean | Prisma.Invoice$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
@@ -462,6 +492,7 @@ export type $InvoicePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     invoiceNumber: string
     invoiceDate: Date
     customerName: string
+    franchiseeId: string
     createdAt: Date
   }, ExtArgs["result"]["invoice"]>
   composites: {}
@@ -891,6 +922,7 @@ export interface InvoiceFieldRefs {
   readonly invoiceNumber: Prisma.FieldRef<"Invoice", 'String'>
   readonly invoiceDate: Prisma.FieldRef<"Invoice", 'DateTime'>
   readonly customerName: Prisma.FieldRef<"Invoice", 'String'>
+  readonly franchiseeId: Prisma.FieldRef<"Invoice", 'String'>
   readonly createdAt: Prisma.FieldRef<"Invoice", 'DateTime'>
 }
     

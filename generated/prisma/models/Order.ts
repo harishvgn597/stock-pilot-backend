@@ -28,6 +28,7 @@ export type OrderMinAggregateOutputType = {
   id: string | null
   orderType: $Enums.OrderType | null
   engineerId: string | null
+  franchiseeId: string | null
   createdAt: Date | null
 }
 
@@ -35,6 +36,7 @@ export type OrderMaxAggregateOutputType = {
   id: string | null
   orderType: $Enums.OrderType | null
   engineerId: string | null
+  franchiseeId: string | null
   createdAt: Date | null
 }
 
@@ -42,6 +44,7 @@ export type OrderCountAggregateOutputType = {
   id: number
   orderType: number
   engineerId: number
+  franchiseeId: number
   createdAt: number
   _all: number
 }
@@ -51,6 +54,7 @@ export type OrderMinAggregateInputType = {
   id?: true
   orderType?: true
   engineerId?: true
+  franchiseeId?: true
   createdAt?: true
 }
 
@@ -58,6 +62,7 @@ export type OrderMaxAggregateInputType = {
   id?: true
   orderType?: true
   engineerId?: true
+  franchiseeId?: true
   createdAt?: true
 }
 
@@ -65,6 +70,7 @@ export type OrderCountAggregateInputType = {
   id?: true
   orderType?: true
   engineerId?: true
+  franchiseeId?: true
   createdAt?: true
   _all?: true
 }
@@ -145,6 +151,7 @@ export type OrderGroupByOutputType = {
   id: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt: Date
   _count: OrderCountAggregateOutputType | null
   _min: OrderMinAggregateOutputType | null
@@ -173,6 +180,7 @@ export type OrderWhereInput = {
   id?: Prisma.StringFilter<"Order"> | string
   orderType?: Prisma.EnumOrderTypeFilter<"Order"> | $Enums.OrderType
   engineerId?: Prisma.StringFilter<"Order"> | string
+  franchiseeId?: Prisma.StringFilter<"Order"> | string
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   engineer?: Prisma.XOR<Prisma.EngineerScalarRelationFilter, Prisma.EngineerWhereInput>
   saleOrder?: Prisma.XOR<Prisma.SaleOrderNullableScalarRelationFilter, Prisma.SaleOrderWhereInput> | null
@@ -184,6 +192,7 @@ export type OrderOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   orderType?: Prisma.SortOrder
   engineerId?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   engineer?: Prisma.EngineerOrderByWithRelationInput
   saleOrder?: Prisma.SaleOrderOrderByWithRelationInput
@@ -198,6 +207,7 @@ export type OrderWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.OrderWhereInput | Prisma.OrderWhereInput[]
   orderType?: Prisma.EnumOrderTypeFilter<"Order"> | $Enums.OrderType
   engineerId?: Prisma.StringFilter<"Order"> | string
+  franchiseeId?: Prisma.StringFilter<"Order"> | string
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   engineer?: Prisma.XOR<Prisma.EngineerScalarRelationFilter, Prisma.EngineerWhereInput>
   saleOrder?: Prisma.XOR<Prisma.SaleOrderNullableScalarRelationFilter, Prisma.SaleOrderWhereInput> | null
@@ -209,6 +219,7 @@ export type OrderOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   orderType?: Prisma.SortOrder
   engineerId?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.OrderCountOrderByAggregateInput
   _max?: Prisma.OrderMaxOrderByAggregateInput
@@ -222,12 +233,14 @@ export type OrderScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Order"> | string
   orderType?: Prisma.EnumOrderTypeWithAggregatesFilter<"Order"> | $Enums.OrderType
   engineerId?: Prisma.StringWithAggregatesFilter<"Order"> | string
+  franchiseeId?: Prisma.StringWithAggregatesFilter<"Order"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Order"> | Date | string
 }
 
 export type OrderCreateInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput
   saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput
@@ -239,6 +252,7 @@ export type OrderUncheckedCreateInput = {
   id?: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt?: Date | string
   saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput
@@ -248,6 +262,7 @@ export type OrderUncheckedCreateInput = {
 export type OrderUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput
   saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput
@@ -259,6 +274,7 @@ export type OrderUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
   engineerId?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput
@@ -269,12 +285,14 @@ export type OrderCreateManyInput = {
   id?: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt?: Date | string
 }
 
 export type OrderUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -282,6 +300,7 @@ export type OrderUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
   engineerId?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -299,6 +318,7 @@ export type OrderCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   orderType?: Prisma.SortOrder
   engineerId?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -306,6 +326,7 @@ export type OrderMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   orderType?: Prisma.SortOrder
   engineerId?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -313,6 +334,7 @@ export type OrderMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   orderType?: Prisma.SortOrder
   engineerId?: Prisma.SortOrder
+  franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -412,6 +434,7 @@ export type OrderUpdateOneRequiredWithoutReturnToGodownOrderNestedInput = {
 export type OrderCreateWithoutEngineerInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput
@@ -421,6 +444,7 @@ export type OrderCreateWithoutEngineerInput = {
 export type OrderUncheckedCreateWithoutEngineerInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput
@@ -460,12 +484,14 @@ export type OrderScalarWhereInput = {
   id?: Prisma.StringFilter<"Order"> | string
   orderType?: Prisma.EnumOrderTypeFilter<"Order"> | $Enums.OrderType
   engineerId?: Prisma.StringFilter<"Order"> | string
+  franchiseeId?: Prisma.StringFilter<"Order"> | string
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
 }
 
 export type OrderCreateWithoutSaleOrderInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderCreateNestedOneWithoutOrderInput
@@ -476,6 +502,7 @@ export type OrderUncheckedCreateWithoutSaleOrderInput = {
   id?: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt?: Date | string
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput
   returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput
@@ -500,6 +527,7 @@ export type OrderUpdateToOneWithWhereWithoutSaleOrderInput = {
 export type OrderUpdateWithoutSaleOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput
@@ -510,6 +538,7 @@ export type OrderUncheckedUpdateWithoutSaleOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
   engineerId?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput
   returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput
@@ -518,6 +547,7 @@ export type OrderUncheckedUpdateWithoutSaleOrderInput = {
 export type OrderCreateWithoutWarrantyAmcOrderInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput
   saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput
@@ -528,6 +558,7 @@ export type OrderUncheckedCreateWithoutWarrantyAmcOrderInput = {
   id?: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt?: Date | string
   saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput
   returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedCreateNestedOneWithoutOrderInput
@@ -552,6 +583,7 @@ export type OrderUpdateToOneWithWhereWithoutWarrantyAmcOrderInput = {
 export type OrderUpdateWithoutWarrantyAmcOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput
   saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput
@@ -562,6 +594,7 @@ export type OrderUncheckedUpdateWithoutWarrantyAmcOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
   engineerId?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput
   returnToGodownOrder?: Prisma.ReturnToGodownOrderUncheckedUpdateOneWithoutOrderNestedInput
@@ -570,6 +603,7 @@ export type OrderUncheckedUpdateWithoutWarrantyAmcOrderInput = {
 export type OrderCreateWithoutReturnToGodownOrderInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
   engineer: Prisma.EngineerCreateNestedOneWithoutOrdersInput
   saleOrder?: Prisma.SaleOrderCreateNestedOneWithoutOrderInput
@@ -580,6 +614,7 @@ export type OrderUncheckedCreateWithoutReturnToGodownOrderInput = {
   id?: string
   orderType: $Enums.OrderType
   engineerId: string
+  franchiseeId: string
   createdAt?: Date | string
   saleOrder?: Prisma.SaleOrderUncheckedCreateNestedOneWithoutOrderInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedCreateNestedOneWithoutOrderInput
@@ -604,6 +639,7 @@ export type OrderUpdateToOneWithWhereWithoutReturnToGodownOrderInput = {
 export type OrderUpdateWithoutReturnToGodownOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   engineer?: Prisma.EngineerUpdateOneRequiredWithoutOrdersNestedInput
   saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput
@@ -614,6 +650,7 @@ export type OrderUncheckedUpdateWithoutReturnToGodownOrderInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
   engineerId?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput
@@ -622,12 +659,14 @@ export type OrderUncheckedUpdateWithoutReturnToGodownOrderInput = {
 export type OrderCreateManyEngineerInput = {
   id?: string
   orderType: $Enums.OrderType
+  franchiseeId: string
   createdAt?: Date | string
 }
 
 export type OrderUpdateWithoutEngineerInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   saleOrder?: Prisma.SaleOrderUpdateOneWithoutOrderNestedInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUpdateOneWithoutOrderNestedInput
@@ -637,6 +676,7 @@ export type OrderUpdateWithoutEngineerInput = {
 export type OrderUncheckedUpdateWithoutEngineerInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   saleOrder?: Prisma.SaleOrderUncheckedUpdateOneWithoutOrderNestedInput
   warrantyAmcOrder?: Prisma.WarrantyAmcOrderUncheckedUpdateOneWithoutOrderNestedInput
@@ -646,6 +686,7 @@ export type OrderUncheckedUpdateWithoutEngineerInput = {
 export type OrderUncheckedUpdateManyWithoutEngineerInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   orderType?: Prisma.EnumOrderTypeFieldUpdateOperationsInput | $Enums.OrderType
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -655,6 +696,7 @@ export type OrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   id?: boolean
   orderType?: boolean
   engineerId?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
   engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>
   saleOrder?: boolean | Prisma.Order$saleOrderArgs<ExtArgs>
@@ -666,6 +708,7 @@ export type OrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   orderType?: boolean
   engineerId?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
   engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["order"]>
@@ -674,6 +717,7 @@ export type OrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   orderType?: boolean
   engineerId?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
   engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["order"]>
@@ -682,10 +726,11 @@ export type OrderSelectScalar = {
   id?: boolean
   orderType?: boolean
   engineerId?: boolean
+  franchiseeId?: boolean
   createdAt?: boolean
 }
 
-export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "orderType" | "engineerId" | "createdAt", ExtArgs["result"]["order"]>
+export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "orderType" | "engineerId" | "franchiseeId" | "createdAt", ExtArgs["result"]["order"]>
 export type OrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   engineer?: boolean | Prisma.EngineerDefaultArgs<ExtArgs>
   saleOrder?: boolean | Prisma.Order$saleOrderArgs<ExtArgs>
@@ -711,6 +756,7 @@ export type $OrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     id: string
     orderType: $Enums.OrderType
     engineerId: string
+    franchiseeId: string
     createdAt: Date
   }, ExtArgs["result"]["order"]>
   composites: {}
@@ -1142,6 +1188,7 @@ export interface OrderFieldRefs {
   readonly id: Prisma.FieldRef<"Order", 'String'>
   readonly orderType: Prisma.FieldRef<"Order", 'OrderType'>
   readonly engineerId: Prisma.FieldRef<"Order", 'String'>
+  readonly franchiseeId: Prisma.FieldRef<"Order", 'String'>
   readonly createdAt: Prisma.FieldRef<"Order", 'DateTime'>
 }
     

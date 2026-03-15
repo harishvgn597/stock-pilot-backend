@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { EngineersService } from './engineers.service.js';
 import { CreateEngineerDto } from './dto/create-engineer.dto.js';
 import { AssignStockDto } from './dto/assign-stock.dto.js';
@@ -19,17 +20,17 @@ let EngineersController = class EngineersController {
     constructor(engineersService) {
         this.engineersService = engineersService;
     }
-    findAll() {
-        return this.engineersService.findAll();
+    findAll(req) {
+        return this.engineersService.findAll(req.user.userId);
     }
-    findById(id) {
-        return this.engineersService.findById(id);
+    findById(id, req) {
+        return this.engineersService.findById(id, req.user.userId);
     }
-    getStock(id) {
-        return this.engineersService.getStock(id);
+    getStock(id, req) {
+        return this.engineersService.getStock(id, req.user.userId);
     }
-    create(createEngineerDto) {
-        return this.engineersService.create(createEngineerDto);
+    create(createEngineerDto, req) {
+        return this.engineersService.create(createEngineerDto, req.user.userId);
     }
     assignStock(assignStockDto) {
         return this.engineersService.assignStock(assignStockDto);
@@ -43,29 +44,33 @@ let EngineersController = class EngineersController {
 };
 __decorate([
     Get(),
+    __param(0, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "findAll", null);
 __decorate([
     Get(':id'),
     __param(0, Param('id')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "findById", null);
 __decorate([
     Get(':id/stock'),
     __param(0, Param('id')),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "getStock", null);
 __decorate([
     Post(),
     __param(0, Body()),
+    __param(1, Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [CreateEngineerDto]),
+    __metadata("design:paramtypes", [CreateEngineerDto, Object]),
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "create", null);
 __decorate([
@@ -91,6 +96,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], EngineersController.prototype, "delete", null);
 EngineersController = __decorate([
+    UseGuards(JwtAuthGuard),
     Controller('engineers'),
     __metadata("design:paramtypes", [EngineersService])
 ], EngineersController);

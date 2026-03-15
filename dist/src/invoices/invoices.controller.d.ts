@@ -4,7 +4,7 @@ import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 export declare class InvoicesController {
     private readonly invoicesService;
     constructor(invoicesService: InvoicesService);
-    findAll(): Promise<({
+    findAll(req: any): Promise<({
         items: {
             id: string;
             materialCode: string;
@@ -25,8 +25,9 @@ export declare class InvoicesController {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     })[]>;
-    findByNumber(invoiceNumber: string): Promise<{
+    findByNumber(invoiceNumber: string, req: any): Promise<{
         items: {
             id: string;
             materialCode: string;
@@ -47,8 +48,9 @@ export declare class InvoicesController {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     }>;
-    create(createInvoiceDto: CreateInvoiceDto): Promise<{
+    create(createInvoiceDto: CreateInvoiceDto, req: any): Promise<{
         items: {
             id: string;
             materialCode: string;
@@ -69,6 +71,7 @@ export declare class InvoicesController {
         invoiceNumber: string;
         invoiceDate: Date;
         customerName: string;
+        franchiseeId: string;
     }>;
     updateItem(id: string, updateDto: UpdateInvoiceItemDto): Promise<{
         id: string;

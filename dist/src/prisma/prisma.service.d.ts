@@ -34,6 +34,9 @@ export declare class PrismaService implements OnModuleInit, OnModuleDestroy {
     get returnToGodownOrder(): import("../../generated/prisma/models.js").ReturnToGodownOrderDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
         omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
     }>;
+    get customerReturn(): import("../../generated/prisma/models.js").CustomerReturnDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
+        omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
+    }>;
     onModuleInit(): Promise<void>;
     onModuleDestroy(): Promise<void>;
 }

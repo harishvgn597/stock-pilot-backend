@@ -94,3 +94,8 @@ export type WarrantyAmcOrder = Prisma.WarrantyAmcOrderModel
  * 
  */
 export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel
+/**
+ * Model CustomerReturn
+ * 
+ */
+export type CustomerReturn = Prisma.CustomerReturnModel

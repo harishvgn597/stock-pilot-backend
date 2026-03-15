@@ -168,6 +168,7 @@ export declare const ModelName: {
     readonly SaleOrder: "SaleOrder";
     readonly WarrantyAmcOrder: "WarrantyAmcOrder";
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
+    readonly CustomerReturn: "CustomerReturn";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{
@@ -180,7 +181,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder";
+        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -998,6 +999,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        CustomerReturn: {
+            payload: Prisma.$CustomerReturnPayload<ExtArgs>;
+            fields: Prisma.CustomerReturnFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.CustomerReturnFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.CustomerReturnFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                findFirst: {
+                    args: Prisma.CustomerReturnFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.CustomerReturnFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                findMany: {
+                    args: Prisma.CustomerReturnFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>[];
+                };
+                create: {
+                    args: Prisma.CustomerReturnCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                createMany: {
+                    args: Prisma.CustomerReturnCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.CustomerReturnCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>[];
+                };
+                delete: {
+                    args: Prisma.CustomerReturnDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                update: {
+                    args: Prisma.CustomerReturnUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.CustomerReturnDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.CustomerReturnUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.CustomerReturnUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>[];
+                };
+                upsert: {
+                    args: Prisma.CustomerReturnUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$CustomerReturnPayload>;
+                };
+                aggregate: {
+                    args: Prisma.CustomerReturnAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateCustomerReturn>;
+                };
+                groupBy: {
+                    args: Prisma.CustomerReturnGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.CustomerReturnGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.CustomerReturnCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.CustomerReturnCountAggregateOutputType> | number;
+                };
+            };
+        };
     };
 } & {
     other: {
@@ -1150,6 +1225,19 @@ export declare const ReturnToGodownOrderScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type ReturnToGodownOrderScalarFieldEnum = (typeof ReturnToGodownOrderScalarFieldEnum)[keyof typeof ReturnToGodownOrderScalarFieldEnum];
+export declare const CustomerReturnScalarFieldEnum: {
+    readonly id: "id";
+    readonly returnDate: "returnDate";
+    readonly franchiseeId: "franchiseeId";
+    readonly materialCode: "materialCode";
+    readonly materialName: "materialName";
+    readonly quantity: "quantity";
+    readonly pricePerUnit: "pricePerUnit";
+    readonly totalPrice: "totalPrice";
+    readonly remarks: "remarks";
+    readonly createdAt: "createdAt";
+};
+export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";
@@ -1214,6 +1302,7 @@ export type GlobalOmitConfig = {
     saleOrder?: Prisma.SaleOrderOmit;
     warrantyAmcOrder?: Prisma.WarrantyAmcOrderOmit;
     returnToGodownOrder?: Prisma.ReturnToGodownOrderOmit;
+    customerReturn?: Prisma.CustomerReturnOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';
 export type LogDefinition = {

@@ -22,6 +22,7 @@ export declare const ModelName: {
     readonly SaleOrder: "SaleOrder";
     readonly WarrantyAmcOrder: "WarrantyAmcOrder";
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
+    readonly CustomerReturn: "CustomerReturn";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -152,6 +153,19 @@ export declare const ReturnToGodownOrderScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type ReturnToGodownOrderScalarFieldEnum = (typeof ReturnToGodownOrderScalarFieldEnum)[keyof typeof ReturnToGodownOrderScalarFieldEnum];
+export declare const CustomerReturnScalarFieldEnum: {
+    readonly id: "id";
+    readonly returnDate: "returnDate";
+    readonly franchiseeId: "franchiseeId";
+    readonly materialCode: "materialCode";
+    readonly materialName: "materialName";
+    readonly quantity: "quantity";
+    readonly pricePerUnit: "pricePerUnit";
+    readonly totalPrice: "totalPrice";
+    readonly remarks: "remarks";
+    readonly createdAt: "createdAt";
+};
+export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";

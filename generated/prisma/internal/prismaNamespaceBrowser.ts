@@ -61,7 +61,8 @@ export const ModelName = {
   Order: 'Order',
   SaleOrder: 'SaleOrder',
   WarrantyAmcOrder: 'WarrantyAmcOrder',
-  ReturnToGodownOrder: 'ReturnToGodownOrder'
+  ReturnToGodownOrder: 'ReturnToGodownOrder',
+  CustomerReturn: 'CustomerReturn'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -232,6 +233,22 @@ export const ReturnToGodownOrderScalarFieldEnum = {
 } as const
 
 export type ReturnToGodownOrderScalarFieldEnum = (typeof ReturnToGodownOrderScalarFieldEnum)[keyof typeof ReturnToGodownOrderScalarFieldEnum]
+
+
+export const CustomerReturnScalarFieldEnum = {
+  id: 'id',
+  returnDate: 'returnDate',
+  franchiseeId: 'franchiseeId',
+  materialCode: 'materialCode',
+  materialName: 'materialName',
+  quantity: 'quantity',
+  pricePerUnit: 'pricePerUnit',
+  totalPrice: 'totalPrice',
+  remarks: 'remarks',
+  createdAt: 'createdAt'
+} as const
+
+export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum]
 
 
 export const SortOrder = {

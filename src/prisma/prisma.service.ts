@@ -53,6 +53,10 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.prisma.returnToGodownOrder;
   }
 
+  get customerReturn() {
+    return this.prisma.customerReturn;
+  }
+
   async onModuleInit() {
     await this.prisma.$connect();
   }

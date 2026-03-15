@@ -61,5 +61,8 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
     get returnToGodownOrder(): Prisma.ReturnToGodownOrderDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
+    get customerReturn(): Prisma.CustomerReturnDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
 }
 export declare function getPrismaClientClass(): PrismaClientConstructor;

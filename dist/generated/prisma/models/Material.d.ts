@@ -102,6 +102,7 @@ export type MaterialWhereInput = {
     saleOrders?: Prisma.SaleOrderListRelationFilter;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderListRelationFilter;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderListRelationFilter;
+    customerReturns?: Prisma.CustomerReturnListRelationFilter;
 };
 export type MaterialOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -115,6 +116,7 @@ export type MaterialOrderByWithRelationInput = {
     saleOrders?: Prisma.SaleOrderOrderByRelationAggregateInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderOrderByRelationAggregateInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderOrderByRelationAggregateInput;
+    customerReturns?: Prisma.CustomerReturnOrderByRelationAggregateInput;
 };
 export type MaterialWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -131,6 +133,7 @@ export type MaterialWhereUniqueInput = Prisma.AtLeast<{
     saleOrders?: Prisma.SaleOrderListRelationFilter;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderListRelationFilter;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderListRelationFilter;
+    customerReturns?: Prisma.CustomerReturnListRelationFilter;
 }, "id" | "materialCode">;
 export type MaterialOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -164,6 +167,7 @@ export type MaterialCreateInput = {
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateInput = {
     id?: string;
@@ -177,6 +181,7 @@ export type MaterialUncheckedCreateInput = {
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -190,6 +195,7 @@ export type MaterialUpdateInput = {
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -203,6 +209,7 @@ export type MaterialUncheckedUpdateInput = {
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateManyInput = {
     id?: string;
@@ -322,6 +329,18 @@ export type MaterialUpdateOneRequiredWithoutReturnToGodownOrdersNestedInput = {
     connect?: Prisma.MaterialWhereUniqueInput;
     update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutReturnToGodownOrdersInput, Prisma.MaterialUpdateWithoutReturnToGodownOrdersInput>, Prisma.MaterialUncheckedUpdateWithoutReturnToGodownOrdersInput>;
 };
+export type MaterialCreateNestedOneWithoutCustomerReturnsInput = {
+    create?: Prisma.XOR<Prisma.MaterialCreateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedCreateWithoutCustomerReturnsInput>;
+    connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutCustomerReturnsInput;
+    connect?: Prisma.MaterialWhereUniqueInput;
+};
+export type MaterialUpdateOneRequiredWithoutCustomerReturnsNestedInput = {
+    create?: Prisma.XOR<Prisma.MaterialCreateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedCreateWithoutCustomerReturnsInput>;
+    connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutCustomerReturnsInput;
+    upsert?: Prisma.MaterialUpsertWithoutCustomerReturnsInput;
+    connect?: Prisma.MaterialWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutCustomerReturnsInput, Prisma.MaterialUpdateWithoutCustomerReturnsInput>, Prisma.MaterialUncheckedUpdateWithoutCustomerReturnsInput>;
+};
 export type MaterialCreateWithoutPricesInput = {
     id?: string;
     materialCode: string;
@@ -333,6 +352,7 @@ export type MaterialCreateWithoutPricesInput = {
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutPricesInput = {
     id?: string;
@@ -345,6 +365,7 @@ export type MaterialUncheckedCreateWithoutPricesInput = {
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutPricesInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -370,6 +391,7 @@ export type MaterialUpdateWithoutPricesInput = {
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutPricesInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -382,6 +404,7 @@ export type MaterialUncheckedUpdateWithoutPricesInput = {
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateWithoutInvoiceItemsInput = {
     id?: string;
@@ -394,6 +417,7 @@ export type MaterialCreateWithoutInvoiceItemsInput = {
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
     id?: string;
@@ -406,6 +430,7 @@ export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutInvoiceItemsInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -431,6 +456,7 @@ export type MaterialUpdateWithoutInvoiceItemsInput = {
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -443,6 +469,7 @@ export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateWithoutEngineerStockInput = {
     id?: string;
@@ -455,6 +482,7 @@ export type MaterialCreateWithoutEngineerStockInput = {
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutEngineerStockInput = {
     id?: string;
@@ -467,6 +495,7 @@ export type MaterialUncheckedCreateWithoutEngineerStockInput = {
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutEngineerStockInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -492,6 +521,7 @@ export type MaterialUpdateWithoutEngineerStockInput = {
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutEngineerStockInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -504,6 +534,7 @@ export type MaterialUncheckedUpdateWithoutEngineerStockInput = {
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateWithoutSaleOrdersInput = {
     id?: string;
@@ -516,6 +547,7 @@ export type MaterialCreateWithoutSaleOrdersInput = {
     engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutSaleOrdersInput = {
     id?: string;
@@ -528,6 +560,7 @@ export type MaterialUncheckedCreateWithoutSaleOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutSaleOrdersInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -553,6 +586,7 @@ export type MaterialUpdateWithoutSaleOrdersInput = {
     engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutSaleOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -565,6 +599,7 @@ export type MaterialUncheckedUpdateWithoutSaleOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateWithoutWarrantyAmcOrdersInput = {
     id?: string;
@@ -577,6 +612,7 @@ export type MaterialCreateWithoutWarrantyAmcOrdersInput = {
     engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput;
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutWarrantyAmcOrdersInput = {
     id?: string;
@@ -589,6 +625,7 @@ export type MaterialUncheckedCreateWithoutWarrantyAmcOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput;
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutWarrantyAmcOrdersInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -614,6 +651,7 @@ export type MaterialUpdateWithoutWarrantyAmcOrdersInput = {
     engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput;
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutWarrantyAmcOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -626,6 +664,7 @@ export type MaterialUncheckedUpdateWithoutWarrantyAmcOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput;
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCreateWithoutReturnToGodownOrdersInput = {
     id?: string;
@@ -638,6 +677,7 @@ export type MaterialCreateWithoutReturnToGodownOrdersInput = {
     engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput;
     saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialUncheckedCreateWithoutReturnToGodownOrdersInput = {
     id?: string;
@@ -650,6 +690,7 @@ export type MaterialUncheckedCreateWithoutReturnToGodownOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput;
     saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput;
 };
 export type MaterialCreateOrConnectWithoutReturnToGodownOrdersInput = {
     where: Prisma.MaterialWhereUniqueInput;
@@ -675,6 +716,7 @@ export type MaterialUpdateWithoutReturnToGodownOrdersInput = {
     engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput;
     saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialUncheckedUpdateWithoutReturnToGodownOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -687,6 +729,72 @@ export type MaterialUncheckedUpdateWithoutReturnToGodownOrdersInput = {
     engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput;
     saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
     warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput;
+};
+export type MaterialCreateWithoutCustomerReturnsInput = {
+    id?: string;
+    materialCode: string;
+    description: string;
+    materialGroup: string;
+    createdAt?: Date | string;
+    prices?: Prisma.MaterialPriceCreateNestedManyWithoutMaterialInput;
+    invoiceItems?: Prisma.InvoiceItemCreateNestedManyWithoutMaterialInput;
+    engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput;
+    saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput;
+    warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput;
+    returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput;
+};
+export type MaterialUncheckedCreateWithoutCustomerReturnsInput = {
+    id?: string;
+    materialCode: string;
+    description: string;
+    materialGroup: string;
+    createdAt?: Date | string;
+    prices?: Prisma.MaterialPriceUncheckedCreateNestedManyWithoutMaterialInput;
+    invoiceItems?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutMaterialInput;
+    engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput;
+    saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput;
+    returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput;
+};
+export type MaterialCreateOrConnectWithoutCustomerReturnsInput = {
+    where: Prisma.MaterialWhereUniqueInput;
+    create: Prisma.XOR<Prisma.MaterialCreateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedCreateWithoutCustomerReturnsInput>;
+};
+export type MaterialUpsertWithoutCustomerReturnsInput = {
+    update: Prisma.XOR<Prisma.MaterialUpdateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedUpdateWithoutCustomerReturnsInput>;
+    create: Prisma.XOR<Prisma.MaterialCreateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedCreateWithoutCustomerReturnsInput>;
+    where?: Prisma.MaterialWhereInput;
+};
+export type MaterialUpdateToOneWithWhereWithoutCustomerReturnsInput = {
+    where?: Prisma.MaterialWhereInput;
+    data: Prisma.XOR<Prisma.MaterialUpdateWithoutCustomerReturnsInput, Prisma.MaterialUncheckedUpdateWithoutCustomerReturnsInput>;
+};
+export type MaterialUpdateWithoutCustomerReturnsInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialGroup?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    prices?: Prisma.MaterialPriceUpdateManyWithoutMaterialNestedInput;
+    invoiceItems?: Prisma.InvoiceItemUpdateManyWithoutMaterialNestedInput;
+    engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput;
+    saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput;
+    warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput;
+    returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput;
+};
+export type MaterialUncheckedUpdateWithoutCustomerReturnsInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    description?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialGroup?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    prices?: Prisma.MaterialPriceUncheckedUpdateManyWithoutMaterialNestedInput;
+    invoiceItems?: Prisma.InvoiceItemUncheckedUpdateManyWithoutMaterialNestedInput;
+    engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput;
+    saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput;
+    returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput;
 };
 export type MaterialCountOutputType = {
     prices: number;
@@ -695,6 +803,7 @@ export type MaterialCountOutputType = {
     saleOrders: number;
     warrantyAmcOrders: number;
     returnToGodownOrders: number;
+    customerReturns: number;
 };
 export type MaterialCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     prices?: boolean | MaterialCountOutputTypeCountPricesArgs;
@@ -703,6 +812,7 @@ export type MaterialCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensio
     saleOrders?: boolean | MaterialCountOutputTypeCountSaleOrdersArgs;
     warrantyAmcOrders?: boolean | MaterialCountOutputTypeCountWarrantyAmcOrdersArgs;
     returnToGodownOrders?: boolean | MaterialCountOutputTypeCountReturnToGodownOrdersArgs;
+    customerReturns?: boolean | MaterialCountOutputTypeCountCustomerReturnsArgs;
 };
 export type MaterialCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     select?: Prisma.MaterialCountOutputTypeSelect<ExtArgs> | null;
@@ -725,6 +835,9 @@ export type MaterialCountOutputTypeCountWarrantyAmcOrdersArgs<ExtArgs extends ru
 export type MaterialCountOutputTypeCountReturnToGodownOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     where?: Prisma.ReturnToGodownOrderWhereInput;
 };
+export type MaterialCountOutputTypeCountCustomerReturnsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.CustomerReturnWhereInput;
+};
 export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
     materialCode?: boolean;
@@ -737,6 +850,7 @@ export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
     saleOrders?: boolean | Prisma.Material$saleOrdersArgs<ExtArgs>;
     warrantyAmcOrders?: boolean | Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>;
     returnToGodownOrders?: boolean | Prisma.Material$returnToGodownOrdersArgs<ExtArgs>;
+    customerReturns?: boolean | Prisma.Material$customerReturnsArgs<ExtArgs>;
     _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["material"]>;
 export type MaterialSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -768,6 +882,7 @@ export type MaterialInclude<ExtArgs extends runtime.Types.Extensions.InternalArg
     saleOrders?: boolean | Prisma.Material$saleOrdersArgs<ExtArgs>;
     warrantyAmcOrders?: boolean | Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>;
     returnToGodownOrders?: boolean | Prisma.Material$returnToGodownOrdersArgs<ExtArgs>;
+    customerReturns?: boolean | Prisma.Material$customerReturnsArgs<ExtArgs>;
     _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type MaterialIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
@@ -781,6 +896,7 @@ export type $MaterialPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
         saleOrders: Prisma.$SaleOrderPayload<ExtArgs>[];
         warrantyAmcOrders: Prisma.$WarrantyAmcOrderPayload<ExtArgs>[];
         returnToGodownOrders: Prisma.$ReturnToGodownOrderPayload<ExtArgs>[];
+        customerReturns: Prisma.$CustomerReturnPayload<ExtArgs>[];
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -846,6 +962,7 @@ export interface Prisma__MaterialClient<T, Null = never, ExtArgs extends runtime
     saleOrders<T extends Prisma.Material$saleOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$saleOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SaleOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     warrantyAmcOrders<T extends Prisma.Material$warrantyAmcOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarrantyAmcOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     returnToGodownOrders<T extends Prisma.Material$returnToGodownOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$returnToGodownOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    customerReturns<T extends Prisma.Material$customerReturnsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$customerReturnsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CustomerReturnPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
     catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
     finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
@@ -1020,6 +1137,17 @@ export type Material$returnToGodownOrdersArgs<ExtArgs extends runtime.Types.Exte
     take?: number;
     skip?: number;
     distinct?: Prisma.ReturnToGodownOrderScalarFieldEnum | Prisma.ReturnToGodownOrderScalarFieldEnum[];
+};
+export type Material$customerReturnsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.CustomerReturnSelect<ExtArgs> | null;
+    omit?: Prisma.CustomerReturnOmit<ExtArgs> | null;
+    include?: Prisma.CustomerReturnInclude<ExtArgs> | null;
+    where?: Prisma.CustomerReturnWhereInput;
+    orderBy?: Prisma.CustomerReturnOrderByWithRelationInput | Prisma.CustomerReturnOrderByWithRelationInput[];
+    cursor?: Prisma.CustomerReturnWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.CustomerReturnScalarFieldEnum | Prisma.CustomerReturnScalarFieldEnum[];
 };
 export type MaterialDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     select?: Prisma.MaterialSelect<ExtArgs> | null;

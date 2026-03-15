@@ -44,6 +44,9 @@ let PrismaService = class PrismaService {
     get returnToGodownOrder() {
         return this.prisma.returnToGodownOrder;
     }
+    get customerReturn() {
+        return this.prisma.customerReturn;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

@@ -54,6 +54,7 @@ model Material {
   saleOrders    SaleOrder[]
   warrantyAmcOrders    WarrantyAmcOrder[]
   returnToGodownOrders ReturnToGodownOrder[]
+  customerReturns      CustomerReturn[]
 }
 
 model MaterialPrice {
@@ -202,6 +203,26 @@ model ReturnToGodownOrder {
 
   description   String
   quantity      Float
+
+  createdAt DateTime @default(now())
+}
+
+// ─── Customer Returns ─────────────────────────────────────────────────────────
+
+model CustomerReturn {
+  id           String   @id @default(uuid())
+  returnDate   DateTime
+  franchiseeId String
+
+  materialCode  String
+  material      Material @relation(fields: [materialCode], references: [materialCode])
+
+  materialName  String
+  quantity      Float
+  pricePerUnit  Float
+  totalPrice    Float
+
+  remarks       String?
 
   createdAt DateTime @default(now())
 }

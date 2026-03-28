@@ -1718,20 +1718,6 @@ export type ListEnumOrderTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
 
 
 /**
- * Reference to a field of type 'WarrantyType'
- */
-export type EnumWarrantyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WarrantyType'>
-    
-
-
-/**
- * Reference to a field of type 'WarrantyType[]'
- */
-export type ListEnumWarrantyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WarrantyType[]'>
-    
-
-
-/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>

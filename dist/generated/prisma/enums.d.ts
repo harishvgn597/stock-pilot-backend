@@ -15,9 +15,3 @@ export declare const OrderType: {
     readonly WarrantyAMC: "WarrantyAMC";
 };
 export type OrderType = (typeof OrderType)[keyof typeof OrderType];
-export declare const WarrantyType: {
-    readonly AMC: "AMC";
-    readonly Warranty: "Warranty";
-    readonly CAMC: "CAMC";
-};
-export type WarrantyType = (typeof WarrantyType)[keyof typeof WarrantyType];

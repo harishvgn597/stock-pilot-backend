@@ -30,12 +30,6 @@ enum OrderType {
   WarrantyAMC
 }
 
-enum WarrantyType {
-  AMC
-  Warranty
-  CAMC
-}
-
 model User {
   id             String   @id @default(uuid())
   name           String
@@ -236,9 +230,9 @@ model CustomerReturn {
 // ─── AMC Contracts ────────────────────────────────────────────────────────────
 
 model AmcContract {
-  id           String      @id @default(uuid())
-  icrNumber    String      @unique
-  warrantyType WarrantyType
+  id           String   @id @default(uuid())
+  icrNumber    String   @unique
+  warrantyType String
   price        Float
   discount     Float?
   totalPrice   Float

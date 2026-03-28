@@ -33,12 +33,3 @@ export const OrderType = {
 } as const
 
 export type OrderType = (typeof OrderType)[keyof typeof OrderType]
-
-
-export const WarrantyType = {
-  AMC: 'AMC',
-  Warranty: 'Warranty',
-  CAMC: 'CAMC'
-} as const
-
-export type WarrantyType = (typeof WarrantyType)[keyof typeof WarrantyType]

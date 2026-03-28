@@ -1,5 +1,4 @@
 import type * as runtime from "@prisma/client/runtime/client";
-import type * as $Enums from "../enums.js";
 import type * as Prisma from "../internal/prismaNamespace.js";
 export type AmcContractModel = runtime.Types.Result.DefaultSelection<Prisma.$AmcContractPayload>;
 export type AggregateAmcContract = {
@@ -22,7 +21,7 @@ export type AmcContractSumAggregateOutputType = {
 export type AmcContractMinAggregateOutputType = {
     id: string | null;
     icrNumber: string | null;
-    warrantyType: $Enums.WarrantyType | null;
+    warrantyType: string | null;
     price: number | null;
     discount: number | null;
     totalPrice: number | null;
@@ -34,7 +33,7 @@ export type AmcContractMinAggregateOutputType = {
 export type AmcContractMaxAggregateOutputType = {
     id: string | null;
     icrNumber: string | null;
-    warrantyType: $Enums.WarrantyType | null;
+    warrantyType: string | null;
     price: number | null;
     discount: number | null;
     totalPrice: number | null;
@@ -134,7 +133,7 @@ export type AmcContractGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type AmcContractGroupByOutputType = {
     id: string;
     icrNumber: string;
-    warrantyType: $Enums.WarrantyType;
+    warrantyType: string;
     price: number;
     discount: number | null;
     totalPrice: number;
@@ -157,7 +156,7 @@ export type AmcContractWhereInput = {
     NOT?: Prisma.AmcContractWhereInput | Prisma.AmcContractWhereInput[];
     id?: Prisma.StringFilter<"AmcContract"> | string;
     icrNumber?: Prisma.StringFilter<"AmcContract"> | string;
-    warrantyType?: Prisma.EnumWarrantyTypeFilter<"AmcContract"> | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFilter<"AmcContract"> | string;
     price?: Prisma.FloatFilter<"AmcContract"> | number;
     discount?: Prisma.FloatNullableFilter<"AmcContract"> | number | null;
     totalPrice?: Prisma.FloatFilter<"AmcContract"> | number;
@@ -184,7 +183,7 @@ export type AmcContractWhereUniqueInput = Prisma.AtLeast<{
     AND?: Prisma.AmcContractWhereInput | Prisma.AmcContractWhereInput[];
     OR?: Prisma.AmcContractWhereInput[];
     NOT?: Prisma.AmcContractWhereInput | Prisma.AmcContractWhereInput[];
-    warrantyType?: Prisma.EnumWarrantyTypeFilter<"AmcContract"> | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFilter<"AmcContract"> | string;
     price?: Prisma.FloatFilter<"AmcContract"> | number;
     discount?: Prisma.FloatNullableFilter<"AmcContract"> | number | null;
     totalPrice?: Prisma.FloatFilter<"AmcContract"> | number;
@@ -216,7 +215,7 @@ export type AmcContractScalarWhereWithAggregatesInput = {
     NOT?: Prisma.AmcContractScalarWhereWithAggregatesInput | Prisma.AmcContractScalarWhereWithAggregatesInput[];
     id?: Prisma.StringWithAggregatesFilter<"AmcContract"> | string;
     icrNumber?: Prisma.StringWithAggregatesFilter<"AmcContract"> | string;
-    warrantyType?: Prisma.EnumWarrantyTypeWithAggregatesFilter<"AmcContract"> | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringWithAggregatesFilter<"AmcContract"> | string;
     price?: Prisma.FloatWithAggregatesFilter<"AmcContract"> | number;
     discount?: Prisma.FloatNullableWithAggregatesFilter<"AmcContract"> | number | null;
     totalPrice?: Prisma.FloatWithAggregatesFilter<"AmcContract"> | number;
@@ -228,7 +227,7 @@ export type AmcContractScalarWhereWithAggregatesInput = {
 export type AmcContractCreateInput = {
     id?: string;
     icrNumber: string;
-    warrantyType: $Enums.WarrantyType;
+    warrantyType: string;
     price: number;
     discount?: number | null;
     totalPrice: number;
@@ -240,7 +239,7 @@ export type AmcContractCreateInput = {
 export type AmcContractUncheckedCreateInput = {
     id?: string;
     icrNumber: string;
-    warrantyType: $Enums.WarrantyType;
+    warrantyType: string;
     price: number;
     discount?: number | null;
     totalPrice: number;
@@ -252,7 +251,7 @@ export type AmcContractUncheckedCreateInput = {
 export type AmcContractUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     icrNumber?: Prisma.StringFieldUpdateOperationsInput | string;
-    warrantyType?: Prisma.EnumWarrantyTypeFieldUpdateOperationsInput | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFieldUpdateOperationsInput | string;
     price?: Prisma.FloatFieldUpdateOperationsInput | number;
     discount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     totalPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
@@ -264,7 +263,7 @@ export type AmcContractUpdateInput = {
 export type AmcContractUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     icrNumber?: Prisma.StringFieldUpdateOperationsInput | string;
-    warrantyType?: Prisma.EnumWarrantyTypeFieldUpdateOperationsInput | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFieldUpdateOperationsInput | string;
     price?: Prisma.FloatFieldUpdateOperationsInput | number;
     discount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     totalPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
@@ -276,7 +275,7 @@ export type AmcContractUncheckedUpdateInput = {
 export type AmcContractCreateManyInput = {
     id?: string;
     icrNumber: string;
-    warrantyType: $Enums.WarrantyType;
+    warrantyType: string;
     price: number;
     discount?: number | null;
     totalPrice: number;
@@ -288,7 +287,7 @@ export type AmcContractCreateManyInput = {
 export type AmcContractUpdateManyMutationInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     icrNumber?: Prisma.StringFieldUpdateOperationsInput | string;
-    warrantyType?: Prisma.EnumWarrantyTypeFieldUpdateOperationsInput | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFieldUpdateOperationsInput | string;
     price?: Prisma.FloatFieldUpdateOperationsInput | number;
     discount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     totalPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
@@ -300,7 +299,7 @@ export type AmcContractUpdateManyMutationInput = {
 export type AmcContractUncheckedUpdateManyInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     icrNumber?: Prisma.StringFieldUpdateOperationsInput | string;
-    warrantyType?: Prisma.EnumWarrantyTypeFieldUpdateOperationsInput | $Enums.WarrantyType;
+    warrantyType?: Prisma.StringFieldUpdateOperationsInput | string;
     price?: Prisma.FloatFieldUpdateOperationsInput | number;
     discount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     totalPrice?: Prisma.FloatFieldUpdateOperationsInput | number;
@@ -354,9 +353,6 @@ export type AmcContractSumOrderByAggregateInput = {
     price?: Prisma.SortOrder;
     discount?: Prisma.SortOrder;
     totalPrice?: Prisma.SortOrder;
-};
-export type EnumWarrantyTypeFieldUpdateOperationsInput = {
-    set?: $Enums.WarrantyType;
 };
 export type NullableFloatFieldUpdateOperationsInput = {
     set?: number | null;
@@ -420,7 +416,7 @@ export type $AmcContractPayload<ExtArgs extends runtime.Types.Extensions.Interna
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
         icrNumber: string;
-        warrantyType: $Enums.WarrantyType;
+        warrantyType: string;
         price: number;
         discount: number | null;
         totalPrice: number;
@@ -487,7 +483,7 @@ export interface Prisma__AmcContractClient<T, Null = never, ExtArgs extends runt
 export interface AmcContractFieldRefs {
     readonly id: Prisma.FieldRef<"AmcContract", 'String'>;
     readonly icrNumber: Prisma.FieldRef<"AmcContract", 'String'>;
-    readonly warrantyType: Prisma.FieldRef<"AmcContract", 'WarrantyType'>;
+    readonly warrantyType: Prisma.FieldRef<"AmcContract", 'String'>;
     readonly price: Prisma.FieldRef<"AmcContract", 'Float'>;
     readonly discount: Prisma.FieldRef<"AmcContract", 'Float'>;
     readonly totalPrice: Prisma.FieldRef<"AmcContract", 'Float'>;

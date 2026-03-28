@@ -12,9 +12,4 @@ export const OrderType = {
     ReturnToServiceCenter: 'ReturnToServiceCenter',
     WarrantyAMC: 'WarrantyAMC'
 };
-export const WarrantyType = {
-    AMC: 'AMC',
-    Warranty: 'Warranty',
-    CAMC: 'CAMC'
-};
 //# sourceMappingURL=enums.js.map

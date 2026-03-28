@@ -11,7 +11,7 @@ export declare class AmcService {
         date: Date;
         totalPrice: number;
         icrNumber: string;
-        warrantyType: import("../../generated/prisma/enums.js").WarrantyType;
+        warrantyType: string;
         discount: number | null;
         engineerName: string;
     }>;
@@ -23,7 +23,7 @@ export declare class AmcService {
         date: Date;
         totalPrice: number;
         icrNumber: string;
-        warrantyType: import("../../generated/prisma/enums.js").WarrantyType;
+        warrantyType: string;
         discount: number | null;
         engineerName: string;
     }[]>;
@@ -35,7 +35,7 @@ export declare class AmcService {
         date: Date;
         totalPrice: number;
         icrNumber: string;
-        warrantyType: import("../../generated/prisma/enums.js").WarrantyType;
+        warrantyType: string;
         discount: number | null;
         engineerName: string;
     }>;
@@ -47,7 +47,7 @@ export declare class AmcService {
         date: Date;
         totalPrice: number;
         icrNumber: string;
-        warrantyType: import("../../generated/prisma/enums.js").WarrantyType;
+        warrantyType: string;
         discount: number | null;
         engineerName: string;
     }>;
@@ -59,7 +59,7 @@ export declare class AmcService {
         date: Date;
         totalPrice: number;
         icrNumber: string;
-        warrantyType: import("../../generated/prisma/enums.js").WarrantyType;
+        warrantyType: string;
         discount: number | null;
         engineerName: string;
     }>;

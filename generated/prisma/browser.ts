@@ -77,3 +77,8 @@ export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel
  * 
  */
 export type CustomerReturn = Prisma.CustomerReturnModel
+/**
+ * Model AmcContract
+ * 
+ */
+export type AmcContract = Prisma.AmcContractModel

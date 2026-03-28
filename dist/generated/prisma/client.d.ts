@@ -18,3 +18,4 @@ export type SaleOrder = Prisma.SaleOrderModel;
 export type WarrantyAmcOrder = Prisma.WarrantyAmcOrderModel;
 export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel;
 export type CustomerReturn = Prisma.CustomerReturnModel;
+export type AmcContract = Prisma.AmcContractModel;

@@ -62,7 +62,8 @@ export const ModelName = {
   SaleOrder: 'SaleOrder',
   WarrantyAmcOrder: 'WarrantyAmcOrder',
   ReturnToGodownOrder: 'ReturnToGodownOrder',
-  CustomerReturn: 'CustomerReturn'
+  CustomerReturn: 'CustomerReturn',
+  AmcContract: 'AmcContract'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -249,6 +250,22 @@ export const CustomerReturnScalarFieldEnum = {
 } as const
 
 export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum]
+
+
+export const AmcContractScalarFieldEnum = {
+  id: 'id',
+  icrNumber: 'icrNumber',
+  warrantyType: 'warrantyType',
+  price: 'price',
+  discount: 'discount',
+  totalPrice: 'totalPrice',
+  engineerName: 'engineerName',
+  date: 'date',
+  franchiseeId: 'franchiseeId',
+  createdAt: 'createdAt'
+} as const
+
+export type AmcContractScalarFieldEnum = (typeof AmcContractScalarFieldEnum)[keyof typeof AmcContractScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -169,6 +169,7 @@ export declare const ModelName: {
     readonly WarrantyAmcOrder: "WarrantyAmcOrder";
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
     readonly CustomerReturn: "CustomerReturn";
+    readonly AmcContract: "AmcContract";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{
@@ -181,7 +182,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn";
+        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn" | "amcContract";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -1073,6 +1074,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        AmcContract: {
+            payload: Prisma.$AmcContractPayload<ExtArgs>;
+            fields: Prisma.AmcContractFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.AmcContractFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.AmcContractFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                findFirst: {
+                    args: Prisma.AmcContractFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.AmcContractFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                findMany: {
+                    args: Prisma.AmcContractFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>[];
+                };
+                create: {
+                    args: Prisma.AmcContractCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                createMany: {
+                    args: Prisma.AmcContractCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.AmcContractCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>[];
+                };
+                delete: {
+                    args: Prisma.AmcContractDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                update: {
+                    args: Prisma.AmcContractUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.AmcContractDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.AmcContractUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.AmcContractUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>[];
+                };
+                upsert: {
+                    args: Prisma.AmcContractUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AmcContractPayload>;
+                };
+                aggregate: {
+                    args: Prisma.AmcContractAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateAmcContract>;
+                };
+                groupBy: {
+                    args: Prisma.AmcContractGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AmcContractGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.AmcContractCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AmcContractCountAggregateOutputType> | number;
+                };
+            };
+        };
     };
 } & {
     other: {
@@ -1238,6 +1313,19 @@ export declare const CustomerReturnScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum];
+export declare const AmcContractScalarFieldEnum: {
+    readonly id: "id";
+    readonly icrNumber: "icrNumber";
+    readonly warrantyType: "warrantyType";
+    readonly price: "price";
+    readonly discount: "discount";
+    readonly totalPrice: "totalPrice";
+    readonly engineerName: "engineerName";
+    readonly date: "date";
+    readonly franchiseeId: "franchiseeId";
+    readonly createdAt: "createdAt";
+};
+export type AmcContractScalarFieldEnum = (typeof AmcContractScalarFieldEnum)[keyof typeof AmcContractScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";
@@ -1265,6 +1353,8 @@ export type EnumItemStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Prism
 export type ListEnumItemStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ItemStatus[]'>;
 export type EnumOrderTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OrderType'>;
 export type ListEnumOrderTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OrderType[]'>;
+export type EnumWarrantyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WarrantyType'>;
+export type ListEnumWarrantyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WarrantyType[]'>;
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>;
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>;
 export type BatchPayload = {
@@ -1303,6 +1393,7 @@ export type GlobalOmitConfig = {
     warrantyAmcOrder?: Prisma.WarrantyAmcOrderOmit;
     returnToGodownOrder?: Prisma.ReturnToGodownOrderOmit;
     customerReturn?: Prisma.CustomerReturnOmit;
+    amcContract?: Prisma.AmcContractOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';
 export type LogDefinition = {

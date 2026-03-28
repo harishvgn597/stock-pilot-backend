@@ -47,6 +47,9 @@ let PrismaService = class PrismaService {
     get customerReturn() {
         return this.prisma.customerReturn;
     }
+    get amcContract() {
+        return this.prisma.amcContract;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

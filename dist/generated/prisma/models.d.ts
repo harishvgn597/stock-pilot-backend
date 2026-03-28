@@ -10,4 +10,5 @@ export type * from './models/SaleOrder.js';
 export type * from './models/WarrantyAmcOrder.js';
 export type * from './models/ReturnToGodownOrder.js';
 export type * from './models/CustomerReturn.js';
+export type * from './models/AmcContract.js';
 export type * from './commonInputTypes.js';

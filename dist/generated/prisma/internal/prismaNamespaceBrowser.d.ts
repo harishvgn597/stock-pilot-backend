@@ -23,6 +23,7 @@ export declare const ModelName: {
     readonly WarrantyAmcOrder: "WarrantyAmcOrder";
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
     readonly CustomerReturn: "CustomerReturn";
+    readonly AmcContract: "AmcContract";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -166,6 +167,19 @@ export declare const CustomerReturnScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type CustomerReturnScalarFieldEnum = (typeof CustomerReturnScalarFieldEnum)[keyof typeof CustomerReturnScalarFieldEnum];
+export declare const AmcContractScalarFieldEnum: {
+    readonly id: "id";
+    readonly icrNumber: "icrNumber";
+    readonly warrantyType: "warrantyType";
+    readonly price: "price";
+    readonly discount: "discount";
+    readonly totalPrice: "totalPrice";
+    readonly engineerName: "engineerName";
+    readonly date: "date";
+    readonly franchiseeId: "franchiseeId";
+    readonly createdAt: "createdAt";
+};
+export type AmcContractScalarFieldEnum = (typeof AmcContractScalarFieldEnum)[keyof typeof AmcContractScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";

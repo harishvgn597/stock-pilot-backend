@@ -20,7 +20,8 @@ export const ModelName = {
     SaleOrder: 'SaleOrder',
     WarrantyAmcOrder: 'WarrantyAmcOrder',
     ReturnToGodownOrder: 'ReturnToGodownOrder',
-    CustomerReturn: 'CustomerReturn'
+    CustomerReturn: 'CustomerReturn',
+    AmcContract: 'AmcContract'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
     ReadUncommitted: 'ReadUncommitted',
@@ -148,6 +149,18 @@ export const CustomerReturnScalarFieldEnum = {
     pricePerUnit: 'pricePerUnit',
     totalPrice: 'totalPrice',
     remarks: 'remarks',
+    createdAt: 'createdAt'
+};
+export const AmcContractScalarFieldEnum = {
+    id: 'id',
+    icrNumber: 'icrNumber',
+    warrantyType: 'warrantyType',
+    price: 'price',
+    discount: 'discount',
+    totalPrice: 'totalPrice',
+    engineerName: 'engineerName',
+    date: 'date',
+    franchiseeId: 'franchiseeId',
     createdAt: 'createdAt'
 };
 export const SortOrder = {

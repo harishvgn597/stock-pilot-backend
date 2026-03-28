@@ -188,6 +188,50 @@ export type EnumOrderTypeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumOrderTypeFilter<$PrismaModel>
 }
 
+export type EnumWarrantyTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.WarrantyType | Prisma.EnumWarrantyTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel> | $Enums.WarrantyType
+}
+
+export type FloatNullableFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatNullableFilter<$PrismaModel> | number | null
+}
+
+export type EnumWarrantyTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.WarrantyType | Prisma.EnumWarrantyTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWarrantyTypeWithAggregatesFilter<$PrismaModel> | $Enums.WarrantyType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel>
+}
+
+export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _sum?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -373,6 +417,50 @@ export type NestedEnumOrderTypeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumOrderTypeFilter<$PrismaModel>
   _max?: Prisma.NestedEnumOrderTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumWarrantyTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.WarrantyType | Prisma.EnumWarrantyTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel> | $Enums.WarrantyType
+}
+
+export type NestedFloatNullableFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatNullableFilter<$PrismaModel> | number | null
+}
+
+export type NestedEnumWarrantyTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.WarrantyType | Prisma.EnumWarrantyTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WarrantyType[] | Prisma.ListEnumWarrantyTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWarrantyTypeWithAggregatesFilter<$PrismaModel> | $Enums.WarrantyType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumWarrantyTypeFilter<$PrismaModel>
+}
+
+export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: number | Prisma.FloatFieldRefInput<$PrismaModel> | null
+  in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  notIn?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel> | null
+  lt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  lte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _avg?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _sum?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedFloatNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedFloatNullableFilter<$PrismaModel>
 }
 
 

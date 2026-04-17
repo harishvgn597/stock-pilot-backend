@@ -24,6 +24,7 @@ export declare const ModelName: {
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
     readonly CustomerReturn: "CustomerReturn";
     readonly AmcContract: "AmcContract";
+    readonly GodownStock: "GodownStock";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export declare const TransactionIsolationLevel: {
@@ -180,6 +181,18 @@ export declare const AmcContractScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type AmcContractScalarFieldEnum = (typeof AmcContractScalarFieldEnum)[keyof typeof AmcContractScalarFieldEnum];
+export declare const GodownStockScalarFieldEnum: {
+    readonly id: "id";
+    readonly franchiseeId: "franchiseeId";
+    readonly materialCode: "materialCode";
+    readonly goodQuantity: "goodQuantity";
+    readonly defectiveQuantity: "defectiveQuantity";
+    readonly invoiceId: "invoiceId";
+    readonly notes: "notes";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type GodownStockScalarFieldEnum = (typeof GodownStockScalarFieldEnum)[keyof typeof GodownStockScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";

@@ -1,11 +1,15 @@
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
+import { GodownService } from '../godown/godown.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
 import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 
 @Injectable()
 export class InvoicesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly godown: GodownService,
+  ) {}
 
   // GET /invoices — list all invoices with items
   async findAll(franchiseeId: string) {
@@ -74,7 +78,7 @@ export class InvoicesService {
       throw new ConflictException(`Invoice ${dto.invoiceNumber} already exists`);
     }
 
-    return this.prisma.invoice.create({
+    const invoice = await this.prisma.invoice.create({
       data: {
         invoiceNumber: dto.invoiceNumber,
         invoiceDate: new Date(dto.invoiceDate),
@@ -115,6 +119,15 @@ export class InvoicesService {
         },
       },
     });
+
+    // Auto-populate godown stock for every item in this invoice
+    await this.godown.createFromInvoice(
+      invoice.id,
+      franchiseeId,
+      invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity })),
+    );
+
+    return invoice;
   }
 
   // PATCH /invoices/items/:id — update an invoice item

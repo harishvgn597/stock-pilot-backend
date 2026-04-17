@@ -189,6 +189,7 @@ export type MaterialWhereInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderListRelationFilter
   returnToGodownOrders?: Prisma.ReturnToGodownOrderListRelationFilter
   customerReturns?: Prisma.CustomerReturnListRelationFilter
+  godownStock?: Prisma.GodownStockListRelationFilter
 }
 
 export type MaterialOrderByWithRelationInput = {
@@ -204,6 +205,7 @@ export type MaterialOrderByWithRelationInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderOrderByRelationAggregateInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderOrderByRelationAggregateInput
   customerReturns?: Prisma.CustomerReturnOrderByRelationAggregateInput
+  godownStock?: Prisma.GodownStockOrderByRelationAggregateInput
 }
 
 export type MaterialWhereUniqueInput = Prisma.AtLeast<{
@@ -222,6 +224,7 @@ export type MaterialWhereUniqueInput = Prisma.AtLeast<{
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderListRelationFilter
   returnToGodownOrders?: Prisma.ReturnToGodownOrderListRelationFilter
   customerReturns?: Prisma.CustomerReturnListRelationFilter
+  godownStock?: Prisma.GodownStockListRelationFilter
 }, "id" | "materialCode">
 
 export type MaterialOrderByWithAggregationInput = {
@@ -259,6 +262,7 @@ export type MaterialCreateInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateInput = {
@@ -274,6 +278,7 @@ export type MaterialUncheckedCreateInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUpdateInput = {
@@ -289,6 +294,7 @@ export type MaterialUpdateInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateInput = {
@@ -304,6 +310,7 @@ export type MaterialUncheckedUpdateInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateManyInput = {
@@ -457,6 +464,20 @@ export type MaterialUpdateOneRequiredWithoutCustomerReturnsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutCustomerReturnsInput, Prisma.MaterialUpdateWithoutCustomerReturnsInput>, Prisma.MaterialUncheckedUpdateWithoutCustomerReturnsInput>
 }
 
+export type MaterialCreateNestedOneWithoutGodownStockInput = {
+  create?: Prisma.XOR<Prisma.MaterialCreateWithoutGodownStockInput, Prisma.MaterialUncheckedCreateWithoutGodownStockInput>
+  connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutGodownStockInput
+  connect?: Prisma.MaterialWhereUniqueInput
+}
+
+export type MaterialUpdateOneRequiredWithoutGodownStockNestedInput = {
+  create?: Prisma.XOR<Prisma.MaterialCreateWithoutGodownStockInput, Prisma.MaterialUncheckedCreateWithoutGodownStockInput>
+  connectOrCreate?: Prisma.MaterialCreateOrConnectWithoutGodownStockInput
+  upsert?: Prisma.MaterialUpsertWithoutGodownStockInput
+  connect?: Prisma.MaterialWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.MaterialUpdateToOneWithWhereWithoutGodownStockInput, Prisma.MaterialUpdateWithoutGodownStockInput>, Prisma.MaterialUncheckedUpdateWithoutGodownStockInput>
+}
+
 export type MaterialCreateWithoutPricesInput = {
   id?: string
   materialCode: string
@@ -469,6 +490,7 @@ export type MaterialCreateWithoutPricesInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutPricesInput = {
@@ -483,6 +505,7 @@ export type MaterialUncheckedCreateWithoutPricesInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutPricesInput = {
@@ -513,6 +536,7 @@ export type MaterialUpdateWithoutPricesInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutPricesInput = {
@@ -527,6 +551,7 @@ export type MaterialUncheckedUpdateWithoutPricesInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutInvoiceItemsInput = {
@@ -541,6 +566,7 @@ export type MaterialCreateWithoutInvoiceItemsInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
@@ -555,6 +581,7 @@ export type MaterialUncheckedCreateWithoutInvoiceItemsInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutInvoiceItemsInput = {
@@ -585,6 +612,7 @@ export type MaterialUpdateWithoutInvoiceItemsInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
@@ -599,6 +627,7 @@ export type MaterialUncheckedUpdateWithoutInvoiceItemsInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutEngineerStockInput = {
@@ -613,6 +642,7 @@ export type MaterialCreateWithoutEngineerStockInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutEngineerStockInput = {
@@ -627,6 +657,7 @@ export type MaterialUncheckedCreateWithoutEngineerStockInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutEngineerStockInput = {
@@ -657,6 +688,7 @@ export type MaterialUpdateWithoutEngineerStockInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutEngineerStockInput = {
@@ -671,6 +703,7 @@ export type MaterialUncheckedUpdateWithoutEngineerStockInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutSaleOrdersInput = {
@@ -685,6 +718,7 @@ export type MaterialCreateWithoutSaleOrdersInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutSaleOrdersInput = {
@@ -699,6 +733,7 @@ export type MaterialUncheckedCreateWithoutSaleOrdersInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutSaleOrdersInput = {
@@ -729,6 +764,7 @@ export type MaterialUpdateWithoutSaleOrdersInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutSaleOrdersInput = {
@@ -743,6 +779,7 @@ export type MaterialUncheckedUpdateWithoutSaleOrdersInput = {
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutWarrantyAmcOrdersInput = {
@@ -757,6 +794,7 @@ export type MaterialCreateWithoutWarrantyAmcOrdersInput = {
   saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutWarrantyAmcOrdersInput = {
@@ -771,6 +809,7 @@ export type MaterialUncheckedCreateWithoutWarrantyAmcOrdersInput = {
   saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutWarrantyAmcOrdersInput = {
@@ -801,6 +840,7 @@ export type MaterialUpdateWithoutWarrantyAmcOrdersInput = {
   saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutWarrantyAmcOrdersInput = {
@@ -815,6 +855,7 @@ export type MaterialUncheckedUpdateWithoutWarrantyAmcOrdersInput = {
   saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutReturnToGodownOrdersInput = {
@@ -829,6 +870,7 @@ export type MaterialCreateWithoutReturnToGodownOrdersInput = {
   saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutReturnToGodownOrdersInput = {
@@ -843,6 +885,7 @@ export type MaterialUncheckedCreateWithoutReturnToGodownOrdersInput = {
   saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutReturnToGodownOrdersInput = {
@@ -873,6 +916,7 @@ export type MaterialUpdateWithoutReturnToGodownOrdersInput = {
   saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutReturnToGodownOrdersInput = {
@@ -887,6 +931,7 @@ export type MaterialUncheckedUpdateWithoutReturnToGodownOrdersInput = {
   saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialCreateWithoutCustomerReturnsInput = {
@@ -901,6 +946,7 @@ export type MaterialCreateWithoutCustomerReturnsInput = {
   saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialUncheckedCreateWithoutCustomerReturnsInput = {
@@ -915,6 +961,7 @@ export type MaterialUncheckedCreateWithoutCustomerReturnsInput = {
   saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutMaterialInput
 }
 
 export type MaterialCreateOrConnectWithoutCustomerReturnsInput = {
@@ -945,6 +992,7 @@ export type MaterialUpdateWithoutCustomerReturnsInput = {
   saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutMaterialNestedInput
 }
 
 export type MaterialUncheckedUpdateWithoutCustomerReturnsInput = {
@@ -959,6 +1007,83 @@ export type MaterialUncheckedUpdateWithoutCustomerReturnsInput = {
   saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput
   warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
   returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutMaterialNestedInput
+}
+
+export type MaterialCreateWithoutGodownStockInput = {
+  id?: string
+  materialCode: string
+  description: string
+  materialGroup: string
+  createdAt?: Date | string
+  prices?: Prisma.MaterialPriceCreateNestedManyWithoutMaterialInput
+  invoiceItems?: Prisma.InvoiceItemCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockCreateNestedManyWithoutMaterialInput
+  saleOrders?: Prisma.SaleOrderCreateNestedManyWithoutMaterialInput
+  warrantyAmcOrders?: Prisma.WarrantyAmcOrderCreateNestedManyWithoutMaterialInput
+  returnToGodownOrders?: Prisma.ReturnToGodownOrderCreateNestedManyWithoutMaterialInput
+  customerReturns?: Prisma.CustomerReturnCreateNestedManyWithoutMaterialInput
+}
+
+export type MaterialUncheckedCreateWithoutGodownStockInput = {
+  id?: string
+  materialCode: string
+  description: string
+  materialGroup: string
+  createdAt?: Date | string
+  prices?: Prisma.MaterialPriceUncheckedCreateNestedManyWithoutMaterialInput
+  invoiceItems?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutMaterialInput
+  engineerStock?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutMaterialInput
+  saleOrders?: Prisma.SaleOrderUncheckedCreateNestedManyWithoutMaterialInput
+  warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedCreateNestedManyWithoutMaterialInput
+  returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedCreateNestedManyWithoutMaterialInput
+  customerReturns?: Prisma.CustomerReturnUncheckedCreateNestedManyWithoutMaterialInput
+}
+
+export type MaterialCreateOrConnectWithoutGodownStockInput = {
+  where: Prisma.MaterialWhereUniqueInput
+  create: Prisma.XOR<Prisma.MaterialCreateWithoutGodownStockInput, Prisma.MaterialUncheckedCreateWithoutGodownStockInput>
+}
+
+export type MaterialUpsertWithoutGodownStockInput = {
+  update: Prisma.XOR<Prisma.MaterialUpdateWithoutGodownStockInput, Prisma.MaterialUncheckedUpdateWithoutGodownStockInput>
+  create: Prisma.XOR<Prisma.MaterialCreateWithoutGodownStockInput, Prisma.MaterialUncheckedCreateWithoutGodownStockInput>
+  where?: Prisma.MaterialWhereInput
+}
+
+export type MaterialUpdateToOneWithWhereWithoutGodownStockInput = {
+  where?: Prisma.MaterialWhereInput
+  data: Prisma.XOR<Prisma.MaterialUpdateWithoutGodownStockInput, Prisma.MaterialUncheckedUpdateWithoutGodownStockInput>
+}
+
+export type MaterialUpdateWithoutGodownStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  prices?: Prisma.MaterialPriceUpdateManyWithoutMaterialNestedInput
+  invoiceItems?: Prisma.InvoiceItemUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUpdateManyWithoutMaterialNestedInput
+  saleOrders?: Prisma.SaleOrderUpdateManyWithoutMaterialNestedInput
+  warrantyAmcOrders?: Prisma.WarrantyAmcOrderUpdateManyWithoutMaterialNestedInput
+  returnToGodownOrders?: Prisma.ReturnToGodownOrderUpdateManyWithoutMaterialNestedInput
+  customerReturns?: Prisma.CustomerReturnUpdateManyWithoutMaterialNestedInput
+}
+
+export type MaterialUncheckedUpdateWithoutGodownStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  materialGroup?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  prices?: Prisma.MaterialPriceUncheckedUpdateManyWithoutMaterialNestedInput
+  invoiceItems?: Prisma.InvoiceItemUncheckedUpdateManyWithoutMaterialNestedInput
+  engineerStock?: Prisma.EngineerStockUncheckedUpdateManyWithoutMaterialNestedInput
+  saleOrders?: Prisma.SaleOrderUncheckedUpdateManyWithoutMaterialNestedInput
+  warrantyAmcOrders?: Prisma.WarrantyAmcOrderUncheckedUpdateManyWithoutMaterialNestedInput
+  returnToGodownOrders?: Prisma.ReturnToGodownOrderUncheckedUpdateManyWithoutMaterialNestedInput
+  customerReturns?: Prisma.CustomerReturnUncheckedUpdateManyWithoutMaterialNestedInput
 }
 
 
@@ -974,6 +1099,7 @@ export type MaterialCountOutputType = {
   warrantyAmcOrders: number
   returnToGodownOrders: number
   customerReturns: number
+  godownStock: number
 }
 
 export type MaterialCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -984,6 +1110,7 @@ export type MaterialCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensio
   warrantyAmcOrders?: boolean | MaterialCountOutputTypeCountWarrantyAmcOrdersArgs
   returnToGodownOrders?: boolean | MaterialCountOutputTypeCountReturnToGodownOrdersArgs
   customerReturns?: boolean | MaterialCountOutputTypeCountCustomerReturnsArgs
+  godownStock?: boolean | MaterialCountOutputTypeCountGodownStockArgs
 }
 
 /**
@@ -1045,6 +1172,13 @@ export type MaterialCountOutputTypeCountCustomerReturnsArgs<ExtArgs extends runt
   where?: Prisma.CustomerReturnWhereInput
 }
 
+/**
+ * MaterialCountOutputType without action
+ */
+export type MaterialCountOutputTypeCountGodownStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GodownStockWhereInput
+}
+
 
 export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1059,6 +1193,7 @@ export type MaterialSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   warrantyAmcOrders?: boolean | Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>
   returnToGodownOrders?: boolean | Prisma.Material$returnToGodownOrdersArgs<ExtArgs>
   customerReturns?: boolean | Prisma.Material$customerReturnsArgs<ExtArgs>
+  godownStock?: boolean | Prisma.Material$godownStockArgs<ExtArgs>
   _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["material"]>
 
@@ -1095,6 +1230,7 @@ export type MaterialInclude<ExtArgs extends runtime.Types.Extensions.InternalArg
   warrantyAmcOrders?: boolean | Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>
   returnToGodownOrders?: boolean | Prisma.Material$returnToGodownOrdersArgs<ExtArgs>
   customerReturns?: boolean | Prisma.Material$customerReturnsArgs<ExtArgs>
+  godownStock?: boolean | Prisma.Material$godownStockArgs<ExtArgs>
   _count?: boolean | Prisma.MaterialCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type MaterialIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1110,6 +1246,7 @@ export type $MaterialPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     warrantyAmcOrders: Prisma.$WarrantyAmcOrderPayload<ExtArgs>[]
     returnToGodownOrders: Prisma.$ReturnToGodownOrderPayload<ExtArgs>[]
     customerReturns: Prisma.$CustomerReturnPayload<ExtArgs>[]
+    godownStock: Prisma.$GodownStockPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1518,6 +1655,7 @@ export interface Prisma__MaterialClient<T, Null = never, ExtArgs extends runtime
   warrantyAmcOrders<T extends Prisma.Material$warrantyAmcOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$warrantyAmcOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarrantyAmcOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   returnToGodownOrders<T extends Prisma.Material$returnToGodownOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$returnToGodownOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReturnToGodownOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   customerReturns<T extends Prisma.Material$customerReturnsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$customerReturnsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CustomerReturnPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  godownStock<T extends Prisma.Material$godownStockArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Material$godownStockArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2105,6 +2243,30 @@ export type Material$customerReturnsArgs<ExtArgs extends runtime.Types.Extension
   take?: number
   skip?: number
   distinct?: Prisma.CustomerReturnScalarFieldEnum | Prisma.CustomerReturnScalarFieldEnum[]
+}
+
+/**
+ * Material.godownStock
+ */
+export type Material$godownStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GodownStock
+   */
+  select?: Prisma.GodownStockSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GodownStock
+   */
+  omit?: Prisma.GodownStockOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GodownStockInclude<ExtArgs> | null
+  where?: Prisma.GodownStockWhereInput
+  orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[]
+  cursor?: Prisma.GodownStockWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GodownStockScalarFieldEnum | Prisma.GodownStockScalarFieldEnum[]
 }
 
 /**

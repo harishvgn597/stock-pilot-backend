@@ -55,6 +55,7 @@ model Material {
   warrantyAmcOrders    WarrantyAmcOrder[]
   returnToGodownOrders ReturnToGodownOrder[]
   customerReturns      CustomerReturn[]
+  godownStock          GodownStock[]
 }
 
 model MaterialPrice {
@@ -80,7 +81,8 @@ model Invoice {
 
   createdAt DateTime @default(now())
 
-  items InvoiceItem[]
+  items       InvoiceItem[]
+  godownStock GodownStock[]
 }
 
 model InvoiceItem {
@@ -241,4 +243,26 @@ model AmcContract {
   franchiseeId String
 
   createdAt DateTime @default(now())
+}
+
+// ─── Godown Stock ─────────────────────────────────────────────────────────────
+
+model GodownStock {
+  id           String   @id @default(uuid())
+  franchiseeId String
+
+  materialCode String
+  material     Material @relation(fields: [materialCode], references: [materialCode])
+
+  goodQuantity      Float @default(0)
+  defectiveQuantity Float @default(0)
+
+  // null = manually added, set = came from an invoice
+  invoiceId String?
+  invoice   Invoice? @relation(fields: [invoiceId], references: [id])
+
+  notes     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

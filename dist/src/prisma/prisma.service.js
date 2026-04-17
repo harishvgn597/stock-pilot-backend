@@ -50,6 +50,9 @@ let PrismaService = class PrismaService {
     get amcContract() {
         return this.prisma.amcContract;
     }
+    get godownStock() {
+        return this.prisma.godownStock;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

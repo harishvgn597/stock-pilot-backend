@@ -1,0 +1,852 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace.js";
+export type GodownStockModel = runtime.Types.Result.DefaultSelection<Prisma.$GodownStockPayload>;
+export type AggregateGodownStock = {
+    _count: GodownStockCountAggregateOutputType | null;
+    _avg: GodownStockAvgAggregateOutputType | null;
+    _sum: GodownStockSumAggregateOutputType | null;
+    _min: GodownStockMinAggregateOutputType | null;
+    _max: GodownStockMaxAggregateOutputType | null;
+};
+export type GodownStockAvgAggregateOutputType = {
+    goodQuantity: number | null;
+    defectiveQuantity: number | null;
+};
+export type GodownStockSumAggregateOutputType = {
+    goodQuantity: number | null;
+    defectiveQuantity: number | null;
+};
+export type GodownStockMinAggregateOutputType = {
+    id: string | null;
+    franchiseeId: string | null;
+    materialCode: string | null;
+    goodQuantity: number | null;
+    defectiveQuantity: number | null;
+    invoiceId: string | null;
+    notes: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+};
+export type GodownStockMaxAggregateOutputType = {
+    id: string | null;
+    franchiseeId: string | null;
+    materialCode: string | null;
+    goodQuantity: number | null;
+    defectiveQuantity: number | null;
+    invoiceId: string | null;
+    notes: string | null;
+    createdAt: Date | null;
+    updatedAt: Date | null;
+};
+export type GodownStockCountAggregateOutputType = {
+    id: number;
+    franchiseeId: number;
+    materialCode: number;
+    goodQuantity: number;
+    defectiveQuantity: number;
+    invoiceId: number;
+    notes: number;
+    createdAt: number;
+    updatedAt: number;
+    _all: number;
+};
+export type GodownStockAvgAggregateInputType = {
+    goodQuantity?: true;
+    defectiveQuantity?: true;
+};
+export type GodownStockSumAggregateInputType = {
+    goodQuantity?: true;
+    defectiveQuantity?: true;
+};
+export type GodownStockMinAggregateInputType = {
+    id?: true;
+    franchiseeId?: true;
+    materialCode?: true;
+    goodQuantity?: true;
+    defectiveQuantity?: true;
+    invoiceId?: true;
+    notes?: true;
+    createdAt?: true;
+    updatedAt?: true;
+};
+export type GodownStockMaxAggregateInputType = {
+    id?: true;
+    franchiseeId?: true;
+    materialCode?: true;
+    goodQuantity?: true;
+    defectiveQuantity?: true;
+    invoiceId?: true;
+    notes?: true;
+    createdAt?: true;
+    updatedAt?: true;
+};
+export type GodownStockCountAggregateInputType = {
+    id?: true;
+    franchiseeId?: true;
+    materialCode?: true;
+    goodQuantity?: true;
+    defectiveQuantity?: true;
+    invoiceId?: true;
+    notes?: true;
+    createdAt?: true;
+    updatedAt?: true;
+    _all?: true;
+};
+export type GodownStockAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.GodownStockWhereInput;
+    orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[];
+    cursor?: Prisma.GodownStockWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    _count?: true | GodownStockCountAggregateInputType;
+    _avg?: GodownStockAvgAggregateInputType;
+    _sum?: GodownStockSumAggregateInputType;
+    _min?: GodownStockMinAggregateInputType;
+    _max?: GodownStockMaxAggregateInputType;
+};
+export type GetGodownStockAggregateType<T extends GodownStockAggregateArgs> = {
+    [P in keyof T & keyof AggregateGodownStock]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateGodownStock[P]> : Prisma.GetScalarType<T[P], AggregateGodownStock[P]>;
+};
+export type GodownStockGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.GodownStockWhereInput;
+    orderBy?: Prisma.GodownStockOrderByWithAggregationInput | Prisma.GodownStockOrderByWithAggregationInput[];
+    by: Prisma.GodownStockScalarFieldEnum[] | Prisma.GodownStockScalarFieldEnum;
+    having?: Prisma.GodownStockScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: GodownStockCountAggregateInputType | true;
+    _avg?: GodownStockAvgAggregateInputType;
+    _sum?: GodownStockSumAggregateInputType;
+    _min?: GodownStockMinAggregateInputType;
+    _max?: GodownStockMaxAggregateInputType;
+};
+export type GodownStockGroupByOutputType = {
+    id: string;
+    franchiseeId: string;
+    materialCode: string;
+    goodQuantity: number;
+    defectiveQuantity: number;
+    invoiceId: string | null;
+    notes: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+    _count: GodownStockCountAggregateOutputType | null;
+    _avg: GodownStockAvgAggregateOutputType | null;
+    _sum: GodownStockSumAggregateOutputType | null;
+    _min: GodownStockMinAggregateOutputType | null;
+    _max: GodownStockMaxAggregateOutputType | null;
+};
+type GetGodownStockGroupByPayload<T extends GodownStockGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<GodownStockGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof GodownStockGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], GodownStockGroupByOutputType[P]> : Prisma.GetScalarType<T[P], GodownStockGroupByOutputType[P]>;
+}>>;
+export type GodownStockWhereInput = {
+    AND?: Prisma.GodownStockWhereInput | Prisma.GodownStockWhereInput[];
+    OR?: Prisma.GodownStockWhereInput[];
+    NOT?: Prisma.GodownStockWhereInput | Prisma.GodownStockWhereInput[];
+    id?: Prisma.StringFilter<"GodownStock"> | string;
+    franchiseeId?: Prisma.StringFilter<"GodownStock"> | string;
+    materialCode?: Prisma.StringFilter<"GodownStock"> | string;
+    goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+    updatedAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+    material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>;
+    invoice?: Prisma.XOR<Prisma.InvoiceNullableScalarRelationFilter, Prisma.InvoiceWhereInput> | null;
+};
+export type GodownStockOrderByWithRelationInput = {
+    id?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+    invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
+    notes?: Prisma.SortOrderInput | Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    updatedAt?: Prisma.SortOrder;
+    material?: Prisma.MaterialOrderByWithRelationInput;
+    invoice?: Prisma.InvoiceOrderByWithRelationInput;
+};
+export type GodownStockWhereUniqueInput = Prisma.AtLeast<{
+    id?: string;
+    AND?: Prisma.GodownStockWhereInput | Prisma.GodownStockWhereInput[];
+    OR?: Prisma.GodownStockWhereInput[];
+    NOT?: Prisma.GodownStockWhereInput | Prisma.GodownStockWhereInput[];
+    franchiseeId?: Prisma.StringFilter<"GodownStock"> | string;
+    materialCode?: Prisma.StringFilter<"GodownStock"> | string;
+    goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+    updatedAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+    material?: Prisma.XOR<Prisma.MaterialScalarRelationFilter, Prisma.MaterialWhereInput>;
+    invoice?: Prisma.XOR<Prisma.InvoiceNullableScalarRelationFilter, Prisma.InvoiceWhereInput> | null;
+}, "id">;
+export type GodownStockOrderByWithAggregationInput = {
+    id?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+    invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
+    notes?: Prisma.SortOrderInput | Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    updatedAt?: Prisma.SortOrder;
+    _count?: Prisma.GodownStockCountOrderByAggregateInput;
+    _avg?: Prisma.GodownStockAvgOrderByAggregateInput;
+    _max?: Prisma.GodownStockMaxOrderByAggregateInput;
+    _min?: Prisma.GodownStockMinOrderByAggregateInput;
+    _sum?: Prisma.GodownStockSumOrderByAggregateInput;
+};
+export type GodownStockScalarWhereWithAggregatesInput = {
+    AND?: Prisma.GodownStockScalarWhereWithAggregatesInput | Prisma.GodownStockScalarWhereWithAggregatesInput[];
+    OR?: Prisma.GodownStockScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.GodownStockScalarWhereWithAggregatesInput | Prisma.GodownStockScalarWhereWithAggregatesInput[];
+    id?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string;
+    franchiseeId?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string;
+    materialCode?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string;
+    goodQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number;
+    defectiveQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number;
+    invoiceId?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
+    notes?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
+    createdAt?: Prisma.DateTimeWithAggregatesFilter<"GodownStock"> | Date | string;
+    updatedAt?: Prisma.DateTimeWithAggregatesFilter<"GodownStock"> | Date | string;
+};
+export type GodownStockCreateInput = {
+    id?: string;
+    franchiseeId: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    material: Prisma.MaterialCreateNestedOneWithoutGodownStockInput;
+    invoice?: Prisma.InvoiceCreateNestedOneWithoutGodownStockInput;
+};
+export type GodownStockUncheckedCreateInput = {
+    id?: string;
+    franchiseeId: string;
+    materialCode: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    invoiceId?: string | null;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    material?: Prisma.MaterialUpdateOneRequiredWithoutGodownStockNestedInput;
+    invoice?: Prisma.InvoiceUpdateOneWithoutGodownStockNestedInput;
+};
+export type GodownStockUncheckedUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockCreateManyInput = {
+    id?: string;
+    franchiseeId: string;
+    materialCode: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    invoiceId?: string | null;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockUpdateManyMutationInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockUncheckedUpdateManyInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockListRelationFilter = {
+    every?: Prisma.GodownStockWhereInput;
+    some?: Prisma.GodownStockWhereInput;
+    none?: Prisma.GodownStockWhereInput;
+};
+export type GodownStockOrderByRelationAggregateInput = {
+    _count?: Prisma.SortOrder;
+};
+export type GodownStockCountOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+    invoiceId?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    updatedAt?: Prisma.SortOrder;
+};
+export type GodownStockAvgOrderByAggregateInput = {
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+};
+export type GodownStockMaxOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+    invoiceId?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    updatedAt?: Prisma.SortOrder;
+};
+export type GodownStockMinOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    franchiseeId?: Prisma.SortOrder;
+    materialCode?: Prisma.SortOrder;
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+    invoiceId?: Prisma.SortOrder;
+    notes?: Prisma.SortOrder;
+    createdAt?: Prisma.SortOrder;
+    updatedAt?: Prisma.SortOrder;
+};
+export type GodownStockSumOrderByAggregateInput = {
+    goodQuantity?: Prisma.SortOrder;
+    defectiveQuantity?: Prisma.SortOrder;
+};
+export type GodownStockCreateNestedManyWithoutMaterialInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput> | Prisma.GodownStockCreateWithoutMaterialInput[] | Prisma.GodownStockUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutMaterialInput | Prisma.GodownStockCreateOrConnectWithoutMaterialInput[];
+    createMany?: Prisma.GodownStockCreateManyMaterialInputEnvelope;
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+};
+export type GodownStockUncheckedCreateNestedManyWithoutMaterialInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput> | Prisma.GodownStockCreateWithoutMaterialInput[] | Prisma.GodownStockUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutMaterialInput | Prisma.GodownStockCreateOrConnectWithoutMaterialInput[];
+    createMany?: Prisma.GodownStockCreateManyMaterialInputEnvelope;
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+};
+export type GodownStockUpdateManyWithoutMaterialNestedInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput> | Prisma.GodownStockCreateWithoutMaterialInput[] | Prisma.GodownStockUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutMaterialInput | Prisma.GodownStockCreateOrConnectWithoutMaterialInput[];
+    upsert?: Prisma.GodownStockUpsertWithWhereUniqueWithoutMaterialInput | Prisma.GodownStockUpsertWithWhereUniqueWithoutMaterialInput[];
+    createMany?: Prisma.GodownStockCreateManyMaterialInputEnvelope;
+    set?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    disconnect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    delete?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    update?: Prisma.GodownStockUpdateWithWhereUniqueWithoutMaterialInput | Prisma.GodownStockUpdateWithWhereUniqueWithoutMaterialInput[];
+    updateMany?: Prisma.GodownStockUpdateManyWithWhereWithoutMaterialInput | Prisma.GodownStockUpdateManyWithWhereWithoutMaterialInput[];
+    deleteMany?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+};
+export type GodownStockUncheckedUpdateManyWithoutMaterialNestedInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput> | Prisma.GodownStockCreateWithoutMaterialInput[] | Prisma.GodownStockUncheckedCreateWithoutMaterialInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutMaterialInput | Prisma.GodownStockCreateOrConnectWithoutMaterialInput[];
+    upsert?: Prisma.GodownStockUpsertWithWhereUniqueWithoutMaterialInput | Prisma.GodownStockUpsertWithWhereUniqueWithoutMaterialInput[];
+    createMany?: Prisma.GodownStockCreateManyMaterialInputEnvelope;
+    set?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    disconnect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    delete?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    update?: Prisma.GodownStockUpdateWithWhereUniqueWithoutMaterialInput | Prisma.GodownStockUpdateWithWhereUniqueWithoutMaterialInput[];
+    updateMany?: Prisma.GodownStockUpdateManyWithWhereWithoutMaterialInput | Prisma.GodownStockUpdateManyWithWhereWithoutMaterialInput[];
+    deleteMany?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+};
+export type GodownStockCreateNestedManyWithoutInvoiceInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput> | Prisma.GodownStockCreateWithoutInvoiceInput[] | Prisma.GodownStockUncheckedCreateWithoutInvoiceInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutInvoiceInput | Prisma.GodownStockCreateOrConnectWithoutInvoiceInput[];
+    createMany?: Prisma.GodownStockCreateManyInvoiceInputEnvelope;
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+};
+export type GodownStockUncheckedCreateNestedManyWithoutInvoiceInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput> | Prisma.GodownStockCreateWithoutInvoiceInput[] | Prisma.GodownStockUncheckedCreateWithoutInvoiceInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutInvoiceInput | Prisma.GodownStockCreateOrConnectWithoutInvoiceInput[];
+    createMany?: Prisma.GodownStockCreateManyInvoiceInputEnvelope;
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+};
+export type GodownStockUpdateManyWithoutInvoiceNestedInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput> | Prisma.GodownStockCreateWithoutInvoiceInput[] | Prisma.GodownStockUncheckedCreateWithoutInvoiceInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutInvoiceInput | Prisma.GodownStockCreateOrConnectWithoutInvoiceInput[];
+    upsert?: Prisma.GodownStockUpsertWithWhereUniqueWithoutInvoiceInput | Prisma.GodownStockUpsertWithWhereUniqueWithoutInvoiceInput[];
+    createMany?: Prisma.GodownStockCreateManyInvoiceInputEnvelope;
+    set?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    disconnect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    delete?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    update?: Prisma.GodownStockUpdateWithWhereUniqueWithoutInvoiceInput | Prisma.GodownStockUpdateWithWhereUniqueWithoutInvoiceInput[];
+    updateMany?: Prisma.GodownStockUpdateManyWithWhereWithoutInvoiceInput | Prisma.GodownStockUpdateManyWithWhereWithoutInvoiceInput[];
+    deleteMany?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+};
+export type GodownStockUncheckedUpdateManyWithoutInvoiceNestedInput = {
+    create?: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput> | Prisma.GodownStockCreateWithoutInvoiceInput[] | Prisma.GodownStockUncheckedCreateWithoutInvoiceInput[];
+    connectOrCreate?: Prisma.GodownStockCreateOrConnectWithoutInvoiceInput | Prisma.GodownStockCreateOrConnectWithoutInvoiceInput[];
+    upsert?: Prisma.GodownStockUpsertWithWhereUniqueWithoutInvoiceInput | Prisma.GodownStockUpsertWithWhereUniqueWithoutInvoiceInput[];
+    createMany?: Prisma.GodownStockCreateManyInvoiceInputEnvelope;
+    set?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    disconnect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    delete?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    connect?: Prisma.GodownStockWhereUniqueInput | Prisma.GodownStockWhereUniqueInput[];
+    update?: Prisma.GodownStockUpdateWithWhereUniqueWithoutInvoiceInput | Prisma.GodownStockUpdateWithWhereUniqueWithoutInvoiceInput[];
+    updateMany?: Prisma.GodownStockUpdateManyWithWhereWithoutInvoiceInput | Prisma.GodownStockUpdateManyWithWhereWithoutInvoiceInput[];
+    deleteMany?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+};
+export type GodownStockCreateWithoutMaterialInput = {
+    id?: string;
+    franchiseeId: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    invoice?: Prisma.InvoiceCreateNestedOneWithoutGodownStockInput;
+};
+export type GodownStockUncheckedCreateWithoutMaterialInput = {
+    id?: string;
+    franchiseeId: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    invoiceId?: string | null;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockCreateOrConnectWithoutMaterialInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    create: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput>;
+};
+export type GodownStockCreateManyMaterialInputEnvelope = {
+    data: Prisma.GodownStockCreateManyMaterialInput | Prisma.GodownStockCreateManyMaterialInput[];
+    skipDuplicates?: boolean;
+};
+export type GodownStockUpsertWithWhereUniqueWithoutMaterialInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    update: Prisma.XOR<Prisma.GodownStockUpdateWithoutMaterialInput, Prisma.GodownStockUncheckedUpdateWithoutMaterialInput>;
+    create: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput>;
+};
+export type GodownStockUpdateWithWhereUniqueWithoutMaterialInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    data: Prisma.XOR<Prisma.GodownStockUpdateWithoutMaterialInput, Prisma.GodownStockUncheckedUpdateWithoutMaterialInput>;
+};
+export type GodownStockUpdateManyWithWhereWithoutMaterialInput = {
+    where: Prisma.GodownStockScalarWhereInput;
+    data: Prisma.XOR<Prisma.GodownStockUpdateManyMutationInput, Prisma.GodownStockUncheckedUpdateManyWithoutMaterialInput>;
+};
+export type GodownStockScalarWhereInput = {
+    AND?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+    OR?: Prisma.GodownStockScalarWhereInput[];
+    NOT?: Prisma.GodownStockScalarWhereInput | Prisma.GodownStockScalarWhereInput[];
+    id?: Prisma.StringFilter<"GodownStock"> | string;
+    franchiseeId?: Prisma.StringFilter<"GodownStock"> | string;
+    materialCode?: Prisma.StringFilter<"GodownStock"> | string;
+    goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
+    createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+    updatedAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
+};
+export type GodownStockCreateWithoutInvoiceInput = {
+    id?: string;
+    franchiseeId: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    material: Prisma.MaterialCreateNestedOneWithoutGodownStockInput;
+};
+export type GodownStockUncheckedCreateWithoutInvoiceInput = {
+    id?: string;
+    franchiseeId: string;
+    materialCode: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockCreateOrConnectWithoutInvoiceInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    create: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput>;
+};
+export type GodownStockCreateManyInvoiceInputEnvelope = {
+    data: Prisma.GodownStockCreateManyInvoiceInput | Prisma.GodownStockCreateManyInvoiceInput[];
+    skipDuplicates?: boolean;
+};
+export type GodownStockUpsertWithWhereUniqueWithoutInvoiceInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    update: Prisma.XOR<Prisma.GodownStockUpdateWithoutInvoiceInput, Prisma.GodownStockUncheckedUpdateWithoutInvoiceInput>;
+    create: Prisma.XOR<Prisma.GodownStockCreateWithoutInvoiceInput, Prisma.GodownStockUncheckedCreateWithoutInvoiceInput>;
+};
+export type GodownStockUpdateWithWhereUniqueWithoutInvoiceInput = {
+    where: Prisma.GodownStockWhereUniqueInput;
+    data: Prisma.XOR<Prisma.GodownStockUpdateWithoutInvoiceInput, Prisma.GodownStockUncheckedUpdateWithoutInvoiceInput>;
+};
+export type GodownStockUpdateManyWithWhereWithoutInvoiceInput = {
+    where: Prisma.GodownStockScalarWhereInput;
+    data: Prisma.XOR<Prisma.GodownStockUpdateManyMutationInput, Prisma.GodownStockUncheckedUpdateManyWithoutInvoiceInput>;
+};
+export type GodownStockCreateManyMaterialInput = {
+    id?: string;
+    franchiseeId: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    invoiceId?: string | null;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockUpdateWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    invoice?: Prisma.InvoiceUpdateOneWithoutGodownStockNestedInput;
+};
+export type GodownStockUncheckedUpdateWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockUncheckedUpdateManyWithoutMaterialInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockCreateManyInvoiceInput = {
+    id?: string;
+    franchiseeId: string;
+    materialCode: string;
+    goodQuantity?: number;
+    defectiveQuantity?: number;
+    notes?: string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};
+export type GodownStockUpdateWithoutInvoiceInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    material?: Prisma.MaterialUpdateOneRequiredWithoutGodownStockNestedInput;
+};
+export type GodownStockUncheckedUpdateWithoutInvoiceInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockUncheckedUpdateManyWithoutInvoiceInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
+    goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type GodownStockSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    franchiseeId?: boolean;
+    materialCode?: boolean;
+    goodQuantity?: boolean;
+    defectiveQuantity?: boolean;
+    invoiceId?: boolean;
+    notes?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+}, ExtArgs["result"]["godownStock"]>;
+export type GodownStockSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    franchiseeId?: boolean;
+    materialCode?: boolean;
+    goodQuantity?: boolean;
+    defectiveQuantity?: boolean;
+    invoiceId?: boolean;
+    notes?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+}, ExtArgs["result"]["godownStock"]>;
+export type GodownStockSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    franchiseeId?: boolean;
+    materialCode?: boolean;
+    goodQuantity?: boolean;
+    defectiveQuantity?: boolean;
+    invoiceId?: boolean;
+    notes?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+}, ExtArgs["result"]["godownStock"]>;
+export type GodownStockSelectScalar = {
+    id?: boolean;
+    franchiseeId?: boolean;
+    materialCode?: boolean;
+    goodQuantity?: boolean;
+    defectiveQuantity?: boolean;
+    invoiceId?: boolean;
+    notes?: boolean;
+    createdAt?: boolean;
+    updatedAt?: boolean;
+};
+export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "goodQuantity" | "defectiveQuantity" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>;
+export type GodownStockInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+};
+export type GodownStockIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+};
+export type GodownStockIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
+    invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
+};
+export type $GodownStockPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "GodownStock";
+    objects: {
+        material: Prisma.$MaterialPayload<ExtArgs>;
+        invoice: Prisma.$InvoicePayload<ExtArgs> | null;
+    };
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        id: string;
+        franchiseeId: string;
+        materialCode: string;
+        goodQuantity: number;
+        defectiveQuantity: number;
+        invoiceId: string | null;
+        notes: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+    }, ExtArgs["result"]["godownStock"]>;
+    composites: {};
+};
+export type GodownStockGetPayload<S extends boolean | null | undefined | GodownStockDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$GodownStockPayload, S>;
+export type GodownStockCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<GodownStockFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: GodownStockCountAggregateInputType | true;
+};
+export interface GodownStockDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['GodownStock'];
+        meta: {
+            name: 'GodownStock';
+        };
+    };
+    findUnique<T extends GodownStockFindUniqueArgs>(args: Prisma.SelectSubset<T, GodownStockFindUniqueArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    findUniqueOrThrow<T extends GodownStockFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, GodownStockFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    findFirst<T extends GodownStockFindFirstArgs>(args?: Prisma.SelectSubset<T, GodownStockFindFirstArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    findFirstOrThrow<T extends GodownStockFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, GodownStockFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    findMany<T extends GodownStockFindManyArgs>(args?: Prisma.SelectSubset<T, GodownStockFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    create<T extends GodownStockCreateArgs>(args: Prisma.SelectSubset<T, GodownStockCreateArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    createMany<T extends GodownStockCreateManyArgs>(args?: Prisma.SelectSubset<T, GodownStockCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    createManyAndReturn<T extends GodownStockCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, GodownStockCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    delete<T extends GodownStockDeleteArgs>(args: Prisma.SelectSubset<T, GodownStockDeleteArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    update<T extends GodownStockUpdateArgs>(args: Prisma.SelectSubset<T, GodownStockUpdateArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    deleteMany<T extends GodownStockDeleteManyArgs>(args?: Prisma.SelectSubset<T, GodownStockDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    updateMany<T extends GodownStockUpdateManyArgs>(args: Prisma.SelectSubset<T, GodownStockUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    updateManyAndReturn<T extends GodownStockUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, GodownStockUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    upsert<T extends GodownStockUpsertArgs>(args: Prisma.SelectSubset<T, GodownStockUpsertArgs<ExtArgs>>): Prisma.Prisma__GodownStockClient<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    count<T extends GodownStockCountArgs>(args?: Prisma.Subset<T, GodownStockCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], GodownStockCountAggregateOutputType> : number>;
+    aggregate<T extends GodownStockAggregateArgs>(args: Prisma.Subset<T, GodownStockAggregateArgs>): Prisma.PrismaPromise<GetGodownStockAggregateType<T>>;
+    groupBy<T extends GodownStockGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: GodownStockGroupByArgs['orderBy'];
+    } : {
+        orderBy?: GodownStockGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, GodownStockGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGodownStockGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    readonly fields: GodownStockFieldRefs;
+}
+export interface Prisma__GodownStockClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    material<T extends Prisma.MaterialDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MaterialDefaultArgs<ExtArgs>>): Prisma.Prisma__MaterialClient<runtime.Types.Result.GetResult<Prisma.$MaterialPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>;
+    invoice<T extends Prisma.GodownStock$invoiceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GodownStock$invoiceArgs<ExtArgs>>): Prisma.Prisma__InvoiceClient<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+export interface GodownStockFieldRefs {
+    readonly id: Prisma.FieldRef<"GodownStock", 'String'>;
+    readonly franchiseeId: Prisma.FieldRef<"GodownStock", 'String'>;
+    readonly materialCode: Prisma.FieldRef<"GodownStock", 'String'>;
+    readonly goodQuantity: Prisma.FieldRef<"GodownStock", 'Float'>;
+    readonly defectiveQuantity: Prisma.FieldRef<"GodownStock", 'Float'>;
+    readonly invoiceId: Prisma.FieldRef<"GodownStock", 'String'>;
+    readonly notes: Prisma.FieldRef<"GodownStock", 'String'>;
+    readonly createdAt: Prisma.FieldRef<"GodownStock", 'DateTime'>;
+    readonly updatedAt: Prisma.FieldRef<"GodownStock", 'DateTime'>;
+}
+export type GodownStockFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where: Prisma.GodownStockWhereUniqueInput;
+};
+export type GodownStockFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where: Prisma.GodownStockWhereUniqueInput;
+};
+export type GodownStockFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where?: Prisma.GodownStockWhereInput;
+    orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[];
+    cursor?: Prisma.GodownStockWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.GodownStockScalarFieldEnum | Prisma.GodownStockScalarFieldEnum[];
+};
+export type GodownStockFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where?: Prisma.GodownStockWhereInput;
+    orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[];
+    cursor?: Prisma.GodownStockWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.GodownStockScalarFieldEnum | Prisma.GodownStockScalarFieldEnum[];
+};
+export type GodownStockFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where?: Prisma.GodownStockWhereInput;
+    orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[];
+    cursor?: Prisma.GodownStockWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.GodownStockScalarFieldEnum | Prisma.GodownStockScalarFieldEnum[];
+};
+export type GodownStockCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.GodownStockCreateInput, Prisma.GodownStockUncheckedCreateInput>;
+};
+export type GodownStockCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    data: Prisma.GodownStockCreateManyInput | Prisma.GodownStockCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+export type GodownStockCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelectCreateManyAndReturn<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    data: Prisma.GodownStockCreateManyInput | Prisma.GodownStockCreateManyInput[];
+    skipDuplicates?: boolean;
+    include?: Prisma.GodownStockIncludeCreateManyAndReturn<ExtArgs> | null;
+};
+export type GodownStockUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.GodownStockUpdateInput, Prisma.GodownStockUncheckedUpdateInput>;
+    where: Prisma.GodownStockWhereUniqueInput;
+};
+export type GodownStockUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    data: Prisma.XOR<Prisma.GodownStockUpdateManyMutationInput, Prisma.GodownStockUncheckedUpdateManyInput>;
+    where?: Prisma.GodownStockWhereInput;
+    limit?: number;
+};
+export type GodownStockUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelectUpdateManyAndReturn<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    data: Prisma.XOR<Prisma.GodownStockUpdateManyMutationInput, Prisma.GodownStockUncheckedUpdateManyInput>;
+    where?: Prisma.GodownStockWhereInput;
+    limit?: number;
+    include?: Prisma.GodownStockIncludeUpdateManyAndReturn<ExtArgs> | null;
+};
+export type GodownStockUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where: Prisma.GodownStockWhereUniqueInput;
+    create: Prisma.XOR<Prisma.GodownStockCreateInput, Prisma.GodownStockUncheckedCreateInput>;
+    update: Prisma.XOR<Prisma.GodownStockUpdateInput, Prisma.GodownStockUncheckedUpdateInput>;
+};
+export type GodownStockDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+    where: Prisma.GodownStockWhereUniqueInput;
+};
+export type GodownStockDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.GodownStockWhereInput;
+    limit?: number;
+};
+export type GodownStock$invoiceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.InvoiceSelect<ExtArgs> | null;
+    omit?: Prisma.InvoiceOmit<ExtArgs> | null;
+    include?: Prisma.InvoiceInclude<ExtArgs> | null;
+    where?: Prisma.InvoiceWhereInput;
+};
+export type GodownStockDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.GodownStockSelect<ExtArgs> | null;
+    omit?: Prisma.GodownStockOmit<ExtArgs> | null;
+    include?: Prisma.GodownStockInclude<ExtArgs> | null;
+};
+export {};

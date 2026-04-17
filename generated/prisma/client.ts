@@ -104,3 +104,8 @@ export type CustomerReturn = Prisma.CustomerReturnModel
  * 
  */
 export type AmcContract = Prisma.AmcContractModel
+/**
+ * Model GodownStock
+ * 
+ */
+export type GodownStock = Prisma.GodownStockModel

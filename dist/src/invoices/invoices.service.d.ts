@@ -1,9 +1,11 @@
 import { PrismaService } from '../prisma/prisma.service.js';
+import { GodownService } from '../godown/godown.service.js';
 import { CreateInvoiceDto } from './dto/create-invoice.dto.js';
 import { UpdateInvoiceItemDto } from './dto/update-invoice-item.dto.js';
 export declare class InvoicesService {
     private readonly prisma;
-    constructor(prisma: PrismaService);
+    private readonly godown;
+    constructor(prisma: PrismaService, godown: GodownService);
     findAll(franchiseeId: string): Promise<({
         items: {
             id: string;

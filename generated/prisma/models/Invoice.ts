@@ -191,6 +191,7 @@ export type InvoiceWhereInput = {
   franchiseeId?: Prisma.StringFilter<"Invoice"> | string
   createdAt?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   items?: Prisma.InvoiceItemListRelationFilter
+  godownStock?: Prisma.GodownStockListRelationFilter
 }
 
 export type InvoiceOrderByWithRelationInput = {
@@ -201,6 +202,7 @@ export type InvoiceOrderByWithRelationInput = {
   franchiseeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   items?: Prisma.InvoiceItemOrderByRelationAggregateInput
+  godownStock?: Prisma.GodownStockOrderByRelationAggregateInput
 }
 
 export type InvoiceWhereUniqueInput = Prisma.AtLeast<{
@@ -214,6 +216,7 @@ export type InvoiceWhereUniqueInput = Prisma.AtLeast<{
   franchiseeId?: Prisma.StringFilter<"Invoice"> | string
   createdAt?: Prisma.DateTimeFilter<"Invoice"> | Date | string
   items?: Prisma.InvoiceItemListRelationFilter
+  godownStock?: Prisma.GodownStockListRelationFilter
 }, "id" | "invoiceNumber">
 
 export type InvoiceOrderByWithAggregationInput = {
@@ -248,6 +251,7 @@ export type InvoiceCreateInput = {
   franchiseeId: string
   createdAt?: Date | string
   items?: Prisma.InvoiceItemCreateNestedManyWithoutInvoiceInput
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutInvoiceInput
 }
 
 export type InvoiceUncheckedCreateInput = {
@@ -258,6 +262,7 @@ export type InvoiceUncheckedCreateInput = {
   franchiseeId: string
   createdAt?: Date | string
   items?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutInvoiceInput
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutInvoiceInput
 }
 
 export type InvoiceUpdateInput = {
@@ -268,6 +273,7 @@ export type InvoiceUpdateInput = {
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.InvoiceItemUpdateManyWithoutInvoiceNestedInput
+  godownStock?: Prisma.GodownStockUpdateManyWithoutInvoiceNestedInput
 }
 
 export type InvoiceUncheckedUpdateInput = {
@@ -278,6 +284,7 @@ export type InvoiceUncheckedUpdateInput = {
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.InvoiceItemUncheckedUpdateManyWithoutInvoiceNestedInput
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutInvoiceNestedInput
 }
 
 export type InvoiceCreateManyInput = {
@@ -339,6 +346,11 @@ export type InvoiceScalarRelationFilter = {
   isNot?: Prisma.InvoiceWhereInput
 }
 
+export type InvoiceNullableScalarRelationFilter = {
+  is?: Prisma.InvoiceWhereInput | null
+  isNot?: Prisma.InvoiceWhereInput | null
+}
+
 export type InvoiceCreateNestedOneWithoutItemsInput = {
   create?: Prisma.XOR<Prisma.InvoiceCreateWithoutItemsInput, Prisma.InvoiceUncheckedCreateWithoutItemsInput>
   connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutItemsInput
@@ -353,6 +365,22 @@ export type InvoiceUpdateOneRequiredWithoutItemsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.InvoiceUpdateToOneWithWhereWithoutItemsInput, Prisma.InvoiceUpdateWithoutItemsInput>, Prisma.InvoiceUncheckedUpdateWithoutItemsInput>
 }
 
+export type InvoiceCreateNestedOneWithoutGodownStockInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutGodownStockInput, Prisma.InvoiceUncheckedCreateWithoutGodownStockInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutGodownStockInput
+  connect?: Prisma.InvoiceWhereUniqueInput
+}
+
+export type InvoiceUpdateOneWithoutGodownStockNestedInput = {
+  create?: Prisma.XOR<Prisma.InvoiceCreateWithoutGodownStockInput, Prisma.InvoiceUncheckedCreateWithoutGodownStockInput>
+  connectOrCreate?: Prisma.InvoiceCreateOrConnectWithoutGodownStockInput
+  upsert?: Prisma.InvoiceUpsertWithoutGodownStockInput
+  disconnect?: Prisma.InvoiceWhereInput | boolean
+  delete?: Prisma.InvoiceWhereInput | boolean
+  connect?: Prisma.InvoiceWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.InvoiceUpdateToOneWithWhereWithoutGodownStockInput, Prisma.InvoiceUpdateWithoutGodownStockInput>, Prisma.InvoiceUncheckedUpdateWithoutGodownStockInput>
+}
+
 export type InvoiceCreateWithoutItemsInput = {
   id?: string
   invoiceNumber: string
@@ -360,6 +388,7 @@ export type InvoiceCreateWithoutItemsInput = {
   customerName: string
   franchiseeId: string
   createdAt?: Date | string
+  godownStock?: Prisma.GodownStockCreateNestedManyWithoutInvoiceInput
 }
 
 export type InvoiceUncheckedCreateWithoutItemsInput = {
@@ -369,6 +398,7 @@ export type InvoiceUncheckedCreateWithoutItemsInput = {
   customerName: string
   franchiseeId: string
   createdAt?: Date | string
+  godownStock?: Prisma.GodownStockUncheckedCreateNestedManyWithoutInvoiceInput
 }
 
 export type InvoiceCreateOrConnectWithoutItemsInput = {
@@ -394,6 +424,7 @@ export type InvoiceUpdateWithoutItemsInput = {
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  godownStock?: Prisma.GodownStockUpdateManyWithoutInvoiceNestedInput
 }
 
 export type InvoiceUncheckedUpdateWithoutItemsInput = {
@@ -403,6 +434,63 @@ export type InvoiceUncheckedUpdateWithoutItemsInput = {
   customerName?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  godownStock?: Prisma.GodownStockUncheckedUpdateManyWithoutInvoiceNestedInput
+}
+
+export type InvoiceCreateWithoutGodownStockInput = {
+  id?: string
+  invoiceNumber: string
+  invoiceDate: Date | string
+  customerName: string
+  franchiseeId: string
+  createdAt?: Date | string
+  items?: Prisma.InvoiceItemCreateNestedManyWithoutInvoiceInput
+}
+
+export type InvoiceUncheckedCreateWithoutGodownStockInput = {
+  id?: string
+  invoiceNumber: string
+  invoiceDate: Date | string
+  customerName: string
+  franchiseeId: string
+  createdAt?: Date | string
+  items?: Prisma.InvoiceItemUncheckedCreateNestedManyWithoutInvoiceInput
+}
+
+export type InvoiceCreateOrConnectWithoutGodownStockInput = {
+  where: Prisma.InvoiceWhereUniqueInput
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutGodownStockInput, Prisma.InvoiceUncheckedCreateWithoutGodownStockInput>
+}
+
+export type InvoiceUpsertWithoutGodownStockInput = {
+  update: Prisma.XOR<Prisma.InvoiceUpdateWithoutGodownStockInput, Prisma.InvoiceUncheckedUpdateWithoutGodownStockInput>
+  create: Prisma.XOR<Prisma.InvoiceCreateWithoutGodownStockInput, Prisma.InvoiceUncheckedCreateWithoutGodownStockInput>
+  where?: Prisma.InvoiceWhereInput
+}
+
+export type InvoiceUpdateToOneWithWhereWithoutGodownStockInput = {
+  where?: Prisma.InvoiceWhereInput
+  data: Prisma.XOR<Prisma.InvoiceUpdateWithoutGodownStockInput, Prisma.InvoiceUncheckedUpdateWithoutGodownStockInput>
+}
+
+export type InvoiceUpdateWithoutGodownStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  items?: Prisma.InvoiceItemUpdateManyWithoutInvoiceNestedInput
+}
+
+export type InvoiceUncheckedUpdateWithoutGodownStockInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  invoiceNumber?: Prisma.StringFieldUpdateOperationsInput | string
+  invoiceDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  customerName?: Prisma.StringFieldUpdateOperationsInput | string
+  franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  items?: Prisma.InvoiceItemUncheckedUpdateManyWithoutInvoiceNestedInput
 }
 
 
@@ -412,10 +500,12 @@ export type InvoiceUncheckedUpdateWithoutItemsInput = {
 
 export type InvoiceCountOutputType = {
   items: number
+  godownStock: number
 }
 
 export type InvoiceCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   items?: boolean | InvoiceCountOutputTypeCountItemsArgs
+  godownStock?: boolean | InvoiceCountOutputTypeCountGodownStockArgs
 }
 
 /**
@@ -435,6 +525,13 @@ export type InvoiceCountOutputTypeCountItemsArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.InvoiceItemWhereInput
 }
 
+/**
+ * InvoiceCountOutputType without action
+ */
+export type InvoiceCountOutputTypeCountGodownStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.GodownStockWhereInput
+}
+
 
 export type InvoiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -444,6 +541,7 @@ export type InvoiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   franchiseeId?: boolean
   createdAt?: boolean
   items?: boolean | Prisma.Invoice$itemsArgs<ExtArgs>
+  godownStock?: boolean | Prisma.Invoice$godownStockArgs<ExtArgs>
   _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["invoice"]>
 
@@ -477,6 +575,7 @@ export type InvoiceSelectScalar = {
 export type InvoiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "invoiceNumber" | "invoiceDate" | "customerName" | "franchiseeId" | "createdAt", ExtArgs["result"]["invoice"]>
 export type InvoiceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   items?: boolean | Prisma.Invoice$itemsArgs<ExtArgs>
+  godownStock?: boolean | Prisma.Invoice$godownStockArgs<ExtArgs>
   _count?: boolean | Prisma.InvoiceCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type InvoiceIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -486,6 +585,7 @@ export type $InvoicePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   name: "Invoice"
   objects: {
     items: Prisma.$InvoiceItemPayload<ExtArgs>[]
+    godownStock: Prisma.$GodownStockPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -889,6 +989,7 @@ readonly fields: InvoiceFieldRefs;
 export interface Prisma__InvoiceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   items<T extends Prisma.Invoice$itemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Invoice$itemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoiceItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  godownStock<T extends Prisma.Invoice$godownStockArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Invoice$godownStockArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GodownStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1333,6 +1434,30 @@ export type Invoice$itemsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.InvoiceItemScalarFieldEnum | Prisma.InvoiceItemScalarFieldEnum[]
+}
+
+/**
+ * Invoice.godownStock
+ */
+export type Invoice$godownStockArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the GodownStock
+   */
+  select?: Prisma.GodownStockSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the GodownStock
+   */
+  omit?: Prisma.GodownStockOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.GodownStockInclude<ExtArgs> | null
+  where?: Prisma.GodownStockWhereInput
+  orderBy?: Prisma.GodownStockOrderByWithRelationInput | Prisma.GodownStockOrderByWithRelationInput[]
+  cursor?: Prisma.GodownStockWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.GodownStockScalarFieldEnum | Prisma.GodownStockScalarFieldEnum[]
 }
 
 /**

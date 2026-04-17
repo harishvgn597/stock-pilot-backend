@@ -9,10 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service.js';
+import { GodownService } from '../godown/godown.service.js';
 let InvoicesService = class InvoicesService {
     prisma;
-    constructor(prisma) {
+    godown;
+    constructor(prisma, godown) {
         this.prisma = prisma;
+        this.godown = godown;
     }
     async findAll(franchiseeId) {
         return this.prisma.invoice.findMany({
@@ -72,7 +75,7 @@ let InvoicesService = class InvoicesService {
         if (existing) {
             throw new ConflictException(`Invoice ${dto.invoiceNumber} already exists`);
         }
-        return this.prisma.invoice.create({
+        const invoice = await this.prisma.invoice.create({
             data: {
                 invoiceNumber: dto.invoiceNumber,
                 invoiceDate: new Date(dto.invoiceDate),
@@ -113,6 +116,8 @@ let InvoicesService = class InvoicesService {
                 },
             },
         });
+        await this.godown.createFromInvoice(invoice.id, franchiseeId, invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity })));
+        return invoice;
     }
     async updateItem(id, dto) {
         const item = await this.prisma.invoiceItem.findUnique({
@@ -151,7 +156,8 @@ let InvoicesService = class InvoicesService {
 };
 InvoicesService = __decorate([
     Injectable(),
-    __metadata("design:paramtypes", [PrismaService])
+    __metadata("design:paramtypes", [PrismaService,
+        GodownService])
 ], InvoicesService);
 export { InvoicesService };
 //# sourceMappingURL=invoices.service.js.map

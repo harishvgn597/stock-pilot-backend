@@ -170,6 +170,7 @@ export declare const ModelName: {
     readonly ReturnToGodownOrder: "ReturnToGodownOrder";
     readonly CustomerReturn: "CustomerReturn";
     readonly AmcContract: "AmcContract";
+    readonly GodownStock: "GodownStock";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
 export interface TypeMapCb<GlobalOmitOptions = {}> extends runtime.Types.Utils.Fn<{
@@ -182,7 +183,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn" | "amcContract";
+        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn" | "amcContract" | "godownStock";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -1148,6 +1149,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        GodownStock: {
+            payload: Prisma.$GodownStockPayload<ExtArgs>;
+            fields: Prisma.GodownStockFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.GodownStockFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.GodownStockFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                findFirst: {
+                    args: Prisma.GodownStockFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.GodownStockFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                findMany: {
+                    args: Prisma.GodownStockFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>[];
+                };
+                create: {
+                    args: Prisma.GodownStockCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                createMany: {
+                    args: Prisma.GodownStockCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.GodownStockCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>[];
+                };
+                delete: {
+                    args: Prisma.GodownStockDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                update: {
+                    args: Prisma.GodownStockUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.GodownStockDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.GodownStockUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.GodownStockUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>[];
+                };
+                upsert: {
+                    args: Prisma.GodownStockUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$GodownStockPayload>;
+                };
+                aggregate: {
+                    args: Prisma.GodownStockAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateGodownStock>;
+                };
+                groupBy: {
+                    args: Prisma.GodownStockGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.GodownStockGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.GodownStockCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.GodownStockCountAggregateOutputType> | number;
+                };
+            };
+        };
     };
 } & {
     other: {
@@ -1326,6 +1401,18 @@ export declare const AmcContractScalarFieldEnum: {
     readonly createdAt: "createdAt";
 };
 export type AmcContractScalarFieldEnum = (typeof AmcContractScalarFieldEnum)[keyof typeof AmcContractScalarFieldEnum];
+export declare const GodownStockScalarFieldEnum: {
+    readonly id: "id";
+    readonly franchiseeId: "franchiseeId";
+    readonly materialCode: "materialCode";
+    readonly goodQuantity: "goodQuantity";
+    readonly defectiveQuantity: "defectiveQuantity";
+    readonly invoiceId: "invoiceId";
+    readonly notes: "notes";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type GodownStockScalarFieldEnum = (typeof GodownStockScalarFieldEnum)[keyof typeof GodownStockScalarFieldEnum];
 export declare const SortOrder: {
     readonly asc: "asc";
     readonly desc: "desc";
@@ -1392,6 +1479,7 @@ export type GlobalOmitConfig = {
     returnToGodownOrder?: Prisma.ReturnToGodownOrderOmit;
     customerReturn?: Prisma.CustomerReturnOmit;
     amcContract?: Prisma.AmcContractOmit;
+    godownStock?: Prisma.GodownStockOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';
 export type LogDefinition = {

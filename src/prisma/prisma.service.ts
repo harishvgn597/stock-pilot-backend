@@ -61,6 +61,10 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.prisma.amcContract;
   }
 
+  get godownStock() {
+    return this.prisma.godownStock;
+  }
+
   async onModuleInit() {
     await this.prisma.$connect();
   }

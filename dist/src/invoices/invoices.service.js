@@ -116,7 +116,7 @@ let InvoicesService = class InvoicesService {
                 },
             },
         });
-        await this.godown.createFromInvoice(invoice.id, franchiseeId, invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity })));
+        await this.godown.createFromInvoice(invoice.id, franchiseeId, invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity, unitPrice: i.unitPrice })));
         return invoice;
     }
     async updateItem(id, dto) {

@@ -256,6 +256,7 @@ model GodownStock {
 
   goodQuantity      Float @default(0)
   defectiveQuantity Float @default(0)
+  unitPrice         Float?
 
   // null = manually added, set = came from an invoice
   invoiceId String?

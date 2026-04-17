@@ -124,7 +124,7 @@ export class InvoicesService {
     await this.godown.createFromInvoice(
       invoice.id,
       franchiseeId,
-      invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity })),
+      invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity, unitPrice: i.unitPrice })),
     );
 
     return invoice;

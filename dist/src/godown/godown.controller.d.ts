@@ -21,6 +21,7 @@ export declare class GodownController {
         materialCode: string;
         franchiseeId: string;
         invoiceId: string | null;
+        unitPrice: number | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -43,6 +44,7 @@ export declare class GodownController {
         materialCode: string;
         franchiseeId: string;
         invoiceId: string | null;
+        unitPrice: number | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -72,6 +74,7 @@ export declare class GodownController {
         materialCode: string;
         franchiseeId: string;
         invoiceId: string | null;
+        unitPrice: number | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -94,6 +97,7 @@ export declare class GodownController {
         materialCode: string;
         franchiseeId: string;
         invoiceId: string | null;
+        unitPrice: number | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -105,6 +109,7 @@ export declare class GodownController {
         materialCode: string;
         franchiseeId: string;
         invoiceId: string | null;
+        unitPrice: number | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;

@@ -11,10 +11,12 @@ export type AggregateGodownStock = {
 export type GodownStockAvgAggregateOutputType = {
     goodQuantity: number | null;
     defectiveQuantity: number | null;
+    unitPrice: number | null;
 };
 export type GodownStockSumAggregateOutputType = {
     goodQuantity: number | null;
     defectiveQuantity: number | null;
+    unitPrice: number | null;
 };
 export type GodownStockMinAggregateOutputType = {
     id: string | null;
@@ -22,6 +24,7 @@ export type GodownStockMinAggregateOutputType = {
     materialCode: string | null;
     goodQuantity: number | null;
     defectiveQuantity: number | null;
+    unitPrice: number | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date | null;
@@ -33,6 +36,7 @@ export type GodownStockMaxAggregateOutputType = {
     materialCode: string | null;
     goodQuantity: number | null;
     defectiveQuantity: number | null;
+    unitPrice: number | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date | null;
@@ -44,6 +48,7 @@ export type GodownStockCountAggregateOutputType = {
     materialCode: number;
     goodQuantity: number;
     defectiveQuantity: number;
+    unitPrice: number;
     invoiceId: number;
     notes: number;
     createdAt: number;
@@ -53,10 +58,12 @@ export type GodownStockCountAggregateOutputType = {
 export type GodownStockAvgAggregateInputType = {
     goodQuantity?: true;
     defectiveQuantity?: true;
+    unitPrice?: true;
 };
 export type GodownStockSumAggregateInputType = {
     goodQuantity?: true;
     defectiveQuantity?: true;
+    unitPrice?: true;
 };
 export type GodownStockMinAggregateInputType = {
     id?: true;
@@ -64,6 +71,7 @@ export type GodownStockMinAggregateInputType = {
     materialCode?: true;
     goodQuantity?: true;
     defectiveQuantity?: true;
+    unitPrice?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -75,6 +83,7 @@ export type GodownStockMaxAggregateInputType = {
     materialCode?: true;
     goodQuantity?: true;
     defectiveQuantity?: true;
+    unitPrice?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -86,6 +95,7 @@ export type GodownStockCountAggregateInputType = {
     materialCode?: true;
     goodQuantity?: true;
     defectiveQuantity?: true;
+    unitPrice?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -126,6 +136,7 @@ export type GodownStockGroupByOutputType = {
     materialCode: string;
     goodQuantity: number;
     defectiveQuantity: number;
+    unitPrice: number | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date;
@@ -148,6 +159,7 @@ export type GodownStockWhereInput = {
     materialCode?: Prisma.StringFilter<"GodownStock"> | string;
     goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
     defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -161,6 +173,7 @@ export type GodownStockOrderByWithRelationInput = {
     materialCode?: Prisma.SortOrder;
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrderInput | Prisma.SortOrder;
     invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
     notes?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -177,6 +190,7 @@ export type GodownStockWhereUniqueInput = Prisma.AtLeast<{
     materialCode?: Prisma.StringFilter<"GodownStock"> | string;
     goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
     defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -190,6 +204,7 @@ export type GodownStockOrderByWithAggregationInput = {
     materialCode?: Prisma.SortOrder;
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrderInput | Prisma.SortOrder;
     invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
     notes?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -209,6 +224,7 @@ export type GodownStockScalarWhereWithAggregatesInput = {
     materialCode?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string;
     goodQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number;
     defectiveQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number;
+    unitPrice?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null;
     invoiceId?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeWithAggregatesFilter<"GodownStock"> | Date | string;
@@ -219,6 +235,7 @@ export type GodownStockCreateInput = {
     franchiseeId: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -231,6 +248,7 @@ export type GodownStockUncheckedCreateInput = {
     materialCode: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -241,6 +259,7 @@ export type GodownStockUpdateInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -253,6 +272,7 @@ export type GodownStockUncheckedUpdateInput = {
     materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -264,6 +284,7 @@ export type GodownStockCreateManyInput = {
     materialCode: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -274,6 +295,7 @@ export type GodownStockUpdateManyMutationInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -284,6 +306,7 @@ export type GodownStockUncheckedUpdateManyInput = {
     materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -303,6 +326,7 @@ export type GodownStockCountOrderByAggregateInput = {
     materialCode?: Prisma.SortOrder;
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -311,6 +335,7 @@ export type GodownStockCountOrderByAggregateInput = {
 export type GodownStockAvgOrderByAggregateInput = {
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrder;
 };
 export type GodownStockMaxOrderByAggregateInput = {
     id?: Prisma.SortOrder;
@@ -318,6 +343,7 @@ export type GodownStockMaxOrderByAggregateInput = {
     materialCode?: Prisma.SortOrder;
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -329,6 +355,7 @@ export type GodownStockMinOrderByAggregateInput = {
     materialCode?: Prisma.SortOrder;
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -337,6 +364,7 @@ export type GodownStockMinOrderByAggregateInput = {
 export type GodownStockSumOrderByAggregateInput = {
     goodQuantity?: Prisma.SortOrder;
     defectiveQuantity?: Prisma.SortOrder;
+    unitPrice?: Prisma.SortOrder;
 };
 export type GodownStockCreateNestedManyWithoutMaterialInput = {
     create?: Prisma.XOR<Prisma.GodownStockCreateWithoutMaterialInput, Prisma.GodownStockUncheckedCreateWithoutMaterialInput> | Prisma.GodownStockCreateWithoutMaterialInput[] | Prisma.GodownStockUncheckedCreateWithoutMaterialInput[];
@@ -419,6 +447,7 @@ export type GodownStockCreateWithoutMaterialInput = {
     franchiseeId: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -429,6 +458,7 @@ export type GodownStockUncheckedCreateWithoutMaterialInput = {
     franchiseeId: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -464,6 +494,7 @@ export type GodownStockScalarWhereInput = {
     materialCode?: Prisma.StringFilter<"GodownStock"> | string;
     goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
     defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number;
+    unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -474,6 +505,7 @@ export type GodownStockCreateWithoutInvoiceInput = {
     franchiseeId: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -485,6 +517,7 @@ export type GodownStockUncheckedCreateWithoutInvoiceInput = {
     materialCode: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -515,6 +548,7 @@ export type GodownStockCreateManyMaterialInput = {
     franchiseeId: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -525,6 +559,7 @@ export type GodownStockUpdateWithoutMaterialInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -535,6 +570,7 @@ export type GodownStockUncheckedUpdateWithoutMaterialInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -545,6 +581,7 @@ export type GodownStockUncheckedUpdateManyWithoutMaterialInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -556,6 +593,7 @@ export type GodownStockCreateManyInvoiceInput = {
     materialCode: string;
     goodQuantity?: number;
     defectiveQuantity?: number;
+    unitPrice?: number | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -565,6 +603,7 @@ export type GodownStockUpdateWithoutInvoiceInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -576,6 +615,7 @@ export type GodownStockUncheckedUpdateWithoutInvoiceInput = {
     materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -586,6 +626,7 @@ export type GodownStockUncheckedUpdateManyWithoutInvoiceInput = {
     materialCode?: Prisma.StringFieldUpdateOperationsInput | string;
     goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number;
+    unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -596,6 +637,7 @@ export type GodownStockSelect<ExtArgs extends runtime.Types.Extensions.InternalA
     materialCode?: boolean;
     goodQuantity?: boolean;
     defectiveQuantity?: boolean;
+    unitPrice?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -609,6 +651,7 @@ export type GodownStockSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
     materialCode?: boolean;
     goodQuantity?: boolean;
     defectiveQuantity?: boolean;
+    unitPrice?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -622,6 +665,7 @@ export type GodownStockSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
     materialCode?: boolean;
     goodQuantity?: boolean;
     defectiveQuantity?: boolean;
+    unitPrice?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -635,12 +679,13 @@ export type GodownStockSelectScalar = {
     materialCode?: boolean;
     goodQuantity?: boolean;
     defectiveQuantity?: boolean;
+    unitPrice?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
 };
-export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "goodQuantity" | "defectiveQuantity" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>;
+export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "goodQuantity" | "defectiveQuantity" | "unitPrice" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>;
 export type GodownStockInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
     invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
@@ -665,6 +710,7 @@ export type $GodownStockPayload<ExtArgs extends runtime.Types.Extensions.Interna
         materialCode: string;
         goodQuantity: number;
         defectiveQuantity: number;
+        unitPrice: number | null;
         invoiceId: string | null;
         notes: string | null;
         createdAt: Date;
@@ -733,6 +779,7 @@ export interface GodownStockFieldRefs {
     readonly materialCode: Prisma.FieldRef<"GodownStock", 'String'>;
     readonly goodQuantity: Prisma.FieldRef<"GodownStock", 'Float'>;
     readonly defectiveQuantity: Prisma.FieldRef<"GodownStock", 'Float'>;
+    readonly unitPrice: Prisma.FieldRef<"GodownStock", 'Float'>;
     readonly invoiceId: Prisma.FieldRef<"GodownStock", 'String'>;
     readonly notes: Prisma.FieldRef<"GodownStock", 'String'>;
     readonly createdAt: Prisma.FieldRef<"GodownStock", 'DateTime'>;

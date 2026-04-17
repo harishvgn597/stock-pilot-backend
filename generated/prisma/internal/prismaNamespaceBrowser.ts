@@ -275,6 +275,7 @@ export const GodownStockScalarFieldEnum = {
   materialCode: 'materialCode',
   goodQuantity: 'goodQuantity',
   defectiveQuantity: 'defectiveQuantity',
+  unitPrice: 'unitPrice',
   invoiceId: 'invoiceId',
   notes: 'notes',
   createdAt: 'createdAt',

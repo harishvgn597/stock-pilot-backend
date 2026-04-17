@@ -29,6 +29,7 @@ let GodownService = class GodownService {
                 materialCode: item.materialCode,
                 goodQuantity: item.quantity,
                 defectiveQuantity: 0,
+                unitPrice: item.unitPrice,
                 invoiceId,
             },
         }));
@@ -47,6 +48,7 @@ let GodownService = class GodownService {
                 materialCode: dto.materialCode,
                 goodQuantity: dto.goodQuantity,
                 defectiveQuantity: dto.defectiveQuantity ?? 0,
+                unitPrice: dto.unitPrice ?? null,
                 invoiceId: null,
                 notes: dto.notes ?? null,
             },
@@ -113,6 +115,7 @@ let GodownService = class GodownService {
             data: {
                 ...(dto.goodQuantity !== undefined && { goodQuantity: dto.goodQuantity }),
                 ...(dto.defectiveQuantity !== undefined && { defectiveQuantity: dto.defectiveQuantity }),
+                ...(dto.unitPrice !== undefined && { unitPrice: dto.unitPrice }),
                 ...(dto.notes !== undefined && { notes: dto.notes }),
             },
             include: INCLUDE,

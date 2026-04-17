@@ -1,1 +1,1 @@
-{"version":3,"file":"update-godown-stock.dto.js","sourceRoot":"","sources":["../../../../src/godown/dto/update-godown-stock.dto.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,oBAAoB;IAC/B,YAAY,CAAU;IACtB,iBAAiB,CAAU;IAC3B,KAAK,CAAU;CAChB"}
+{"version":3,"file":"update-godown-stock.dto.js","sourceRoot":"","sources":["../../../../src/godown/dto/update-godown-stock.dto.ts"],"names":[],"mappings":"AAAA,MAAM,OAAO,oBAAoB;IAC/B,YAAY,CAAU;IACtB,iBAAiB,CAAU;IAC3B,SAAS,CAAU;IACnB,KAAK,CAAU;CAChB"}

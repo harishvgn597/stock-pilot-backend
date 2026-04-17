@@ -21,7 +21,7 @@ export class GodownService {
   async createFromInvoice(
     invoiceId: string,
     franchiseeId: string,
-    items: Array<{ materialCode: string; quantity: number }>,
+    items: Array<{ materialCode: string; quantity: number; unitPrice: number }>,
   ) {
     const rows = items.map((item) =>
       this.prisma.godownStock.create({
@@ -30,6 +30,7 @@ export class GodownService {
           materialCode: item.materialCode,
           goodQuantity: item.quantity,
           defectiveQuantity: 0,
+          unitPrice: item.unitPrice,
           invoiceId,
         },
       }),
@@ -52,6 +53,7 @@ export class GodownService {
         materialCode: dto.materialCode,
         goodQuantity: dto.goodQuantity,
         defectiveQuantity: dto.defectiveQuantity ?? 0,
+        unitPrice: dto.unitPrice ?? null,
         invoiceId: null,
         notes: dto.notes ?? null,
       },
@@ -128,6 +130,7 @@ export class GodownService {
       data: {
         ...(dto.goodQuantity !== undefined && { goodQuantity: dto.goodQuantity }),
         ...(dto.defectiveQuantity !== undefined && { defectiveQuantity: dto.defectiveQuantity }),
+        ...(dto.unitPrice !== undefined && { unitPrice: dto.unitPrice }),
         ...(dto.notes !== undefined && { notes: dto.notes }),
       },
       include: INCLUDE,

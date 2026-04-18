@@ -116,7 +116,19 @@ let InvoicesService = class InvoicesService {
                 },
             },
         });
-        await this.godown.createFromInvoice(invoice.id, franchiseeId, invoice.items.map((i) => ({ materialCode: i.materialCode, quantity: i.quantity, unitPrice: i.unitPrice })));
+        await this.godown.createFromInvoice(invoice.id, franchiseeId, invoice.items.map((i) => ({
+            materialCode: i.materialCode,
+            description: i.description,
+            hsn: i.hsn,
+            quantity: i.quantity,
+            uom: i.uom,
+            unitPrice: i.unitPrice,
+            totalAmount: i.totalAmount,
+            cgst: i.cgst,
+            sgst: i.sgst,
+            spareType: i.spareType,
+            status: i.status,
+        })));
         return invoice;
     }
     async updateItem(id, dto) {

@@ -30,21 +30,35 @@ export type GodownStockAvgAggregateOutputType = {
   goodQuantity: number | null
   defectiveQuantity: number | null
   unitPrice: number | null
+  totalAmount: number | null
+  cgst: number | null
+  sgst: number | null
 }
 
 export type GodownStockSumAggregateOutputType = {
   goodQuantity: number | null
   defectiveQuantity: number | null
   unitPrice: number | null
+  totalAmount: number | null
+  cgst: number | null
+  sgst: number | null
 }
 
 export type GodownStockMinAggregateOutputType = {
   id: string | null
   franchiseeId: string | null
   materialCode: string | null
+  description: string | null
+  hsn: string | null
+  uom: string | null
   goodQuantity: number | null
   defectiveQuantity: number | null
   unitPrice: number | null
+  totalAmount: number | null
+  cgst: number | null
+  sgst: number | null
+  spareType: $Enums.SpareType | null
+  status: $Enums.ItemStatus | null
   invoiceId: string | null
   notes: string | null
   createdAt: Date | null
@@ -55,9 +69,17 @@ export type GodownStockMaxAggregateOutputType = {
   id: string | null
   franchiseeId: string | null
   materialCode: string | null
+  description: string | null
+  hsn: string | null
+  uom: string | null
   goodQuantity: number | null
   defectiveQuantity: number | null
   unitPrice: number | null
+  totalAmount: number | null
+  cgst: number | null
+  sgst: number | null
+  spareType: $Enums.SpareType | null
+  status: $Enums.ItemStatus | null
   invoiceId: string | null
   notes: string | null
   createdAt: Date | null
@@ -68,9 +90,17 @@ export type GodownStockCountAggregateOutputType = {
   id: number
   franchiseeId: number
   materialCode: number
+  description: number
+  hsn: number
+  uom: number
   goodQuantity: number
   defectiveQuantity: number
   unitPrice: number
+  totalAmount: number
+  cgst: number
+  sgst: number
+  spareType: number
+  status: number
   invoiceId: number
   notes: number
   createdAt: number
@@ -83,21 +113,35 @@ export type GodownStockAvgAggregateInputType = {
   goodQuantity?: true
   defectiveQuantity?: true
   unitPrice?: true
+  totalAmount?: true
+  cgst?: true
+  sgst?: true
 }
 
 export type GodownStockSumAggregateInputType = {
   goodQuantity?: true
   defectiveQuantity?: true
   unitPrice?: true
+  totalAmount?: true
+  cgst?: true
+  sgst?: true
 }
 
 export type GodownStockMinAggregateInputType = {
   id?: true
   franchiseeId?: true
   materialCode?: true
+  description?: true
+  hsn?: true
+  uom?: true
   goodQuantity?: true
   defectiveQuantity?: true
   unitPrice?: true
+  totalAmount?: true
+  cgst?: true
+  sgst?: true
+  spareType?: true
+  status?: true
   invoiceId?: true
   notes?: true
   createdAt?: true
@@ -108,9 +152,17 @@ export type GodownStockMaxAggregateInputType = {
   id?: true
   franchiseeId?: true
   materialCode?: true
+  description?: true
+  hsn?: true
+  uom?: true
   goodQuantity?: true
   defectiveQuantity?: true
   unitPrice?: true
+  totalAmount?: true
+  cgst?: true
+  sgst?: true
+  spareType?: true
+  status?: true
   invoiceId?: true
   notes?: true
   createdAt?: true
@@ -121,9 +173,17 @@ export type GodownStockCountAggregateInputType = {
   id?: true
   franchiseeId?: true
   materialCode?: true
+  description?: true
+  hsn?: true
+  uom?: true
   goodQuantity?: true
   defectiveQuantity?: true
   unitPrice?: true
+  totalAmount?: true
+  cgst?: true
+  sgst?: true
+  spareType?: true
+  status?: true
   invoiceId?: true
   notes?: true
   createdAt?: true
@@ -221,9 +281,17 @@ export type GodownStockGroupByOutputType = {
   id: string
   franchiseeId: string
   materialCode: string
+  description: string | null
+  hsn: string | null
+  uom: string | null
   goodQuantity: number
   defectiveQuantity: number
   unitPrice: number | null
+  totalAmount: number | null
+  cgst: number | null
+  sgst: number | null
+  spareType: $Enums.SpareType | null
+  status: $Enums.ItemStatus | null
   invoiceId: string | null
   notes: string | null
   createdAt: Date
@@ -257,9 +325,17 @@ export type GodownStockWhereInput = {
   id?: Prisma.StringFilter<"GodownStock"> | string
   franchiseeId?: Prisma.StringFilter<"GodownStock"> | string
   materialCode?: Prisma.StringFilter<"GodownStock"> | string
+  description?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  hsn?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  uom?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  totalAmount?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null
+  status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null
   invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string
@@ -272,9 +348,17 @@ export type GodownStockOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   franchiseeId?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  hsn?: Prisma.SortOrderInput | Prisma.SortOrder
+  uom?: Prisma.SortOrderInput | Prisma.SortOrder
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalAmount?: Prisma.SortOrderInput | Prisma.SortOrder
+  cgst?: Prisma.SortOrderInput | Prisma.SortOrder
+  sgst?: Prisma.SortOrderInput | Prisma.SortOrder
+  spareType?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrderInput | Prisma.SortOrder
   invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -290,9 +374,17 @@ export type GodownStockWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.GodownStockWhereInput | Prisma.GodownStockWhereInput[]
   franchiseeId?: Prisma.StringFilter<"GodownStock"> | string
   materialCode?: Prisma.StringFilter<"GodownStock"> | string
+  description?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  hsn?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  uom?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  totalAmount?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null
+  status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null
   invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string
@@ -305,9 +397,17 @@ export type GodownStockOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   franchiseeId?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
+  description?: Prisma.SortOrderInput | Prisma.SortOrder
+  hsn?: Prisma.SortOrderInput | Prisma.SortOrder
+  uom?: Prisma.SortOrderInput | Prisma.SortOrder
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrderInput | Prisma.SortOrder
+  totalAmount?: Prisma.SortOrderInput | Prisma.SortOrder
+  cgst?: Prisma.SortOrderInput | Prisma.SortOrder
+  sgst?: Prisma.SortOrderInput | Prisma.SortOrder
+  spareType?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrderInput | Prisma.SortOrder
   invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -326,9 +426,17 @@ export type GodownStockScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string
   franchiseeId?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string
   materialCode?: Prisma.StringWithAggregatesFilter<"GodownStock"> | string
+  description?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null
+  hsn?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null
+  uom?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null
   goodQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number
   defectiveQuantity?: Prisma.FloatWithAggregatesFilter<"GodownStock"> | number
   unitPrice?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null
+  totalAmount?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null
+  cgst?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null
+  sgst?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null
+  spareType?: Prisma.EnumSpareTypeNullableWithAggregatesFilter<"GodownStock"> | $Enums.SpareType | null
+  status?: Prisma.EnumItemStatusNullableWithAggregatesFilter<"GodownStock"> | $Enums.ItemStatus | null
   invoiceId?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null
   notes?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"GodownStock"> | Date | string
@@ -338,9 +446,17 @@ export type GodownStockScalarWhereWithAggregatesInput = {
 export type GodownStockCreateInput = {
   id?: string
   franchiseeId: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -352,9 +468,17 @@ export type GodownStockUncheckedCreateInput = {
   id?: string
   franchiseeId: string
   materialCode: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   invoiceId?: string | null
   notes?: string | null
   createdAt?: Date | string
@@ -364,9 +488,17 @@ export type GodownStockUncheckedCreateInput = {
 export type GodownStockUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -378,9 +510,17 @@ export type GodownStockUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -391,9 +531,17 @@ export type GodownStockCreateManyInput = {
   id?: string
   franchiseeId: string
   materialCode: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   invoiceId?: string | null
   notes?: string | null
   createdAt?: Date | string
@@ -403,9 +551,17 @@ export type GodownStockCreateManyInput = {
 export type GodownStockUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -415,9 +571,17 @@ export type GodownStockUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -438,9 +602,17 @@ export type GodownStockCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   franchiseeId?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  hsn?: Prisma.SortOrder
+  uom?: Prisma.SortOrder
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrder
+  totalAmount?: Prisma.SortOrder
+  cgst?: Prisma.SortOrder
+  sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   invoiceId?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -451,15 +623,26 @@ export type GodownStockAvgOrderByAggregateInput = {
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrder
+  totalAmount?: Prisma.SortOrder
+  cgst?: Prisma.SortOrder
+  sgst?: Prisma.SortOrder
 }
 
 export type GodownStockMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   franchiseeId?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  hsn?: Prisma.SortOrder
+  uom?: Prisma.SortOrder
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrder
+  totalAmount?: Prisma.SortOrder
+  cgst?: Prisma.SortOrder
+  sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   invoiceId?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -470,9 +653,17 @@ export type GodownStockMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   franchiseeId?: Prisma.SortOrder
   materialCode?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  hsn?: Prisma.SortOrder
+  uom?: Prisma.SortOrder
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrder
+  totalAmount?: Prisma.SortOrder
+  cgst?: Prisma.SortOrder
+  sgst?: Prisma.SortOrder
+  spareType?: Prisma.SortOrder
+  status?: Prisma.SortOrder
   invoiceId?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -483,6 +674,9 @@ export type GodownStockSumOrderByAggregateInput = {
   goodQuantity?: Prisma.SortOrder
   defectiveQuantity?: Prisma.SortOrder
   unitPrice?: Prisma.SortOrder
+  totalAmount?: Prisma.SortOrder
+  cgst?: Prisma.SortOrder
+  sgst?: Prisma.SortOrder
 }
 
 export type GodownStockCreateNestedManyWithoutMaterialInput = {
@@ -572,9 +766,17 @@ export type GodownStockUncheckedUpdateManyWithoutInvoiceNestedInput = {
 export type GodownStockCreateWithoutMaterialInput = {
   id?: string
   franchiseeId: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -584,9 +786,17 @@ export type GodownStockCreateWithoutMaterialInput = {
 export type GodownStockUncheckedCreateWithoutMaterialInput = {
   id?: string
   franchiseeId: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   invoiceId?: string | null
   notes?: string | null
   createdAt?: Date | string
@@ -626,9 +836,17 @@ export type GodownStockScalarWhereInput = {
   id?: Prisma.StringFilter<"GodownStock"> | string
   franchiseeId?: Prisma.StringFilter<"GodownStock"> | string
   materialCode?: Prisma.StringFilter<"GodownStock"> | string
+  description?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  hsn?: Prisma.StringNullableFilter<"GodownStock"> | string | null
+  uom?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   goodQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   defectiveQuantity?: Prisma.FloatFilter<"GodownStock"> | number
   unitPrice?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  totalAmount?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null
+  spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null
+  status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null
   invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null
   createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string
@@ -638,9 +856,17 @@ export type GodownStockScalarWhereInput = {
 export type GodownStockCreateWithoutInvoiceInput = {
   id?: string
   franchiseeId: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -651,9 +877,17 @@ export type GodownStockUncheckedCreateWithoutInvoiceInput = {
   id?: string
   franchiseeId: string
   materialCode: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -688,9 +922,17 @@ export type GodownStockUpdateManyWithWhereWithoutInvoiceInput = {
 export type GodownStockCreateManyMaterialInput = {
   id?: string
   franchiseeId: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   invoiceId?: string | null
   notes?: string | null
   createdAt?: Date | string
@@ -700,9 +942,17 @@ export type GodownStockCreateManyMaterialInput = {
 export type GodownStockUpdateWithoutMaterialInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -712,9 +962,17 @@ export type GodownStockUpdateWithoutMaterialInput = {
 export type GodownStockUncheckedUpdateWithoutMaterialInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -724,9 +982,17 @@ export type GodownStockUncheckedUpdateWithoutMaterialInput = {
 export type GodownStockUncheckedUpdateManyWithoutMaterialInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -737,9 +1003,17 @@ export type GodownStockCreateManyInvoiceInput = {
   id?: string
   franchiseeId: string
   materialCode: string
+  description?: string | null
+  hsn?: string | null
+  uom?: string | null
   goodQuantity?: number
   defectiveQuantity?: number
   unitPrice?: number | null
+  totalAmount?: number | null
+  cgst?: number | null
+  sgst?: number | null
+  spareType?: $Enums.SpareType | null
+  status?: $Enums.ItemStatus | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -748,9 +1022,17 @@ export type GodownStockCreateManyInvoiceInput = {
 export type GodownStockUpdateWithoutInvoiceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -761,9 +1043,17 @@ export type GodownStockUncheckedUpdateWithoutInvoiceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -773,9 +1063,17 @@ export type GodownStockUncheckedUpdateManyWithoutInvoiceInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string
   materialCode?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hsn?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  uom?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   goodQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   defectiveQuantity?: Prisma.FloatFieldUpdateOperationsInput | number
   unitPrice?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  totalAmount?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null
+  status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -787,9 +1085,17 @@ export type GodownStockSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   id?: boolean
   franchiseeId?: boolean
   materialCode?: boolean
+  description?: boolean
+  hsn?: boolean
+  uom?: boolean
   goodQuantity?: boolean
   defectiveQuantity?: boolean
   unitPrice?: boolean
+  totalAmount?: boolean
+  cgst?: boolean
+  sgst?: boolean
+  spareType?: boolean
+  status?: boolean
   invoiceId?: boolean
   notes?: boolean
   createdAt?: boolean
@@ -802,9 +1108,17 @@ export type GodownStockSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   id?: boolean
   franchiseeId?: boolean
   materialCode?: boolean
+  description?: boolean
+  hsn?: boolean
+  uom?: boolean
   goodQuantity?: boolean
   defectiveQuantity?: boolean
   unitPrice?: boolean
+  totalAmount?: boolean
+  cgst?: boolean
+  sgst?: boolean
+  spareType?: boolean
+  status?: boolean
   invoiceId?: boolean
   notes?: boolean
   createdAt?: boolean
@@ -817,9 +1131,17 @@ export type GodownStockSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   id?: boolean
   franchiseeId?: boolean
   materialCode?: boolean
+  description?: boolean
+  hsn?: boolean
+  uom?: boolean
   goodQuantity?: boolean
   defectiveQuantity?: boolean
   unitPrice?: boolean
+  totalAmount?: boolean
+  cgst?: boolean
+  sgst?: boolean
+  spareType?: boolean
+  status?: boolean
   invoiceId?: boolean
   notes?: boolean
   createdAt?: boolean
@@ -832,16 +1154,24 @@ export type GodownStockSelectScalar = {
   id?: boolean
   franchiseeId?: boolean
   materialCode?: boolean
+  description?: boolean
+  hsn?: boolean
+  uom?: boolean
   goodQuantity?: boolean
   defectiveQuantity?: boolean
   unitPrice?: boolean
+  totalAmount?: boolean
+  cgst?: boolean
+  sgst?: boolean
+  spareType?: boolean
+  status?: boolean
   invoiceId?: boolean
   notes?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "goodQuantity" | "defectiveQuantity" | "unitPrice" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>
+export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "description" | "hsn" | "uom" | "goodQuantity" | "defectiveQuantity" | "unitPrice" | "totalAmount" | "cgst" | "sgst" | "spareType" | "status" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>
 export type GodownStockInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>
   invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>
@@ -865,9 +1195,17 @@ export type $GodownStockPayload<ExtArgs extends runtime.Types.Extensions.Interna
     id: string
     franchiseeId: string
     materialCode: string
+    description: string | null
+    hsn: string | null
+    uom: string | null
     goodQuantity: number
     defectiveQuantity: number
     unitPrice: number | null
+    totalAmount: number | null
+    cgst: number | null
+    sgst: number | null
+    spareType: $Enums.SpareType | null
+    status: $Enums.ItemStatus | null
     invoiceId: string | null
     notes: string | null
     createdAt: Date
@@ -1300,9 +1638,17 @@ export interface GodownStockFieldRefs {
   readonly id: Prisma.FieldRef<"GodownStock", 'String'>
   readonly franchiseeId: Prisma.FieldRef<"GodownStock", 'String'>
   readonly materialCode: Prisma.FieldRef<"GodownStock", 'String'>
+  readonly description: Prisma.FieldRef<"GodownStock", 'String'>
+  readonly hsn: Prisma.FieldRef<"GodownStock", 'String'>
+  readonly uom: Prisma.FieldRef<"GodownStock", 'String'>
   readonly goodQuantity: Prisma.FieldRef<"GodownStock", 'Float'>
   readonly defectiveQuantity: Prisma.FieldRef<"GodownStock", 'Float'>
   readonly unitPrice: Prisma.FieldRef<"GodownStock", 'Float'>
+  readonly totalAmount: Prisma.FieldRef<"GodownStock", 'Float'>
+  readonly cgst: Prisma.FieldRef<"GodownStock", 'Float'>
+  readonly sgst: Prisma.FieldRef<"GodownStock", 'Float'>
+  readonly spareType: Prisma.FieldRef<"GodownStock", 'SpareType'>
+  readonly status: Prisma.FieldRef<"GodownStock", 'ItemStatus'>
   readonly invoiceId: Prisma.FieldRef<"GodownStock", 'String'>
   readonly notes: Prisma.FieldRef<"GodownStock", 'String'>
   readonly createdAt: Prisma.FieldRef<"GodownStock", 'DateTime'>

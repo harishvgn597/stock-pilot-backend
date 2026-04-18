@@ -254,9 +254,17 @@ model GodownStock {
   materialCode String
   material     Material @relation(fields: [materialCode], references: [materialCode])
 
-  goodQuantity      Float @default(0)
-  defectiveQuantity Float @default(0)
+  description       String?
+  hsn               String?
+  uom               String?
+  goodQuantity      Float      @default(0)
+  defectiveQuantity Float      @default(0)
   unitPrice         Float?
+  totalAmount       Float?
+  cgst              Float?
+  sgst              Float?
+  spareType         SpareType?
+  status            ItemStatus?
 
   // null = manually added, set = came from an invoice
   invoiceId String?

@@ -1,7 +1,15 @@
 export class CreateGodownStockDto {
   materialCode: string;
+  description?: string;
+  hsn?: string;
+  uom?: string;
   goodQuantity: number;
-  defectiveQuantity?: number;  // defaults to 0
-  unitPrice?: number;          // optional price per unit
+  defectiveQuantity?: number;
+  unitPrice?: number;
+  totalAmount?: number;
+  cgst?: number;
+  sgst?: number;
+  spareType?: 'Spare' | 'Additive' | 'Accessory';
+  status?: 'Good' | 'Defective';
   notes?: string;
 }

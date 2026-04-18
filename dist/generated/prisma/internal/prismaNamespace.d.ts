@@ -1405,9 +1405,17 @@ export declare const GodownStockScalarFieldEnum: {
     readonly id: "id";
     readonly franchiseeId: "franchiseeId";
     readonly materialCode: "materialCode";
+    readonly description: "description";
+    readonly hsn: "hsn";
+    readonly uom: "uom";
     readonly goodQuantity: "goodQuantity";
     readonly defectiveQuantity: "defectiveQuantity";
     readonly unitPrice: "unitPrice";
+    readonly totalAmount: "totalAmount";
+    readonly cgst: "cgst";
+    readonly sgst: "sgst";
+    readonly spareType: "spareType";
+    readonly status: "status";
     readonly invoiceId: "invoiceId";
     readonly notes: "notes";
     readonly createdAt: "createdAt";

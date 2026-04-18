@@ -39,7 +39,6 @@ export type GodownStockMinAggregateOutputType = {
     cgst: number | null;
     sgst: number | null;
     spareType: $Enums.SpareType | null;
-    status: $Enums.ItemStatus | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date | null;
@@ -59,7 +58,6 @@ export type GodownStockMaxAggregateOutputType = {
     cgst: number | null;
     sgst: number | null;
     spareType: $Enums.SpareType | null;
-    status: $Enums.ItemStatus | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date | null;
@@ -79,7 +77,6 @@ export type GodownStockCountAggregateOutputType = {
     cgst: number;
     sgst: number;
     spareType: number;
-    status: number;
     invoiceId: number;
     notes: number;
     createdAt: number;
@@ -116,7 +113,6 @@ export type GodownStockMinAggregateInputType = {
     cgst?: true;
     sgst?: true;
     spareType?: true;
-    status?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -136,7 +132,6 @@ export type GodownStockMaxAggregateInputType = {
     cgst?: true;
     sgst?: true;
     spareType?: true;
-    status?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -156,7 +151,6 @@ export type GodownStockCountAggregateInputType = {
     cgst?: true;
     sgst?: true;
     spareType?: true;
-    status?: true;
     invoiceId?: true;
     notes?: true;
     createdAt?: true;
@@ -205,7 +199,6 @@ export type GodownStockGroupByOutputType = {
     cgst: number | null;
     sgst: number | null;
     spareType: $Enums.SpareType | null;
-    status: $Enums.ItemStatus | null;
     invoiceId: string | null;
     notes: string | null;
     createdAt: Date;
@@ -236,7 +229,6 @@ export type GodownStockWhereInput = {
     cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null;
-    status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -258,7 +250,6 @@ export type GodownStockOrderByWithRelationInput = {
     cgst?: Prisma.SortOrderInput | Prisma.SortOrder;
     sgst?: Prisma.SortOrderInput | Prisma.SortOrder;
     spareType?: Prisma.SortOrderInput | Prisma.SortOrder;
-    status?: Prisma.SortOrderInput | Prisma.SortOrder;
     invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
     notes?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -283,7 +274,6 @@ export type GodownStockWhereUniqueInput = Prisma.AtLeast<{
     cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null;
-    status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -305,7 +295,6 @@ export type GodownStockOrderByWithAggregationInput = {
     cgst?: Prisma.SortOrderInput | Prisma.SortOrder;
     sgst?: Prisma.SortOrderInput | Prisma.SortOrder;
     spareType?: Prisma.SortOrderInput | Prisma.SortOrder;
-    status?: Prisma.SortOrderInput | Prisma.SortOrder;
     invoiceId?: Prisma.SortOrderInput | Prisma.SortOrder;
     notes?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -333,7 +322,6 @@ export type GodownStockScalarWhereWithAggregatesInput = {
     cgst?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null;
     sgst?: Prisma.FloatNullableWithAggregatesFilter<"GodownStock"> | number | null;
     spareType?: Prisma.EnumSpareTypeNullableWithAggregatesFilter<"GodownStock"> | $Enums.SpareType | null;
-    status?: Prisma.EnumItemStatusNullableWithAggregatesFilter<"GodownStock"> | $Enums.ItemStatus | null;
     invoiceId?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableWithAggregatesFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeWithAggregatesFilter<"GodownStock"> | Date | string;
@@ -352,7 +340,6 @@ export type GodownStockCreateInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -373,7 +360,6 @@ export type GodownStockUncheckedCreateInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -392,7 +378,6 @@ export type GodownStockUpdateInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -413,7 +398,6 @@ export type GodownStockUncheckedUpdateInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -433,7 +417,6 @@ export type GodownStockCreateManyInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -452,7 +435,6 @@ export type GodownStockUpdateManyMutationInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -471,7 +453,6 @@ export type GodownStockUncheckedUpdateManyInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -499,7 +480,6 @@ export type GodownStockCountOrderByAggregateInput = {
     cgst?: Prisma.SortOrder;
     sgst?: Prisma.SortOrder;
     spareType?: Prisma.SortOrder;
-    status?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -527,7 +507,6 @@ export type GodownStockMaxOrderByAggregateInput = {
     cgst?: Prisma.SortOrder;
     sgst?: Prisma.SortOrder;
     spareType?: Prisma.SortOrder;
-    status?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -547,7 +526,6 @@ export type GodownStockMinOrderByAggregateInput = {
     cgst?: Prisma.SortOrder;
     sgst?: Prisma.SortOrder;
     spareType?: Prisma.SortOrder;
-    status?: Prisma.SortOrder;
     invoiceId?: Prisma.SortOrder;
     notes?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -650,7 +628,6 @@ export type GodownStockCreateWithoutMaterialInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -669,7 +646,6 @@ export type GodownStockUncheckedCreateWithoutMaterialInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -713,7 +689,6 @@ export type GodownStockScalarWhereInput = {
     cgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     sgst?: Prisma.FloatNullableFilter<"GodownStock"> | number | null;
     spareType?: Prisma.EnumSpareTypeNullableFilter<"GodownStock"> | $Enums.SpareType | null;
-    status?: Prisma.EnumItemStatusNullableFilter<"GodownStock"> | $Enums.ItemStatus | null;
     invoiceId?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     notes?: Prisma.StringNullableFilter<"GodownStock"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"GodownStock"> | Date | string;
@@ -732,7 +707,6 @@ export type GodownStockCreateWithoutInvoiceInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -752,7 +726,6 @@ export type GodownStockUncheckedCreateWithoutInvoiceInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -791,7 +764,6 @@ export type GodownStockCreateManyMaterialInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     invoiceId?: string | null;
     notes?: string | null;
     createdAt?: Date | string;
@@ -810,7 +782,6 @@ export type GodownStockUpdateWithoutMaterialInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -829,7 +800,6 @@ export type GodownStockUncheckedUpdateWithoutMaterialInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -848,7 +818,6 @@ export type GodownStockUncheckedUpdateManyWithoutMaterialInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     invoiceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -868,7 +837,6 @@ export type GodownStockCreateManyInvoiceInput = {
     cgst?: number | null;
     sgst?: number | null;
     spareType?: $Enums.SpareType | null;
-    status?: $Enums.ItemStatus | null;
     notes?: string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -886,7 +854,6 @@ export type GodownStockUpdateWithoutInvoiceInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -906,7 +873,6 @@ export type GodownStockUncheckedUpdateWithoutInvoiceInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -925,7 +891,6 @@ export type GodownStockUncheckedUpdateManyWithoutInvoiceInput = {
     cgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     sgst?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
     spareType?: Prisma.NullableEnumSpareTypeFieldUpdateOperationsInput | $Enums.SpareType | null;
-    status?: Prisma.NullableEnumItemStatusFieldUpdateOperationsInput | $Enums.ItemStatus | null;
     notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -944,7 +909,6 @@ export type GodownStockSelect<ExtArgs extends runtime.Types.Extensions.InternalA
     cgst?: boolean;
     sgst?: boolean;
     spareType?: boolean;
-    status?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -966,7 +930,6 @@ export type GodownStockSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
     cgst?: boolean;
     sgst?: boolean;
     spareType?: boolean;
-    status?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -988,7 +951,6 @@ export type GodownStockSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
     cgst?: boolean;
     sgst?: boolean;
     spareType?: boolean;
-    status?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
@@ -1010,13 +972,12 @@ export type GodownStockSelectScalar = {
     cgst?: boolean;
     sgst?: boolean;
     spareType?: boolean;
-    status?: boolean;
     invoiceId?: boolean;
     notes?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
 };
-export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "description" | "hsn" | "uom" | "goodQuantity" | "defectiveQuantity" | "unitPrice" | "totalAmount" | "cgst" | "sgst" | "spareType" | "status" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>;
+export type GodownStockOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "franchiseeId" | "materialCode" | "description" | "hsn" | "uom" | "goodQuantity" | "defectiveQuantity" | "unitPrice" | "totalAmount" | "cgst" | "sgst" | "spareType" | "invoiceId" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["godownStock"]>;
 export type GodownStockInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     material?: boolean | Prisma.MaterialDefaultArgs<ExtArgs>;
     invoice?: boolean | Prisma.GodownStock$invoiceArgs<ExtArgs>;
@@ -1049,7 +1010,6 @@ export type $GodownStockPayload<ExtArgs extends runtime.Types.Extensions.Interna
         cgst: number | null;
         sgst: number | null;
         spareType: $Enums.SpareType | null;
-        status: $Enums.ItemStatus | null;
         invoiceId: string | null;
         notes: string | null;
         createdAt: Date;
@@ -1126,7 +1086,6 @@ export interface GodownStockFieldRefs {
     readonly cgst: Prisma.FieldRef<"GodownStock", 'Float'>;
     readonly sgst: Prisma.FieldRef<"GodownStock", 'Float'>;
     readonly spareType: Prisma.FieldRef<"GodownStock", 'SpareType'>;
-    readonly status: Prisma.FieldRef<"GodownStock", 'ItemStatus'>;
     readonly invoiceId: Prisma.FieldRef<"GodownStock", 'String'>;
     readonly notes: Prisma.FieldRef<"GodownStock", 'String'>;
     readonly createdAt: Prisma.FieldRef<"GodownStock", 'DateTime'>;

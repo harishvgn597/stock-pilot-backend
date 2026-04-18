@@ -9,6 +9,5 @@ export declare class UpdateGodownStockDto {
     cgst?: number;
     sgst?: number;
     spareType?: 'Spare' | 'Additive' | 'Accessory';
-    status?: 'Good' | 'Defective';
     notes?: string;
 }

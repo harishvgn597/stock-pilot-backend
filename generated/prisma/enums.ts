@@ -18,14 +18,6 @@ export const SpareType = {
 export type SpareType = (typeof SpareType)[keyof typeof SpareType]
 
 
-export const ItemStatus = {
-  Good: 'Good',
-  Defective: 'Defective'
-} as const
-
-export type ItemStatus = (typeof ItemStatus)[keyof typeof ItemStatus]
-
-
 export const OrderType = {
   Sale: 'Sale',
   ReturnToServiceCenter: 'ReturnToServiceCenter',

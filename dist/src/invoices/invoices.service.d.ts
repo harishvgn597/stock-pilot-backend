@@ -19,7 +19,6 @@ export declare class InvoicesService {
             cgst: number;
             sgst: number;
             spareType: import("../../generated/prisma/enums.js").SpareType | null;
-            status: import("../../generated/prisma/enums.js").ItemStatus | null;
         }[];
     } & {
         id: string;
@@ -42,7 +41,6 @@ export declare class InvoicesService {
             cgst: number;
             sgst: number;
             spareType: import("../../generated/prisma/enums.js").SpareType | null;
-            status: import("../../generated/prisma/enums.js").ItemStatus | null;
         }[];
     } & {
         id: string;
@@ -65,7 +63,6 @@ export declare class InvoicesService {
             cgst: number;
             sgst: number;
             spareType: import("../../generated/prisma/enums.js").SpareType | null;
-            status: import("../../generated/prisma/enums.js").ItemStatus | null;
         }[];
     } & {
         id: string;
@@ -87,6 +84,5 @@ export declare class InvoicesService {
         cgst: number;
         sgst: number;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
     }>;
 }

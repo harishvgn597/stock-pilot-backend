@@ -86,7 +86,6 @@ export declare const InvoiceItemScalarFieldEnum: {
     readonly cgst: "cgst";
     readonly sgst: "sgst";
     readonly spareType: "spareType";
-    readonly status: "status";
     readonly createdAt: "createdAt";
 };
 export type InvoiceItemScalarFieldEnum = (typeof InvoiceItemScalarFieldEnum)[keyof typeof InvoiceItemScalarFieldEnum];
@@ -195,7 +194,6 @@ export declare const GodownStockScalarFieldEnum: {
     readonly cgst: "cgst";
     readonly sgst: "sgst";
     readonly spareType: "spareType";
-    readonly status: "status";
     readonly invoiceId: "invoiceId";
     readonly notes: "notes";
     readonly createdAt: "createdAt";

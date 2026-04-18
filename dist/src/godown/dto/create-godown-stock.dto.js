@@ -10,7 +10,6 @@ export class CreateGodownStockDto {
     cgst;
     sgst;
     spareType;
-    status;
     notes;
 }
 //# sourceMappingURL=create-godown-stock.dto.js.map

@@ -3,10 +3,6 @@ export const SpareType = {
     Additive: 'Additive',
     Accessory: 'Accessory'
 };
-export const ItemStatus = {
-    Good: 'Good',
-    Defective: 'Defective'
-};
 export const OrderType = {
     Sale: 'Sale',
     ReturnToServiceCenter: 'ReturnToServiceCenter',

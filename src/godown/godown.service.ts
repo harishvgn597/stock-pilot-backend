@@ -32,7 +32,6 @@ export class GodownService {
       cgst: number;
       sgst: number;
       spareType?: string | null;
-      status?: string | null;
     }>,
   ) {
     const rows = items.map((item) =>
@@ -50,7 +49,6 @@ export class GodownService {
           cgst: item.cgst,
           sgst: item.sgst,
           spareType: (item.spareType as any) ?? null,
-          status: (item.status as any) ?? null,
           invoiceId,
         },
       }),
@@ -81,7 +79,6 @@ export class GodownService {
         cgst: dto.cgst ?? null,
         sgst: dto.sgst ?? null,
         spareType: (dto.spareType as any) ?? null,
-        status: (dto.status as any) ?? null,
         invoiceId: null,
         notes: dto.notes ?? null,
       },
@@ -166,7 +163,6 @@ export class GodownService {
         ...(dto.cgst !== undefined && { cgst: dto.cgst }),
         ...(dto.sgst !== undefined && { sgst: dto.sgst }),
         ...(dto.spareType !== undefined && { spareType: dto.spareType as any }),
-        ...(dto.status !== undefined && { status: dto.status as any }),
         ...(dto.notes !== undefined && { notes: dto.notes }),
       },
       include: INCLUDE,

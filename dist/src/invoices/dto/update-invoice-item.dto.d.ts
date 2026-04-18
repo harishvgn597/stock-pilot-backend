@@ -5,5 +5,4 @@ export declare class UpdateInvoiceItemDto {
     cgst?: number;
     sgst?: number;
     spareType?: 'Spare' | 'Additive' | 'Accessory';
-    status?: 'Good' | 'Defective';
 }

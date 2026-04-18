@@ -19,11 +19,6 @@ enum SpareType {
   Accessory
 }
 
-enum ItemStatus {
-  Good
-  Defective
-}
-
 enum OrderType {
   Sale
   ReturnToServiceCenter
@@ -103,7 +98,6 @@ model InvoiceItem {
   cgst        Float
   sgst        Float
   spareType   SpareType?
-  status      ItemStatus?
 
   createdAt DateTime @default(now())
 }
@@ -264,7 +258,6 @@ model GodownStock {
   cgst              Float?
   sgst              Float?
   spareType         SpareType?
-  status            ItemStatus?
 
   // null = manually added, set = came from an invoice
   invoiceId String?

@@ -29,7 +29,6 @@ export declare class GodownController {
         cgst: number | null;
         sgst: number | null;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -60,7 +59,6 @@ export declare class GodownController {
         cgst: number | null;
         sgst: number | null;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -98,7 +96,6 @@ export declare class GodownController {
         cgst: number | null;
         sgst: number | null;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -129,7 +126,6 @@ export declare class GodownController {
         cgst: number | null;
         sgst: number | null;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;
@@ -149,7 +145,6 @@ export declare class GodownController {
         cgst: number | null;
         sgst: number | null;
         spareType: import("../../generated/prisma/enums.js").SpareType | null;
-        status: import("../../generated/prisma/enums.js").ItemStatus | null;
         goodQuantity: number;
         defectiveQuantity: number;
         notes: string | null;

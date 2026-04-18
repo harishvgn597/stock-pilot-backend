@@ -9,7 +9,6 @@ export class UpdateGodownStockDto {
     cgst;
     sgst;
     spareType;
-    status;
     notes;
 }
 //# sourceMappingURL=update-godown-stock.dto.js.map

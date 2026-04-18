@@ -9,7 +9,6 @@ export class CreateInvoiceItemDto {
     cgst;
     sgst;
     spareType;
-    status;
 }
 export class CreateInvoiceDto {
     invoiceNumber;

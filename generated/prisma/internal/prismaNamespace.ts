@@ -1556,7 +1556,6 @@ export const InvoiceItemScalarFieldEnum = {
   cgst: 'cgst',
   sgst: 'sgst',
   spareType: 'spareType',
-  status: 'status',
   createdAt: 'createdAt'
 } as const
 
@@ -1692,7 +1691,6 @@ export const GodownStockScalarFieldEnum = {
   cgst: 'cgst',
   sgst: 'sgst',
   spareType: 'spareType',
-  status: 'status',
   invoiceId: 'invoiceId',
   notes: 'notes',
   createdAt: 'createdAt',
@@ -1785,20 +1783,6 @@ export type EnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prisma
  * Reference to a field of type 'SpareType[]'
  */
 export type ListEnumSpareTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SpareType[]'>
-    
-
-
-/**
- * Reference to a field of type 'ItemStatus'
- */
-export type EnumItemStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ItemStatus'>
-    
-
-
-/**
- * Reference to a field of type 'ItemStatus[]'
- */
-export type ListEnumItemStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ItemStatus[]'>
     
 
 

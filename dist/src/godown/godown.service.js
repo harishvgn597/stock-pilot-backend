@@ -37,7 +37,6 @@ let GodownService = class GodownService {
                 cgst: item.cgst,
                 sgst: item.sgst,
                 spareType: item.spareType ?? null,
-                status: item.status ?? null,
                 invoiceId,
             },
         }));
@@ -64,7 +63,6 @@ let GodownService = class GodownService {
                 cgst: dto.cgst ?? null,
                 sgst: dto.sgst ?? null,
                 spareType: dto.spareType ?? null,
-                status: dto.status ?? null,
                 invoiceId: null,
                 notes: dto.notes ?? null,
             },
@@ -139,7 +137,6 @@ let GodownService = class GodownService {
                 ...(dto.cgst !== undefined && { cgst: dto.cgst }),
                 ...(dto.sgst !== undefined && { sgst: dto.sgst }),
                 ...(dto.spareType !== undefined && { spareType: dto.spareType }),
-                ...(dto.status !== undefined && { status: dto.status }),
                 ...(dto.notes !== undefined && { notes: dto.notes }),
             },
             include: INCLUDE,

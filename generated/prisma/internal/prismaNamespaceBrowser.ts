@@ -91,6 +91,8 @@ export const UserScalarFieldEnum = {
   franchiseeName: 'franchiseeName',
   gstin: 'gstin',
   password: 'password',
+  resetToken: 'resetToken',
+  resetTokenExpiry: 'resetTokenExpiry',
   createdAt: 'createdAt'
 } as const
 

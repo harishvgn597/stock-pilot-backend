@@ -1,5 +1,7 @@
 import { AuthService } from './auth.service.js';
 import { LoginDto } from './dto/login.dto.js';
+import { ForgotPasswordDto } from './dto/forgot-password.dto.js';
+import { ResetPasswordDto } from './dto/reset-password.dto.js';
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);
@@ -14,5 +16,9 @@ export declare class AuthController {
             gstin: string;
             createdAt: Date;
         };
+    }>;
+    forgotPassword(dto: ForgotPasswordDto): Promise<Record<string, string>>;
+    resetPassword(dto: ResetPasswordDto): Promise<{
+        message: string;
     }>;
 }

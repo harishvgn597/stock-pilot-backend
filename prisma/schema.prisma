@@ -32,8 +32,10 @@ model User {
   phoneNumber    String
   franchiseeName String
   gstin          String
-  password       String
-  createdAt      DateTime @default(now())
+  password            String
+  resetToken          String?
+  resetTokenExpiry    DateTime?
+  createdAt           DateTime @default(now())
 }
 
 model Material {

@@ -32,6 +32,8 @@ export type UserMinAggregateOutputType = {
   franchiseeName: string | null
   gstin: string | null
   password: string | null
+  resetToken: string | null
+  resetTokenExpiry: Date | null
   createdAt: Date | null
 }
 
@@ -43,6 +45,8 @@ export type UserMaxAggregateOutputType = {
   franchiseeName: string | null
   gstin: string | null
   password: string | null
+  resetToken: string | null
+  resetTokenExpiry: Date | null
   createdAt: Date | null
 }
 
@@ -54,6 +58,8 @@ export type UserCountAggregateOutputType = {
   franchiseeName: number
   gstin: number
   password: number
+  resetToken: number
+  resetTokenExpiry: number
   createdAt: number
   _all: number
 }
@@ -67,6 +73,8 @@ export type UserMinAggregateInputType = {
   franchiseeName?: true
   gstin?: true
   password?: true
+  resetToken?: true
+  resetTokenExpiry?: true
   createdAt?: true
 }
 
@@ -78,6 +86,8 @@ export type UserMaxAggregateInputType = {
   franchiseeName?: true
   gstin?: true
   password?: true
+  resetToken?: true
+  resetTokenExpiry?: true
   createdAt?: true
 }
 
@@ -89,6 +99,8 @@ export type UserCountAggregateInputType = {
   franchiseeName?: true
   gstin?: true
   password?: true
+  resetToken?: true
+  resetTokenExpiry?: true
   createdAt?: true
   _all?: true
 }
@@ -173,6 +185,8 @@ export type UserGroupByOutputType = {
   franchiseeName: string
   gstin: string
   password: string
+  resetToken: string | null
+  resetTokenExpiry: Date | null
   createdAt: Date
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
@@ -205,6 +219,8 @@ export type UserWhereInput = {
   franchiseeName?: Prisma.StringFilter<"User"> | string
   gstin?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
+  resetToken?: Prisma.StringNullableFilter<"User"> | string | null
+  resetTokenExpiry?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
 }
 
@@ -216,6 +232,8 @@ export type UserOrderByWithRelationInput = {
   franchiseeName?: Prisma.SortOrder
   gstin?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  resetToken?: Prisma.SortOrderInput | Prisma.SortOrder
+  resetTokenExpiry?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -230,6 +248,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   franchiseeName?: Prisma.StringFilter<"User"> | string
   gstin?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
+  resetToken?: Prisma.StringNullableFilter<"User"> | string | null
+  resetTokenExpiry?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
 }, "id" | "email">
 
@@ -241,6 +261,8 @@ export type UserOrderByWithAggregationInput = {
   franchiseeName?: Prisma.SortOrder
   gstin?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  resetToken?: Prisma.SortOrderInput | Prisma.SortOrder
+  resetTokenExpiry?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -258,6 +280,8 @@ export type UserScalarWhereWithAggregatesInput = {
   franchiseeName?: Prisma.StringWithAggregatesFilter<"User"> | string
   gstin?: Prisma.StringWithAggregatesFilter<"User"> | string
   password?: Prisma.StringWithAggregatesFilter<"User"> | string
+  resetToken?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  resetTokenExpiry?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
@@ -269,6 +293,8 @@ export type UserCreateInput = {
   franchiseeName: string
   gstin: string
   password: string
+  resetToken?: string | null
+  resetTokenExpiry?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -280,6 +306,8 @@ export type UserUncheckedCreateInput = {
   franchiseeName: string
   gstin: string
   password: string
+  resetToken?: string | null
+  resetTokenExpiry?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -291,6 +319,8 @@ export type UserUpdateInput = {
   franchiseeName?: Prisma.StringFieldUpdateOperationsInput | string
   gstin?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  resetToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  resetTokenExpiry?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -302,6 +332,8 @@ export type UserUncheckedUpdateInput = {
   franchiseeName?: Prisma.StringFieldUpdateOperationsInput | string
   gstin?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  resetToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  resetTokenExpiry?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -313,6 +345,8 @@ export type UserCreateManyInput = {
   franchiseeName: string
   gstin: string
   password: string
+  resetToken?: string | null
+  resetTokenExpiry?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -324,6 +358,8 @@ export type UserUpdateManyMutationInput = {
   franchiseeName?: Prisma.StringFieldUpdateOperationsInput | string
   gstin?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  resetToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  resetTokenExpiry?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -335,6 +371,8 @@ export type UserUncheckedUpdateManyInput = {
   franchiseeName?: Prisma.StringFieldUpdateOperationsInput | string
   gstin?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  resetToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  resetTokenExpiry?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -346,6 +384,8 @@ export type UserCountOrderByAggregateInput = {
   franchiseeName?: Prisma.SortOrder
   gstin?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  resetToken?: Prisma.SortOrder
+  resetTokenExpiry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -357,6 +397,8 @@ export type UserMaxOrderByAggregateInput = {
   franchiseeName?: Prisma.SortOrder
   gstin?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  resetToken?: Prisma.SortOrder
+  resetTokenExpiry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -368,11 +410,21 @@ export type UserMinOrderByAggregateInput = {
   franchiseeName?: Prisma.SortOrder
   gstin?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  resetToken?: Prisma.SortOrder
+  resetTokenExpiry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
 export type StringFieldUpdateOperationsInput = {
   set?: string
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type NullableDateTimeFieldUpdateOperationsInput = {
+  set?: Date | string | null
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -389,6 +441,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   franchiseeName?: boolean
   gstin?: boolean
   password?: boolean
+  resetToken?: boolean
+  resetTokenExpiry?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
@@ -400,6 +454,8 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   franchiseeName?: boolean
   gstin?: boolean
   password?: boolean
+  resetToken?: boolean
+  resetTokenExpiry?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
@@ -411,6 +467,8 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   franchiseeName?: boolean
   gstin?: boolean
   password?: boolean
+  resetToken?: boolean
+  resetTokenExpiry?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
@@ -422,10 +480,12 @@ export type UserSelectScalar = {
   franchiseeName?: boolean
   gstin?: boolean
   password?: boolean
+  resetToken?: boolean
+  resetTokenExpiry?: boolean
   createdAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "franchiseeName" | "gstin" | "password" | "createdAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phoneNumber" | "franchiseeName" | "gstin" | "password" | "resetToken" | "resetTokenExpiry" | "createdAt", ExtArgs["result"]["user"]>
 
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
@@ -438,6 +498,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     franchiseeName: string
     gstin: string
     password: string
+    resetToken: string | null
+    resetTokenExpiry: Date | null
     createdAt: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
@@ -869,6 +931,8 @@ export interface UserFieldRefs {
   readonly franchiseeName: Prisma.FieldRef<"User", 'String'>
   readonly gstin: Prisma.FieldRef<"User", 'String'>
   readonly password: Prisma.FieldRef<"User", 'String'>
+  readonly resetToken: Prisma.FieldRef<"User", 'String'>
+  readonly resetTokenExpiry: Prisma.FieldRef<"User", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
 }
     

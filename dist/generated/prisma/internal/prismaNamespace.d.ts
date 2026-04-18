@@ -1262,6 +1262,8 @@ export declare const UserScalarFieldEnum: {
     readonly franchiseeName: "franchiseeName";
     readonly gstin: "gstin";
     readonly password: "password";
+    readonly resetToken: "resetToken";
+    readonly resetTokenExpiry: "resetTokenExpiry";
     readonly createdAt: "createdAt";
 };
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum];

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Put, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { GodownService } from './godown.service.js';
 import { CreateGodownStockDto } from './dto/create-godown-stock.dto.js';
@@ -33,7 +33,13 @@ export class GodownController {
     return this.godownService.findOne(id, req.user.userId);
   }
 
-  // PATCH /godown/:id — update quantities / notes
+  // PUT /godown/:id — full update of a stock entry
+  @Put(':id')
+  replace(@Param('id') id: string, @Body() dto: UpdateGodownStockDto, @Request() req: any) {
+    return this.godownService.update(id, dto, req.user.userId);
+  }
+
+  // PATCH /godown/:id — partial update of a stock entry
   @Patch(':id')
   update(@Param('id') id: string, @Body() dto: UpdateGodownStockDto, @Request() req: any) {
     return this.godownService.update(id, dto, req.user.userId);

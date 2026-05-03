@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Controller, Get, Post, Patch, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Put, Delete, Body, Param, UseGuards, Request } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { GodownService } from './godown.service.js';
 import { CreateGodownStockDto } from './dto/create-godown-stock.dto.js';
@@ -31,6 +31,9 @@ let GodownController = class GodownController {
     }
     findOne(id, req) {
         return this.godownService.findOne(id, req.user.userId);
+    }
+    replace(id, dto, req) {
+        return this.godownService.update(id, dto, req.user.userId);
     }
     update(id, dto, req) {
         return this.godownService.update(id, dto, req.user.userId);
@@ -69,6 +72,15 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], GodownController.prototype, "findOne", null);
+__decorate([
+    Put(':id'),
+    __param(0, Param('id')),
+    __param(1, Body()),
+    __param(2, Request()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, UpdateGodownStockDto, Object]),
+    __metadata("design:returntype", void 0)
+], GodownController.prototype, "replace", null);
 __decorate([
     Patch(':id'),
     __param(0, Param('id')),

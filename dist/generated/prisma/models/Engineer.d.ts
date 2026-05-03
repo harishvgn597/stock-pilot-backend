@@ -114,6 +114,7 @@ export type EngineerWhereInput = {
     createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string;
     assignedGoods?: Prisma.EngineerStockListRelationFilter;
     orders?: Prisma.OrderListRelationFilter;
+    attendance?: Prisma.AttendanceListRelationFilter;
 };
 export type EngineerOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -125,6 +126,7 @@ export type EngineerOrderByWithRelationInput = {
     createdAt?: Prisma.SortOrder;
     assignedGoods?: Prisma.EngineerStockOrderByRelationAggregateInput;
     orders?: Prisma.OrderOrderByRelationAggregateInput;
+    attendance?: Prisma.AttendanceOrderByRelationAggregateInput;
 };
 export type EngineerWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -139,6 +141,7 @@ export type EngineerWhereUniqueInput = Prisma.AtLeast<{
     createdAt?: Prisma.DateTimeFilter<"Engineer"> | Date | string;
     assignedGoods?: Prisma.EngineerStockListRelationFilter;
     orders?: Prisma.OrderListRelationFilter;
+    attendance?: Prisma.AttendanceListRelationFilter;
 }, "id" | "email">;
 export type EngineerOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -174,6 +177,7 @@ export type EngineerCreateInput = {
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput;
     orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerUncheckedCreateInput = {
     id?: string;
@@ -185,6 +189,7 @@ export type EngineerUncheckedCreateInput = {
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceUncheckedCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -196,6 +201,7 @@ export type EngineerUpdateInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput;
     orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -207,6 +213,7 @@ export type EngineerUncheckedUpdateInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUncheckedUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerCreateManyInput = {
     id?: string;
@@ -290,6 +297,18 @@ export type EngineerUpdateOneRequiredWithoutOrdersNestedInput = {
     connect?: Prisma.EngineerWhereUniqueInput;
     update?: Prisma.XOR<Prisma.XOR<Prisma.EngineerUpdateToOneWithWhereWithoutOrdersInput, Prisma.EngineerUpdateWithoutOrdersInput>, Prisma.EngineerUncheckedUpdateWithoutOrdersInput>;
 };
+export type EngineerCreateNestedOneWithoutAttendanceInput = {
+    create?: Prisma.XOR<Prisma.EngineerCreateWithoutAttendanceInput, Prisma.EngineerUncheckedCreateWithoutAttendanceInput>;
+    connectOrCreate?: Prisma.EngineerCreateOrConnectWithoutAttendanceInput;
+    connect?: Prisma.EngineerWhereUniqueInput;
+};
+export type EngineerUpdateOneRequiredWithoutAttendanceNestedInput = {
+    create?: Prisma.XOR<Prisma.EngineerCreateWithoutAttendanceInput, Prisma.EngineerUncheckedCreateWithoutAttendanceInput>;
+    connectOrCreate?: Prisma.EngineerCreateOrConnectWithoutAttendanceInput;
+    upsert?: Prisma.EngineerUpsertWithoutAttendanceInput;
+    connect?: Prisma.EngineerWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.EngineerUpdateToOneWithWhereWithoutAttendanceInput, Prisma.EngineerUpdateWithoutAttendanceInput>, Prisma.EngineerUncheckedUpdateWithoutAttendanceInput>;
+};
 export type EngineerCreateWithoutAssignedGoodsInput = {
     id?: string;
     name: string;
@@ -299,6 +318,7 @@ export type EngineerCreateWithoutAssignedGoodsInput = {
     franchiseeId: string;
     createdAt?: Date | string;
     orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerUncheckedCreateWithoutAssignedGoodsInput = {
     id?: string;
@@ -309,6 +329,7 @@ export type EngineerUncheckedCreateWithoutAssignedGoodsInput = {
     franchiseeId: string;
     createdAt?: Date | string;
     orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceUncheckedCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerCreateOrConnectWithoutAssignedGoodsInput = {
     where: Prisma.EngineerWhereUniqueInput;
@@ -332,6 +353,7 @@ export type EngineerUpdateWithoutAssignedGoodsInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -342,6 +364,7 @@ export type EngineerUncheckedUpdateWithoutAssignedGoodsInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUncheckedUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerCreateWithoutOrdersInput = {
     id?: string;
@@ -352,6 +375,7 @@ export type EngineerCreateWithoutOrdersInput = {
     franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerUncheckedCreateWithoutOrdersInput = {
     id?: string;
@@ -362,6 +386,7 @@ export type EngineerUncheckedCreateWithoutOrdersInput = {
     franchiseeId: string;
     createdAt?: Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput;
+    attendance?: Prisma.AttendanceUncheckedCreateNestedManyWithoutEngineerInput;
 };
 export type EngineerCreateOrConnectWithoutOrdersInput = {
     where: Prisma.EngineerWhereUniqueInput;
@@ -385,6 +410,7 @@ export type EngineerUpdateWithoutOrdersInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerUncheckedUpdateWithoutOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -395,14 +421,74 @@ export type EngineerUncheckedUpdateWithoutOrdersInput = {
     franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput;
+    attendance?: Prisma.AttendanceUncheckedUpdateManyWithoutEngineerNestedInput;
+};
+export type EngineerCreateWithoutAttendanceInput = {
+    id?: string;
+    name: string;
+    email: string;
+    phoneNumber?: string | null;
+    specialization?: string | null;
+    franchiseeId: string;
+    createdAt?: Date | string;
+    assignedGoods?: Prisma.EngineerStockCreateNestedManyWithoutEngineerInput;
+    orders?: Prisma.OrderCreateNestedManyWithoutEngineerInput;
+};
+export type EngineerUncheckedCreateWithoutAttendanceInput = {
+    id?: string;
+    name: string;
+    email: string;
+    phoneNumber?: string | null;
+    specialization?: string | null;
+    franchiseeId: string;
+    createdAt?: Date | string;
+    assignedGoods?: Prisma.EngineerStockUncheckedCreateNestedManyWithoutEngineerInput;
+    orders?: Prisma.OrderUncheckedCreateNestedManyWithoutEngineerInput;
+};
+export type EngineerCreateOrConnectWithoutAttendanceInput = {
+    where: Prisma.EngineerWhereUniqueInput;
+    create: Prisma.XOR<Prisma.EngineerCreateWithoutAttendanceInput, Prisma.EngineerUncheckedCreateWithoutAttendanceInput>;
+};
+export type EngineerUpsertWithoutAttendanceInput = {
+    update: Prisma.XOR<Prisma.EngineerUpdateWithoutAttendanceInput, Prisma.EngineerUncheckedUpdateWithoutAttendanceInput>;
+    create: Prisma.XOR<Prisma.EngineerCreateWithoutAttendanceInput, Prisma.EngineerUncheckedCreateWithoutAttendanceInput>;
+    where?: Prisma.EngineerWhereInput;
+};
+export type EngineerUpdateToOneWithWhereWithoutAttendanceInput = {
+    where?: Prisma.EngineerWhereInput;
+    data: Prisma.XOR<Prisma.EngineerUpdateWithoutAttendanceInput, Prisma.EngineerUncheckedUpdateWithoutAttendanceInput>;
+};
+export type EngineerUpdateWithoutAttendanceInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    name?: Prisma.StringFieldUpdateOperationsInput | string;
+    email?: Prisma.StringFieldUpdateOperationsInput | string;
+    phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    assignedGoods?: Prisma.EngineerStockUpdateManyWithoutEngineerNestedInput;
+    orders?: Prisma.OrderUpdateManyWithoutEngineerNestedInput;
+};
+export type EngineerUncheckedUpdateWithoutAttendanceInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    name?: Prisma.StringFieldUpdateOperationsInput | string;
+    email?: Prisma.StringFieldUpdateOperationsInput | string;
+    phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    specialization?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    franchiseeId?: Prisma.StringFieldUpdateOperationsInput | string;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    assignedGoods?: Prisma.EngineerStockUncheckedUpdateManyWithoutEngineerNestedInput;
+    orders?: Prisma.OrderUncheckedUpdateManyWithoutEngineerNestedInput;
 };
 export type EngineerCountOutputType = {
     assignedGoods: number;
     orders: number;
+    attendance: number;
 };
 export type EngineerCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     assignedGoods?: boolean | EngineerCountOutputTypeCountAssignedGoodsArgs;
     orders?: boolean | EngineerCountOutputTypeCountOrdersArgs;
+    attendance?: boolean | EngineerCountOutputTypeCountAttendanceArgs;
 };
 export type EngineerCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     select?: Prisma.EngineerCountOutputTypeSelect<ExtArgs> | null;
@@ -412,6 +498,9 @@ export type EngineerCountOutputTypeCountAssignedGoodsArgs<ExtArgs extends runtim
 };
 export type EngineerCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     where?: Prisma.OrderWhereInput;
+};
+export type EngineerCountOutputTypeCountAttendanceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.AttendanceWhereInput;
 };
 export type EngineerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
@@ -423,6 +512,7 @@ export type EngineerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
     createdAt?: boolean;
     assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>;
     orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>;
+    attendance?: boolean | Prisma.Engineer$attendanceArgs<ExtArgs>;
     _count?: boolean | Prisma.EngineerCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["engineer"]>;
 export type EngineerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -456,6 +546,7 @@ export type EngineerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 export type EngineerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     assignedGoods?: boolean | Prisma.Engineer$assignedGoodsArgs<ExtArgs>;
     orders?: boolean | Prisma.Engineer$ordersArgs<ExtArgs>;
+    attendance?: boolean | Prisma.Engineer$attendanceArgs<ExtArgs>;
     _count?: boolean | Prisma.EngineerCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type EngineerIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
@@ -465,6 +556,7 @@ export type $EngineerPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     objects: {
         assignedGoods: Prisma.$EngineerStockPayload<ExtArgs>[];
         orders: Prisma.$OrderPayload<ExtArgs>[];
+        attendance: Prisma.$AttendancePayload<ExtArgs>[];
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -528,6 +620,7 @@ export interface Prisma__EngineerClient<T, Null = never, ExtArgs extends runtime
     readonly [Symbol.toStringTag]: "PrismaPromise";
     assignedGoods<T extends Prisma.Engineer$assignedGoodsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Engineer$assignedGoodsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EngineerStockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     orders<T extends Prisma.Engineer$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Engineer$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    attendance<T extends Prisma.Engineer$attendanceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Engineer$attendanceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AttendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
     catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
     finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
@@ -660,6 +753,17 @@ export type Engineer$ordersArgs<ExtArgs extends runtime.Types.Extensions.Interna
     take?: number;
     skip?: number;
     distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[];
+};
+export type Engineer$attendanceArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    select?: Prisma.AttendanceSelect<ExtArgs> | null;
+    omit?: Prisma.AttendanceOmit<ExtArgs> | null;
+    include?: Prisma.AttendanceInclude<ExtArgs> | null;
+    where?: Prisma.AttendanceWhereInput;
+    orderBy?: Prisma.AttendanceOrderByWithRelationInput | Prisma.AttendanceOrderByWithRelationInput[];
+    cursor?: Prisma.AttendanceWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.AttendanceScalarFieldEnum | Prisma.AttendanceScalarFieldEnum[];
 };
 export type EngineerDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     select?: Prisma.EngineerSelect<ExtArgs> | null;

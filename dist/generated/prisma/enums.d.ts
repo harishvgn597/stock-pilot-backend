@@ -1,3 +1,10 @@
+export declare const AttendanceStatus: {
+    readonly Present: "Present";
+    readonly Absent: "Absent";
+    readonly HalfDay: "HalfDay";
+    readonly Leave: "Leave";
+};
+export type AttendanceStatus = (typeof AttendanceStatus)[keyof typeof AttendanceStatus];
 export declare const SpareType: {
     readonly Spare: "Spare";
     readonly Additive: "Additive";

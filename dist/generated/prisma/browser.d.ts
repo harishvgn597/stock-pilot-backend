@@ -16,3 +16,4 @@ export type ReturnToGodownOrder = Prisma.ReturnToGodownOrderModel;
 export type CustomerReturn = Prisma.CustomerReturnModel;
 export type AmcContract = Prisma.AmcContractModel;
 export type GodownStock = Prisma.GodownStockModel;
+export type Attendance = Prisma.AttendanceModel;

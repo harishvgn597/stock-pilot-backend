@@ -53,6 +53,9 @@ let PrismaService = class PrismaService {
     get godownStock() {
         return this.prisma.godownStock;
     }
+    get attendance() {
+        return this.prisma.attendance;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

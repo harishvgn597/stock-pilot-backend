@@ -1,3 +1,9 @@
+export const AttendanceStatus = {
+    Present: 'Present',
+    Absent: 'Absent',
+    HalfDay: 'HalfDay',
+    Leave: 'Leave'
+};
 export const SpareType = {
     Spare: 'Spare',
     Additive: 'Additive',

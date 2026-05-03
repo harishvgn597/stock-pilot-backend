@@ -87,3 +87,8 @@ export type AmcContract = Prisma.AmcContractModel
  * 
  */
 export type GodownStock = Prisma.GodownStockModel
+/**
+ * Model Attendance
+ * 
+ */
+export type Attendance = Prisma.AttendanceModel

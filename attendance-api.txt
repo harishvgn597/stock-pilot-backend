@@ -1,0 +1,174 @@
+ATTENDANCE API — REQUEST & RESPONSE EXAMPLES
+============================================
+All routes require: Authorization: Bearer <token>
+
+
+────────────────────────────────────────────
+1. MARK ATTENDANCE
+   POST /attendance
+────────────────────────────────────────────
+
+Request:
+  POST /attendance
+  Content-Type: application/json
+  Authorization: Bearer <token>
+
+  {
+    "engineerId": "a1b2c3d4-0000-0000-0000-000000000001",
+    "date": "2026-05-03",
+    "status": "Present",
+    "notes": "On-site at client location"
+  }
+
+Response 201:
+  {
+    "id": "f7e6d5c4-1111-2222-3333-444444444444",
+    "date": "2026-05-03T00:00:00.000Z",
+    "status": "Present",
+    "notes": "On-site at client location",
+    "createdAt": "2026-05-03T09:00:00.000Z",
+    "engineer": {
+      "id": "a1b2c3d4-0000-0000-0000-000000000001",
+      "name": "Ravi Kumar"
+    }
+  }
+
+Response 409 (already marked):
+  {
+    "statusCode": 409,
+    "message": "Attendance for engineer a1b2c3d4-... on 2026-05-03 already marked",
+    "error": "Conflict"
+  }
+
+Response 404 (engineer not found):
+  {
+    "statusCode": 404,
+    "message": "Engineer with id a1b2c3d4-... not found",
+    "error": "Not Found"
+  }
+
+Valid status values: "Present" | "Absent" | "HalfDay" | "Leave"
+notes field is optional.
+
+
+────────────────────────────────────────────
+2. LIST ALL ATTENDANCE (optionally filter by date)
+   GET /attendance
+   GET /attendance?date=YYYY-MM-DD
+────────────────────────────────────────────
+
+Request (all):
+  GET /attendance
+  Authorization: Bearer <token>
+
+Request (by date):
+  GET /attendance?date=2026-05-03
+  Authorization: Bearer <token>
+
+Response 200:
+  [
+    {
+      "id": "f7e6d5c4-1111-2222-3333-444444444444",
+      "date": "2026-05-03T00:00:00.000Z",
+      "status": "Present",
+      "notes": "On-site at client location",
+      "createdAt": "2026-05-03T09:00:00.000Z",
+      "engineer": {
+        "id": "a1b2c3d4-0000-0000-0000-000000000001",
+        "name": "Ravi Kumar"
+      }
+    },
+    {
+      "id": "a9b8c7d6-5555-6666-7777-888888888888",
+      "date": "2026-05-03T00:00:00.000Z",
+      "status": "Absent",
+      "notes": null,
+      "createdAt": "2026-05-03T09:05:00.000Z",
+      "engineer": {
+        "id": "b2c3d4e5-0000-0000-0000-000000000002",
+        "name": "Suresh Babu"
+      }
+    }
+  ]
+
+Results are ordered by date desc, then engineer name asc.
+
+
+────────────────────────────────────────────
+3. ATTENDANCE HISTORY FOR ONE ENGINEER
+   GET /attendance/engineer/:engineerId
+────────────────────────────────────────────
+
+Request:
+  GET /attendance/engineer/a1b2c3d4-0000-0000-0000-000000000001
+  Authorization: Bearer <token>
+
+Response 200:
+  [
+    {
+      "id": "f7e6d5c4-1111-2222-3333-444444444444",
+      "date": "2026-05-03T00:00:00.000Z",
+      "status": "Present",
+      "notes": "On-site at client location",
+      "createdAt": "2026-05-03T09:00:00.000Z"
+    },
+    {
+      "id": "c3d4e5f6-9999-aaaa-bbbb-cccccccccccc",
+      "date": "2026-05-02T00:00:00.000Z",
+      "status": "HalfDay",
+      "notes": "Left early due to medical appointment",
+      "createdAt": "2026-05-02T09:00:00.000Z"
+    },
+    {
+      "id": "d4e5f6a7-dddd-eeee-ffff-000000000000",
+      "date": "2026-05-01T00:00:00.000Z",
+      "status": "Leave",
+      "notes": null,
+      "createdAt": "2026-05-01T08:55:00.000Z"
+    }
+  ]
+
+Response 404 (engineer not in your franchisee):
+  {
+    "statusCode": 404,
+    "message": "Engineer with id a1b2c3d4-... not found",
+    "error": "Not Found"
+  }
+
+
+────────────────────────────────────────────
+4. CORRECT AN ATTENDANCE RECORD
+   PATCH /attendance/:id
+────────────────────────────────────────────
+
+Request:
+  PATCH /attendance/f7e6d5c4-1111-2222-3333-444444444444
+  Content-Type: application/json
+  Authorization: Bearer <token>
+
+  {
+    "status": "HalfDay",
+    "notes": "Marked wrong — left at noon"
+  }
+
+Both fields are optional — send only what you want to change.
+
+Response 200:
+  {
+    "id": "f7e6d5c4-1111-2222-3333-444444444444",
+    "date": "2026-05-03T00:00:00.000Z",
+    "status": "HalfDay",
+    "notes": "Marked wrong — left at noon",
+    "createdAt": "2026-05-03T09:00:00.000Z",
+    "engineer": {
+      "id": "a1b2c3d4-0000-0000-0000-000000000001",
+      "name": "Ravi Kumar"
+    }
+  }
+
+Response 404 (record not found or belongs to another franchisee):
+  {
+    "statusCode": 404,
+    "message": "Attendance record with id f7e6d5c4-... not found",
+    "error": "Not Found"
+  }

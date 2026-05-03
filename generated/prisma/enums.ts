@@ -9,6 +9,16 @@
 * 🟢 You can import this file directly.
 */
 
+export const AttendanceStatus = {
+  Present: 'Present',
+  Absent: 'Absent',
+  HalfDay: 'HalfDay',
+  Leave: 'Leave'
+} as const
+
+export type AttendanceStatus = (typeof AttendanceStatus)[keyof typeof AttendanceStatus]
+
+
 export const SpareType = {
   Spare: 'Spare',
   Additive: 'Additive',

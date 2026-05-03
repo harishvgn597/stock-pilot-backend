@@ -13,6 +13,13 @@ datasource db {
   provider = "postgresql"
 }
 
+enum AttendanceStatus {
+  Present
+  Absent
+  HalfDay
+  Leave
+}
+
 enum SpareType {
   Spare
   Additive
@@ -116,6 +123,7 @@ model Engineer {
 
   assignedGoods EngineerStock[]
   orders        Order[]
+  attendance    Attendance[]
 }
 
 model EngineerStock {
@@ -269,4 +277,19 @@ model GodownStock {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+// ─── Attendance ───────────────────────────────────────────────────────────────
+
+model Attendance {
+  id           String           @id @default(uuid())
+  engineerId   String
+  engineer     Engineer         @relation(fields: [engineerId], references: [id])
+  franchiseeId String
+  date         DateTime         @db.Date
+  status       AttendanceStatus
+  notes        String?
+  createdAt    DateTime         @default(now())
+
+  @@unique([engineerId, date])
 }

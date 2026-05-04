@@ -56,6 +56,9 @@ let PrismaService = class PrismaService {
     get attendance() {
         return this.prisma.attendance;
     }
+    get franchiseSalaryConfig() {
+        return this.prisma.franchiseSalaryConfig;
+    }
     async onModuleInit() {
         await this.prisma.$connect();
     }

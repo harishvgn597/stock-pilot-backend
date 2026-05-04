@@ -46,6 +46,9 @@ export declare class PrismaService implements OnModuleInit, OnModuleDestroy {
     get attendance(): import("../../generated/prisma/models.js").AttendanceDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
         omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
     }>;
+    get franchiseSalaryConfig(): import("../../generated/prisma/models.js").FranchiseSalaryConfigDelegate<import("@prisma/client/runtime/client").DefaultArgs, {
+        omit: import("../../generated/prisma/internal/prismaNamespace.js").GlobalOmitConfig | undefined;
+    }>;
     onModuleInit(): Promise<void>;
     onModuleDestroy(): Promise<void>;
 }

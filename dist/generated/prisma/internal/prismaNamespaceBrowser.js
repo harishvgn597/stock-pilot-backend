@@ -23,6 +23,7 @@ export const ModelName = {
     CustomerReturn: 'CustomerReturn',
     AmcContract: 'AmcContract',
     GodownStock: 'GodownStock',
+    FranchiseSalaryConfig: 'FranchiseSalaryConfig',
     Attendance: 'Attendance'
 };
 export const TransactionIsolationLevel = runtime.makeStrictEnum({
@@ -182,6 +183,17 @@ export const GodownStockScalarFieldEnum = {
     spareType: 'spareType',
     invoiceId: 'invoiceId',
     notes: 'notes',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+export const FranchiseSalaryConfigScalarFieldEnum = {
+    id: 'id',
+    franchiseeId: 'franchiseeId',
+    ratePerSalesCall: 'ratePerSalesCall',
+    rateCustomerSatisfaction: 'rateCustomerSatisfaction',
+    slabAccessory: 'slabAccessory',
+    slabSpare: 'slabSpare',
+    slabEssential: 'slabEssential',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };

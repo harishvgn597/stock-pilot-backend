@@ -171,6 +171,7 @@ export declare const ModelName: {
     readonly CustomerReturn: "CustomerReturn";
     readonly AmcContract: "AmcContract";
     readonly GodownStock: "GodownStock";
+    readonly FranchiseSalaryConfig: "FranchiseSalaryConfig";
     readonly Attendance: "Attendance";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -184,7 +185,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn" | "amcContract" | "godownStock" | "attendance";
+        modelProps: "user" | "material" | "materialPrice" | "invoice" | "invoiceItem" | "engineer" | "engineerStock" | "order" | "saleOrder" | "warrantyAmcOrder" | "returnToGodownOrder" | "customerReturn" | "amcContract" | "godownStock" | "franchiseSalaryConfig" | "attendance";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -1224,6 +1225,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        FranchiseSalaryConfig: {
+            payload: Prisma.$FranchiseSalaryConfigPayload<ExtArgs>;
+            fields: Prisma.FranchiseSalaryConfigFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.FranchiseSalaryConfigFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.FranchiseSalaryConfigFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                findFirst: {
+                    args: Prisma.FranchiseSalaryConfigFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.FranchiseSalaryConfigFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                findMany: {
+                    args: Prisma.FranchiseSalaryConfigFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>[];
+                };
+                create: {
+                    args: Prisma.FranchiseSalaryConfigCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                createMany: {
+                    args: Prisma.FranchiseSalaryConfigCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.FranchiseSalaryConfigCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>[];
+                };
+                delete: {
+                    args: Prisma.FranchiseSalaryConfigDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                update: {
+                    args: Prisma.FranchiseSalaryConfigUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.FranchiseSalaryConfigDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.FranchiseSalaryConfigUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.FranchiseSalaryConfigUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>[];
+                };
+                upsert: {
+                    args: Prisma.FranchiseSalaryConfigUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$FranchiseSalaryConfigPayload>;
+                };
+                aggregate: {
+                    args: Prisma.FranchiseSalaryConfigAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateFranchiseSalaryConfig>;
+                };
+                groupBy: {
+                    args: Prisma.FranchiseSalaryConfigGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.FranchiseSalaryConfigGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.FranchiseSalaryConfigCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.FranchiseSalaryConfigCountAggregateOutputType> | number;
+                };
+            };
+        };
         Attendance: {
             payload: Prisma.$AttendancePayload<ExtArgs>;
             fields: Prisma.AttendanceFieldRefs;
@@ -1497,6 +1572,18 @@ export declare const GodownStockScalarFieldEnum: {
     readonly updatedAt: "updatedAt";
 };
 export type GodownStockScalarFieldEnum = (typeof GodownStockScalarFieldEnum)[keyof typeof GodownStockScalarFieldEnum];
+export declare const FranchiseSalaryConfigScalarFieldEnum: {
+    readonly id: "id";
+    readonly franchiseeId: "franchiseeId";
+    readonly ratePerSalesCall: "ratePerSalesCall";
+    readonly rateCustomerSatisfaction: "rateCustomerSatisfaction";
+    readonly slabAccessory: "slabAccessory";
+    readonly slabSpare: "slabSpare";
+    readonly slabEssential: "slabEssential";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type FranchiseSalaryConfigScalarFieldEnum = (typeof FranchiseSalaryConfigScalarFieldEnum)[keyof typeof FranchiseSalaryConfigScalarFieldEnum];
 export declare const AttendanceScalarFieldEnum: {
     readonly id: "id";
     readonly engineerId: "engineerId";
@@ -1574,6 +1661,7 @@ export type GlobalOmitConfig = {
     customerReturn?: Prisma.CustomerReturnOmit;
     amcContract?: Prisma.AmcContractOmit;
     godownStock?: Prisma.GodownStockOmit;
+    franchiseSalaryConfig?: Prisma.FranchiseSalaryConfigOmit;
     attendance?: Prisma.AttendanceOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';

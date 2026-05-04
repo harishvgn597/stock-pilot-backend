@@ -279,6 +279,20 @@ model GodownStock {
   updatedAt DateTime @updatedAt
 }
 
+// ─── Engineer Salary Config ───────────────────────────────────────────────────
+
+model FranchiseSalaryConfig {
+  id                       String   @id @default(uuid())
+  franchiseeId             String   @unique
+  ratePerSalesCall         Float    @default(0)
+  rateCustomerSatisfaction Float    @default(0)
+  slabAccessory            Float    @default(0)
+  slabSpare                Float    @default(0)
+  slabEssential            Float    @default(0)
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+}
+
 // ─── Attendance ───────────────────────────────────────────────────────────────
 
 model Attendance {

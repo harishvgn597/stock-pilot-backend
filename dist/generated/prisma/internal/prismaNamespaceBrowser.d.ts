@@ -25,6 +25,7 @@ export declare const ModelName: {
     readonly CustomerReturn: "CustomerReturn";
     readonly AmcContract: "AmcContract";
     readonly GodownStock: "GodownStock";
+    readonly FranchiseSalaryConfig: "FranchiseSalaryConfig";
     readonly Attendance: "Attendance";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -203,6 +204,18 @@ export declare const GodownStockScalarFieldEnum: {
     readonly updatedAt: "updatedAt";
 };
 export type GodownStockScalarFieldEnum = (typeof GodownStockScalarFieldEnum)[keyof typeof GodownStockScalarFieldEnum];
+export declare const FranchiseSalaryConfigScalarFieldEnum: {
+    readonly id: "id";
+    readonly franchiseeId: "franchiseeId";
+    readonly ratePerSalesCall: "ratePerSalesCall";
+    readonly rateCustomerSatisfaction: "rateCustomerSatisfaction";
+    readonly slabAccessory: "slabAccessory";
+    readonly slabSpare: "slabSpare";
+    readonly slabEssential: "slabEssential";
+    readonly createdAt: "createdAt";
+    readonly updatedAt: "updatedAt";
+};
+export type FranchiseSalaryConfigScalarFieldEnum = (typeof FranchiseSalaryConfigScalarFieldEnum)[keyof typeof FranchiseSalaryConfigScalarFieldEnum];
 export declare const AttendanceScalarFieldEnum: {
     readonly id: "id";
     readonly engineerId: "engineerId";

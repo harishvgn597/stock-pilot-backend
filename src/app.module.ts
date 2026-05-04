@@ -12,9 +12,10 @@ import { ReturnsModule } from './returns/returns.module.js';
 import { AmcModule } from './amc/amc.module.js';
 import { GodownModule } from './godown/godown.module.js';
 import { AttendanceModule } from './attendance/attendance.module.js';
+import { SalaryConfigModule } from './salary-config/salary-config.module.js';
 
 @Module({
-  imports: [PrismaModule, UsersModule, AuthModule, MaterialsModule, InvoicesModule, EngineersModule, OrdersModule, ReturnsModule, AmcModule, GodownModule, AttendanceModule],
+  imports: [PrismaModule, UsersModule, AuthModule, MaterialsModule, InvoicesModule, EngineersModule, OrdersModule, ReturnsModule, AmcModule, GodownModule, AttendanceModule, SalaryConfigModule],
   controllers: [AppController],
   providers: [AppService],
 })

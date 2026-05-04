@@ -88,6 +88,11 @@ export type AmcContract = Prisma.AmcContractModel
  */
 export type GodownStock = Prisma.GodownStockModel
 /**
+ * Model FranchiseSalaryConfig
+ * 
+ */
+export type FranchiseSalaryConfig = Prisma.FranchiseSalaryConfigModel
+/**
  * Model Attendance
  * 
  */

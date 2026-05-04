@@ -65,6 +65,7 @@ export const ModelName = {
   CustomerReturn: 'CustomerReturn',
   AmcContract: 'AmcContract',
   GodownStock: 'GodownStock',
+  FranchiseSalaryConfig: 'FranchiseSalaryConfig',
   Attendance: 'Attendance'
 } as const
 
@@ -292,6 +293,21 @@ export const GodownStockScalarFieldEnum = {
 } as const
 
 export type GodownStockScalarFieldEnum = (typeof GodownStockScalarFieldEnum)[keyof typeof GodownStockScalarFieldEnum]
+
+
+export const FranchiseSalaryConfigScalarFieldEnum = {
+  id: 'id',
+  franchiseeId: 'franchiseeId',
+  ratePerSalesCall: 'ratePerSalesCall',
+  rateCustomerSatisfaction: 'rateCustomerSatisfaction',
+  slabAccessory: 'slabAccessory',
+  slabSpare: 'slabSpare',
+  slabEssential: 'slabEssential',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type FranchiseSalaryConfigScalarFieldEnum = (typeof FranchiseSalaryConfigScalarFieldEnum)[keyof typeof FranchiseSalaryConfigScalarFieldEnum]
 
 
 export const AttendanceScalarFieldEnum = {

@@ -70,6 +70,9 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
     get godownStock(): Prisma.GodownStockDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
+    get franchiseSalaryConfig(): Prisma.FranchiseSalaryConfigDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
     get attendance(): Prisma.AttendanceDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;

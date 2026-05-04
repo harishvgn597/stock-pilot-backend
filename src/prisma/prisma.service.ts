@@ -69,6 +69,10 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.prisma.attendance;
   }
 
+  get franchiseSalaryConfig() {
+    return this.prisma.franchiseSalaryConfig;
+  }
+
   async onModuleInit() {
     await this.prisma.$connect();
   }
